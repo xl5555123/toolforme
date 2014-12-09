@@ -3,7 +3,6 @@ package com.pku.ipku.ui;
 import android.app.Application;
 
 import com.google.common.base.Strings;
-import com.pku.ipku.dto.User;
 import com.pku.ipku.util.AppConfig;
 import com.pku.ipku.util.AppException;
 import com.pku.ipku.util.PropertyHelper;
@@ -15,8 +14,6 @@ public class AppContext extends Application {
     private final static String CURRENT_USER_KEY = "current-user";
 
     public static final int PAGE_SIZE = 20;// 默认分页大小
-
-    private User currentUser;
 
     @Override
     public void onCreate() {

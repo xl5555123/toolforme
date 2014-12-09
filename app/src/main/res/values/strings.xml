@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Onboard</string>
+    <string name="app_name">PKU信息门户</string>
     <string name="login_logo">Onboard</string>
     <string name="login_userName">账号:</string>
     <string name="login_userName_hint">输入账号/邮箱</string>

@@ -29,7 +29,6 @@ public class AppStart extends Activity {
      * TODO redirect to Login page or Navigation Page ?
      */
     private void redirectTo() {
-        AppContext appContext = (AppContext)getApplicationContext();
         Intent intent = new Intent(this, Home.class);
         startActivity(intent);
         finish();
