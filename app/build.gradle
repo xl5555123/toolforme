@@ -43,4 +43,5 @@ dependencies {
     compile project(':slidingmenu')
     compile 'commons-httpclient:commons-httpclient:3.1'
     compile 'de.hdodenhof:circleimageview:1.2.1'
+    compile files('libs/BaiduLBS_Android.jar')
 }

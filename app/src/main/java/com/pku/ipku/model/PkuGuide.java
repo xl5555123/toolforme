@@ -10,7 +10,7 @@ import com.pku.ipku.ui.pkuGuide.PkuGuideFragment;
 /**
  * Created by XingLiang on 2014/12/8.
  */
-public class PkuGuide implements Typable, Fragmentable {
+public class PkuGuide implements Fragmentable {
 
     @Override
     public String getType() {

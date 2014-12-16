@@ -10,7 +10,7 @@ import com.pku.ipku.ui.pkuMap.PkuMapFragment;
 /**
  * Created by XingLiang on 2014/12/8.
  */
-public class PkuMap implements Typable, Fragmentable {
+public class PkuMap implements Fragmentable {
     @Override
     public String getType() {
         return "pku_map";

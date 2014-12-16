@@ -4,7 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 
 import com.pku.ipku.R;
-import com.pku.ipku.ui.person.PersonFragment;
+import com.pku.ipku.ui.person.PersonNavigationFragment;
 import com.pku.ipku.util.AppManager;
 
 import cn.onboard.android.slidingmenu.SlidingMenu;
@@ -36,7 +36,7 @@ public class Home extends SlidingFragmentActivity {
             currrentContent = getSupportFragmentManager().getFragment(
                     savedInstanceState, "mContent");
         if (currrentContent == null)
-            currrentContent = new PersonFragment();
+            currrentContent = new PersonNavigationFragment();
     }
 
 
@@ -44,13 +44,14 @@ public class Home extends SlidingFragmentActivity {
         setContentView(R.layout.content_frame);
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.content_frame, currrentContent).commit();
+        getSupportActionBar().setHomeButtonEnabled(true);
 
         setBehindContentView(R.layout.menu_frame);
         FragmentTransaction leftFragmentTransaction = getSupportFragmentManager().beginTransaction();
         leftFragmentTransaction.replace(R.id.menu_frame, new HomeMenuFragment()).commit();
 
         slidingMenu = getSlidingMenu();
-        slidingMenu.setMode(SlidingMenu.LEFT_RIGHT);
+        slidingMenu.setMode(SlidingMenu.LEFT);
         slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
         slidingMenu.setShadowWidthRes(R.dimen.shadow_width);
         slidingMenu.setShadowDrawable(R.drawable.shadow);
@@ -66,5 +67,18 @@ public class Home extends SlidingFragmentActivity {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.content_frame, fragment).commit();
         getSlidingMenu().showContent();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(com.actionbarsherlock.view.MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                getSlidingMenu().showContent();
+                toggle();
+                break;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

@@ -1,7 +1,5 @@
-package com.pku.ipku.ui.pkuInfo;
+package com.pku.ipku.ui.studyGuide;
 
-import android.app.Activity;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -10,9 +8,8 @@ import android.view.ViewGroup;
 
 import com.pku.ipku.R;
 
-public class PkuInfoFragment extends Fragment {
-
-    public PkuInfoFragment() {
+public class CurriculumFragment extends Fragment {
+    public CurriculumFragment() {
         // Required empty public constructor
     }
 
@@ -25,7 +22,7 @@ public class PkuInfoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pku_info, container, false);
+        return inflater.inflate(R.layout.fragment_curriculum, container, false);
     }
 
 }

@@ -1,8 +1,7 @@
-package com.pku.ipku.ui.person;
+package com.pku.ipku.ui.pkuInfo;
 
-import android.app.Activity;
-import android.net.Uri;
 import android.os.Bundle;
+
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,9 +9,10 @@ import android.view.ViewGroup;
 
 import com.pku.ipku.R;
 
-public class PersonFragment extends Fragment {
 
-    public PersonFragment() {
+public class PkuClubFragment extends Fragment {
+
+    public PkuClubFragment() {
         // Required empty public constructor
     }
 
@@ -25,7 +25,7 @@ public class PersonFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_person, container, false);
+        return inflater.inflate(R.layout.fragment_pku_club, container, false);
     }
 
 }

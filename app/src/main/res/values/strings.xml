@@ -48,6 +48,10 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_company_detail">CompanyDetail</string>
     <string name="title_activity_completed_todo">CompletedTodoActivity</string>
-
+    <string name="title_activity_pku_notice">PkuNotice</string>
+    <string name="title_activity_pku_lecture">PkuLecture</string>
+    <string name="title_activity_pku_news">PkuNews</string>
+    <string name="title_activity_pku_club">PkuClub</string>
+    <string name="title_activity_pku_job">PkuJob</string>
 
 </resources>

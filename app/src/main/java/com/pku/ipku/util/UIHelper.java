@@ -1,23 +1,28 @@
 package com.pku.ipku.util;
 
+import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.view.Gravity;
+import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
+import android.widget.SpinnerAdapter;
 import android.widget.Toast;
 
-import com.actionbarsherlock.app.ActionBar;
 import com.pku.ipku.R;
+import com.pku.ipku.model.pkuInfo.PkuInfo;
+import com.pku.ipku.model.studyguide.StudyGuide;
+import com.pku.ipku.model.type.Fragmentable;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * 应用程序UI工具包：封装UI相关的一些操作
@@ -73,8 +78,8 @@ public class UIHelper {
                 //发送异常报告
                 Intent i = new Intent(Intent.ACTION_SEND);
                 i.setType("message/rfc822"); //真机
-                i.putExtra(Intent.EXTRA_EMAIL, new String[]{"xuchen0602@126.com"});
-                i.putExtra(Intent.EXTRA_SUBJECT, "Onboard_Android客户端 - 错误报告");
+                i.putExtra(Intent.EXTRA_EMAIL, new String[]{"xl5555123@gmail.com"});
+                i.putExtra(Intent.EXTRA_SUBJECT, "IPKU客户端 - 错误报告");
                 i.putExtra(Intent.EXTRA_TEXT, crashReport);
                 cont.startActivity(Intent.createChooser(i, "发送错误报告"));
                 //退出
@@ -160,6 +165,29 @@ public class UIHelper {
         params.height = totalHeight
                 + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
         listView.setLayoutParams(params);
+    }
+
+    public static void setUpActionBarWithNoNavigation(ActionBar actionBar, String title) {
+        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
+        actionBar.setHomeButtonEnabled(true);
+        actionBar.setTitle(title);
+        actionBar.removeAllTabs();
+    }
+
+    public static void setUpActionBarWithNavigation(ActionBar actionBar, String title, final FragmentActivity activity, final List<Fragmentable> fragmentableList) {
+        actionBar.setHomeButtonEnabled(true);
+        actionBar.setTitle(title);
+        actionBar.setNavigationMode(android.app.ActionBar.NAVIGATION_MODE_LIST);
+        SpinnerAdapter spinnerAdapter = new ArrayAdapter<String>(activity, R.layout.navigation_bar_list_item, DataHandleUtil.getFragmentablesChineseNameList(fragmentableList));
+        actionBar.setListNavigationCallbacks(spinnerAdapter, new android.app.ActionBar.OnNavigationListener() {
+            @Override
+            public boolean onNavigationItemSelected(int itemPosition, long itemId) {
+                Fragmentable fragmentable = fragmentableList.get(itemPosition);
+                android.support.v4.app.FragmentTransaction transaction = activity.getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.content_frame, fragmentable.getAttachedFragment(null)).commit();
+                return true;
+            }
+        });
     }
 
 

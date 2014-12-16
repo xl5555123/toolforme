@@ -1,16 +1,16 @@
-package com.pku.ipku.model;
+package com.pku.ipku.model.person;
 
 import android.support.v4.app.Fragment;
 
 import com.pku.ipku.R;
 import com.pku.ipku.model.type.Fragmentable;
 import com.pku.ipku.model.type.Typable;
-import com.pku.ipku.ui.person.PersonFragment;
+import com.pku.ipku.ui.person.PersonNavigationFragment;
 
 /**
  * Created by XingLiang on 2014/12/8.
  */
-public class Person implements Typable, Fragmentable {
+public class Person implements Fragmentable {
     @Override
     public String getType() {
         return "person";
@@ -23,7 +23,7 @@ public class Person implements Typable, Fragmentable {
 
     @Override
     public Fragment getAttachedFragment(String[] args) {
-        return new PersonFragment();
+        return new PersonNavigationFragment();
     }
 
     @Override

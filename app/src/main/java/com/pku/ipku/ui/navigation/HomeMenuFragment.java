@@ -15,11 +15,11 @@ import android.widget.TextView;
 import com.actionbarsherlock.app.SherlockListFragment;
 import com.pku.ipku.R;
 import com.pku.ipku.adapter.HomeMenuAdapter;
-import com.pku.ipku.model.Person;
+import com.pku.ipku.model.person.Person;
 import com.pku.ipku.model.PkuGuide;
+import com.pku.ipku.model.pkuInfo.PkuInfo;
 import com.pku.ipku.model.PkuMap;
-import com.pku.ipku.model.PkuNews;
-import com.pku.ipku.model.StudyHelper;
+import com.pku.ipku.model.studyguide.StudyGuide;
 import com.pku.ipku.model.type.Fragmentable;
 import com.pku.ipku.util.AppContextHolder;
 import com.pku.ipku.util.BitmapManager;
@@ -43,16 +43,22 @@ public class HomeMenuFragment extends SherlockListFragment {
             add(new Person());
             add(new PkuGuide());
             add(new PkuMap());
-            add(new PkuNews());
-            add(new StudyHelper());
+            add(new PkuInfo());
+            add(new StudyGuide());
         }
     };
+    public HomeMenuFragment() {
+
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.home_menu, null);
         initView(view);
+        HomeMenuAdapter homeMenuAdapter = new HomeMenuAdapter(getActivity().getApplicationContext(), menuItemList,
+                R.layout.menu_item);
+        setListAdapter(homeMenuAdapter);
         return view;
     }
 
@@ -62,13 +68,6 @@ public class HomeMenuFragment extends SherlockListFragment {
         this.bmpManager = new BitmapManager(BitmapFactory.decodeResource(AppContextHolder.getAppContext().getResources(),
                 R.drawable.widget_dface_loading));
         userName.setText("邢亮");
-    }
-
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        HomeMenuAdapter homeMenuAdapter = new HomeMenuAdapter(getActivity().getApplicationContext(), menuItemList,
-                R.layout.menu_item);
-        setListAdapter(homeMenuAdapter);
     }
 
     private void selectItemChangingColor(int position, ListView lv) {

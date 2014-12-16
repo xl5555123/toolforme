@@ -8,6 +8,6 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:text="版面提供常用的电话和链接，同时提供一些校内常见问题的处理方法，如如何补办校园卡，遇上紧急情况如何报警，快递一般去哪取之内的。" />
 
 </FrameLayout>
