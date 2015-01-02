@@ -5,7 +5,7 @@ package cn.onboard.android.slidingmenu;
 
 public final class BuildConfig {
   public static final boolean DEBUG = false;
-  public static final String PACKAGE_NAME = "cn.onboard.android.slidingmenu";
+  public static final String APPLICATION_ID = "cn.onboard.android.slidingmenu";
   public static final String BUILD_TYPE = "release";
   public static final String FLAVOR = "";
   public static final int VERSION_CODE = 1;
