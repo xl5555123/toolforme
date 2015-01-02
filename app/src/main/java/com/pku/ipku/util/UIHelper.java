@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
@@ -17,12 +18,18 @@ import android.widget.SpinnerAdapter;
 import android.widget.Toast;
 
 import com.pku.ipku.R;
+import com.pku.ipku.adapter.PagerAdapter;
 import com.pku.ipku.model.pkuInfo.PkuInfo;
 import com.pku.ipku.model.studyguide.StudyGuide;
 import com.pku.ipku.model.type.Fragmentable;
+import com.viewpagerindicator.TabPageIndicator;
 
 import java.util.Date;
 import java.util.List;
+
+import cn.onboard.android.slidingmenu.SlidingMenu;
+import cn.onboard.android.slidingmenu.app.SlidingActivity;
+import cn.onboard.android.slidingmenu.app.SlidingFragmentActivity;
 
 /**
  * 应用程序UI工具包：封装UI相关的一些操作
@@ -186,6 +193,33 @@ public class UIHelper {
                 android.support.v4.app.FragmentTransaction transaction = activity.getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.content_frame, fragmentable.getAttachedFragment(null)).commit();
                 return true;
+            }
+        });
+    }
+
+    public static void setUpTab(final SlidingFragmentActivity activity, ViewPager viewPager, TabPageIndicator tabPageIndicator, List<Fragmentable> fragmentables) {
+
+        viewPager.setAdapter(new PagerAdapter(activity.getSupportFragmentManager(), fragmentables));
+        tabPageIndicator.setViewPager(viewPager);
+        tabPageIndicator.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                if (position == 0) {
+                    activity.getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+                }
+                else {
+                    activity.getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_MARGIN);
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
             }
         });
     }

@@ -26,7 +26,7 @@
             android:configChanges="keyboardHidden|orientation"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.Sherlock.Light.DarkActionBar"
+            android:theme="@style/ipku.tab.style"
             android:windowSoftInputMode="stateVisible|adjustResize" />
     </application>
 

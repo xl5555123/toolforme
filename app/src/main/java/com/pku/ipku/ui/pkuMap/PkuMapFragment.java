@@ -12,9 +12,14 @@ import com.baidu.mapapi.map.BaiduMapOptions;
 import com.baidu.mapapi.map.MapView;
 import com.pku.ipku.model.PkuMap;
 
+import cn.onboard.android.slidingmenu.SlidingMenu;
+import cn.onboard.android.slidingmenu.app.SlidingFragmentActivity;
+
 public class PkuMapFragment extends Fragment {
 
     private MapView mapView;
+
+    private SlidingFragmentActivity slidingFragmentActivity;
 
     public PkuMapFragment() {
         // Required empty public constructor
@@ -30,6 +35,8 @@ public class PkuMapFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         initActionBar();
+        slidingFragmentActivity = (SlidingFragmentActivity) getActivity();
+        slidingFragmentActivity.getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_MARGIN);
         SDKInitializer.initialize(getActivity().getApplicationContext());
         mapView = new MapView(getActivity(), new BaiduMapOptions());
         return mapView;

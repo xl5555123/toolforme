@@ -4,13 +4,13 @@ import android.app.ActionBar;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.SpinnerAdapter;
 
 import com.pku.ipku.R;
+import com.pku.ipku.adapter.PagerAdapter;
 import com.pku.ipku.model.person.ArrearageState;
 import com.pku.ipku.model.person.LibState;
 import com.pku.ipku.model.person.Person;
@@ -18,13 +18,16 @@ import com.pku.ipku.model.person.PersonInfo;
 import com.pku.ipku.model.person.Scholarship;
 import com.pku.ipku.model.person.Score;
 import com.pku.ipku.model.person.SelectingResult;
-import com.pku.ipku.model.pkuInfo.PkuInfo;
 import com.pku.ipku.model.type.Fragmentable;
-import com.pku.ipku.util.DataHandleUtil;
 import com.pku.ipku.util.UIHelper;
+import com.viewpagerindicator.TabPageIndicator;
+import com.viewpagerindicator.TitlePageIndicator;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import cn.onboard.android.slidingmenu.SlidingMenu;
+import cn.onboard.android.slidingmenu.app.SlidingFragmentActivity;
 
 public class PersonNavigationFragment extends Fragment {
 
@@ -39,7 +42,7 @@ public class PersonNavigationFragment extends Fragment {
         }
     };
 
-    private FragmentActivity activity;
+    private SlidingFragmentActivity activity;
 
     public PersonNavigationFragment() {
         // Required empty public constructor
@@ -55,13 +58,18 @@ public class PersonNavigationFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         initActionBar();
-        return inflater.inflate(R.layout.fragment_person, container, false);
+        View view = inflater.inflate(R.layout.fragment_person, container, false);
+        ViewPager viewPager = (ViewPager) view.findViewById(R.id.pager);
+        TabPageIndicator indicator = (TabPageIndicator) view.findViewById(R.id.titles);
+        UIHelper.setUpTab(activity, viewPager, indicator, items);
+        return view;
     }
 
     private void initActionBar() {
         final ActionBar actionBar = getActivity().getActionBar();
-        activity = getActivity();
-        UIHelper.setUpActionBarWithNavigation(actionBar, new Person().getChineseName(), activity, items);
+        activity = (SlidingFragmentActivity)getActivity();
+        UIHelper.setUpActionBarWithNoNavigation(actionBar, new Person().getChineseName());
     }
+
 
 }

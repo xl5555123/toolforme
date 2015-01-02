@@ -12,7 +12,13 @@ import com.pku.ipku.model.PkuGuide;
 import com.pku.ipku.model.studyguide.StudyGuide;
 import com.pku.ipku.util.UIHelper;
 
+import cn.onboard.android.slidingmenu.SlidingMenu;
+import cn.onboard.android.slidingmenu.app.SlidingFragmentActivity;
+
 public class PkuGuideFragment extends Fragment {
+
+    SlidingFragmentActivity slidingFragmentActivity;
+
     public PkuGuideFragment() {
         // Required empty public constructor
     }
@@ -27,6 +33,8 @@ public class PkuGuideFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         initActionBar();
+        slidingFragmentActivity = (SlidingFragmentActivity) getActivity();
+        slidingFragmentActivity.getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
         return inflater.inflate(R.layout.fragment_pku_guide, container, false);
     }
 
