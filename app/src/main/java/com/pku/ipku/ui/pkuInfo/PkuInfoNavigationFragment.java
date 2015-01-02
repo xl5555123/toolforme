@@ -60,7 +60,7 @@ public class PkuInfoNavigationFragment extends Fragment {
         initActionBar();
         ViewPager viewPager = (ViewPager) view.findViewById(R.id.pager);
         TabPageIndicator indicator = (TabPageIndicator) view.findViewById(R.id.titles);
-        UIHelper.setUpTab(slidingFragmentActivity, viewPager, indicator, items);
+        UIHelper.setUpTab(slidingFragmentActivity, getChildFragmentManager(), viewPager, indicator, items);
         return view;
     }
 

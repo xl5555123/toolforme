@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.ViewGroup;
@@ -197,9 +198,9 @@ public class UIHelper {
         });
     }
 
-    public static void setUpTab(final SlidingFragmentActivity activity, ViewPager viewPager, TabPageIndicator tabPageIndicator, List<Fragmentable> fragmentables) {
+    public static void setUpTab(final SlidingFragmentActivity activity, FragmentManager fragmentManager, ViewPager viewPager, TabPageIndicator tabPageIndicator, List<Fragmentable> fragmentables) {
 
-        viewPager.setAdapter(new PagerAdapter(activity.getSupportFragmentManager(), fragmentables));
+        viewPager.setAdapter(new PagerAdapter(fragmentManager, fragmentables));
         tabPageIndicator.setViewPager(viewPager);
         tabPageIndicator.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override

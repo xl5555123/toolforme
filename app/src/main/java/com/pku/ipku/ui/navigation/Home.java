@@ -1,6 +1,7 @@
 package com.pku.ipku.ui.navigation;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 
 import com.pku.ipku.R;
@@ -19,7 +20,7 @@ public class Home extends SlidingFragmentActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initVariables(savedInstanceState);
+        initVariables();
         initView();
     }
 
@@ -31,10 +32,7 @@ public class Home extends SlidingFragmentActivity {
         AppManager.getAppManager().finishActivity(this);
     }
 
-    private void initVariables(Bundle savedInstanceState) {
-        if (savedInstanceState != null)
-            currrentContent = getSupportFragmentManager().getFragment(
-                    savedInstanceState, "mContent");
+    private void initVariables() {
         if (currrentContent == null)
             currrentContent = new PersonNavigationFragment();
     }
@@ -64,8 +62,9 @@ public class Home extends SlidingFragmentActivity {
 
     public void switchContent(Fragment fragment) {
         currrentContent = fragment;
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.content_frame, fragment).commit();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.content_frame, currrentContent).commit();
         getSlidingMenu().showContent();
     }
 

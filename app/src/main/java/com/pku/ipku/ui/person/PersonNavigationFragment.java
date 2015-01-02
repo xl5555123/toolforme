@@ -61,7 +61,7 @@ public class PersonNavigationFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_person, container, false);
         ViewPager viewPager = (ViewPager) view.findViewById(R.id.pager);
         TabPageIndicator indicator = (TabPageIndicator) view.findViewById(R.id.titles);
-        UIHelper.setUpTab(activity, viewPager, indicator, items);
+        UIHelper.setUpTab(activity, getChildFragmentManager(), viewPager, indicator, items);
         return view;
     }
 
