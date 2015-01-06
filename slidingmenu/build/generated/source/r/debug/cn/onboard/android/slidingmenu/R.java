@@ -704,21 +704,21 @@ containing a value of this type.
         public static int abs__primary_text_holo_light=0x7f050009;
     }
     public static final class dimen {
-        public static int abs__action_bar_default_height=0x7f070000;
-        public static int abs__action_bar_icon_vertical_padding=0x7f070001;
-        public static int abs__action_bar_subtitle_bottom_margin=0x7f070002;
-        public static int abs__action_bar_subtitle_text_size=0x7f070003;
-        public static int abs__action_bar_subtitle_top_margin=0x7f070004;
-        public static int abs__action_bar_title_text_size=0x7f070005;
-        public static int abs__action_button_min_width=0x7f070006;
-        public static int abs__config_prefDialogWidth=0x7f070007;
-        public static int abs__dialog_min_width_major=0x7f07000d;
-        public static int abs__dialog_min_width_minor=0x7f07000e;
-        public static int abs__dropdownitem_icon_width=0x7f070008;
-        public static int abs__dropdownitem_text_padding_left=0x7f070009;
-        public static int abs__dropdownitem_text_padding_right=0x7f07000a;
-        public static int abs__search_view_preferred_width=0x7f07000b;
-        public static int abs__search_view_text_min_width=0x7f07000c;
+        public static int abs__action_bar_default_height=0x7f060000;
+        public static int abs__action_bar_icon_vertical_padding=0x7f060001;
+        public static int abs__action_bar_subtitle_bottom_margin=0x7f060002;
+        public static int abs__action_bar_subtitle_text_size=0x7f060003;
+        public static int abs__action_bar_subtitle_top_margin=0x7f060004;
+        public static int abs__action_bar_title_text_size=0x7f060005;
+        public static int abs__action_button_min_width=0x7f060006;
+        public static int abs__config_prefDialogWidth=0x7f060007;
+        public static int abs__dialog_min_width_major=0x7f06000d;
+        public static int abs__dialog_min_width_minor=0x7f06000e;
+        public static int abs__dropdownitem_icon_width=0x7f060008;
+        public static int abs__dropdownitem_text_padding_left=0x7f060009;
+        public static int abs__dropdownitem_text_padding_right=0x7f06000a;
+        public static int abs__search_view_preferred_width=0x7f06000b;
+        public static int abs__search_view_text_min_width=0x7f06000c;
     }
     public static final class drawable {
         public static int abs__ab_bottom_solid_dark_holo=0x7f020000;
@@ -836,62 +836,62 @@ containing a value of this type.
         public static int ic_launcher=0x7f020070;
     }
     public static final class id {
-        public static int abs__action_bar=0x7f060025;
-        public static int abs__action_bar_container=0x7f060024;
-        public static int abs__action_bar_subtitle=0x7f060016;
-        public static int abs__action_bar_title=0x7f060015;
-        public static int abs__action_context_bar=0x7f060026;
-        public static int abs__action_menu_divider=0x7f06000e;
-        public static int abs__action_menu_presenter=0x7f06000f;
-        public static int abs__action_mode_bar=0x7f06002a;
-        public static int abs__action_mode_bar_stub=0x7f060029;
-        public static int abs__action_mode_close_button=0x7f060019;
-        public static int abs__activity_chooser_view_content=0x7f06001a;
-        public static int abs__checkbox=0x7f060021;
-        public static int abs__content=0x7f060027;
-        public static int abs__default_activity_button=0x7f06001d;
-        public static int abs__expand_activities_button=0x7f06001b;
-        public static int abs__home=0x7f060010;
-        public static int abs__icon=0x7f06001f;
-        public static int abs__image=0x7f06001c;
-        public static int abs__imageButton=0x7f060017;
-        public static int abs__list_item=0x7f06001e;
-        public static int abs__progress_circular=0x7f060011;
-        public static int abs__progress_horizontal=0x7f060012;
-        public static int abs__radio=0x7f060022;
-        public static int abs__search_badge=0x7f06002d;
-        public static int abs__search_bar=0x7f06002c;
-        public static int abs__search_button=0x7f06002e;
-        public static int abs__search_close_btn=0x7f060033;
-        public static int abs__search_edit_frame=0x7f06002f;
-        public static int abs__search_go_btn=0x7f060035;
-        public static int abs__search_mag_icon=0x7f060030;
-        public static int abs__search_plate=0x7f060031;
-        public static int abs__search_src_text=0x7f060032;
-        public static int abs__search_voice_btn=0x7f060036;
-        public static int abs__shortcut=0x7f060023;
-        public static int abs__split_action_bar=0x7f060028;
-        public static int abs__submit_area=0x7f060034;
-        public static int abs__textButton=0x7f060018;
-        public static int abs__title=0x7f060020;
-        public static int abs__up=0x7f060013;
-        public static int disableHome=0x7f060008;
-        public static int edit_query=0x7f06002b;
-        public static int fullscreen=0x7f06000d;
-        public static int homeAsUp=0x7f060005;
-        public static int left=0x7f06000a;
-        public static int listMode=0x7f060001;
-        public static int margin=0x7f06000c;
-        public static int normal=0x7f060000;
-        public static int right=0x7f06000b;
-        public static int selected_view=0x7f060014;
-        public static int showCustom=0x7f060007;
-        public static int showHome=0x7f060004;
-        public static int showTitle=0x7f060006;
-        public static int slidingmenumain=0x7f060037;
-        public static int tabMode=0x7f060002;
-        public static int useLogo=0x7f060003;
-        public static int wrap_content=0x7f060009;
+        public static int abs__action_bar=0x7f070025;
+        public static int abs__action_bar_container=0x7f070024;
+        public static int abs__action_bar_subtitle=0x7f070016;
+        public static int abs__action_bar_title=0x7f070015;
+        public static int abs__action_context_bar=0x7f070026;
+        public static int abs__action_menu_divider=0x7f070000;
+        public static int abs__action_menu_presenter=0x7f070001;
+        public static int abs__action_mode_bar=0x7f07002a;
+        public static int abs__action_mode_bar_stub=0x7f070029;
+        public static int abs__action_mode_close_button=0x7f070019;
+        public static int abs__activity_chooser_view_content=0x7f07001a;
+        public static int abs__checkbox=0x7f070021;
+        public static int abs__content=0x7f070027;
+        public static int abs__default_activity_button=0x7f07001d;
+        public static int abs__expand_activities_button=0x7f07001b;
+        public static int abs__home=0x7f070002;
+        public static int abs__icon=0x7f07001f;
+        public static int abs__image=0x7f07001c;
+        public static int abs__imageButton=0x7f070017;
+        public static int abs__list_item=0x7f07001e;
+        public static int abs__progress_circular=0x7f070003;
+        public static int abs__progress_horizontal=0x7f070004;
+        public static int abs__radio=0x7f070022;
+        public static int abs__search_badge=0x7f07002d;
+        public static int abs__search_bar=0x7f07002c;
+        public static int abs__search_button=0x7f07002e;
+        public static int abs__search_close_btn=0x7f070033;
+        public static int abs__search_edit_frame=0x7f07002f;
+        public static int abs__search_go_btn=0x7f070035;
+        public static int abs__search_mag_icon=0x7f070030;
+        public static int abs__search_plate=0x7f070031;
+        public static int abs__search_src_text=0x7f070032;
+        public static int abs__search_voice_btn=0x7f070036;
+        public static int abs__shortcut=0x7f070023;
+        public static int abs__split_action_bar=0x7f070028;
+        public static int abs__submit_area=0x7f070034;
+        public static int abs__textButton=0x7f070018;
+        public static int abs__title=0x7f070020;
+        public static int abs__up=0x7f070005;
+        public static int disableHome=0x7f07000a;
+        public static int edit_query=0x7f07002b;
+        public static int fullscreen=0x7f070013;
+        public static int homeAsUp=0x7f07000b;
+        public static int left=0x7f070011;
+        public static int listMode=0x7f070007;
+        public static int margin=0x7f070014;
+        public static int normal=0x7f070008;
+        public static int right=0x7f070012;
+        public static int selected_view=0x7f070006;
+        public static int showCustom=0x7f07000c;
+        public static int showHome=0x7f07000d;
+        public static int showTitle=0x7f07000e;
+        public static int slidingmenumain=0x7f070037;
+        public static int tabMode=0x7f070009;
+        public static int useLogo=0x7f07000f;
+        public static int wrap_content=0x7f070010;
     }
     public static final class integer {
         public static int abs__max_action_buttons=0x7f080000;
@@ -1093,7 +1093,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
           @attr name cn.onboard.android.slidingmenu:background
         */
-        public static final int SherlockActionBar_background = 0;
+        public static int SherlockActionBar_background = 0;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#backgroundSplit}
           attribute's value can be found in the {@link #SherlockActionBar} array.
@@ -1105,7 +1105,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
           @attr name cn.onboard.android.slidingmenu:backgroundSplit
         */
-        public static final int SherlockActionBar_backgroundSplit = 1;
+        public static int SherlockActionBar_backgroundSplit = 1;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#backgroundStacked}
           attribute's value can be found in the {@link #SherlockActionBar} array.
@@ -1117,7 +1117,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
           @attr name cn.onboard.android.slidingmenu:backgroundStacked
         */
-        public static final int SherlockActionBar_backgroundStacked = 12;
+        public static int SherlockActionBar_backgroundStacked = 12;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#customNavigationLayout}
           attribute's value can be found in the {@link #SherlockActionBar} array.
@@ -1127,7 +1127,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:customNavigationLayout
         */
-        public static final int SherlockActionBar_customNavigationLayout = 13;
+        public static int SherlockActionBar_customNavigationLayout = 13;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#displayOptions}
           attribute's value can be found in the {@link #SherlockActionBar} array.
@@ -1148,7 +1148,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 </table>
           @attr name cn.onboard.android.slidingmenu:displayOptions
         */
-        public static final int SherlockActionBar_displayOptions = 7;
+        public static int SherlockActionBar_displayOptions = 7;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#divider}
           attribute's value can be found in the {@link #SherlockActionBar} array.
@@ -1158,7 +1158,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:divider
         */
-        public static final int SherlockActionBar_divider = 2;
+        public static int SherlockActionBar_divider = 2;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#height}
           attribute's value can be found in the {@link #SherlockActionBar} array.
@@ -1174,7 +1174,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name cn.onboard.android.slidingmenu:height
         */
-        public static final int SherlockActionBar_height = 3;
+        public static int SherlockActionBar_height = 3;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#homeLayout}
           attribute's value can be found in the {@link #SherlockActionBar} array.
@@ -1184,7 +1184,7 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:homeLayout
         */
-        public static final int SherlockActionBar_homeLayout = 14;
+        public static int SherlockActionBar_homeLayout = 14;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#icon}
           attribute's value can be found in the {@link #SherlockActionBar} array.
@@ -1194,7 +1194,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:icon
         */
-        public static final int SherlockActionBar_icon = 10;
+        public static int SherlockActionBar_icon = 10;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#indeterminateProgressStyle}
           attribute's value can be found in the {@link #SherlockActionBar} array.
@@ -1204,7 +1204,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:indeterminateProgressStyle
         */
-        public static final int SherlockActionBar_indeterminateProgressStyle = 16;
+        public static int SherlockActionBar_indeterminateProgressStyle = 16;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#itemPadding}
           attribute's value can be found in the {@link #SherlockActionBar} array.
@@ -1220,7 +1220,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name cn.onboard.android.slidingmenu:itemPadding
         */
-        public static final int SherlockActionBar_itemPadding = 18;
+        public static int SherlockActionBar_itemPadding = 18;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#logo}
           attribute's value can be found in the {@link #SherlockActionBar} array.
@@ -1230,7 +1230,7 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:logo
         */
-        public static final int SherlockActionBar_logo = 11;
+        public static int SherlockActionBar_logo = 11;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#navigationMode}
           attribute's value can be found in the {@link #SherlockActionBar} array.
@@ -1248,7 +1248,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 </table>
           @attr name cn.onboard.android.slidingmenu:navigationMode
         */
-        public static final int SherlockActionBar_navigationMode = 6;
+        public static int SherlockActionBar_navigationMode = 6;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#progressBarPadding}
           attribute's value can be found in the {@link #SherlockActionBar} array.
@@ -1264,7 +1264,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name cn.onboard.android.slidingmenu:progressBarPadding
         */
-        public static final int SherlockActionBar_progressBarPadding = 17;
+        public static int SherlockActionBar_progressBarPadding = 17;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#progressBarStyle}
           attribute's value can be found in the {@link #SherlockActionBar} array.
@@ -1274,7 +1274,7 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:progressBarStyle
         */
-        public static final int SherlockActionBar_progressBarStyle = 15;
+        public static int SherlockActionBar_progressBarStyle = 15;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#subtitle}
           attribute's value can be found in the {@link #SherlockActionBar} array.
@@ -1288,7 +1288,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name cn.onboard.android.slidingmenu:subtitle
         */
-        public static final int SherlockActionBar_subtitle = 9;
+        public static int SherlockActionBar_subtitle = 9;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#subtitleTextStyle}
           attribute's value can be found in the {@link #SherlockActionBar} array.
@@ -1298,7 +1298,7 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:subtitleTextStyle
         */
-        public static final int SherlockActionBar_subtitleTextStyle = 4;
+        public static int SherlockActionBar_subtitleTextStyle = 4;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#title}
           attribute's value can be found in the {@link #SherlockActionBar} array.
@@ -1312,7 +1312,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name cn.onboard.android.slidingmenu:title
         */
-        public static final int SherlockActionBar_title = 8;
+        public static int SherlockActionBar_title = 8;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#titleTextStyle}
           attribute's value can be found in the {@link #SherlockActionBar} array.
@@ -1322,7 +1322,7 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:titleTextStyle
         */
-        public static final int SherlockActionBar_titleTextStyle = 5;
+        public static int SherlockActionBar_titleTextStyle = 5;
         /** Attributes that can be used with a SherlockActionMenuItemView.
            <p>Includes the following attributes:</p>
            <table>
@@ -1341,7 +1341,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           attribute's value can be found in the {@link #SherlockActionMenuItemView} array.
           @attr name android:minWidth
         */
-        public static final int SherlockActionMenuItemView_android_minWidth = 0;
+        public static int SherlockActionMenuItemView_android_minWidth = 0;
         /** Attributes that can be used with a SherlockActionMode.
            <p>Includes the following attributes:</p>
            <table>
@@ -1375,7 +1375,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
           @attr name cn.onboard.android.slidingmenu:background
         */
-        public static final int SherlockActionMode_background = 0;
+        public static int SherlockActionMode_background = 0;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#backgroundSplit}
           attribute's value can be found in the {@link #SherlockActionMode} array.
@@ -1387,7 +1387,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
           @attr name cn.onboard.android.slidingmenu:backgroundSplit
         */
-        public static final int SherlockActionMode_backgroundSplit = 1;
+        public static int SherlockActionMode_backgroundSplit = 1;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#height}
           attribute's value can be found in the {@link #SherlockActionMode} array.
@@ -1403,7 +1403,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name cn.onboard.android.slidingmenu:height
         */
-        public static final int SherlockActionMode_height = 2;
+        public static int SherlockActionMode_height = 2;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#subtitleTextStyle}
           attribute's value can be found in the {@link #SherlockActionMode} array.
@@ -1413,7 +1413,7 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:subtitleTextStyle
         */
-        public static final int SherlockActionMode_subtitleTextStyle = 3;
+        public static int SherlockActionMode_subtitleTextStyle = 3;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#titleTextStyle}
           attribute's value can be found in the {@link #SherlockActionMode} array.
@@ -1423,7 +1423,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:titleTextStyle
         */
-        public static final int SherlockActionMode_titleTextStyle = 4;
+        public static int SherlockActionMode_titleTextStyle = 4;
         /** Attributes that can be used with a SherlockActivityChooserView.
            <p>Includes the following attributes:</p>
            <table>
@@ -1446,7 +1446,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           attribute's value can be found in the {@link #SherlockActivityChooserView} array.
           @attr name android:background
         */
-        public static final int SherlockActivityChooserView_android_background = 0;
+        public static int SherlockActivityChooserView_android_background = 0;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#expandActivityOverflowButtonDrawable}
           attribute's value can be found in the {@link #SherlockActivityChooserView} array.
@@ -1456,7 +1456,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:expandActivityOverflowButtonDrawable
         */
-        public static final int SherlockActivityChooserView_expandActivityOverflowButtonDrawable = 2;
+        public static int SherlockActivityChooserView_expandActivityOverflowButtonDrawable = 2;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#initialActivityCount}
           attribute's value can be found in the {@link #SherlockActivityChooserView} array.
@@ -1470,7 +1470,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name cn.onboard.android.slidingmenu:initialActivityCount
         */
-        public static final int SherlockActivityChooserView_initialActivityCount = 1;
+        public static int SherlockActivityChooserView_initialActivityCount = 1;
         /** Attributes that can be used with a SherlockMenuGroup.
            <p>Includes the following attributes:</p>
            <table>
@@ -1500,37 +1500,37 @@ containing a value of this type.
           attribute's value can be found in the {@link #SherlockMenuGroup} array.
           @attr name android:checkableBehavior
         */
-        public static final int SherlockMenuGroup_android_checkableBehavior = 5;
+        public static int SherlockMenuGroup_android_checkableBehavior = 5;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#enabled}
           attribute's value can be found in the {@link #SherlockMenuGroup} array.
           @attr name android:enabled
         */
-        public static final int SherlockMenuGroup_android_enabled = 0;
+        public static int SherlockMenuGroup_android_enabled = 0;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#id}
           attribute's value can be found in the {@link #SherlockMenuGroup} array.
           @attr name android:id
         */
-        public static final int SherlockMenuGroup_android_id = 1;
+        public static int SherlockMenuGroup_android_id = 1;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#menuCategory}
           attribute's value can be found in the {@link #SherlockMenuGroup} array.
           @attr name android:menuCategory
         */
-        public static final int SherlockMenuGroup_android_menuCategory = 3;
+        public static int SherlockMenuGroup_android_menuCategory = 3;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#orderInCategory}
           attribute's value can be found in the {@link #SherlockMenuGroup} array.
           @attr name android:orderInCategory
         */
-        public static final int SherlockMenuGroup_android_orderInCategory = 4;
+        public static int SherlockMenuGroup_android_orderInCategory = 4;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#visible}
           attribute's value can be found in the {@link #SherlockMenuGroup} array.
           @attr name android:visible
         */
-        public static final int SherlockMenuGroup_android_visible = 2;
+        public static int SherlockMenuGroup_android_visible = 2;
         /** Attributes that can be used with a SherlockMenuItem.
            <p>Includes the following attributes:</p>
            <table>
@@ -1585,103 +1585,103 @@ containing a value of this type.
           attribute's value can be found in the {@link #SherlockMenuItem} array.
           @attr name android:actionLayout
         */
-        public static final int SherlockMenuItem_android_actionLayout = 14;
+        public static int SherlockMenuItem_android_actionLayout = 14;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#actionProviderClass}
           attribute's value can be found in the {@link #SherlockMenuItem} array.
           @attr name android:actionProviderClass
         */
-        public static final int SherlockMenuItem_android_actionProviderClass = 16;
+        public static int SherlockMenuItem_android_actionProviderClass = 16;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#actionViewClass}
           attribute's value can be found in the {@link #SherlockMenuItem} array.
           @attr name android:actionViewClass
         */
-        public static final int SherlockMenuItem_android_actionViewClass = 15;
+        public static int SherlockMenuItem_android_actionViewClass = 15;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#alphabeticShortcut}
           attribute's value can be found in the {@link #SherlockMenuItem} array.
           @attr name android:alphabeticShortcut
         */
-        public static final int SherlockMenuItem_android_alphabeticShortcut = 9;
+        public static int SherlockMenuItem_android_alphabeticShortcut = 9;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#checkable}
           attribute's value can be found in the {@link #SherlockMenuItem} array.
           @attr name android:checkable
         */
-        public static final int SherlockMenuItem_android_checkable = 11;
+        public static int SherlockMenuItem_android_checkable = 11;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#checked}
           attribute's value can be found in the {@link #SherlockMenuItem} array.
           @attr name android:checked
         */
-        public static final int SherlockMenuItem_android_checked = 3;
+        public static int SherlockMenuItem_android_checked = 3;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#enabled}
           attribute's value can be found in the {@link #SherlockMenuItem} array.
           @attr name android:enabled
         */
-        public static final int SherlockMenuItem_android_enabled = 1;
+        public static int SherlockMenuItem_android_enabled = 1;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#icon}
           attribute's value can be found in the {@link #SherlockMenuItem} array.
           @attr name android:icon
         */
-        public static final int SherlockMenuItem_android_icon = 0;
+        public static int SherlockMenuItem_android_icon = 0;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#id}
           attribute's value can be found in the {@link #SherlockMenuItem} array.
           @attr name android:id
         */
-        public static final int SherlockMenuItem_android_id = 2;
+        public static int SherlockMenuItem_android_id = 2;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#menuCategory}
           attribute's value can be found in the {@link #SherlockMenuItem} array.
           @attr name android:menuCategory
         */
-        public static final int SherlockMenuItem_android_menuCategory = 5;
+        public static int SherlockMenuItem_android_menuCategory = 5;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#numericShortcut}
           attribute's value can be found in the {@link #SherlockMenuItem} array.
           @attr name android:numericShortcut
         */
-        public static final int SherlockMenuItem_android_numericShortcut = 10;
+        public static int SherlockMenuItem_android_numericShortcut = 10;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#onClick}
           attribute's value can be found in the {@link #SherlockMenuItem} array.
           @attr name android:onClick
         */
-        public static final int SherlockMenuItem_android_onClick = 12;
+        public static int SherlockMenuItem_android_onClick = 12;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#orderInCategory}
           attribute's value can be found in the {@link #SherlockMenuItem} array.
           @attr name android:orderInCategory
         */
-        public static final int SherlockMenuItem_android_orderInCategory = 6;
+        public static int SherlockMenuItem_android_orderInCategory = 6;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#showAsAction}
           attribute's value can be found in the {@link #SherlockMenuItem} array.
           @attr name android:showAsAction
         */
-        public static final int SherlockMenuItem_android_showAsAction = 13;
+        public static int SherlockMenuItem_android_showAsAction = 13;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#title}
           attribute's value can be found in the {@link #SherlockMenuItem} array.
           @attr name android:title
         */
-        public static final int SherlockMenuItem_android_title = 7;
+        public static int SherlockMenuItem_android_title = 7;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#titleCondensed}
           attribute's value can be found in the {@link #SherlockMenuItem} array.
           @attr name android:titleCondensed
         */
-        public static final int SherlockMenuItem_android_titleCondensed = 8;
+        public static int SherlockMenuItem_android_titleCondensed = 8;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#visible}
           attribute's value can be found in the {@link #SherlockMenuItem} array.
           @attr name android:visible
         */
-        public static final int SherlockMenuItem_android_visible = 4;
+        public static int SherlockMenuItem_android_visible = 4;
         /** Attributes that can be used with a SherlockMenuView.
            <p>Includes the following attributes:</p>
            <table>
@@ -1721,7 +1721,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
           @attr name cn.onboard.android.slidingmenu:headerBackground
         */
-        public static final int SherlockMenuView_headerBackground = 3;
+        public static int SherlockMenuView_headerBackground = 3;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#horizontalDivider}
           attribute's value can be found in the {@link #SherlockMenuView} array.
@@ -1731,7 +1731,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:horizontalDivider
         */
-        public static final int SherlockMenuView_horizontalDivider = 1;
+        public static int SherlockMenuView_horizontalDivider = 1;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#itemBackground}
           attribute's value can be found in the {@link #SherlockMenuView} array.
@@ -1743,7 +1743,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
           @attr name cn.onboard.android.slidingmenu:itemBackground
         */
-        public static final int SherlockMenuView_itemBackground = 4;
+        public static int SherlockMenuView_itemBackground = 4;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#itemIconDisabledAlpha}
           attribute's value can be found in the {@link #SherlockMenuView} array.
@@ -1757,7 +1757,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name cn.onboard.android.slidingmenu:itemIconDisabledAlpha
         */
-        public static final int SherlockMenuView_itemIconDisabledAlpha = 6;
+        public static int SherlockMenuView_itemIconDisabledAlpha = 6;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#itemTextAppearance}
           attribute's value can be found in the {@link #SherlockMenuView} array.
@@ -1767,7 +1767,7 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:itemTextAppearance
         */
-        public static final int SherlockMenuView_itemTextAppearance = 0;
+        public static int SherlockMenuView_itemTextAppearance = 0;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#preserveIconSpacing}
           attribute's value can be found in the {@link #SherlockMenuView} array.
@@ -1781,7 +1781,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name cn.onboard.android.slidingmenu:preserveIconSpacing
         */
-        public static final int SherlockMenuView_preserveIconSpacing = 7;
+        public static int SherlockMenuView_preserveIconSpacing = 7;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#verticalDivider}
           attribute's value can be found in the {@link #SherlockMenuView} array.
@@ -1791,7 +1791,7 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:verticalDivider
         */
-        public static final int SherlockMenuView_verticalDivider = 2;
+        public static int SherlockMenuView_verticalDivider = 2;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#windowAnimationStyle}
           attribute's value can be found in the {@link #SherlockMenuView} array.
@@ -1801,7 +1801,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:windowAnimationStyle
         */
-        public static final int SherlockMenuView_windowAnimationStyle = 5;
+        public static int SherlockMenuView_windowAnimationStyle = 5;
         /** Attributes that can be used with a SherlockSearchView.
            <p>Includes the following attributes:</p>
            <table>
@@ -1829,19 +1829,19 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           attribute's value can be found in the {@link #SherlockSearchView} array.
           @attr name android:imeOptions
         */
-        public static final int SherlockSearchView_android_imeOptions = 2;
+        public static int SherlockSearchView_android_imeOptions = 2;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#inputType}
           attribute's value can be found in the {@link #SherlockSearchView} array.
           @attr name android:inputType
         */
-        public static final int SherlockSearchView_android_inputType = 1;
+        public static int SherlockSearchView_android_inputType = 1;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#maxWidth}
           attribute's value can be found in the {@link #SherlockSearchView} array.
           @attr name android:maxWidth
         */
-        public static final int SherlockSearchView_android_maxWidth = 0;
+        public static int SherlockSearchView_android_maxWidth = 0;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#iconifiedByDefault}
           attribute's value can be found in the {@link #SherlockSearchView} array.
@@ -1855,7 +1855,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name cn.onboard.android.slidingmenu:iconifiedByDefault
         */
-        public static final int SherlockSearchView_iconifiedByDefault = 3;
+        public static int SherlockSearchView_iconifiedByDefault = 3;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#queryHint}
           attribute's value can be found in the {@link #SherlockSearchView} array.
@@ -1869,7 +1869,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name cn.onboard.android.slidingmenu:queryHint
         */
-        public static final int SherlockSearchView_queryHint = 4;
+        public static int SherlockSearchView_queryHint = 4;
         /** Attributes that can be used with a SherlockSpinner.
            <p>Includes the following attributes:</p>
            <table>
@@ -1903,49 +1903,49 @@ containing a value of this type.
           attribute's value can be found in the {@link #SherlockSpinner} array.
           @attr name android:dropDownHorizontalOffset
         */
-        public static final int SherlockSpinner_android_dropDownHorizontalOffset = 5;
+        public static int SherlockSpinner_android_dropDownHorizontalOffset = 5;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#dropDownSelector}
           attribute's value can be found in the {@link #SherlockSpinner} array.
           @attr name android:dropDownSelector
         */
-        public static final int SherlockSpinner_android_dropDownSelector = 1;
+        public static int SherlockSpinner_android_dropDownSelector = 1;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#dropDownVerticalOffset}
           attribute's value can be found in the {@link #SherlockSpinner} array.
           @attr name android:dropDownVerticalOffset
         */
-        public static final int SherlockSpinner_android_dropDownVerticalOffset = 6;
+        public static int SherlockSpinner_android_dropDownVerticalOffset = 6;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#dropDownWidth}
           attribute's value can be found in the {@link #SherlockSpinner} array.
           @attr name android:dropDownWidth
         */
-        public static final int SherlockSpinner_android_dropDownWidth = 4;
+        public static int SherlockSpinner_android_dropDownWidth = 4;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#gravity}
           attribute's value can be found in the {@link #SherlockSpinner} array.
           @attr name android:gravity
         */
-        public static final int SherlockSpinner_android_gravity = 0;
+        public static int SherlockSpinner_android_gravity = 0;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#popupBackground}
           attribute's value can be found in the {@link #SherlockSpinner} array.
           @attr name android:popupBackground
         */
-        public static final int SherlockSpinner_android_popupBackground = 2;
+        public static int SherlockSpinner_android_popupBackground = 2;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#popupPromptView}
           attribute's value can be found in the {@link #SherlockSpinner} array.
           @attr name android:popupPromptView
         */
-        public static final int SherlockSpinner_android_popupPromptView = 7;
+        public static int SherlockSpinner_android_popupPromptView = 7;
         /**
           <p>This symbol is the offset where the {@link android.R.attr#prompt}
           attribute's value can be found in the {@link #SherlockSpinner} array.
           @attr name android:prompt
         */
-        public static final int SherlockSpinner_android_prompt = 3;
+        public static int SherlockSpinner_android_prompt = 3;
         /** Attributes that can be used with a SherlockTheme.
            <p>Includes the following attributes:</p>
            <table>
@@ -2116,7 +2116,7 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:actionBarDivider
         */
-        public static final int SherlockTheme_actionBarDivider = 8;
+        public static int SherlockTheme_actionBarDivider = 8;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#actionBarItemBackground}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2126,7 +2126,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:actionBarItemBackground
         */
-        public static final int SherlockTheme_actionBarItemBackground = 9;
+        public static int SherlockTheme_actionBarItemBackground = 9;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#actionBarSize}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2150,7 +2150,7 @@ containing a value of this type.
 </table>
           @attr name cn.onboard.android.slidingmenu:actionBarSize
         */
-        public static final int SherlockTheme_actionBarSize = 7;
+        public static int SherlockTheme_actionBarSize = 7;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#actionBarSplitStyle}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2160,7 +2160,7 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:actionBarSplitStyle
         */
-        public static final int SherlockTheme_actionBarSplitStyle = 5;
+        public static int SherlockTheme_actionBarSplitStyle = 5;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#actionBarStyle}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2170,7 +2170,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:actionBarStyle
         */
-        public static final int SherlockTheme_actionBarStyle = 4;
+        public static int SherlockTheme_actionBarStyle = 4;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#actionBarTabBarStyle}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2180,7 +2180,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:actionBarTabBarStyle
         */
-        public static final int SherlockTheme_actionBarTabBarStyle = 1;
+        public static int SherlockTheme_actionBarTabBarStyle = 1;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#actionBarTabStyle}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2190,7 +2190,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:actionBarTabStyle
         */
-        public static final int SherlockTheme_actionBarTabStyle = 0;
+        public static int SherlockTheme_actionBarTabStyle = 0;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#actionBarTabTextStyle}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2200,7 +2200,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:actionBarTabTextStyle
         */
-        public static final int SherlockTheme_actionBarTabTextStyle = 2;
+        public static int SherlockTheme_actionBarTabTextStyle = 2;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#actionBarWidgetTheme}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2210,7 +2210,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:actionBarWidgetTheme
         */
-        public static final int SherlockTheme_actionBarWidgetTheme = 6;
+        public static int SherlockTheme_actionBarWidgetTheme = 6;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#actionButtonStyle}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2220,7 +2220,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:actionButtonStyle
         */
-        public static final int SherlockTheme_actionButtonStyle = 52;
+        public static int SherlockTheme_actionButtonStyle = 52;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#actionDropDownStyle}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2230,7 +2230,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:actionDropDownStyle
         */
-        public static final int SherlockTheme_actionDropDownStyle = 51;
+        public static int SherlockTheme_actionDropDownStyle = 51;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#actionMenuTextAppearance}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2240,7 +2240,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:actionMenuTextAppearance
         */
-        public static final int SherlockTheme_actionMenuTextAppearance = 10;
+        public static int SherlockTheme_actionMenuTextAppearance = 10;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#actionMenuTextColor}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2252,7 +2252,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
           @attr name cn.onboard.android.slidingmenu:actionMenuTextColor
         */
-        public static final int SherlockTheme_actionMenuTextColor = 11;
+        public static int SherlockTheme_actionMenuTextColor = 11;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#actionModeBackground}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2262,7 +2262,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:actionModeBackground
         */
-        public static final int SherlockTheme_actionModeBackground = 14;
+        public static int SherlockTheme_actionModeBackground = 14;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#actionModeCloseButtonStyle}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2272,7 +2272,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:actionModeCloseButtonStyle
         */
-        public static final int SherlockTheme_actionModeCloseButtonStyle = 13;
+        public static int SherlockTheme_actionModeCloseButtonStyle = 13;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#actionModeCloseDrawable}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2282,7 +2282,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:actionModeCloseDrawable
         */
-        public static final int SherlockTheme_actionModeCloseDrawable = 16;
+        public static int SherlockTheme_actionModeCloseDrawable = 16;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#actionModePopupWindowStyle}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2292,7 +2292,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:actionModePopupWindowStyle
         */
-        public static final int SherlockTheme_actionModePopupWindowStyle = 18;
+        public static int SherlockTheme_actionModePopupWindowStyle = 18;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#actionModeShareDrawable}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2302,7 +2302,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:actionModeShareDrawable
         */
-        public static final int SherlockTheme_actionModeShareDrawable = 17;
+        public static int SherlockTheme_actionModeShareDrawable = 17;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#actionModeSplitBackground}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2312,7 +2312,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:actionModeSplitBackground
         */
-        public static final int SherlockTheme_actionModeSplitBackground = 15;
+        public static int SherlockTheme_actionModeSplitBackground = 15;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#actionModeStyle}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2322,7 +2322,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:actionModeStyle
         */
-        public static final int SherlockTheme_actionModeStyle = 12;
+        public static int SherlockTheme_actionModeStyle = 12;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#actionOverflowButtonStyle}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2332,7 +2332,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:actionOverflowButtonStyle
         */
-        public static final int SherlockTheme_actionOverflowButtonStyle = 3;
+        public static int SherlockTheme_actionOverflowButtonStyle = 3;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#actionSpinnerItemStyle}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2342,7 +2342,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:actionSpinnerItemStyle
         */
-        public static final int SherlockTheme_actionSpinnerItemStyle = 57;
+        public static int SherlockTheme_actionSpinnerItemStyle = 57;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#activatedBackgroundIndicator}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2352,7 +2352,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:activatedBackgroundIndicator
         */
-        public static final int SherlockTheme_activatedBackgroundIndicator = 65;
+        public static int SherlockTheme_activatedBackgroundIndicator = 65;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#activityChooserViewStyle}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2362,7 +2362,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:activityChooserViewStyle
         */
-        public static final int SherlockTheme_activityChooserViewStyle = 64;
+        public static int SherlockTheme_activityChooserViewStyle = 64;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#buttonStyleSmall}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2372,7 +2372,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:buttonStyleSmall
         */
-        public static final int SherlockTheme_buttonStyleSmall = 19;
+        public static int SherlockTheme_buttonStyleSmall = 19;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#dividerVertical}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2382,7 +2382,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:dividerVertical
         */
-        public static final int SherlockTheme_dividerVertical = 50;
+        public static int SherlockTheme_dividerVertical = 50;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#dropDownHintAppearance}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2392,7 +2392,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:dropDownHintAppearance
         */
-        public static final int SherlockTheme_dropDownHintAppearance = 66;
+        public static int SherlockTheme_dropDownHintAppearance = 66;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#dropDownListViewStyle}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2402,7 +2402,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:dropDownListViewStyle
         */
-        public static final int SherlockTheme_dropDownListViewStyle = 54;
+        public static int SherlockTheme_dropDownListViewStyle = 54;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#dropdownListPreferredItemHeight}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2418,7 +2418,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name cn.onboard.android.slidingmenu:dropdownListPreferredItemHeight
         */
-        public static final int SherlockTheme_dropdownListPreferredItemHeight = 56;
+        public static int SherlockTheme_dropdownListPreferredItemHeight = 56;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#homeAsUpIndicator}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2428,7 +2428,7 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:homeAsUpIndicator
         */
-        public static final int SherlockTheme_homeAsUpIndicator = 53;
+        public static int SherlockTheme_homeAsUpIndicator = 53;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#listPopupWindowStyle}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2438,7 +2438,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:listPopupWindowStyle
         */
-        public static final int SherlockTheme_listPopupWindowStyle = 63;
+        public static int SherlockTheme_listPopupWindowStyle = 63;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#listPreferredItemHeightSmall}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2454,7 +2454,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name cn.onboard.android.slidingmenu:listPreferredItemHeightSmall
         */
-        public static final int SherlockTheme_listPreferredItemHeightSmall = 44;
+        public static int SherlockTheme_listPreferredItemHeightSmall = 44;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#listPreferredItemPaddingLeft}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2470,7 +2470,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name cn.onboard.android.slidingmenu:listPreferredItemPaddingLeft
         */
-        public static final int SherlockTheme_listPreferredItemPaddingLeft = 45;
+        public static int SherlockTheme_listPreferredItemPaddingLeft = 45;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#listPreferredItemPaddingRight}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2486,7 +2486,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name cn.onboard.android.slidingmenu:listPreferredItemPaddingRight
         */
-        public static final int SherlockTheme_listPreferredItemPaddingRight = 46;
+        public static int SherlockTheme_listPreferredItemPaddingRight = 46;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#popupMenuStyle}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2496,7 +2496,7 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:popupMenuStyle
         */
-        public static final int SherlockTheme_popupMenuStyle = 55;
+        public static int SherlockTheme_popupMenuStyle = 55;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#searchAutoCompleteTextView}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2506,7 +2506,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:searchAutoCompleteTextView
         */
-        public static final int SherlockTheme_searchAutoCompleteTextView = 30;
+        public static int SherlockTheme_searchAutoCompleteTextView = 30;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#searchDropdownBackground}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2516,7 +2516,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:searchDropdownBackground
         */
-        public static final int SherlockTheme_searchDropdownBackground = 31;
+        public static int SherlockTheme_searchDropdownBackground = 31;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#searchResultListItemHeight}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2532,7 +2532,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name cn.onboard.android.slidingmenu:searchResultListItemHeight
         */
-        public static final int SherlockTheme_searchResultListItemHeight = 41;
+        public static int SherlockTheme_searchResultListItemHeight = 41;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#searchViewCloseIcon}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2542,7 +2542,7 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:searchViewCloseIcon
         */
-        public static final int SherlockTheme_searchViewCloseIcon = 32;
+        public static int SherlockTheme_searchViewCloseIcon = 32;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#searchViewEditQuery}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2552,7 +2552,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:searchViewEditQuery
         */
-        public static final int SherlockTheme_searchViewEditQuery = 36;
+        public static int SherlockTheme_searchViewEditQuery = 36;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#searchViewEditQueryBackground}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2562,7 +2562,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:searchViewEditQueryBackground
         */
-        public static final int SherlockTheme_searchViewEditQueryBackground = 37;
+        public static int SherlockTheme_searchViewEditQueryBackground = 37;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#searchViewGoIcon}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2572,7 +2572,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:searchViewGoIcon
         */
-        public static final int SherlockTheme_searchViewGoIcon = 33;
+        public static int SherlockTheme_searchViewGoIcon = 33;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#searchViewSearchIcon}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2582,7 +2582,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:searchViewSearchIcon
         */
-        public static final int SherlockTheme_searchViewSearchIcon = 34;
+        public static int SherlockTheme_searchViewSearchIcon = 34;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#searchViewTextField}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2592,7 +2592,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:searchViewTextField
         */
-        public static final int SherlockTheme_searchViewTextField = 38;
+        public static int SherlockTheme_searchViewTextField = 38;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#searchViewTextFieldRight}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2602,7 +2602,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:searchViewTextFieldRight
         */
-        public static final int SherlockTheme_searchViewTextFieldRight = 39;
+        public static int SherlockTheme_searchViewTextFieldRight = 39;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#searchViewVoiceIcon}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2612,7 +2612,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:searchViewVoiceIcon
         */
-        public static final int SherlockTheme_searchViewVoiceIcon = 35;
+        public static int SherlockTheme_searchViewVoiceIcon = 35;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#selectableItemBackground}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2622,7 +2622,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:selectableItemBackground
         */
-        public static final int SherlockTheme_selectableItemBackground = 20;
+        public static int SherlockTheme_selectableItemBackground = 20;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#spinnerDropDownItemStyle}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2632,7 +2632,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:spinnerDropDownItemStyle
         */
-        public static final int SherlockTheme_spinnerDropDownItemStyle = 29;
+        public static int SherlockTheme_spinnerDropDownItemStyle = 29;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#spinnerItemStyle}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2642,7 +2642,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:spinnerItemStyle
         */
-        public static final int SherlockTheme_spinnerItemStyle = 28;
+        public static int SherlockTheme_spinnerItemStyle = 28;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#textAppearanceLargePopupMenu}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2652,7 +2652,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:textAppearanceLargePopupMenu
         */
-        public static final int SherlockTheme_textAppearanceLargePopupMenu = 22;
+        public static int SherlockTheme_textAppearanceLargePopupMenu = 22;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#textAppearanceListItemSmall}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2662,7 +2662,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:textAppearanceListItemSmall
         */
-        public static final int SherlockTheme_textAppearanceListItemSmall = 47;
+        public static int SherlockTheme_textAppearanceListItemSmall = 47;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#textAppearanceSearchResultSubtitle}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2672,7 +2672,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:textAppearanceSearchResultSubtitle
         */
-        public static final int SherlockTheme_textAppearanceSearchResultSubtitle = 43;
+        public static int SherlockTheme_textAppearanceSearchResultSubtitle = 43;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#textAppearanceSearchResultTitle}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2682,7 +2682,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:textAppearanceSearchResultTitle
         */
-        public static final int SherlockTheme_textAppearanceSearchResultTitle = 42;
+        public static int SherlockTheme_textAppearanceSearchResultTitle = 42;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#textAppearanceSmall}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2692,7 +2692,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:textAppearanceSmall
         */
-        public static final int SherlockTheme_textAppearanceSmall = 24;
+        public static int SherlockTheme_textAppearanceSmall = 24;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#textAppearanceSmallPopupMenu}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2702,7 +2702,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:textAppearanceSmallPopupMenu
         */
-        public static final int SherlockTheme_textAppearanceSmallPopupMenu = 23;
+        public static int SherlockTheme_textAppearanceSmallPopupMenu = 23;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#textColorPrimary}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2717,7 +2717,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name cn.onboard.android.slidingmenu:textColorPrimary
         */
-        public static final int SherlockTheme_textColorPrimary = 25;
+        public static int SherlockTheme_textColorPrimary = 25;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#textColorPrimaryDisableOnly}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2732,7 +2732,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name cn.onboard.android.slidingmenu:textColorPrimaryDisableOnly
         */
-        public static final int SherlockTheme_textColorPrimaryDisableOnly = 26;
+        public static int SherlockTheme_textColorPrimaryDisableOnly = 26;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#textColorPrimaryInverse}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2747,7 +2747,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name cn.onboard.android.slidingmenu:textColorPrimaryInverse
         */
-        public static final int SherlockTheme_textColorPrimaryInverse = 27;
+        public static int SherlockTheme_textColorPrimaryInverse = 27;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#textColorSearchUrl}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2759,7 +2759,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
           @attr name cn.onboard.android.slidingmenu:textColorSearchUrl
         */
-        public static final int SherlockTheme_textColorSearchUrl = 40;
+        public static int SherlockTheme_textColorSearchUrl = 40;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#windowActionBar}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2773,7 +2773,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name cn.onboard.android.slidingmenu:windowActionBar
         */
-        public static final int SherlockTheme_windowActionBar = 59;
+        public static int SherlockTheme_windowActionBar = 59;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#windowActionBarOverlay}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2787,7 +2787,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name cn.onboard.android.slidingmenu:windowActionBarOverlay
         */
-        public static final int SherlockTheme_windowActionBarOverlay = 60;
+        public static int SherlockTheme_windowActionBarOverlay = 60;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#windowActionModeOverlay}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2801,7 +2801,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name cn.onboard.android.slidingmenu:windowActionModeOverlay
         */
-        public static final int SherlockTheme_windowActionModeOverlay = 61;
+        public static int SherlockTheme_windowActionModeOverlay = 61;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#windowContentOverlay}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2811,7 +2811,7 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:windowContentOverlay
         */
-        public static final int SherlockTheme_windowContentOverlay = 21;
+        public static int SherlockTheme_windowContentOverlay = 21;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#windowMinWidthMajor}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2827,7 +2827,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name cn.onboard.android.slidingmenu:windowMinWidthMajor
         */
-        public static final int SherlockTheme_windowMinWidthMajor = 48;
+        public static int SherlockTheme_windowMinWidthMajor = 48;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#windowMinWidthMinor}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2843,7 +2843,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name cn.onboard.android.slidingmenu:windowMinWidthMinor
         */
-        public static final int SherlockTheme_windowMinWidthMinor = 49;
+        public static int SherlockTheme_windowMinWidthMinor = 49;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#windowNoTitle}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2857,7 +2857,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name cn.onboard.android.slidingmenu:windowNoTitle
         */
-        public static final int SherlockTheme_windowNoTitle = 58;
+        public static int SherlockTheme_windowNoTitle = 58;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#windowSplitActionBar}
           attribute's value can be found in the {@link #SherlockTheme} array.
@@ -2871,7 +2871,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name cn.onboard.android.slidingmenu:windowSplitActionBar
         */
-        public static final int SherlockTheme_windowSplitActionBar = 62;
+        public static int SherlockTheme_windowSplitActionBar = 62;
         /** Attributes that can be used with a SherlockView.
            <p>Includes the following attributes:</p>
            <table>
@@ -2890,7 +2890,7 @@ containing a value of this type.
           attribute's value can be found in the {@link #SherlockView} array.
           @attr name android:focusable
         */
-        public static final int SherlockView_android_focusable = 0;
+        public static int SherlockView_android_focusable = 0;
         /** Attributes that can be used with a SlidingMenu.
            <p>Includes the following attributes:</p>
            <table>
@@ -2948,7 +2948,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name cn.onboard.android.slidingmenu:behindOffset
         */
-        public static final int SlidingMenu_behindOffset = 3;
+        public static int SlidingMenu_behindOffset = 3;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#behindScrollScale}
           attribute's value can be found in the {@link #SlidingMenu} array.
@@ -2962,7 +2962,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name cn.onboard.android.slidingmenu:behindScrollScale
         */
-        public static final int SlidingMenu_behindScrollScale = 5;
+        public static int SlidingMenu_behindScrollScale = 5;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#behindWidth}
           attribute's value can be found in the {@link #SlidingMenu} array.
@@ -2978,7 +2978,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name cn.onboard.android.slidingmenu:behindWidth
         */
-        public static final int SlidingMenu_behindWidth = 4;
+        public static int SlidingMenu_behindWidth = 4;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#fadeDegree}
           attribute's value can be found in the {@link #SlidingMenu} array.
@@ -2992,7 +2992,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name cn.onboard.android.slidingmenu:fadeDegree
         */
-        public static final int SlidingMenu_fadeDegree = 11;
+        public static int SlidingMenu_fadeDegree = 11;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#fadeEnabled}
           attribute's value can be found in the {@link #SlidingMenu} array.
@@ -3006,7 +3006,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name cn.onboard.android.slidingmenu:fadeEnabled
         */
-        public static final int SlidingMenu_fadeEnabled = 10;
+        public static int SlidingMenu_fadeEnabled = 10;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#mode}
           attribute's value can be found in the {@link #SlidingMenu} array.
@@ -3023,7 +3023,7 @@ containing a value of this type.
 </table>
           @attr name cn.onboard.android.slidingmenu:mode
         */
-        public static final int SlidingMenu_mode = 0;
+        public static int SlidingMenu_mode = 0;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#selectorDrawable}
           attribute's value can be found in the {@link #SlidingMenu} array.
@@ -3033,7 +3033,7 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:selectorDrawable
         */
-        public static final int SlidingMenu_selectorDrawable = 13;
+        public static int SlidingMenu_selectorDrawable = 13;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#selectorEnabled}
           attribute's value can be found in the {@link #SlidingMenu} array.
@@ -3047,7 +3047,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name cn.onboard.android.slidingmenu:selectorEnabled
         */
-        public static final int SlidingMenu_selectorEnabled = 12;
+        public static int SlidingMenu_selectorEnabled = 12;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#shadowDrawable}
           attribute's value can be found in the {@link #SlidingMenu} array.
@@ -3057,7 +3057,7 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:shadowDrawable
         */
-        public static final int SlidingMenu_shadowDrawable = 8;
+        public static int SlidingMenu_shadowDrawable = 8;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#shadowWidth}
           attribute's value can be found in the {@link #SlidingMenu} array.
@@ -3073,7 +3073,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name cn.onboard.android.slidingmenu:shadowWidth
         */
-        public static final int SlidingMenu_shadowWidth = 9;
+        public static int SlidingMenu_shadowWidth = 9;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#touchModeAbove}
           attribute's value can be found in the {@link #SlidingMenu} array.
@@ -3090,7 +3090,7 @@ containing a value of this type.
 </table>
           @attr name cn.onboard.android.slidingmenu:touchModeAbove
         */
-        public static final int SlidingMenu_touchModeAbove = 6;
+        public static int SlidingMenu_touchModeAbove = 6;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#touchModeBehind}
           attribute's value can be found in the {@link #SlidingMenu} array.
@@ -3107,7 +3107,7 @@ containing a value of this type.
 </table>
           @attr name cn.onboard.android.slidingmenu:touchModeBehind
         */
-        public static final int SlidingMenu_touchModeBehind = 7;
+        public static int SlidingMenu_touchModeBehind = 7;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#viewAbove}
           attribute's value can be found in the {@link #SlidingMenu} array.
@@ -3117,7 +3117,7 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:viewAbove
         */
-        public static final int SlidingMenu_viewAbove = 1;
+        public static int SlidingMenu_viewAbove = 1;
         /**
           <p>This symbol is the offset where the {@link cn.onboard.android.slidingmenu.R.attr#viewBehind}
           attribute's value can be found in the {@link #SlidingMenu} array.
@@ -3127,6 +3127,6 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name cn.onboard.android.slidingmenu:viewBehind
         */
-        public static final int SlidingMenu_viewBehind = 2;
+        public static int SlidingMenu_viewBehind = 2;
     };
 }
