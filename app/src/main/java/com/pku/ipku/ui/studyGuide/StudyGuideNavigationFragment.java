@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
 import com.pku.ipku.R;
 import com.pku.ipku.model.studyguide.Curriculum;
 import com.pku.ipku.model.studyguide.FreeClassroom;
@@ -19,9 +20,6 @@ import com.viewpagerindicator.TabPageIndicator;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import cn.onboard.android.slidingmenu.SlidingMenu;
-import cn.onboard.android.slidingmenu.app.SlidingFragmentActivity;
 
 public class StudyGuideNavigationFragment extends Fragment {
 

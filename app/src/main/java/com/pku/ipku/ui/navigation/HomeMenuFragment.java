@@ -5,6 +5,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,13 +13,12 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.actionbarsherlock.app.SherlockListFragment;
 import com.pku.ipku.R;
 import com.pku.ipku.adapter.HomeMenuAdapter;
-import com.pku.ipku.model.person.Person;
 import com.pku.ipku.model.PkuGuide;
-import com.pku.ipku.model.pkuInfo.PkuInfo;
 import com.pku.ipku.model.PkuMap;
+import com.pku.ipku.model.person.Person;
+import com.pku.ipku.model.pkuInfo.PkuInfo;
 import com.pku.ipku.model.studyguide.StudyGuide;
 import com.pku.ipku.model.type.Fragmentable;
 import com.pku.ipku.util.AppContextHolder;
@@ -27,7 +27,7 @@ import com.pku.ipku.util.BitmapManager;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeMenuFragment extends SherlockListFragment {
+public class HomeMenuFragment extends ListFragment {
 
     private ListView menuListView;
 
@@ -47,6 +47,7 @@ public class HomeMenuFragment extends SherlockListFragment {
             add(new StudyGuide());
         }
     };
+
     public HomeMenuFragment() {
 
     }
@@ -63,22 +64,22 @@ public class HomeMenuFragment extends SherlockListFragment {
     }
 
     private void initView(View view) {
-        this.userFace = (ImageView)view.findViewById(R.id.user_face);
-        this.userName = (TextView)view.findViewById(R.id.user_name);
+        this.userFace = (ImageView) view.findViewById(R.id.user_face);
+        this.userName = (TextView) view.findViewById(R.id.user_name);
         this.bmpManager = new BitmapManager(BitmapFactory.decodeResource(AppContextHolder.getAppContext().getResources(),
                 R.drawable.widget_dface_loading));
         userName.setText("邢亮");
     }
 
     private void selectItemChangingColor(int position, ListView lv) {
-        for (int i =0; i < lv.getChildCount();i++) {
-            TextView menuText = (TextView)lv.getChildAt(i).findViewById(R.id.menu_text);
-            ImageView image = (ImageView)lv.getChildAt(i).findViewById(R.id.menu_icon);
+        for (int i = 0; i < lv.getChildCount(); i++) {
+            TextView menuText = (TextView) lv.getChildAt(i).findViewById(R.id.menu_text);
+            ImageView image = (ImageView) lv.getChildAt(i).findViewById(R.id.menu_icon);
             menuText.setTextColor(Color.argb(150, 255, 255, 255));
             image.setAlpha(150);
         }
-        TextView menuText = (TextView)lv.getChildAt(position).findViewById(R.id.menu_text);
-        ImageView image = (ImageView)lv.getChildAt(position).findViewById(R.id.menu_icon);
+        TextView menuText = (TextView) lv.getChildAt(position).findViewById(R.id.menu_text);
+        ImageView image = (ImageView) lv.getChildAt(position).findViewById(R.id.menu_icon);
         menuText.setTextColor(Color.argb(255, 255, 255, 255));
         image.setAlpha(255);
     }
@@ -100,7 +101,7 @@ public class HomeMenuFragment extends SherlockListFragment {
             return;
 
         if (getActivity() instanceof Home) {
-            Home homeActivity= (Home) getActivity();
+            Home homeActivity = (Home) getActivity();
             homeActivity.switchContent(fragment);
         }
     }

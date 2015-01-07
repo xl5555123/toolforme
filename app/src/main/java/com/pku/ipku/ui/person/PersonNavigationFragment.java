@@ -3,14 +3,13 @@ package com.pku.ipku.ui.person;
 import android.app.ActionBar;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
 import com.pku.ipku.R;
-import com.pku.ipku.adapter.PagerAdapter;
 import com.pku.ipku.model.person.ArrearageState;
 import com.pku.ipku.model.person.LibState;
 import com.pku.ipku.model.person.Person;
@@ -21,13 +20,9 @@ import com.pku.ipku.model.person.SelectingResult;
 import com.pku.ipku.model.type.Fragmentable;
 import com.pku.ipku.util.UIHelper;
 import com.viewpagerindicator.TabPageIndicator;
-import com.viewpagerindicator.TitlePageIndicator;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import cn.onboard.android.slidingmenu.SlidingMenu;
-import cn.onboard.android.slidingmenu.app.SlidingFragmentActivity;
 
 public class PersonNavigationFragment extends Fragment {
 
@@ -67,7 +62,7 @@ public class PersonNavigationFragment extends Fragment {
 
     private void initActionBar() {
         final ActionBar actionBar = getActivity().getActionBar();
-        activity = (SlidingFragmentActivity)getActivity();
+        activity = (SlidingFragmentActivity) getActivity();
         UIHelper.setUpActionBarWithNoNavigation(actionBar, new Person().getChineseName());
     }
 

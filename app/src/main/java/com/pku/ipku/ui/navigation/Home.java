@@ -1,15 +1,16 @@
 package com.pku.ipku.ui.navigation;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.view.MenuItem;
 
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
+import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
 import com.pku.ipku.R;
 import com.pku.ipku.ui.person.PersonNavigationFragment;
 import com.pku.ipku.util.AppManager;
-
-import cn.onboard.android.slidingmenu.SlidingMenu;
-import cn.onboard.android.slidingmenu.app.SlidingFragmentActivity;
 
 public class Home extends SlidingFragmentActivity {
     //当前页的内容
@@ -42,7 +43,7 @@ public class Home extends SlidingFragmentActivity {
         setContentView(R.layout.content_frame);
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.content_frame, currrentContent).commit();
-        getSupportActionBar().setHomeButtonEnabled(true);
+        getActionBar().setHomeButtonEnabled(true);
 
         setBehindContentView(R.layout.menu_frame);
         FragmentTransaction leftFragmentTransaction = getSupportFragmentManager().beginTransaction();
@@ -69,7 +70,7 @@ public class Home extends SlidingFragmentActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(com.actionbarsherlock.view.MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
                 getSlidingMenu().showContent();

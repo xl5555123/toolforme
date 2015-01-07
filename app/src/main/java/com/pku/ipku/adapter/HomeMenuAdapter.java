@@ -13,7 +13,6 @@ import com.google.common.collect.Lists;
 import com.pku.ipku.R;
 import com.pku.ipku.model.type.Fragmentable;
 import com.pku.ipku.model.type.Typable;
-import com.pku.ipku.ui.navigation.HomeMenuFragment;
 
 import java.util.List;
 
@@ -81,8 +80,7 @@ public class HomeMenuAdapter extends BaseAdapter {
         if (0 == position) {
             listItemView.title.setTextColor(Color.argb(255, 255, 255, 255));
             listItemView.icon.setAlpha(255);
-        }
-        else {
+        } else {
             listItemView.title.setTextColor(Color.argb(150, 255, 255, 255));
             listItemView.icon.setAlpha(150);
         }

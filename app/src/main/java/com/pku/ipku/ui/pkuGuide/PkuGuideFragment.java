@@ -7,13 +7,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
+import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
 import com.pku.ipku.R;
 import com.pku.ipku.model.PkuGuide;
-import com.pku.ipku.model.studyguide.StudyGuide;
 import com.pku.ipku.util.UIHelper;
-
-import cn.onboard.android.slidingmenu.SlidingMenu;
-import cn.onboard.android.slidingmenu.app.SlidingFragmentActivity;
 
 public class PkuGuideFragment extends Fragment {
 

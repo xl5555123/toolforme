@@ -10,10 +10,9 @@ import android.view.ViewGroup;
 import com.baidu.mapapi.SDKInitializer;
 import com.baidu.mapapi.map.BaiduMapOptions;
 import com.baidu.mapapi.map.MapView;
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
+import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
 import com.pku.ipku.model.PkuMap;
-
-import cn.onboard.android.slidingmenu.SlidingMenu;
-import cn.onboard.android.slidingmenu.app.SlidingFragmentActivity;
 
 public class PkuMapFragment extends Fragment {
 
@@ -49,6 +48,7 @@ public class PkuMapFragment extends Fragment {
         actionBar.setTitle(new PkuMap().getChineseName());
         actionBar.removeAllTabs();
     }
+
     @Override
     public void onDestroy() {
         super.onDestroy();

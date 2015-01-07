@@ -266,7 +266,7 @@ public class HttpHelper {
         private SSLContext sslcontext = null;
 
         private SSLContext createSSLContext() {
-            SSLContext sslcontext=null;
+            SSLContext sslcontext = null;
             try {
                 sslcontext = SSLContext.getInstance("SSL");
                 sslcontext.init(null, new TrustManager[]{new TrustAnyTrustManager()}, new java.security.SecureRandom());

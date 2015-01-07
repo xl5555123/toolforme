@@ -8,7 +8,7 @@ import com.pku.ipku.ui.studyGuide.FreeClassroomFragment;
 /**
  * Created by XingLiang on 2014/12/16.
  */
-public class FreeClassroom implements Fragmentable{
+public class FreeClassroom implements Fragmentable {
     @Override
     public Fragment getAttachedFragment(String[] args) {
         return new FreeClassroomFragment();

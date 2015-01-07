@@ -2,7 +2,6 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-    
     <style name="TodoEditHeaderText">
         <item name="android:textSize">20sp</item>
         <item name="android:textColor">@color/black</item>
@@ -31,21 +30,11 @@
 
     <style name="ListSubtitleText" parent="SubtitleText"></style>
 
-    <style name="onboard.actionbar" parent="Theme.Sherlock.Light.DarkActionBar">
-        <item name="actionBarStyle">@style/onboard.actionbar.style</item>
-        <item name="android:actionBarStyle">@style/onboard.actionbar.style</item>
+    <style name="ipku.tab.style" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="vpiTabPageIndicatorStyle">@style/tabPageIndicator</item>
     </style>
 
-    <style name="onboard.actionbar.style" parent="Widget.Sherlock.Light.ActionBar.Solid.Inverse">
-        <item name="background">@color/good_blue</item>
-        <item name="android:background">@color/good_blue</item>
-    </style>
-
-    <style name="ipku.tab.style" parent="Theme.Sherlock.Light.DarkActionBar">
-        <item name="vpiTabPageIndicatorStyle">@style/MyWidget.TabPageIndicator</item>
-    </style>
-
-    <style name="MyWidget.TabPageIndicator" parent="Widget">
+    <style name="tabPageIndicator" parent="Widget">
         <item name="android:gravity">center</item>
         <item name="android:background">@drawable/vpi__tab_indicator</item>
         <item name="android:paddingLeft">10dip</item>
