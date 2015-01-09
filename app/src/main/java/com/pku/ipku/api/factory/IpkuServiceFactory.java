@@ -1,9 +1,12 @@
 package com.pku.ipku.api.factory;
 
+import com.pku.ipku.api.PersonService;
 import com.pku.ipku.api.PkuInfoService;
 import com.pku.ipku.api.StudyGuideService;
+import com.pku.ipku.api.cache.PersonServiceCacheImpl;
 import com.pku.ipku.api.cache.PkuInfoServiceCacheImpl;
 import com.pku.ipku.api.cache.StudyGuideServiceCacheImpl;
+import com.pku.ipku.api.net.PersonServiceNetImpl;
 import com.pku.ipku.api.net.PkuInfoServiceNetImpl;
 import com.pku.ipku.api.net.StudyGuideServiceNetImpl;
 
@@ -24,5 +27,12 @@ public class IpkuServiceFactory {
             return new StudyGuideServiceCacheImpl();
         }
         return new StudyGuideServiceNetImpl();
+    }
+
+    public static PersonService getPersonService(boolean cache) {
+        if (cache) {
+            return new PersonServiceCacheImpl();
+        }
+        return new PersonServiceNetImpl();
     }
 }
