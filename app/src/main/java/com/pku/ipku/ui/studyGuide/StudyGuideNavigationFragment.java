@@ -8,13 +8,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.common.collect.Lists;
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
 import com.pku.ipku.R;
+import com.pku.ipku.api.factory.IpkuServiceFactory;
 import com.pku.ipku.model.studyguide.Curriculum;
 import com.pku.ipku.model.studyguide.FreeClassroom;
 import com.pku.ipku.model.studyguide.QueryClass;
 import com.pku.ipku.model.studyguide.StudyGuide;
+import com.pku.ipku.model.studyguide.dto.CurriculumDTO;
 import com.pku.ipku.model.type.Fragmentable;
+import com.pku.ipku.task.LoadDataConfigure;
+import com.pku.ipku.task.LoadDataDefaultTask;
 import com.pku.ipku.util.UIHelper;
 import com.viewpagerindicator.TabPageIndicator;
 
@@ -23,13 +29,11 @@ import java.util.List;
 
 public class StudyGuideNavigationFragment extends Fragment {
 
-    private final static List<Fragmentable> items = new ArrayList<Fragmentable>() {
-        {
-            add(new Curriculum());
-            add(new FreeClassroom());
-            add(new QueryClass());
-        }
-    };
+    private static List<Fragmentable> items = Lists.newArrayList();
+
+    private CurriculumDTO curriculum;
+    ViewPager viewPager;
+    TabPageIndicator indicator;
 
     SlidingFragmentActivity slidingFragmentActivity;
 
@@ -49,15 +53,59 @@ public class StudyGuideNavigationFragment extends Fragment {
         initActionBar();
         slidingFragmentActivity = (SlidingFragmentActivity) getActivity();
         View view = inflater.inflate(R.layout.fragment_study_guide, container, false);
-        ViewPager viewPager = (ViewPager) view.findViewById(R.id.pager);
-        TabPageIndicator indicator = (TabPageIndicator) view.findViewById(R.id.titles);
+        viewPager = (ViewPager) view.findViewById(R.id.pager);
+        indicator = (TabPageIndicator) view.findViewById(R.id.titles);
         UIHelper.setUpTab(slidingFragmentActivity, getChildFragmentManager(), viewPager, indicator, items);
+        initData();
         return view;
     }
 
     private void initActionBar() {
         ActionBar actionBar = getActivity().getActionBar();
         UIHelper.setUpActionBarWithNoNavigation(actionBar, new StudyGuide().getChineseName());
+    }
+
+    private void getTabItems() {
+        items = new ArrayList<Fragmentable>() {
+            {
+                add(new Curriculum(curriculum));
+                add(new FreeClassroom());
+                add(new QueryClass());
+            }
+        };
+    }
+
+
+
+    private void initData() {
+        new LoadDataDefaultTask(new LoadDataConfigure() {
+            @Override
+            public void showData() {
+                getTabItems();
+                UIHelper.setUpTab(slidingFragmentActivity, getChildFragmentManager(), viewPager, indicator, items);
+            }
+
+            @Override
+            public boolean getData(boolean cache) {
+                curriculum = IpkuServiceFactory.getStudyGuideService(cache).getCurriculum();
+                if (curriculum == null) {
+                    return false;
+                }
+                else {
+                    return true;
+                }
+            }
+
+            @Override
+            public void showWaiting() {
+
+            }
+
+            @Override
+            public void stopWaiting() {
+
+            }
+        }).execute();
     }
 
 }
