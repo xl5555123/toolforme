@@ -1,40 +1,27 @@
 package com.pku.ipku.ui.pkuInfo;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
+import android.widget.TextView;
 
 import com.pku.ipku.R;
+import com.pku.ipku.model.pkuInfo.dto.PkuClubDTO;
 
 public class PkuClubDetailActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pku_club_detial);
+        Log.d("DEBUG", "============PkuClubDetailActivity start");
+        setContentView(R.layout.activity_pku_club_detail);
+        Intent intent = getIntent();
+        //获取社团活动对象
+        PkuClubDTO pkuClubDTO = (PkuClubDTO)intent.getSerializableExtra(PkuClubFragment.CLUB_ACTIVITY_KEY);
+        TextView subject = (TextView)findViewById(R.id.club_detail_subject);
+        subject.setText(pkuClubDTO.getSubject());
     }
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_pku_club_detial, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 }
