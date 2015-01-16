@@ -7,8 +7,6 @@ import android.graphics.Point;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -180,14 +178,6 @@ public class PkuMapFragment extends Fragment implements BaiduMap.OnMapClickListe
         mSearch.setOnGetRoutePlanResultListener(this);
     }
 
-    @Override
-    public void onPrepareOptionsMenu(Menu menu) {
-        menu.clear();
-        MenuInflater inflater = getActivity().getMenuInflater();
-        inflater.inflate(R.menu.map, menu);
-        super.onPrepareOptionsMenu(menu);
-    }
-
     /*
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -293,13 +283,13 @@ public class PkuMapFragment extends Fragment implements BaiduMap.OnMapClickListe
                 LatLng ll = mBaiduMap.getProjection().fromScreenLocation(p);
 
                 infoWindow = new InfoWindow(db, ll, 0,new OnInfoWindowClickListener()
-                        {
-                            @Override
-                            public void onInfoWindowClick()
-                            {
-                                mBaiduMap.hideInfoWindow();
-                            }
-                        });
+                {
+                    @Override
+                    public void onInfoWindowClick()
+                    {
+                        mBaiduMap.hideInfoWindow();
+                    }
+                });
                 mBaiduMap.showInfoWindow(infoWindow);
                 mMarkerLy.setVisibility(View.VISIBLE);
                 return true;
