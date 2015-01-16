@@ -1,4 +1,4 @@
-package com.pku.ipku.api;
+package com.pku.ipku.api.mock.pkuInfo;
 
 import com.pku.ipku.model.pkuInfo.dto.PkuClubDTO;
 

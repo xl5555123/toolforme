@@ -1,12 +1,11 @@
 package com.pku.ipku.model.pkuInfo.dto;
-
-import java.io.Serializable;
+;
 import java.util.Date;
 
 /**
  * Created by Allen on 2015/1/7.
  */
-public class PkuClubDTO implements Serializable {
+public class PkuClubDTO{
 
     private String clubName;
     private String subject;
