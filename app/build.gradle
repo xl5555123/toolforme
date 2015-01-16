@@ -43,4 +43,5 @@ dependencies {
     compile 'de.hdodenhof:circleimageview:1.2.1'
     compile 'com.viewpagerindicator:library:2.4.1@aar'
     compile files('libs/BaiduLBS_Android.jar')
+    compile files('libs/BaiduLBS_Android_1.jar')
 }

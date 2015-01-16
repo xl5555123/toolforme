@@ -1,9 +1,11 @@
 package com.pku.ipku.ui.navigation;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 
+import com.actionbarsherlock.app.ActionBar;
 import com.pku.ipku.R;
 import com.pku.ipku.ui.person.PersonNavigationFragment;
 import com.pku.ipku.util.AppManager;
@@ -17,9 +19,12 @@ public class Home extends SlidingFragmentActivity {
 
     private SlidingMenu slidingMenu;
 
+    private ActionBar actionBar;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        actionBar = getSupportActionBar();
         initVariables();
         initView();
     }

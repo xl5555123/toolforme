@@ -54,4 +54,18 @@
     <string name="title_activity_pku_club">PkuClub</string>
     <string name="title_activity_pku_job">PkuJob</string>
 
+
+    <string-array name="map">
+        <item>普通地图</item>
+        <item>卫星地图</item>
+        <item>实时交通(off)</item>
+        <item>实时交通(on)</item>
+        <item>我的位置</item>
+        <item>普通模式</item>
+        <item>跟随模式</item>
+        <item>罗盘模式</item>
+        <item>添加标记</item>
+        <item>导航</item>
+    </string-array>
+
 </resources>

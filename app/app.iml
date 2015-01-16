@@ -92,6 +92,7 @@
     <orderEntry type="library" exported="" name="guava-16.0.1" level="project" />
     <orderEntry type="library" exported="" name="support-v4-18.0.0" level="project" />
     <orderEntry type="library" exported="" name="jackson-mapper-asl-1.9.12" level="project" />
+    <orderEntry type="library" exported="" name="BaiduLBS_Android_1" level="project" />
     <orderEntry type="library" exported="" name="greendao-1.3.0" level="project" />
     <orderEntry type="library" exported="" name="circleimageview-1.2.1" level="project" />
     <orderEntry type="library" exported="" name="commons-httpclient-3.1" level="project" />
