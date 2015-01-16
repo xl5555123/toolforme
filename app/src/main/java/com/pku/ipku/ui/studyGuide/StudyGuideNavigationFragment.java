@@ -33,7 +33,6 @@ public class StudyGuideNavigationFragment extends Fragment {
 
     private static List<Fragmentable> items = Lists.newArrayList();
 
-    private CurriculumDTO curriculum;
     ViewPager viewPager;
     TabPageIndicator indicator;
 
@@ -57,8 +56,14 @@ public class StudyGuideNavigationFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_study_guide, container, false);
         viewPager = (ViewPager) view.findViewById(R.id.pager);
         indicator = (TabPageIndicator) view.findViewById(R.id.titles);
+        items = new ArrayList<Fragmentable>() {
+            {
+                add(new Curriculum());
+                add(new FreeClassroom());
+                add(new QueryClass());
+            }
+        };
         UIHelper.setUpTab(slidingFragmentActivity, getChildFragmentManager(), viewPager, indicator, items);
-        initData();
         return view;
     }
 
@@ -67,49 +72,8 @@ public class StudyGuideNavigationFragment extends Fragment {
         UIHelper.setUpActionBarWithNoNavigation(actionBar, new StudyGuide().getChineseName());
     }
 
-    private void getTabItems() {
-        items = new ArrayList<Fragmentable>() {
-            {
-                add(new Curriculum(curriculum));
-                add(new FreeClassroom());
-                add(new QueryClass());
-            }
-        };
-    }
 
 
 
-    private void initData() {
-        new LoadDataDefaultTask(new LoadDataConfigure() {
-
-            @Override
-            public void showData() {
-                getTabItems();
-                UIHelper.setUpTab(slidingFragmentActivity, getChildFragmentManager(), viewPager, indicator, items);
-            }
-
-            @Override
-            public boolean getData(boolean cache) {
-                curriculum = IpkuServiceFactory.getStudyGuideService(cache).getCurriculum();
-                if (curriculum == null) {
-                    return false;
-                }
-                else {
-                    return true;
-                }
-            }
-
-            @Override
-            public void showWaiting() {
-
-            }
-
-            @Override
-            public void stopWaiting() {
-
-            }
-
-        }).execute();
-    }
 
 }

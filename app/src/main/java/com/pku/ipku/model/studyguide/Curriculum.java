@@ -43,7 +43,7 @@ public class Curriculum implements Fragmentable {
 
     @Override
     public Fragment getAttachedFragment(String[] args) {
-        return new CurriculumFragment(curriculumDTO);
+        return new CurriculumFragment();
     }
 
     @Override

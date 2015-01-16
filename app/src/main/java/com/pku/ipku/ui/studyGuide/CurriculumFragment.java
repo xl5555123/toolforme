@@ -25,6 +25,7 @@ import com.pku.ipku.task.LoadDataConfigure;
 import com.pku.ipku.task.LoadDataDefaultTask;
 import com.pku.ipku.util.CurriculumView;
 import com.pku.ipku.util.DataHandleUtil;
+import com.pku.ipku.util.UIHelper;
 
 import java.util.Calendar;
 import java.util.List;
@@ -36,10 +37,8 @@ public class CurriculumFragment extends Fragment {
     private CurriculumDTO curriculum;
     private Map<Integer, Lesson> lessons;
 
-    public CurriculumFragment(CurriculumDTO curriculumDTO) {
+    public CurriculumFragment() {
         // Required empty public constructor
-        this.curriculum = curriculumDTO;
-        this.lessons = Curriculum.getAllLessons(curriculumDTO);
     }
 
     @Override
@@ -52,8 +51,41 @@ public class CurriculumFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_curriculum, container, false);
+        initData();
         initView(view);
         return view;
+    }
+
+    private void initData() {
+        new LoadDataDefaultTask(new LoadDataConfigure() {
+
+            @Override
+            public void showData() {
+               lessons = Curriculum.getAllLessons(curriculum);
+            }
+
+            @Override
+            public boolean getData(boolean cache) {
+                curriculum = IpkuServiceFactory.getStudyGuideService(cache).getCurriculum();
+                if (curriculum == null) {
+                    return false;
+                }
+                else {
+                    return true;
+                }
+            }
+
+            @Override
+            public void showWaiting() {
+
+            }
+
+            @Override
+            public void stopWaiting() {
+
+            }
+
+        }).execute();
     }
 
     private void initView(View view) {

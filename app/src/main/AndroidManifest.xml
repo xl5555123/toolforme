@@ -41,14 +41,14 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/ipku.tab.style"
-            android:windowSoftInputMode="stateVisible|adjustResize" />
+            android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity
             android:name=".ui.studyGuide.ClassDetail"
             android:configChanges="keyboardHidden|orientation"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/ipku.tab.style"
-            android:windowSoftInputMode="stateVisible|adjustResize" >
+            android:windowSoftInputMode="adjustPan|stateHidden" >
         </activity>
     </application>
 
