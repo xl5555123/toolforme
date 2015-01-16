@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     tools:context="com.pku.ipku.ui.studyGuide.CurriculumFragment">
 
-    <com.alamkanak.weekview.WeekView
+    <com.pku.ipku.util.CurriculumView
         android:id="@+id/weekView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

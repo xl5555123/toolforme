@@ -79,6 +79,7 @@ public class StudyGuideNavigationFragment extends Fragment {
 
     private void initData() {
         new LoadDataDefaultTask(new LoadDataConfigure() {
+
             @Override
             public void showData() {
                 getTabItems();
@@ -105,6 +106,7 @@ public class StudyGuideNavigationFragment extends Fragment {
             public void stopWaiting() {
 
             }
+
         }).execute();
     }
 

@@ -37,7 +37,6 @@ public class MockCurriculum {
         lesson.setTeacherName("日语老师");
         curriculum.setDayClass(Calendar.MONDAY, ClassIndex.TENTHCLASS, lesson);
         curriculum.setDayClass(Calendar.MONDAY, ClassIndex.ELEVENTHCLASS, lesson);
-        curriculum.setDayClass(Calendar.MONDAY, ClassIndex.ELEVENTHCLASS, lesson);
         curriculum.setDayClass(Calendar.THURSDAY, ClassIndex.TENTHCLASS, lesson);
         curriculum.setDayClass(Calendar.THURSDAY, ClassIndex.ELEVENTHCLASS, lesson);
         lesson = new Lesson();

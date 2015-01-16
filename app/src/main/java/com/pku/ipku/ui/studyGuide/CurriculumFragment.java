@@ -22,6 +22,7 @@ import com.pku.ipku.model.studyguide.util.DayClass;
 import com.pku.ipku.model.studyguide.util.WeekIndex;
 import com.pku.ipku.task.LoadDataConfigure;
 import com.pku.ipku.task.LoadDataDefaultTask;
+import com.pku.ipku.util.CurriculumView;
 
 import java.util.Calendar;
 import java.util.List;
@@ -29,7 +30,7 @@ import java.util.Map;
 
 public class CurriculumFragment extends Fragment {
 
-    private WeekView weekView;
+    private CurriculumView weekView;
     private CurriculumDTO curriculum;
 
     public CurriculumFragment(CurriculumDTO curriculumDTO) {
@@ -52,25 +53,26 @@ public class CurriculumFragment extends Fragment {
     }
 
     private void initView(View view) {
-        weekView = (WeekView) view.findViewById(R.id.weekView);
+        weekView = (CurriculumView) view.findViewById(R.id.weekView);
         Calendar calendar = Calendar.getInstance();
         calendar.add(Calendar.DAY_OF_MONTH, 7);
         weekView.goToDate(calendar);
-        weekView.setOnEventClickListener(new WeekView.EventClickListener() {
+        weekView.setOnEventClickListener(new CurriculumView.EventClickListener() {
             @Override
             public void onEventClick(WeekViewEvent weekViewEvent, RectF rectF) {
 
             }
         });
-        weekView.setEventLongPressListener(new WeekView.EventLongPressListener() {
+        weekView.setEventLongPressListener(new CurriculumView.EventLongPressListener() {
             @Override
             public void onEventLongPress(WeekViewEvent weekViewEvent, RectF rectF) {
 
             }
         });
-        weekView.setMonthChangeListener(new WeekView.MonthChangeListener() {
+        weekView.setMonthChangeListener(new CurriculumView.MonthChangeListener() {
             @Override
             public List<WeekViewEvent> onMonthChange(int newYear, int newMonth) {
+                goToThisMonday(newYear, newMonth);
                 List<WeekViewEvent> events = getEvents(newYear, newMonth);
                 return events;
             }
@@ -93,8 +95,12 @@ public class CurriculumFragment extends Fragment {
         });
     }
 
-    private String getLessonTitle(Lesson lesson) {
-        return String.format("%s\n%s\n%s\n%s", lesson.getName(), lesson.getTeacherName(), lesson.getLocation(), lesson.getInformation());
+    private void goToThisMonday(int newYear, int newMonth) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY);
+        calendar.set(Calendar.MONTH, newMonth - 1);
+        calendar.set(Calendar.YEAR, newYear);
+        weekView.goToDate(calendar);
     }
 
     private List<WeekViewEvent> getEvents(int newYear, int newMonth) {
@@ -114,10 +120,11 @@ public class CurriculumFragment extends Fragment {
             endTime.add(Calendar.HOUR_OF_DAY,  1);
             endTime.add(Calendar.MINUTE, 30);
             endTime.set(Calendar.MONTH, newMonth - 1);
-            WeekViewEvent event = new WeekViewEvent(count++, getLessonTitle(lessonMap.get(dayClass)), startTime, endTime);
+            WeekViewEvent event = new WeekViewEvent(count++, lessonMap.get(dayClass).getName(), startTime, endTime);
             event.setColor(getResources().getColor(R.color.blue));
             events.add(event);
         }
+
 
         return events;
     }
