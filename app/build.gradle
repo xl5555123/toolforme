@@ -42,6 +42,7 @@ dependencies {
     compile 'com.github.alamkanak:android-week-view:1.2.1'
     compile 'commons-httpclient:commons-httpclient:3.1'
     compile 'de.hdodenhof:circleimageview:1.2.1'
+    compile 'org.ocpsoft.prettytime:prettytime:2.1.2.Final'
     compile 'com.viewpagerindicator:library:2.4.1@aar'
     compile files('libs/BaiduLBS_Android.jar')
     compile files('libs/BaiduLBS_Android_1.jar')
