@@ -3,17 +3,17 @@ package com.pku.ipku.ui.pkuInfo;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-
 import com.pku.ipku.R;
 import com.pku.ipku.adapter.pkuInfo.PkuClubAdapter;
-import com.pku.ipku.api.MockPkuClubActivityList;
+import com.pku.ipku.api.factory.IpkuServiceFactory;
 import com.pku.ipku.model.pkuInfo.dto.PkuClubDTO;
+import com.pku.ipku.task.LoadDataConfigure;
+import com.pku.ipku.task.LoadDataDefaultTask;
 import com.pku.ipku.ui.AppContext;
 import java.util.List;
 
@@ -43,22 +43,44 @@ public class PkuClubFragment extends Fragment implements AdapterView.OnItemClick
         View view = inflater.inflate(R.layout.fragment_pku_club, container, false);
         clubActivitiesListView = (ListView)view.findViewById(R.id.club_activities);
         appContext = (AppContext)getActivity().getApplicationContext();
-        //获取社团活动对象
-        pkuClubDTOList = MockPkuClubActivityList.get();
-        clubActivitiesListView.setAdapter(new PkuClubAdapter(appContext, pkuClubDTOList));
-        //点击事件
-        clubActivitiesListView.setOnItemClickListener(this);
+        new LoadDataDefaultTask(new LoadPkuClubConfigure()).execute();
+        //点击事件无法跳转
+        //clubActivitiesListView.setOnItemClickListener(this);
         return view;
     }
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         Intent intent = new Intent();
-        intent.setClass(this.getActivity(),PkuClubDetailActivity.class);
-        Bundle bundle = new Bundle();
-        bundle.putSerializable(CLUB_ACTIVITY_KEY, pkuClubDTOList.get(i));
-        intent.putExtras(bundle);
-        Log.d("DEBUG", "============Intent start" + getActivity().toString() + this.toString() + i);
-        this.startActivity(intent);
+        intent.putExtra("CLUB_ACTIVITY_KEY", pkuClubDTOList.get(i).getAttachUrl());
+        intent.setClass(this.getActivity(), PkuClubDetailActivity.class);
+        startActivity(intent);
+    }
+
+    private class LoadPkuClubConfigure implements LoadDataConfigure {
+
+        @Override
+        public void showData() {
+            clubActivitiesListView.setAdapter(new PkuClubAdapter(appContext, pkuClubDTOList));
+        }
+
+        @Override
+        public boolean getData(boolean cache) {
+            pkuClubDTOList = IpkuServiceFactory.getPkuInfoService(cache).getPkuClubActivities();
+            if (pkuClubDTOList == null) {
+                return false;
+            }
+            return true;
+        }
+
+        @Override
+        public void showWaiting() {
+
+        }
+
+        @Override
+        public void stopWaiting() {
+
+        }
     }
 }

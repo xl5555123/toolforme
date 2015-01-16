@@ -6,11 +6,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
-
 import com.pku.ipku.R;
 import com.pku.ipku.model.pkuInfo.dto.PkuClubDTO;
 
+import org.ocpsoft.prettytime.PrettyTime;
+
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Created by Allen on 2015/1/7.
@@ -20,6 +22,7 @@ public class PkuClubAdapter extends BaseAdapter {
     private final List<PkuClubDTO> pkuClubList;
     private final LayoutInflater listContainer;// 视图容器
     private Context context;
+
     public PkuClubAdapter(Context context, List<PkuClubDTO> pkuClubList) {
         this.pkuClubList = pkuClubList;
         this.context = context;
@@ -44,7 +47,7 @@ public class PkuClubAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
 
-        PkuClubDTO pkuClubDTO = pkuClubList.get(i);
+        final PkuClubDTO pkuClubDTO = pkuClubList.get(i);
         view = listContainer.inflate(R.layout.club_item, null);
 
         TextView subjectView = (TextView) view.findViewById(R.id.club_activity_subject);
@@ -56,8 +59,8 @@ public class PkuClubAdapter extends BaseAdapter {
         subjectView.setText(pkuClubDTO.getSubject());
         clubNameView.setText(pkuClubDTO.getClubName());
         locationView.setText(pkuClubDTO.getLocation());
-        //startTimeView.setText(new PrettyTime(new Locale("zh")).format(pkuClubDTO.getStartTime()));
-        //createTimeView.setText(new PrettyTime(new Locale("zh")).format(pkuClubDTO.toString());
+        startTimeView.setText(new PrettyTime(new Locale("zh")).format(pkuClubDTO.getStartTime()));
+        createTimeView.setText(new PrettyTime(new Locale("zh")).format(pkuClubDTO.getCreateTime()));
         view.setTag(pkuClubDTO.getAttachUrl());
         return view;
     }
