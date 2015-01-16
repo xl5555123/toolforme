@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <merger version="3"><dataSet config="main"><source path="D:\serc\code\实验室\Portal-App\slidingmenu\src\main\assets"/></dataSet><dataSet config="release"><source path="D:\serc\code\实验室\Portal-App\slidingmenu\src\release\assets"/></dataSet></merger>
+=======
+<merger version="3"><dataSet config="main"><source path="/home/pktxq/git/Portal-App/slidingmenu/src/main/assets"/></dataSet><dataSet config="release"><source path="/home/pktxq/git/Portal-App/slidingmenu/src/release/assets"/></dataSet></merger>
+>>>>>>> remotes/origin/tab-refactor

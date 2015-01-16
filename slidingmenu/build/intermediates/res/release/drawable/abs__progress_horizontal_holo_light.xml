@@ -30,4 +30,8 @@
     </item>
 
 </layer-list>
+<<<<<<< HEAD
 <!-- From: file:/Users/jw/dev/ActionBarSherlock/target/checkout/actionbarsherlock/res/drawable/abs__progress_horizontal_holo_light.xml --><!-- From: file:/D:/serc/code/实验室/Portal-App/slidingmenu/build/intermediates/exploded-aar/com.actionbarsherlock/actionbarsherlock/4.4.0/res/drawable/abs__progress_horizontal_holo_light.xml -->
+=======
+<!-- From: file:/Users/jw/dev/ActionBarSherlock/target/checkout/actionbarsherlock/res/drawable/abs__progress_horizontal_holo_light.xml --><!-- From: file:/home/pktxq/git/Portal-App/slidingmenu/build/intermediates/exploded-aar/com.actionbarsherlock/actionbarsherlock/4.4.0/res/drawable/abs__progress_horizontal_holo_light.xml -->
+>>>>>>> remotes/origin/tab-refactor

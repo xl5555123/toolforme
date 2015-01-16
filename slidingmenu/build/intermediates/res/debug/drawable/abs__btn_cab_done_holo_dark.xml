@@ -22,4 +22,8 @@
     <item android:state_enabled="true"
         android:drawable="@drawable/abs__btn_cab_done_default_holo_dark" />
 </selector>
+<<<<<<< HEAD
 <!-- From: file:/Users/jw/dev/ActionBarSherlock/target/checkout/actionbarsherlock/res/drawable/abs__btn_cab_done_holo_dark.xml --><!-- From: file:/D:/serc/code/实验室/Portal-App/slidingmenu/build/intermediates/exploded-aar/com.actionbarsherlock/actionbarsherlock/4.4.0/res/drawable/abs__btn_cab_done_holo_dark.xml -->
+=======
+<!-- From: file:/Users/jw/dev/ActionBarSherlock/target/checkout/actionbarsherlock/res/drawable/abs__btn_cab_done_holo_dark.xml --><!-- From: file:/home/pktxq/git/Portal-App/slidingmenu/build/intermediates/exploded-aar/com.actionbarsherlock/actionbarsherlock/4.4.0/res/drawable/abs__btn_cab_done_holo_dark.xml -->
+>>>>>>> remotes/origin/tab-refactor
