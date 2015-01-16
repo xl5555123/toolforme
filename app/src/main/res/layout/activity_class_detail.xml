@@ -1,0 +1,147 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context="com.pku.ipku.ui.studyGuide.ClassDetail">
+
+    <TextView
+        android:id="@+id/class_info_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/class_detail_blue_title"
+        android:text="课堂信息"/>
+
+    <FrameLayout
+        android:id="@+id/class_info_line"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/class_info_title"
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:alpha="50"
+        android:background="@color/good_blue"/>
+
+    <LinearLayout
+        android:layout_marginTop="16dp"
+        android:layout_below="@id/class_info_line"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/class_name"/>
+
+        <TextView
+            style="@style/class_detail_black_title"
+            android:text="名称"
+            android:layout_gravity="center_vertical"/>
+
+        <TextView
+            android:id="@+id/class_name"
+            style="@style/class_detail_gray_content"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="16dp"
+        android:layout_below="@id/class_info_line"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/class_name"/>
+
+        <TextView
+            style="@style/class_detail_black_title"
+            android:text="教室"
+            android:layout_gravity="center_vertical"/>
+
+        <TextView
+            android:id="@+id/classroom"
+            style="@style/class_detail_gray_content"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="16dp"
+        android:layout_below="@id/class_info_line"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/class_name"/>
+
+        <TextView
+            style="@style/class_detail_black_title"
+            android:text="老师"
+            android:layout_gravity="center_vertical"/>
+
+        <TextView
+            android:id="@+id/class_teacher"
+            style="@style/class_detail_gray_content"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="16dp"
+        android:layout_below="@id/class_info_line"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/class_name"/>
+
+        <TextView
+            style="@style/class_detail_black_title"
+            android:text="节数"
+            android:layout_gravity="center_vertical"/>
+
+        <TextView
+            android:id="@+id/class_sector"
+            style="@style/class_detail_gray_content"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginTop="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/class_detail_blue_title"
+        android:text="上课时间"/>
+
+    <FrameLayout
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/class_info_title"
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:alpha="50"
+        android:background="@color/good_blue"/>
+
+    <LinearLayout
+        android:layout_marginTop="16dp"
+        android:layout_below="@id/class_info_line"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/class_name"/>
+
+        <TextView
+            style="@style/class_detail_black_title"
+            android:text="时间"
+            android:layout_gravity="center_vertical"/>
+
+        <TextView
+            android:id="@+id/class_time"
+            style="@style/class_detail_gray_content"/>
+    </LinearLayout>
+
+</LinearLayout>

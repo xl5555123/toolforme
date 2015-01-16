@@ -53,5 +53,6 @@
     <string name="title_activity_pku_news">PkuNews</string>
     <string name="title_activity_pku_club">PkuClub</string>
     <string name="title_activity_pku_job">PkuJob</string>
+    <string name="title_activity_class_detail">ClassDetail</string>
 
 </resources>

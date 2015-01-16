@@ -15,6 +15,7 @@ import com.pku.ipku.R;
 import com.pku.ipku.api.factory.IpkuServiceFactory;
 import com.pku.ipku.model.studyguide.Curriculum;
 import com.pku.ipku.model.studyguide.FreeClassroom;
+import com.pku.ipku.model.studyguide.Lesson;
 import com.pku.ipku.model.studyguide.QueryClass;
 import com.pku.ipku.model.studyguide.StudyGuide;
 import com.pku.ipku.model.studyguide.dto.CurriculumDTO;
@@ -26,6 +27,7 @@ import com.viewpagerindicator.TabPageIndicator;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class StudyGuideNavigationFragment extends Fragment {
 

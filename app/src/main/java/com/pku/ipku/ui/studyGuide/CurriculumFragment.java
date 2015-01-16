@@ -1,5 +1,6 @@
 package com.pku.ipku.ui.studyGuide;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.graphics.RectF;
@@ -23,6 +24,7 @@ import com.pku.ipku.model.studyguide.util.WeekIndex;
 import com.pku.ipku.task.LoadDataConfigure;
 import com.pku.ipku.task.LoadDataDefaultTask;
 import com.pku.ipku.util.CurriculumView;
+import com.pku.ipku.util.DataHandleUtil;
 
 import java.util.Calendar;
 import java.util.List;
@@ -32,10 +34,12 @@ public class CurriculumFragment extends Fragment {
 
     private CurriculumView weekView;
     private CurriculumDTO curriculum;
+    private Map<Integer, Lesson> lessons;
 
     public CurriculumFragment(CurriculumDTO curriculumDTO) {
         // Required empty public constructor
         this.curriculum = curriculumDTO;
+        this.lessons = Curriculum.getAllLessons(curriculumDTO);
     }
 
     @Override
@@ -93,6 +97,17 @@ public class CurriculumFragment extends Fragment {
                 }
             }
         });
+        weekView.setOnEventClickListener(new CurriculumView.EventClickListener() {
+            @Override
+            public void onEventClick(WeekViewEvent event, RectF eventRect) {
+                Integer lessonId = (int)event.getId();
+                Lesson lesson = lessons.get(lessonId);
+                String lessonJson = DataHandleUtil.objectToJson(lesson);
+                Intent intent = new Intent(getActivity(), ClassDetail.class);
+                intent.putExtra("lesson", lessonJson);
+                startActivity(intent);
+            }
+        });
     }
 
     private void goToThisMonday(int newYear, int newMonth) {
@@ -122,6 +137,7 @@ public class CurriculumFragment extends Fragment {
             endTime.set(Calendar.MONTH, newMonth - 1);
             WeekViewEvent event = new WeekViewEvent(count++, lessonMap.get(dayClass).getName(), startTime, endTime);
             event.setColor(getResources().getColor(R.color.blue));
+            event.setId(lessonMap.get(dayClass).getId());
             events.add(event);
         }
 
