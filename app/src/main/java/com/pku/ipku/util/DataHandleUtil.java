@@ -5,7 +5,6 @@ import android.util.Log;
 
 import com.google.common.collect.Lists;
 import com.pku.ipku.model.type.Fragmentable;
-import com.pku.ipku.model.type.Typable;
 
 import org.codehaus.jackson.map.DeserializationConfig;
 import org.codehaus.jackson.map.ObjectMapper;

@@ -3,14 +3,13 @@ package com.pku.ipku.ui.pkuInfo;
 import android.app.ActionBar;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.SpinnerAdapter;
 
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
+import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
 import com.pku.ipku.R;
 import com.pku.ipku.model.pkuInfo.PkuClub;
 import com.pku.ipku.model.pkuInfo.PkuInfo;
@@ -19,15 +18,11 @@ import com.pku.ipku.model.pkuInfo.PkuLecture;
 import com.pku.ipku.model.pkuInfo.PkuNews;
 import com.pku.ipku.model.pkuInfo.PkuNotice;
 import com.pku.ipku.model.type.Fragmentable;
-import com.pku.ipku.util.DataHandleUtil;
 import com.pku.ipku.util.UIHelper;
 import com.viewpagerindicator.TabPageIndicator;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import cn.onboard.android.slidingmenu.SlidingMenu;
-import cn.onboard.android.slidingmenu.app.SlidingFragmentActivity;
 
 public class PkuInfoNavigationFragment extends Fragment {
 
@@ -70,7 +65,6 @@ public class PkuInfoNavigationFragment extends Fragment {
         slidingFragmentActivity.getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
         UIHelper.setUpActionBarWithNoNavigation(actionBar, new PkuInfo().getChineseName());
     }
-
 
 
 }

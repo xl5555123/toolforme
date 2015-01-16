@@ -18,19 +18,15 @@ import android.widget.ListView;
 import android.widget.SpinnerAdapter;
 import android.widget.Toast;
 
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
+import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
 import com.pku.ipku.R;
 import com.pku.ipku.adapter.PagerAdapter;
-import com.pku.ipku.model.pkuInfo.PkuInfo;
-import com.pku.ipku.model.studyguide.StudyGuide;
 import com.pku.ipku.model.type.Fragmentable;
 import com.viewpagerindicator.TabPageIndicator;
 
 import java.util.Date;
 import java.util.List;
-
-import cn.onboard.android.slidingmenu.SlidingMenu;
-import cn.onboard.android.slidingmenu.app.SlidingActivity;
-import cn.onboard.android.slidingmenu.app.SlidingFragmentActivity;
 
 /**
  * 应用程序UI工具包：封装UI相关的一些操作
@@ -212,8 +208,7 @@ public class UIHelper {
             public void onPageSelected(int position) {
                 if (position == 0) {
                     activity.getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
-                }
-                else {
+                } else {
                     activity.getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_MARGIN);
                 }
             }
@@ -224,7 +219,6 @@ public class UIHelper {
             }
         });
     }
-
 
 
 }

@@ -4,7 +4,6 @@ import android.support.v4.app.Fragment;
 
 import com.pku.ipku.R;
 import com.pku.ipku.model.type.Fragmentable;
-import com.pku.ipku.model.type.Typable;
 import com.pku.ipku.ui.pkuMap.PkuMapFragment;
 
 /**

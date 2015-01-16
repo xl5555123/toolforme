@@ -3,9 +3,6 @@ package com.pku.ipku.adapter;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
-import android.view.ViewGroup;
 
 import com.pku.ipku.model.type.Fragmentable;
 

@@ -4,7 +4,4 @@
 /.idea/libraries
 .DS_Store
 /build
-.idea
-scopes
-libraries
-copyright
+/.idea
