@@ -50,6 +50,10 @@
             android:theme="@style/ipku.tab.style"
             android:windowSoftInputMode="adjustPan|stateHidden" >
         </activity>
+        <activity
+            android:name=".ui.studyGuide.freeClassRoom.FreeClassRoomInAnBuilding"
+            android:label="@string/title_activity_free_class_room_in_an_building" >
+        </activity>
     </application>
 
 </manifest>

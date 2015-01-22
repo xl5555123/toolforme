@@ -1,4 +1,4 @@
-package com.pku.ipku.api.mock.pkuInfo;
+package com.pku.ipku.api.mock.studyGuide;
 
 import android.graphics.Point;
 
