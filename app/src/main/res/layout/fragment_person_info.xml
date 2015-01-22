@@ -1,383 +1,665 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical"
-    tools:context="com.pku.ipku.ui.person.PersonInfoFragment">
-
-    <!-- TODO: Update blank fragment layout -->
+    android:fadingEdge="vertical"
+    android:scrollbars="vertical">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_marginTop="5dip"
-        android:layout_marginLeft="12dip"
-        android:layout_marginRight="12dip"
-        android:orientation="horizontal">
+        android:background="#f0f0f0"
+        android:orientation="vertical"
+        tools:context="com.pku.ipku.ui.person.PersonInfoFragment">
 
-        <ImageView
-            android:id="@+id/user_face"
-            android:layout_width="wrap_content"
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="80dp"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+            android:layout_marginTop="5dip"
+            android:background="#ffffff"
+            android:orientation="horizontal"
+            android:tabStripEnabled="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_column="0"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:text="头像"
+                android:textColor="#000000"
+                android:textSize="@dimen/space_16" />
+
+            <ImageView
+                android:id="@+id/user_face"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="4dp"
+                android:scaleType="matrix"
+                android:src="@drawable/xingliang" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dip"
+            android:background="#F0f0f0" />
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:scaleType="matrix"
-            android:src="@drawable/xingliang" />
 
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="-115dp">
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+            android:background="#FFFFFF"
+            android:orientation="horizontal"
+            android:tabStripEnabled="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_column="2"
+                android:layout_marginLeft="3dp"
+                android:gravity="center"
+                android:text="名字"
+                android:textColor="#000000"
+                android:textSize="@dimen/space_16" />
+
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_column="3"
+                android:layout_marginRight="4dp"
+                android:gravity="center"
+                android:text="猪八戒"
+                android:textColor="#777"
+                android:textSize="@dimen/space_16" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dip"
+            android:background="#F0f0f0" />
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+
+            android:background="#FFFFFF"
+            android:orientation="horizontal"
+            android:tabStripEnabled="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_column="4"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:text="性别"
+                android:textColor="#000000"
+                android:textSize="@dimen/space_16" />
+
+            <TextView
+                android:id="@+id/user_sex"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_column="5"
+                android:layout_marginRight="4dp"
+                android:gravity="center"
+                android:text="男"
+                android:textColor="#777"
+                android:textSize="@dimen/space_16" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dip"
+            android:background="#F0f0f0" />
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+            android:background="#FFFFFF"
+            android:orientation="horizontal"
+            android:tabStripEnabled="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_column="4"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:text="民族"
+                android:textColor="#000000"
+                android:textSize="@dimen/space_16" />
+
+            <TextView
+                android:id="@+id/user_race"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_column="5"
+                android:layout_marginRight="4dp"
+                android:gravity="center"
+                android:text="汉"
+                android:textColor="#777"
+                android:textSize="@dimen/space_16" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dip"
+            android:background="#F0f0f0" />
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+            android:background="#FFFFFF"
+            android:orientation="horizontal"
+            android:tabStripEnabled="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_column="4"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:text="籍贯"
+                android:textColor="#000000"
+                android:textSize="@dimen/space_16" />
+
+            <TextView
+                android:id="@+id/user_nativePlace"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_column="5"
+                android:layout_marginRight="4dp"
+                android:gravity="center"
+                android:text="广东省"
+                android:textColor="#777"
+                android:textSize="@dimen/space_16" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dip"
+            android:background="#F0f0f0" />
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+            android:background="#FFFFFF"
+            android:orientation="horizontal"
+            android:tabStripEnabled="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_column="4"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:text="政治面貌"
+                android:textColor="#000000"
+                android:textSize="@dimen/space_16" />
+
+            <TextView
+                android:id="@+id/user_politicalStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_column="5"
+                android:layout_marginRight="4dp"
+                android:gravity="center"
+                android:text="中共党员"
+                android:textColor="#777"
+                android:textSize="@dimen/space_16" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dip"
+            android:background="#F0f0f0" />
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+            android:background="#FFFFFF"
+            android:orientation="horizontal"
+            android:tabStripEnabled="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_column="4"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:text="出生日期"
+                android:textColor="#000000"
+                android:textSize="@dimen/space_16" />
+
+            <TextView
+                android:id="@+id/user_birthday"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_column="5"
+                android:layout_marginRight="4dp"
+                android:gravity="center"
+                android:text="1992-01-31"
+                android:textColor="#777"
+                android:textSize="@dimen/space_16" />
+        </RelativeLayout>
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+            android:layout_marginTop="20dip"
+            android:background="#FFFFFF"
+            android:orientation="horizontal"
+            android:tabStripEnabled="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_column="4"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:text="入学年份"
+                android:textColor="#000000"
+                android:textSize="@dimen/space_16" />
+
+            <TextView
+                android:id="@+id/user_enterSchoolDate"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_column="5"
+                android:layout_marginRight="4dp"
+                android:gravity="center"
+                android:text="2014-8-31"
+                android:textColor="#777"
+                android:textSize="@dimen/space_16" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dip"
+            android:background="#F0f0f0" />
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+            android:background="#FFFFFF"
+            android:orientation="horizontal"
+            android:tabStripEnabled="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_column="4"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:text="学号"
+                android:textColor="#000000"
+                android:textSize="@dimen/space_16" />
+
+            <TextView
+                android:id="@+id/user_stuId"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_column="5"
+                android:layout_marginRight="4dp"
+                android:gravity="center"
+                android:text="1401210322"
+                android:textColor="#777"
+                android:textSize="@dimen/space_16" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dip"
+            android:background="#F0f0f0" />
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+            android:background="#FFFFFF"
+            android:orientation="horizontal"
+            android:tabStripEnabled="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_column="4"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:text="所在院系"
+                android:textColor="#000000"
+                android:textSize="@dimen/space_16" />
+
+            <TextView
+                android:id="@+id/user_department"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_column="5"
+                android:layout_marginRight="4dp"
+                android:gravity="center"
+                android:text="软件与微电子"
+                android:textColor="#777"
+                android:textSize="@dimen/space_16" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dip"
+            android:background="#F0f0f0" />
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+            android:background="#FFFFFF"
+            android:orientation="horizontal"
+            android:tabStripEnabled="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_column="4"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:text="专业"
+                android:textColor="#000000"
+                android:textSize="@dimen/space_16" />
+
+            <TextView
+                android:id="@+id/user_major"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_column="5"
+                android:layout_marginRight="4dp"
+                android:gravity="center"
+                android:text="软件工程"
+                android:textColor="#777"
+                android:textSize="@dimen/space_16" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dip"
+            android:background="#F0f0f0" />
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+            android:background="#FFFFFF"
+            android:orientation="horizontal"
+            android:tabStripEnabled="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_column="4"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:text="研究方向"
+                android:textColor="#000000"
+                android:textSize="@dimen/space_16" />
+
+            <TextView
+                android:id="@+id/user_researchArea"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_column="5"
+                android:layout_marginRight="4dp"
+                android:gravity="center"
+                android:text="软件协同研发"
+                android:textColor="#777"
+                android:textSize="@dimen/space_16" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dip"
+            android:background="#F0f0f0" />
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+            android:background="#FFFFFF"
+            android:orientation="horizontal"
+            android:tabStripEnabled="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_column="4"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:text="导师"
+                android:textColor="#000000"
+                android:textSize="@dimen/space_16" />
+
+            <TextView
+                android:id="@+id/user_supervisor"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_column="5"
+                android:layout_marginRight="4dp"
+                android:gravity="center"
+                android:text="振中海"
+                android:textColor="#777"
+                android:textSize="@dimen/space_16" />
+        </RelativeLayout>
 
 
-            <TableRow android:layout_width="match_parent">
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+            android:layout_marginTop="20dip"
+            android:background="#FFFFFF"
+            android:orientation="horizontal"
+            android:tabStripEnabled="true">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_column="2"
-                    android:layout_marginLeft="145dp"
-                    android:layout_marginTop="2dp"
-                    android:background="#F0F0F0"
-                    android:gravity="right"
-                    android:text="名字" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_column="4"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:text="学生类别"
+                android:textColor="#000000"
+                android:textSize="@dimen/space_16" />
 
-                <TextView
-                    android:id="@+id/user_name"
-                    android:layout_column="3"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="2dp"
-                    android:gravity="center"
-                    android:text="猪八戒" />
+            <TextView
+                android:id="@+id/user_stuType"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_column="5"
+                android:layout_marginRight="4dp"
+                android:gravity="center"
+                android:text="双证"
+                android:textColor="#777"
+                android:textSize="@dimen/space_16" />
+        </RelativeLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_column="4"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="2dp"
-                    android:background="#f0f0f0"
-                    android:gravity="right"
-                    android:text="性别" />
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dip"
+            android:background="#F0f0f0" />
 
-                <TextView
-                    android:id="@+id/user_sex"
-                    android:layout_column="5"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="2dp"
-                    android:gravity="center"
-                    android:text="男" />
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
 
-            </TableRow>
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+            android:background="#FFFFFF"
+            android:orientation="horizontal"
+            android:tabStripEnabled="true">
 
-            <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_column="4"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:text="学生考号"
+                android:textColor="#000000"
+                android:textSize="@dimen/space_16" />
 
-                <TextView
+            <TextView
+                android:id="@+id/user_stuExamId"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_column="5"
+                android:layout_marginRight="4dp"
+                android:gravity="center"
+                android:text="27389274838290"
+                android:textColor="#777"
+                android:textSize="@dimen/space_16" />
+        </RelativeLayout>
 
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_column="2"
-                    android:layout_marginLeft="145dp"
-                    android:layout_marginTop="2dp"
-                    android:background="#f0f0f0"
-                    android:gravity="right"
-                    android:text="民族" />
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dip"
+            android:background="#F0f0f0" />
 
-                <TextView
-                    android:id="@+id/user_race"
-                    android:layout_column="3"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="2dp"
-                    android:gravity="center"
-                    android:text="汉" />
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
 
-                <TextView
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+            android:background="#FFFFFF"
+            android:orientation="horizontal"
+            android:tabStripEnabled="true">
 
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_column="4"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="2dp"
-                    android:background="#f0f0f0"
-                    android:gravity="right"
-                    android:text="籍贯" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_column="4"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:text="证件类型"
+                android:textColor="#000000"
+                android:textSize="@dimen/space_16" />
 
-                <TextView
-                    android:id="@+id/user_nativePlace"
-                    android:layout_column="5"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="2dp"
-                    android:gravity="center"
-                    android:text="广东省" />
+            <TextView
+                android:id="@+id/user_credentials"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_column="5"
+                android:layout_marginRight="4dp"
+                android:gravity="center"
+                android:text="身份证"
+                android:textColor="#777"
+                android:textSize="@dimen/space_16" />
+        </RelativeLayout>
 
-            </TableRow>
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dip"
+            android:background="#F0f0f0" />
 
-            <TableRow>
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
 
-                <TextView
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+            android:background="#FFFFFF"
+            android:orientation="horizontal"
+            android:tabStripEnabled="true">
 
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_column="2"
-                    android:layout_marginLeft="145dp"
-                    android:layout_marginTop="2dp"
-                    android:background="#f0f0f0"
-                    android:gravity="right"
-                    android:text="导师" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_column="4"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:text="证件号码"
+                android:textColor="#000000"
+                android:textSize="@dimen/space_16" />
 
-                <TextView
-                    android:id="@+id/user_supervisor"
-                    android:layout_column="3"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="2dp"
-                    android:gravity="center"
-                    android:text="振中海" />
+            <TextView
+                android:id="@+id/user_credentialsId"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_column="5"
+                android:layout_marginRight="4dp"
+                android:gravity="center"
+                android:text="102390160201042139"
+                android:textColor="#777"
+                android:textSize="@dimen/space_16" />
+        </RelativeLayout>
 
-                <TextView
 
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_column="4"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="2dp"
-                    android:background="#f0f0f0"
-                    android:gravity="right"
-                    android:text="政治面貌" />
-
-                <TextView
-                    android:id="@+id/user_politicalStatus"
-                    android:layout_column="5"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="2dp"
-                    android:gravity="center"
-                    android:text="中共党员" />
-            </TableRow>
-
-            <TableRow>
-
-                <TextView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_column="2"
-                    android:layout_marginLeft="145dp"
-                    android:layout_marginTop="2dp"
-                    android:background="#f0f0f0"
-                    android:gravity="right"
-                    android:text="学生类别" />
-
-                <TextView
-                    android:id="@+id/user_stuType"
-                    android:layout_column="3"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="2dp"
-                    android:gravity="center"
-                    android:text="双证" />
-
-                <TextView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_column="4"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="2dp"
-                    android:background="#f0f0f0"
-                    android:gravity="right"
-                    android:text="证件类型" />
-
-                <TextView
-                    android:id="@+id/user_credentials"
-                    android:layout_column="5"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="2dp"
-                    android:gravity="center"
-                    android:text="身份证" />
-            </TableRow>
-
-            <TableRow>
-
-                <TextView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_column="2"
-                    android:layout_marginLeft="145dp"
-                    android:layout_marginTop="2dp"
-                    android:background="#f0f0f0"
-                    android:gravity="right"
-                    android:text="证件号码" />
-
-                <TextView
-                    android:id="@+id/user_credentialsId"
-                    android:layout_column="3"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_span="3"
-                    android:gravity="left"
-                    android:text="102390180201042139" />
-            </TableRow>
-
-            <TableRow>
-
-                <TextView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_column="2"
-                    android:layout_marginLeft="145dp"
-                    android:layout_marginTop="2dp"
-                    android:background="#f0f0f0"
-                    android:gravity="right"
-                    android:text="出生日期" />
-
-                <TextView
-                    android:id="@+id/user_birthday"
-                    android:layout_column="3"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_span="3"
-                    android:gravity="left"
-                    android:text="1992-01-31" />
-            </TableRow>
-
-            <TableRow>
-
-                <TextView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_column="2"
-                    android:layout_marginLeft="145dp"
-                    android:layout_marginTop="2dp"
-                    android:background="#f0f0f0"
-                    android:gravity="right"
-                    android:text="入学年份" />
-
-                <TextView
-                    android:id="@+id/user_enterSchoolDate"
-                    android:layout_column="2"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_span="3"
-                    android:gravity="left"
-                    android:text="2014-8-31" />
-            </TableRow>
-
-            <TableRow>
-
-                <TextView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_column="2"
-                    android:layout_marginLeft="145dp"
-                    android:layout_marginTop="2dp"
-                    android:background="#f0f0f0"
-                    android:gravity="right"
-                    android:text="学生考号" />
-
-                <TextView
-                    android:id="@+id/user_stuExamId"
-                    android:layout_column="3"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_span="3"
-                    android:gravity="left"
-                    android:text="27389274838290" />
-            </TableRow>
-
-            <TableRow android:layout_width="wrap_content">
-
-                <TextView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_column="2"
-                    android:layout_marginLeft="145dp"
-                    android:layout_marginTop="2dp"
-                    android:background="#f0f0f0"
-                    android:gravity="right"
-                    android:text="学号" />
-
-                <TextView
-                    android:id="@+id/user_stuId"
-                    android:layout_column="3"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_span="3"
-                    android:gravity="left"
-                    android:text="1401210322" />
-            </TableRow>
-
-            <TableRow>
-
-                <TextView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_column="2"
-                    android:layout_marginLeft="145dp"
-                    android:layout_marginTop="2dp"
-                    android:background="#f0f0f0"
-                    android:gravity="right"
-                    android:text="所在院系" />
-
-                <TextView
-                    android:id="@+id/user_department"
-                    android:layout_column="3"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_span="3"
-                    android:gravity="left"
-                    android:text="软件与微电子" />
-            </TableRow>
-
-            <TableRow>
-
-                <TextView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_column="2"
-                    android:layout_marginLeft="145dp"
-                    android:layout_marginTop="2dp"
-                    android:background="#f0f0f0"
-                    android:gravity="right"
-                    android:text="专业" />
-
-                <TextView
-                    android:id="@+id/user_major"
-                    android:layout_column="3"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_span="3"
-                    android:gravity="left"
-                    android:text="软件工程" />
-            </TableRow>
-
-            <TableRow>
-
-                <TextView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_column="2"
-                    android:layout_marginLeft="145dp"
-                    android:layout_marginTop="2dp"
-                    android:background="#f0f0f0"
-                    android:gravity="right"
-                    android:text="研究方向" />
-
-                <TextView
-                    android:id="@+id/user_researchArea"
-                    android:layout_column="3"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_span="3"
-                    android:gravity="left"
-                    android:text="软件协同研发" />
-            </TableRow>
-
-        </TableLayout>
     </LinearLayout>
-
-</LinearLayout>
+</ScrollView>

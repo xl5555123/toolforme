@@ -30,7 +30,7 @@ public class FreeClassroomFragment extends Fragment {
         }
     };
 
-    private ListView 
+    //private ListView
 
     public FreeClassroomFragment() {
         // Required empty public constructor
