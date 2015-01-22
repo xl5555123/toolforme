@@ -11,3 +11,5 @@
 .idea
 build
 *.apk
+/gradle
+/app/manifest-merger-release-report.txt

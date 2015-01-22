@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import com.pku.ipku.R;
 
@@ -28,6 +29,8 @@ public class FreeClassroomFragment extends Fragment {
             add("政管");
         }
     };
+
+    private ListView 
 
     public FreeClassroomFragment() {
         // Required empty public constructor
