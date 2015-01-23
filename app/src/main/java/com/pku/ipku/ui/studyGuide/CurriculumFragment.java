@@ -14,6 +14,7 @@ import com.alamkanak.weekview.DateTimeInterpreter;
 import com.alamkanak.weekview.WeekView;
 import com.alamkanak.weekview.WeekViewEvent;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import com.pku.ipku.R;
 import com.pku.ipku.api.factory.IpkuServiceFactory;
 import com.pku.ipku.model.studyguide.Curriculum;
@@ -33,6 +34,8 @@ import java.util.Map;
 
 public class CurriculumFragment extends Fragment {
 
+    private View currentView;
+
     private CurriculumView weekView;
     private CurriculumDTO curriculum;
     private Map<Integer, Lesson> lessons;
@@ -50,10 +53,10 @@ public class CurriculumFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =  inflater.inflate(R.layout.fragment_curriculum, container, false);
+        currentView =  inflater.inflate(R.layout.fragment_curriculum, container, false);
         initData();
-        initView(view);
-        return view;
+        initView(currentView);
+        return currentView;
     }
 
     private void initData() {
@@ -62,6 +65,7 @@ public class CurriculumFragment extends Fragment {
             @Override
             public void showData() {
                lessons = Curriculum.getAllLessons(curriculum);
+               initView(currentView);
             }
 
             @Override
@@ -152,7 +156,13 @@ public class CurriculumFragment extends Fragment {
 
     private List<WeekViewEvent> getEvents(int newYear, int newMonth) {
         List<WeekViewEvent> events = Lists.newArrayList();
-        Map<DayClass, Lesson> lessonMap = curriculum.getLessonMap();
+        Map<DayClass, Lesson> lessonMap;
+        if (curriculum == null) {
+            lessonMap = Maps.newHashMap();
+        }
+        else {
+            lessonMap = curriculum.getLessonMap();
+        }
         int count = 0;
         for (DayClass dayClass : lessonMap.keySet()) {
             WeekViewEvent weekViewEvent = new WeekViewEvent();

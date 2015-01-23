@@ -3,7 +3,7 @@ package com.pku.ipku.model.studyguide;
 import android.support.v4.app.Fragment;
 
 import com.pku.ipku.model.type.Fragmentable;
-import com.pku.ipku.ui.studyGuide.FreeClassroomFragment;
+import com.pku.ipku.ui.studyGuide.freeClassRoom.FreeClassroomFragment;
 
 /**
  * Created by XingLiang on 2014/12/16.

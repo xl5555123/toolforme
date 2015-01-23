@@ -50,6 +50,14 @@
             android:theme="@style/ipku.tab.style"
             android:windowSoftInputMode="adjustPan|stateHidden" >
         </activity>
+        <activity
+            android:name=".ui.studyGuide.freeClassRoom.FreeClassRoomInAnBuilding"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/ipku.tab.style"
+            android:windowSoftInputMode="adjustPan|stateHidden" >
+        </activity>
     </application>
 
 </manifest>

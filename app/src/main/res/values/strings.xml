@@ -55,7 +55,6 @@
     <string name="title_activity_pku_job">PkuJob</string>
     <string name="title_activity_class_detail">ClassDetail</string>
 
-
     <string-array name="map">
         <item>普通地图</item>
         <item>卫星地图</item>
@@ -68,5 +67,7 @@
         <item>添加标记</item>
         <item>导航</item>
     </string-array>
+
+    <string name="title_activity_free_class_room_in_an_building">FreeClassRoomInAnBuilding</string>
 
 </resources>

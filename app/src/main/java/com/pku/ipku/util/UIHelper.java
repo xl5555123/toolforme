@@ -64,6 +64,14 @@ public class UIHelper {
         Toast.makeText(cont, msg, Toast.LENGTH_SHORT).show();
     }
 
+    public static void ToastMessage(String msg) {
+        Toast.makeText(AppContextHolder.getAppContext(), msg, Toast.LENGTH_SHORT).show();
+    }
+
+    public static void ToastMessage(int msg) {
+        Toast.makeText(AppContextHolder.getAppContext(), msg, Toast.LENGTH_SHORT).show();
+    }
+
 
     /**
      * 发送App异常崩溃报告

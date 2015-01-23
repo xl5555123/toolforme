@@ -45,4 +45,5 @@ dependencies {
     compile 'com.viewpagerindicator:library:2.4.1@aar'
     compile files('libs/BaiduLBS_Android.jar')
     compile files('libs/BaiduLBS_Android_1.jar')
+    compile 'com.tonicartos:stickygridheaders:1.0.1'
 }
