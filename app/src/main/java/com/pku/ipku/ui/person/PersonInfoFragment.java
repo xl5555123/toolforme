@@ -9,16 +9,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.graphics.Paint;
 
 import com.pku.ipku.R;
-import com.pku.ipku.api.PersonService;
 import com.pku.ipku.api.factory.IpkuServiceFactory;
-import com.pku.ipku.dto.StuInfoDTO;
+import com.pku.ipku.model.person.dto.StuInfoDTO;
 import com.pku.ipku.task.LoadDataConfigure;
 import com.pku.ipku.task.LoadDataDefaultTask;
-
-import org.w3c.dom.Text;
 
 public class PersonInfoFragment extends Fragment {
     private StuInfoDTO stuInfo ;

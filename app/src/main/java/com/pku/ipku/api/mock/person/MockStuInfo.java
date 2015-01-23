@@ -1,6 +1,6 @@
 package com.pku.ipku.api.mock.person;
 
-import com.pku.ipku.dto.StuInfoDTO;
+import com.pku.ipku.model.person.dto.StuInfoDTO;
 
 /**
  * Created by pktxq on 15-1-22.
