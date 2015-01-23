@@ -7,8 +7,13 @@ import com.pku.ipku.api.mock.person.MockScore;
 import com.pku.ipku.model.person.dto.ScoreDTO;
 import com.pku.ipku.model.person.dto.StuInfoDTO;
 import com.pku.ipku.model.person.dto.ArrearageStateDTO;
-import java.util.List;
+import com.pku.ipku.model.person.dto.LibBorrowDTO;
+import com.pku.ipku.model.person.dto.ScholarShipDTO;
+import com.pku.ipku.api.mock.person.MockLibBorrowInfo;
+import com.pku.ipku.api.mock.person.MockScholarShip;
 
+
+import java.util.List;
 
 /**
  * Created by XingLiang on 2015/1/9.
@@ -20,12 +25,23 @@ public class PersonServiceCacheImpl implements PersonService {
     }
 
     @Override
+
     public StuInfoDTO getStuInfo(){
         return MockStuInfo.get();
     }
 
     @Override
-    public List<ScoreDTO> getScores(){
+    public List<ScoreDTO> getScores() {
         return MockScore.get();
+    }
+    @Override
+    public List<LibBorrowDTO> getLibBorrowInfo() {
+        return MockLibBorrowInfo.get();
+    }
+
+    @Override
+    public List<ScholarShipDTO> getScholarShips() {
+        return MockScholarShip.get();
+
     }
 }

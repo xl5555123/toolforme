@@ -1,8 +1,13 @@
 package com.pku.ipku.api;
 
+
 import com.pku.ipku.model.person.dto.ScoreDTO;
 import com.pku.ipku.model.person.dto.StuInfoDTO;
 import com.pku.ipku.model.person.dto.ArrearageStateDTO;
+import com.pku.ipku.model.person.dto.LibBorrowDTO;
+import com.pku.ipku.model.person.dto.ScholarShipDTO;
+
+import java.util.List;
 
 import java.util.List;
 
@@ -14,4 +19,6 @@ public interface PersonService {
     public ArrearageStateDTO getArrearageState();
     public StuInfoDTO getStuInfo();
     public List<ScoreDTO> getScores();
+    public List<LibBorrowDTO> getLibBorrowInfo();
+    public List<ScholarShipDTO> getScholarShips();
 }

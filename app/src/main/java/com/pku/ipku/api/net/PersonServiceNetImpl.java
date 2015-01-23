@@ -6,7 +6,13 @@ import com.pku.ipku.api.mock.person.MockScore;
 import com.pku.ipku.api.mock.person.MockStuInfo;
 import com.pku.ipku.model.person.dto.ScoreDTO;
 import com.pku.ipku.model.person.dto.StuInfoDTO;
+import com.pku.ipku.api.mock.person.MockLibBorrowInfo;
+import com.pku.ipku.api.mock.person.MockScholarShip;
 import com.pku.ipku.model.person.dto.ArrearageStateDTO;
+import com.pku.ipku.model.person.dto.LibBorrowDTO;
+import com.pku.ipku.model.person.dto.ScholarShipDTO;
+
+import java.util.List;
 
 import java.util.List;
 
@@ -28,4 +34,8 @@ public class PersonServiceNetImpl implements PersonService {
     public List<ScoreDTO> getScores(){
         return MockScore.get();
     }
+
+    public List<LibBorrowDTO> getLibBorrowInfo(){return MockLibBorrowInfo.get();}
+    public List<ScholarShipDTO> getScholarShips(){return MockScholarShip.get();}
+
 }
