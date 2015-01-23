@@ -1,4 +1,4 @@
-package com.pku.ipku.dto;
+package com.pku.ipku.model.person.dto;
 
 /**
  * Created by pktxq on 15-1-6.
@@ -18,6 +18,9 @@ public class StuInfoDTO {
     private String stuExamId;
     private String stuId;
     private String department;
+    private String major;
+    private String researchArea;
+    public StuInfoDTO(){}
 
     public String getName() {
         return name;
@@ -168,7 +171,6 @@ public class StuInfoDTO {
         this.researchArea = researchArea;
     }
 
-    private String major;
-    private String researchArea;
+
 
 }

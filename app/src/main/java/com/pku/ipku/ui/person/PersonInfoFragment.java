@@ -11,13 +11,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.pku.ipku.R;
-import com.pku.ipku.dto.StuInfoDTO;
-
-import org.w3c.dom.Text;
+import com.pku.ipku.api.factory.IpkuServiceFactory;
+import com.pku.ipku.model.person.dto.StuInfoDTO;
+import com.pku.ipku.task.LoadDataConfigure;
+import com.pku.ipku.task.LoadDataDefaultTask;
 
 public class PersonInfoFragment extends Fragment {
-    StuInfoDTO stuInfo = new StuInfoDTO("孙悟空","男","汉","花果山水帘洞","唐僧","群众","双证","身份证","111233222333322234","1111-11-11","2222-2-22","21325352154321523","2341231234",
-            "大唐佛学院","降妖除魔","大惊刚经");
+    private StuInfoDTO stuInfo ;
     private ImageView userFace;
     private TextView userName;
     private TextView userSex;
@@ -36,6 +36,8 @@ public class PersonInfoFragment extends Fragment {
     private TextView userMajor;
     private TextView userResearchArea;
 
+    LoadDataDefaultTask loadDataDefaultTask = new LoadDataDefaultTask(new LoadStuInfoConfigure());
+
     public PersonInfoFragment() {
         // Required empty public constructor
     }
@@ -50,11 +52,53 @@ public class PersonInfoFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_person_info, container, false);
-        setView(view);
+        initView(view);
+        loadDataDefaultTask.execute();
         return view;
     }
 
-    public void setView(View view){
+    private class LoadStuInfoConfigure implements LoadDataConfigure {
+        @Override
+        public void showData(){
+            userFace.setScaleType(ImageView.ScaleType.FIT_XY);
+            userName.setText(stuInfo.getName());
+            userSex.setText(stuInfo.getSex());
+            userRace.setText(stuInfo.getRace());
+            userNativePlace.setText(stuInfo.getNativePlace());
+            userSupervisor.setText(stuInfo.getSupervisor());
+            userPoliticalStatus.setText(stuInfo.getPoliticalStatus());
+            userType.setText(stuInfo.getStuType());
+            userCredentials.setText(stuInfo.getCredentials());
+            userCredentialsId.setText(stuInfo.getCredentialsId());
+            userBirthday.setText(stuInfo.getBirthday());
+            userEnterSchoolDate.setText(stuInfo.getEnterSchoolDate());
+            userExamId.setText(stuInfo.getStuExamId());
+            userStuId.setText(stuInfo.getStuId());
+            //userStuId.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG );
+            userDepartment.setText(stuInfo.getDepartment());
+            userMajor.setText(stuInfo.getMajor());
+            userResearchArea.setText(stuInfo.getResearchArea());
+        }
+        @Override
+        public boolean getData(boolean cache){
+            stuInfo = IpkuServiceFactory.getPersonService(cache).getStuInfo();
+            if(stuInfo == null)
+                return false;
+            return true;
+        }
+
+        @Override
+        public void showWaiting(){
+
+        }
+
+        @Override
+        public void stopWaiting(){
+
+        }
+    }
+
+    public void initView(View view){
         this.userFace = (ImageView)view.findViewById(R.id.user_face);
         this.userName = (TextView)view.findViewById(R.id.user_name);
         this.userSex = (TextView)view.findViewById(R.id.user_sex);
@@ -72,24 +116,6 @@ public class PersonInfoFragment extends Fragment {
         this.userDepartment = (TextView)view.findViewById(R.id.user_department);
         this.userMajor = (TextView)view.findViewById(R.id.user_major);
         this.userResearchArea = (TextView)view.findViewById(R.id.user_researchArea);
-
-        userFace.setScaleType(ImageView.ScaleType.FIT_XY);
-        userName.setText(stuInfo.getName());
-        userSex.setText(stuInfo.getSex());
-        userRace.setText(stuInfo.getRace());
-        userNativePlace.setText(stuInfo.getNativePlace());
-        userSupervisor.setText(stuInfo.getSupervisor());
-        userPoliticalStatus.setText(stuInfo.getPoliticalStatus());
-        userType.setText(stuInfo.getStuType());
-        userCredentials.setText(stuInfo.getCredentials());
-        userCredentialsId.setText(stuInfo.getCredentialsId());
-        userBirthday.setText(stuInfo.getBirthday());
-        userEnterSchoolDate.setText(stuInfo.getEnterSchoolDate());
-        userExamId.setText(stuInfo.getStuExamId());
-        userStuId.setText(stuInfo.getStuId());
-        userDepartment.setText(stuInfo.getDepartment());
-        userMajor.setText(stuInfo.getMajor());
-        userResearchArea.setText(stuInfo.getResearchArea());
 
     }
 }
