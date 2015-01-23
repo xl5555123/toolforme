@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
+import android.text.Editable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -75,6 +76,7 @@ public class QueryClassFragment extends Fragment {
     }
 
     private void initView(View view) {
+        lessonName = (EditText) view.findViewById(R.id.lesson_name);
         termTextView = (TextView) view.findViewById(R.id.team);
         yearTextView = (TextView) view.findViewById(R.id.year);
         view.findViewById(R.id.team_selector).setOnClickListener(new View.OnClickListener() {
@@ -94,7 +96,7 @@ public class QueryClassFragment extends Fragment {
         view.findViewById(R.id.search).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String lesson = lessonName.getText().toString();
+                Editable lesson = lessonName.getText();
                 if (lesson == null || lesson.length() == 0) {
                     UIHelper.ToastMessage("请输入课程名");
                     return;

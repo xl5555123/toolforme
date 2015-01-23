@@ -75,7 +75,7 @@ public class FreeClassroomFragment extends Fragment {
     }
 
     private void initView(View view) {
-        buildingsName = (TextView) view.findViewById(R.id.buiding_name);
+        buildingsName = (TextView) view.findViewById(R.id.buidings_name);
         timeList = (TextView) view.findViewById(R.id.times_list);
         seletedBuidings = Lists.newArrayList();
         selectedTime = Lists.newArrayList();

@@ -78,7 +78,7 @@ public class FreeClassAdapter extends BaseAdapter implements StickyGridHeadersSi
         view = mInflater.inflate(R.layout.free_class_item, viewGroup, false);
         itemView = (TextView) view.findViewById(R.id.classroom_number);
         final ClassRoom item = getItem(i);
-        itemView.setText(classRooms.get(i).classroomNumber);
+        itemView.setText(String.format("%d", classRooms.get(i).classroomNumber));
 
         return view;
     }

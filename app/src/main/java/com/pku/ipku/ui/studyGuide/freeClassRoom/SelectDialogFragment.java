@@ -39,7 +39,6 @@ public class SelectDialogFragment extends DialogFragment {
 
     private String getTextAndSetResult() {
         StringBuilder builder = new StringBuilder();
-        itemToSelect.clear();
         for (int i = 0; i < itemToSelect.size(); i++) {
             if (ifAssigned[i]) {
                 builder.append(itemToSelect.get(i));
