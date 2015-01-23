@@ -8,8 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.pku.ipku.R;
-import com.pku.ipku.adapter.Person.StuScoreAdapter;
-import com.pku.ipku.adapter.pkuInfo.PkuJobAdapter;
+import com.pku.ipku.adapter.person.StuScoreAdapter;
 import com.pku.ipku.api.factory.IpkuServiceFactory;
 import com.pku.ipku.model.person.dto.ScoreDTO;
 import com.pku.ipku.task.LoadDataConfigure;

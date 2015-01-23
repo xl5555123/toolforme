@@ -1,4 +1,4 @@
-package com.pku.ipku.adapter.Person;
+package com.pku.ipku.adapter.person;
 
 import android.content.Context;
 import android.view.LayoutInflater;
