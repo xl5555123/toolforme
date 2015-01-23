@@ -3,12 +3,12 @@ package com.pku.ipku.model.person.dto;
 /**
  * Created by Allen on 2015/1/19.
  */
-public class ScholarshipDTO {
+public class ScholarShipDTO {
     private String scholarshipName;
     private String semester;
     private double money;
 
-    public ScholarshipDTO(String scholarshipName, String semester, double money) {
+    public ScholarShipDTO(String scholarshipName, String semester, double money) {
         this.scholarshipName = scholarshipName;
         this.semester = semester;
         this.money = money;

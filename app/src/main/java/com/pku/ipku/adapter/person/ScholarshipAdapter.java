@@ -8,7 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.pku.ipku.R;
-import com.pku.ipku.model.person.dto.ScholarshipDTO;
+import com.pku.ipku.model.person.dto.ScholarShipDTO;
 
 import java.util.List;
 
@@ -16,11 +16,11 @@ import java.util.List;
  * Created by Allen on 2015/1/22.
  */
 public class ScholarshipAdapter extends BaseAdapter {
-    private List<ScholarshipDTO> scholarshipDTOs;
+    private List<ScholarShipDTO> scholarshipDTOs;
     private final LayoutInflater listContainer;// 视图容器
     private Context context;
 
-    public ScholarshipAdapter(Context context, List<ScholarshipDTO> scholarshipDTOs) {
+    public ScholarshipAdapter(Context context, List<ScholarShipDTO> scholarshipDTOs) {
         this.scholarshipDTOs = scholarshipDTOs;
         this.context = context;
         this.listContainer = LayoutInflater.from(context); // 创建视图容器并设置上下文
@@ -43,7 +43,7 @@ public class ScholarshipAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        ScholarshipDTO scholarShip = scholarshipDTOs.get(i);
+        ScholarShipDTO scholarShip = scholarshipDTOs.get(i);
         view = listContainer.inflate(R.layout.scholarship_item, null);
 
         TextView scholarshipName = (TextView) view.findViewById(R.id.scholarship_name);
