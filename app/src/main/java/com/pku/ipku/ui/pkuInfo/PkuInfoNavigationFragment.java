@@ -33,7 +33,6 @@ public class PkuInfoNavigationFragment extends Fragment {
             add(new PkuNotice());
             add(new PkuLecture());
             add(new PkuNews());
-            add(new PkuClub());
             add(new PkuJob());
         }
     };

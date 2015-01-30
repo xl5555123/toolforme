@@ -4,6 +4,7 @@ import android.support.v4.app.Fragment;
 
 import com.pku.ipku.model.type.Fragmentable;
 import com.pku.ipku.ui.pkuInfo.PkuNoticeFragment;
+import com.pku.ipku.ui.pkuInfo.PkuPublicInfoFragment;
 
 /**
  * Created by XingLiang on 2014/12/16.
@@ -11,7 +12,7 @@ import com.pku.ipku.ui.pkuInfo.PkuNoticeFragment;
 public class PkuNotice implements Fragmentable {
     @Override
     public Fragment getAttachedFragment(String[] args) {
-        return new PkuNoticeFragment();
+        return PkuPublicInfoFragment.newInstance(PkuInfoType.PKU_NOTICES);
     }
 
     @Override

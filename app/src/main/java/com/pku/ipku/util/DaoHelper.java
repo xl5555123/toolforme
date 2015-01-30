@@ -61,7 +61,7 @@ public class DaoHelper {
         } else {
             return null;
         }
-        return DataHandleUtil.StringToObject(type, data);
+        return DataHandleUtil.stringToObject(type, data);
     }
 
     public static void saveData(String key, Object data) {

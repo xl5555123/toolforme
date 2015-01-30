@@ -52,7 +52,7 @@ public class DataHandleUtil {
         return null;
     }
 
-    public static <T> T StringToObject(final Class<T> type,
+    public static <T> T stringToObject(final Class<T> type,
                                        String jsonString) {
 
         T data = null;

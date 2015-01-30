@@ -1,5 +1,6 @@
 package com.pku.ipku.ui.navigation;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -10,9 +11,10 @@ import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
 import com.pku.ipku.R;
 import com.pku.ipku.ui.person.PersonNavigationFragment;
+import com.pku.ipku.ui.pkuInfo.PkuPublicInfoFragment;
 import com.pku.ipku.util.AppManager;
 
-public class Home extends SlidingFragmentActivity {
+public class Home extends SlidingFragmentActivity implements PkuPublicInfoFragment.OnFragmentInteractionListener {
     //当前页的内容
     private Fragment currrentContent;
 
@@ -80,5 +82,10 @@ public class Home extends SlidingFragmentActivity {
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 }

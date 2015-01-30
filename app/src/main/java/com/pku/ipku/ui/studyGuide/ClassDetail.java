@@ -2,7 +2,6 @@ package com.pku.ipku.ui.studyGuide;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -19,7 +18,7 @@ public class ClassDetail extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_class_detail);
         String lessonJson = getIntent().getStringExtra("lesson");
-        lesson = DataHandleUtil.StringToObject(Lesson.class, lessonJson);
+        lesson = DataHandleUtil.stringToObject(Lesson.class, lessonJson);
         initView();
     }
 

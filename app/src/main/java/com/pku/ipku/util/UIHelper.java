@@ -10,6 +10,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ArrayAdapter;
@@ -128,36 +129,17 @@ public class UIHelper {
     }
 
     /**
-     * webview content的默认设置
      *
      * @param webView
-     * @param content
+     * @param url
      */
-    public static void setWebViewContent(WebView webView, String content) {
-        webView.getSettings().setJavaScriptEnabled(false);
+    public static void setWebViewContent(WebView webView, String url) {
+        webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setSupportZoom(true);
         webView.getSettings().setBuiltInZoomControls(true);
         webView.getSettings().setDefaultFontSize(15);
-        String body = UIHelper.WEB_STYLE + content
-                + "<div style=\"margin-bottom: 80px\" />";
-        // 读取用户设置：是否加载文章图片--默认有wifi下始终加载图片
-        boolean isLoadImage;
-        if (SystemHelper.NET_TYPE_WIFI == SystemHelper.getNetworkType()) {
-            isLoadImage = true;
-        } else {
-            isLoadImage = PropertyHelper.isLoadImage();
-        }
-        if (isLoadImage) {
-            body = body.replaceAll(
-                    "(<img[^>]*?)\\s+width\\s*=\\s*\\S+", "$1");
-            body = body.replaceAll(
-                    "(<img[^>]*?)\\s+height\\s*=\\s*\\S+", "$1");
-        } else {
-            body = body.replaceAll("<\\s*img\\s+([^>]*)\\s*>", "");
-        }
-
-        webView.loadDataWithBaseURL(null, body, "text/html",
-                "utf-8", null);
+        webView.setInitialScale(100);
+        webView.loadUrl(url);
         webView.setWebViewClient(new WebViewClient());
     }
 

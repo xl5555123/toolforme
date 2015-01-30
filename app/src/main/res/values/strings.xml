@@ -69,5 +69,7 @@
     </string-array>
 
     <string name="title_activity_free_class_room_in_an_building">FreeClassRoomInAnBuilding</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_web_view">WebViewActivity</string>
 
 </resources>
