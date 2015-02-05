@@ -1,0 +1,58 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.pku.ipku.ui.navigation.MainNavigationActivity">
+
+    <FrameLayout
+        android:id="@+id/content"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></FrameLayout>
+    
+    <LinearLayout
+        android:focusable="false"
+        android:background="#59b89c"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+
+        <ImageButton
+            android:id="@+id/home_button"
+            android:focusable="true"
+            android:paddingLeft="26dp"
+            android:paddingRight="26dp"
+            android:layout_width="90dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/navigation_selector"
+            android:src="@drawable/home"/>
+
+        <ImageButton
+            android:id="@+id/student_button"
+            android:paddingLeft="26dp"
+            android:paddingRight="26dp"
+            android:layout_width="90dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/navigation_selector"
+            android:src="@drawable/person"/>
+
+        <ImageButton
+            android:id="@+id/school_button"
+            android:paddingLeft="26dp"
+            android:paddingRight="26dp"
+            android:layout_width="90dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/navigation_selector"
+            android:src="@drawable/school"/>
+
+        <ImageButton
+            android:id="@+id/setting_button"
+            android:paddingLeft="26dp"
+            android:paddingRight="26dp"
+            android:layout_width="90dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/navigation_selector"
+            android:src="@drawable/setting"/>
+
+    </LinearLayout>
+</RelativeLayout>

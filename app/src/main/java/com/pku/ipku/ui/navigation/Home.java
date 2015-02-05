@@ -10,11 +10,10 @@ import android.view.MenuItem;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
 import com.pku.ipku.R;
-import com.pku.ipku.ui.person.PersonNavigationFragment;
-import com.pku.ipku.ui.pkuInfo.PkuPublicInfoFragment;
+import com.pku.ipku.ui.pkuInfo.PkuPublicInfoActivity;
 import com.pku.ipku.util.AppManager;
 
-public class Home extends SlidingFragmentActivity implements PkuPublicInfoFragment.OnFragmentInteractionListener {
+public class Home extends SlidingFragmentActivity {
     //当前页的内容
     private Fragment currrentContent;
 
@@ -36,8 +35,6 @@ public class Home extends SlidingFragmentActivity implements PkuPublicInfoFragme
     }
 
     private void initVariables() {
-        if (currrentContent == null)
-            currrentContent = new PersonNavigationFragment();
     }
 
 
@@ -49,8 +46,6 @@ public class Home extends SlidingFragmentActivity implements PkuPublicInfoFragme
 
         setBehindContentView(R.layout.menu_frame);
         FragmentTransaction leftFragmentTransaction = getSupportFragmentManager().beginTransaction();
-        leftFragmentTransaction.replace(R.id.menu_frame, new HomeMenuFragment()).commit();
-
         slidingMenu = getSlidingMenu();
         slidingMenu.setMode(SlidingMenu.LEFT);
         slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
@@ -82,10 +77,5 @@ public class Home extends SlidingFragmentActivity implements PkuPublicInfoFragme
                 break;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public void onFragmentInteraction(Uri uri) {
-
     }
 }

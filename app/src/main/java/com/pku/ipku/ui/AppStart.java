@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.pku.ipku.R;
+import com.pku.ipku.ui.account.LoginActivity;
 import com.pku.ipku.ui.navigation.Home;
 import com.pku.ipku.util.AppContextHolder;
 
@@ -29,7 +30,7 @@ public class AppStart extends Activity {
      * TODO redirect to Login page or Navigation Page ?
      */
     private void redirectTo() {
-        Intent intent = new Intent(this, Home.class);
+        Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
         finish();
     }

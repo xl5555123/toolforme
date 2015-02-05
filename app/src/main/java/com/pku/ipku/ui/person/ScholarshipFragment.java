@@ -36,7 +36,7 @@ public class ScholarshipFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_scholarship, container, false);
+        View view = inflater.inflate(R.layout.activity_scholarship, container, false);
         scholarshipListView = (ListView)view.findViewById(R.id.scholarship_list);
         appContext = (AppContext)getActivity().getApplicationContext();
         new LoadDataDefaultTask(new LoadScholarShipConfigure()).execute();

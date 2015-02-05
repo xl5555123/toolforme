@@ -36,7 +36,7 @@ public class LibStateFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_lib_state, container, false);
+        View view = inflater.inflate(R.layout.activity_library, container, false);
         bookListView = (ListView)view.findViewById(R.id.lib_book_listview);
         appContext = (AppContext)getActivity().getApplicationContext();
         new LoadDataDefaultTask(new LoadLibStateConfigure()).execute();

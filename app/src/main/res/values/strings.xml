@@ -71,5 +71,10 @@
     <string name="title_activity_free_class_room_in_an_building">FreeClassRoomInAnBuilding</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_web_view">WebViewActivity</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_main_navigation">MainNavigationActivity</string>
+    <string name="title_activity_home_fragment">HomeFragment</string>
+    <string name="title_activity_person_fragment">PersonFragment</string>
+    <string name="title_activity_person_info">PersonInfoActivity</string>
 
 </resources>

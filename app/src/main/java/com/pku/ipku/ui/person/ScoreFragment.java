@@ -36,7 +36,7 @@ public class ScoreFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_score, container, false);
+        View view = inflater.inflate(R.layout.activity_score, container, false);
         scoreListView = (ListView) view.findViewById(R.id.scoreListView);
         appContext = (AppContext)getActivity().getApplicationContext();
         new LoadDataDefaultTask(new LoadScoreConfigure()).execute();

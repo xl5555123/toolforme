@@ -4,7 +4,6 @@ import com.pku.ipku.api.StudyGuideService;
 import com.pku.ipku.api.mock.studyGuide.MockCurriculum;
 import com.pku.ipku.api.mock.studyGuide.MockFreeClassrooms;
 import com.pku.ipku.api.mock.studyGuide.MockLesson;
-import com.pku.ipku.model.studyguide.FreeClassroom;
 import com.pku.ipku.model.studyguide.Lesson;
 import com.pku.ipku.model.studyguide.dto.CurriculumDTO;
 

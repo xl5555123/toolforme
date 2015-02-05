@@ -2,7 +2,9 @@ package com.pku.ipku.model.pkuInfo;
 
 import com.pku.ipku.model.pkuInfo.dto.PkuPublicInfo;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by XingLiang on 2015/1/26.
@@ -13,6 +15,15 @@ public class PkuInfoType {
     public final static String PKU_NOTICES = "pku_notices";
     public final static String PKU_LECTURES = "pku_lectures";
     public final static String PKU_CAREER = "pku_career";
+
+    private Map<String, String> titles = new HashMap<String, String>() {
+        {
+            put(PKU_NEWS, "学校新闻");
+            put(PKU_NOTICES, "学校通知");
+            put(PKU_LECTURES, "校内讲座");
+            put(PKU_CAREER, "招聘信息");
+        }
+    };
 
     private String type;
     private String title;
@@ -51,6 +62,9 @@ public class PkuInfoType {
     }
 
     public String getTitle() {
+        if (title == null) {
+            return titles.get(type);
+        }
         return title;
     }
 

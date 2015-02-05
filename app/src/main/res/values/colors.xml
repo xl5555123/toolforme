@@ -142,6 +142,7 @@
     <color name="graywhite">#F5F5F5</color>
     <color name="grayslate">#708090</color>
     <color name="lightblue">#0083FF</color>
+    <color name="darkgreen">#2B7765</color>
     <color name="full_transparent">#00000000</color>
     <color name="half_transparent">#aa000000</color>
     <color name="bright_foreground_light">#ff000000</color>

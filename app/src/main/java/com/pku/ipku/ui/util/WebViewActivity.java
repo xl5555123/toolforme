@@ -5,8 +5,6 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.Window;
-import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
@@ -15,25 +13,26 @@ import com.alamkanak.weekview.WeekView;
 import com.pku.ipku.R;
 import com.pku.ipku.util.UIHelper;
 
-public class WebViewActivity extends ActionBarActivity {
+public class WebViewActivity extends BaseActivityIncludingFooterNavigation {
 
     private WebView webView;
     private String url;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web_view);
+        if (savedInstanceState == null) {
+            savedInstanceState = new Bundle();
+        }
         url = getIntent().getStringExtra("url");
         String title = getIntent().getStringExtra("title");
-        getActionBar().setDisplayHomeAsUpEnabled(true);
-        getActionBar().setDisplayHomeAsUpEnabled(true);
         if (title != null) {
-            getActionBar().setTitle(title);
+            savedInstanceState.putString("title", "成绩查询");
         }
         else {
-            getActionBar().setTitle("IPKU");
+            savedInstanceState.putString("title", "IPKU");
         }
+        super.onCreate(savedInstanceState);
         webView = (WebView) findViewById(R.id.webview);
 
         UIHelper.setWebViewContent(webView, url);

@@ -1,7 +1,5 @@
 package com.pku.ipku.model.pkuInfo.dto;
 
-import com.pku.ipku.model.pkuInfo.PkuLecture;
-
 import java.util.Date;
 
 /**

@@ -1,19 +1,104 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.pku.ipku.ui.person.PersonNavigationFragment">
+    android:background="#8c8783"
+    tools:context="com.pku.ipku.ui.navigation.PersonFragment">
 
-    <com.viewpagerindicator.TabPageIndicator
-        android:id="@+id/titles"
-        android:layout_height="wrap_content"
-        android:layout_width="fill_parent" />
 
-    <android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/pager"
-        android:layout_weight="1"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent" />
 
-</LinearLayout>
+    <RelativeLayout
+        android:layout_marginBottom="70dp"
+        android:id="@+id/grid"
+        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/user_class_button"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/user_class"
+            android:layout_width="80dp"
+            android:layout_height="80dp" />
+
+
+        <ImageButton
+            android:id="@+id/user_class_result_button"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/user_class_button"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/user_result"
+            android:layout_width="80dp"
+            android:layout_height="80dp" />
+
+        <ImageButton
+            android:id="@+id/user_money_button"
+            android:layout_marginRight="8dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/user_money"
+            android:layout_width="80dp"
+            android:layout_height="80dp" />
+
+
+        <ImageButton
+            android:id="@+id/user_classroom_button"
+            android:layout_marginRight="8dp"
+            android:layout_toLeftOf="@id/user_money_button"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/user_classroom"
+            android:layout_width="80dp"
+            android:layout_height="80dp" />
+
+        <ImageButton
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:id="@+id/person_info_button"
+            android:layout_above="@id/user_class_button"
+            android:src="@drawable/person_info_button"
+            android:layout_width="80dp"
+            android:layout_height="80dp" />
+
+        <ImageButton
+            android:id="@+id/scholarship_button"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/person_info_button"
+            android:layout_above="@id/user_class_button"
+            android:src="@drawable/user_scholar"
+            android:layout_width="80dp"
+            android:layout_height="80dp" />
+
+        <ImageButton
+            android:id="@+id/library_button"
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_alignParentRight="true"
+            android:layout_above="@id/user_class_button"
+            android:src="@drawable/user_library"
+            android:layout_width="80dp"
+            android:layout_height="80dp" />
+
+        <ImageButton
+            android:id="@+id/user_grade_button"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_toLeftOf="@id/library_button"
+            android:layout_above="@id/user_class_button"
+            android:src="@drawable/user_grade"
+            android:layout_width="80dp"
+            android:layout_height="80dp" />
+
+
+
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/grid"
+        android:src="@drawable/person_background" />
+</RelativeLayout>
