@@ -1,12 +1,13 @@
 package com.pku.ipku.ui.person;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.ListView;
 
 import com.pku.ipku.R;
-import com.pku.ipku.adapter.person.LibStateAdapter;
 import com.pku.ipku.api.factory.IpkuServiceFactory;
 import com.pku.ipku.model.person.dto.LibBorrowDTO;
+import com.pku.ipku.model.person.navigation.RegisterInPersonPage;
 import com.pku.ipku.task.LoadDataConfigure;
 import com.pku.ipku.task.LoadDataDefaultTask;
 import com.pku.ipku.ui.AppContext;
@@ -17,7 +18,7 @@ import java.util.List;
 /**
  * Created by XingLiang on 2015/2/5.
  */
-public class LibraryActivity extends BaseActivityIncludingFooterNavigation {
+public class LibraryActivity extends BaseActivityIncludingFooterNavigation implements RegisterInPersonPage {
 
     private List<LibBorrowDTO> bookList;
     private ListView bookListView;
@@ -29,18 +30,33 @@ public class LibraryActivity extends BaseActivityIncludingFooterNavigation {
         if (savedInstanceState == null) {
             savedInstanceState = new Bundle();
         }
-        savedInstanceState.putString("title", "图书馆");
+        savedInstanceState.putString("title", getPageTitle());
         super.onCreate(savedInstanceState);
         bookListView = (ListView) findViewById(R.id.lib_book_listview);
         appContext = (AppContext) getApplicationContext();
         new LoadDataDefaultTask(new LoadLibStateConfigure()).execute();
     }
 
+    @Override
+    public int getPageDrawableId() {
+        return R.drawable.user_library;
+    }
+
+    @Override
+    public String getPageTitle() {
+        return "图书馆";
+    }
+
+    @Override
+    public Class attachedClassType() {
+        return LibraryActivity.class;
+    }
+
     private class LoadLibStateConfigure implements LoadDataConfigure {
 
         @Override
         public void showData() {
-            bookListView.setAdapter(new LibStateAdapter(appContext, bookList));
+            bookListView.setAdapter(new com.pku.ipku.adapter.person.LibStateAdapter(appContext, bookList));
         }
 
         @Override

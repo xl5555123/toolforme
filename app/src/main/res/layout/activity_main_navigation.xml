@@ -11,18 +11,18 @@
     
     <LinearLayout
         android:focusable="false"
-        android:background="#59b89c"
+        android:background="#514841"
         android:orientation="horizontal"
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
-        android:layout_height="48dp">
+        android:layout_height="44dp">
 
         <ImageButton
             android:id="@+id/home_button"
             android:focusable="true"
             android:paddingLeft="26dp"
             android:paddingRight="26dp"
-            android:layout_width="90dp"
+            android:layout_width="81dp"
             android:layout_height="match_parent"
             android:background="@drawable/navigation_selector"
             android:src="@drawable/home"/>
@@ -31,7 +31,7 @@
             android:id="@+id/student_button"
             android:paddingLeft="26dp"
             android:paddingRight="26dp"
-            android:layout_width="90dp"
+            android:layout_width="81dp"
             android:layout_height="match_parent"
             android:background="@drawable/navigation_selector"
             android:src="@drawable/person"/>
@@ -40,7 +40,7 @@
             android:id="@+id/school_button"
             android:paddingLeft="26dp"
             android:paddingRight="26dp"
-            android:layout_width="90dp"
+            android:layout_width="81dp"
             android:layout_height="match_parent"
             android:background="@drawable/navigation_selector"
             android:src="@drawable/school"/>
@@ -49,7 +49,7 @@
             android:id="@+id/setting_button"
             android:paddingLeft="26dp"
             android:paddingRight="26dp"
-            android:layout_width="90dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/navigation_selector"
             android:src="@drawable/setting"/>

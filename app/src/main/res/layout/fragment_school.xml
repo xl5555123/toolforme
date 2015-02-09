@@ -1,60 +1,17 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#8c8783"
+    android:background="#b9b9b9"
+    android:paddingLeft="19dp"
+    android:paddingRight="19dp"
+    android:paddingBottom="135dp"
+    android:paddingTop="135dp"
     tools:context="com.pku.ipku.ui.navigation.PersonFragment">
 
-    <ImageView
+    <GridView
+        android:id="@+id/icon"
+        android:numColumns="3"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@id/grid"
-        android:src="@drawable/person_background" />
+        android:layout_height="match_parent"></GridView>
 
-    <RelativeLayout
-        android:layout_marginBottom="70dp"
-        android:id="@+id/grid"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <ImageButton
-            android:id="@+id/school_news_button"
-            android:layout_marginTop="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_alignParentTop="true"
-            android:src="@drawable/college_news"
-            android:layout_width="80dp"
-            android:layout_height="80dp" />
-
-        <ImageButton
-            android:id="@+id/school_notification_button"
-            android:layout_marginTop="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_toRightOf="@id/school_news_button"
-            android:layout_alignParentTop="true"
-            android:src="@drawable/college_inform"
-            android:layout_width="80dp"
-            android:layout_height="80dp" />
-
-        <ImageButton
-            android:id="@+id/school_job_button"
-            android:layout_marginTop="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:src="@drawable/college_job"
-            android:layout_width="80dp"
-            android:layout_height="80dp" />
-
-        <ImageButton
-            android:id="@+id/school_lecture_button"
-            android:layout_marginTop="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_toLeftOf="@id/school_job_button"
-            android:layout_alignParentTop="true"
-            android:src="@drawable/college_lecture"
-            android:layout_width="80dp"
-            android:layout_height="80dp" />
-    </RelativeLayout>
 </RelativeLayout>

@@ -8,11 +8,17 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.GridView;
 
 import com.pku.ipku.R;
+import com.pku.ipku.adapter.navigation.SchoolNavigationAdapter;
 import com.pku.ipku.model.pkuInfo.PkuInfoType;
 import com.pku.ipku.model.pkuInfo.dto.PkuPublicInfo;
 import com.pku.ipku.ui.pkuInfo.PkuPublicInfoActivity;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,7 +27,18 @@ import com.pku.ipku.ui.pkuInfo.PkuPublicInfoActivity;
  */
 public class SchoolFragment extends Fragment {
 
+    private final static List<PkuInfoType> pkuInfoTypeList = new ArrayList<PkuInfoType>() {
+        {
+            add(new PkuInfoType(PkuInfoType.PKU_NEWS));
+            add(new PkuInfoType(PkuInfoType.PKU_NOTICES));
+            add(new PkuInfoType(PkuInfoType.PKU_LECTURES));
+            add(new PkuInfoType(PkuInfoType.PKU_CAREER));
+        }
+    };
+
     private Activity parentActivity;
+
+    private GridView icon;
 
     // TODO: Rename and change types and number of parameters
     public static SchoolFragment newInstance() {
@@ -57,6 +74,20 @@ public class SchoolFragment extends Fragment {
 
     private void initView(View view) {
         parentActivity = getActivity();
+        icon = (GridView) view.findViewById(R.id.icon);
+        icon.setAdapter(new SchoolNavigationAdapter(parentActivity, pkuInfoTypeList));
+        icon.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                PkuInfoType pkuInfoType = (PkuInfoType) view.getTag();
+                if (pkuInfoType != null) {
+                    Intent intent = new Intent(parentActivity, PkuPublicInfoActivity.class);
+                    intent.putExtra("type", pkuInfoType.getType());
+                    startActivity(intent);
+                }
+            }
+        });
+        /*
         view.findViewById(R.id.school_news_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,6 +120,7 @@ public class SchoolFragment extends Fragment {
                 startActivity(intent);
             }
         });
+         */
     }
 
 

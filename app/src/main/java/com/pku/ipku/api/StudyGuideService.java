@@ -1,6 +1,5 @@
 package com.pku.ipku.api;
 
-import com.pku.ipku.model.studyguide.Curriculum;
 import com.pku.ipku.model.studyguide.Lesson;
 import com.pku.ipku.model.studyguide.dto.CurriculumDTO;
 

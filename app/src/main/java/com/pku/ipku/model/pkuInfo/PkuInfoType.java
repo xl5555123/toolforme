@@ -1,5 +1,6 @@
 package com.pku.ipku.model.pkuInfo;
 
+import com.pku.ipku.R;
 import com.pku.ipku.model.pkuInfo.dto.PkuPublicInfo;
 
 import java.util.HashMap;
@@ -22,6 +23,15 @@ public class PkuInfoType {
             put(PKU_NOTICES, "学校通知");
             put(PKU_LECTURES, "校内讲座");
             put(PKU_CAREER, "招聘信息");
+        }
+    };
+
+    private Map<String, Integer> icons = new HashMap<String, Integer>() {
+        {
+            put(PKU_NEWS, R.drawable.college_news);
+            put(PKU_NOTICES, R.drawable.college_inform);
+            put(PKU_LECTURES, R.drawable.college_lecture);
+            put(PKU_CAREER, R.drawable.college_job);
         }
     };
 
@@ -48,9 +58,8 @@ public class PkuInfoType {
         return type.equals(PKU_CAREER);
     }
 
-    public PkuInfoType(String type, String title) {
+    public PkuInfoType(String type) {
         this.type = type;
-        this.title = title;
     }
 
     public String getType() {
@@ -62,13 +71,15 @@ public class PkuInfoType {
     }
 
     public String getTitle() {
-        if (title == null) {
-            return titles.get(type);
-        }
-        return title;
+        return titles.get(type);
     }
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public Integer getIconId() {
+        return icons.get(type);
+
     }
 }

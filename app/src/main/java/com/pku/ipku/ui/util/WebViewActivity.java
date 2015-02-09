@@ -1,15 +1,10 @@
 package com.pku.ipku.ui.util;
 
-import android.app.Activity;
-import android.support.v7.app.ActionBarActivity;
+
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import android.widget.Toast;
 
-import com.alamkanak.weekview.WeekView;
 import com.pku.ipku.R;
 import com.pku.ipku.util.UIHelper;
 

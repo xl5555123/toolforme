@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
-
     <style name="TodoEditHeaderText">
         <item name="android:textSize">20sp</item>
         <item name="android:textColor">@color/black</item>
@@ -29,7 +28,7 @@
     </style>
 
     <style name="ListSubtitleText" parent="SubtitleText"></style>
-
+<!--
     <style name="ipku.tab.style" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="vpiTabPageIndicatorStyle">@style/tabPageIndicator</item>
     </style>
@@ -50,7 +49,7 @@
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/black</item>
     </style>
-
+-->
     <!-- class_detail_style -->
     <style name="class_detail_blue_title">
         <item name="android:textSize">15sp</item>

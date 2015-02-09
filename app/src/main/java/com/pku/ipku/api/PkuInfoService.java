@@ -3,7 +3,6 @@ package com.pku.ipku.api;
 import com.pku.ipku.model.pkuInfo.PkuInfoType;
 import com.pku.ipku.model.pkuInfo.dto.PkuClubDTO;
 import com.pku.ipku.model.pkuInfo.dto.PkuJobDTO;
-import com.pku.ipku.model.pkuInfo.dto.PkuLectureDTO;
 import com.pku.ipku.model.pkuInfo.dto.PkuPublicInfo;
 
 import org.springframework.web.client.RestClientException;

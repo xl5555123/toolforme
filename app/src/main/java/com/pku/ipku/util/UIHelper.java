@@ -19,12 +19,7 @@ import android.widget.ListView;
 import android.widget.SpinnerAdapter;
 import android.widget.Toast;
 
-import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
-import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
 import com.pku.ipku.R;
-import com.pku.ipku.adapter.PagerAdapter;
-import com.pku.ipku.model.type.Fragmentable;
-import com.viewpagerindicator.TabPageIndicator;
 
 import java.util.Date;
 import java.util.List;
@@ -160,55 +155,4 @@ public class UIHelper {
                 + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
         listView.setLayoutParams(params);
     }
-
-    public static void setUpActionBarWithNoNavigation(ActionBar actionBar, String title) {
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
-        actionBar.setHomeButtonEnabled(true);
-        actionBar.setTitle(title);
-        actionBar.removeAllTabs();
-    }
-
-    public static void setUpActionBarWithNavigation(ActionBar actionBar, String title, final FragmentActivity activity, final List<Fragmentable> fragmentableList) {
-        actionBar.setHomeButtonEnabled(true);
-        actionBar.setTitle(title);
-        actionBar.setNavigationMode(android.app.ActionBar.NAVIGATION_MODE_LIST);
-        SpinnerAdapter spinnerAdapter = new ArrayAdapter<String>(activity, R.layout.navigation_bar_list_item, DataHandleUtil.getFragmentablesChineseNameList(fragmentableList));
-        actionBar.setListNavigationCallbacks(spinnerAdapter, new android.app.ActionBar.OnNavigationListener() {
-            @Override
-            public boolean onNavigationItemSelected(int itemPosition, long itemId) {
-                Fragmentable fragmentable = fragmentableList.get(itemPosition);
-                android.support.v4.app.FragmentTransaction transaction = activity.getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.content_frame, fragmentable.getAttachedFragment(null)).commit();
-                return true;
-            }
-        });
-    }
-
-    public static void setUpTab(final SlidingFragmentActivity activity, FragmentManager fragmentManager, ViewPager viewPager, TabPageIndicator tabPageIndicator, List<Fragmentable> fragmentables) {
-
-        viewPager.setAdapter(new PagerAdapter(fragmentManager, fragmentables));
-        tabPageIndicator.setViewPager(viewPager);
-        tabPageIndicator.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-                if (position == 0) {
-                    activity.getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
-                } else {
-                    activity.getSlidingMenu().setTouchModeAbove(SlidingMenu.TOUCHMODE_MARGIN);
-                }
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        });
-    }
-
-
 }

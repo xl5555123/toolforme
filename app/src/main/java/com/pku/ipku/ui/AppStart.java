@@ -7,7 +7,6 @@ import android.view.View;
 
 import com.pku.ipku.R;
 import com.pku.ipku.ui.account.LoginActivity;
-import com.pku.ipku.ui.navigation.Home;
 import com.pku.ipku.util.AppContextHolder;
 
 /**

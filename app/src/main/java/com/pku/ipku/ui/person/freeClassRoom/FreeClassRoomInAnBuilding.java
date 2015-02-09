@@ -1,6 +1,6 @@
 package com.pku.ipku.ui.person.freeClassRoom;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class FreeClassRoomInAnBuilding extends ActionBarActivity {
+public class FreeClassRoomInAnBuilding extends Activity {
 
     private ArrayList<String> seletedBuidings;
     private ArrayList<String> selectedTime;
@@ -69,22 +69,5 @@ public class FreeClassRoomInAnBuilding extends ActionBarActivity {
 
             }
         }).execute();
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_free_class_room_in_an_building, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                break;
-        }
-        return true;
     }
 }

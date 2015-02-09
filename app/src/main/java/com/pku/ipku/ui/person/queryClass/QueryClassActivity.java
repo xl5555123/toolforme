@@ -3,6 +3,7 @@ package com.pku.ipku.ui.person.queryClass;
 import android.app.Activity;
 import android.app.DialogFragment;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 
 import com.pku.ipku.R;
 import com.pku.ipku.api.factory.IpkuServiceFactory;
+import com.pku.ipku.model.person.navigation.RegisterInPersonPage;
 import com.pku.ipku.model.studyguide.Lesson;
 import com.pku.ipku.task.LoadDataConfigure;
 import com.pku.ipku.task.LoadDataDefaultTask;
@@ -22,7 +24,7 @@ import com.pku.ipku.util.UIHelper;
 import java.util.ArrayList;
 import java.util.List;
 
-public class QueryClassActivity extends BaseActivityIncludingFooterNavigation {
+public class QueryClassActivity extends BaseActivityIncludingFooterNavigation implements RegisterInPersonPage{
 
     private String term;
     private String year;
@@ -66,7 +68,7 @@ public class QueryClassActivity extends BaseActivityIncludingFooterNavigation {
         if (savedInstanceState == null) {
             savedInstanceState = new Bundle();
         }
-        savedInstanceState.putString("title", "课程查询");
+        savedInstanceState.putString("title", getPageTitle());
         super.onCreate(savedInstanceState);
         initView();
     }
@@ -134,5 +136,18 @@ public class QueryClassActivity extends BaseActivityIncludingFooterNavigation {
         }).execute();
     }
 
+    @Override
+    public int getPageDrawableId() {
+        return R.drawable.user_class;
+    }
 
+    @Override
+    public String getPageTitle() {
+        return "课程查询";
+    }
+
+    @Override
+    public Class attachedClassType() {
+        return QueryClassActivity.class;
+    }
 }

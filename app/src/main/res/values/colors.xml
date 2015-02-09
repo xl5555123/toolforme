@@ -165,6 +165,7 @@
     <color name="listitem_green">#ffe3ffc6</color>
     <color name="listitem_greenyellow">#ff87b869</color>
     <color name="listitem_yellow">#fffaffbf</color>
+    <color name="footer_red">#de6d4e</color>
 
     <drawable name="ab_bg_black">#aa000000</drawable>
 
@@ -240,6 +241,5 @@
     <color name="project_yellow">#f2e04c</color>
     <color name="project_red">#ff897c</color>
     <color name="project_blue">#66c5cf</color>
-
 
 </resources>

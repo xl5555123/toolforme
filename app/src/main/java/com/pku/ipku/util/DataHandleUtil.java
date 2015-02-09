@@ -4,7 +4,6 @@ package com.pku.ipku.util;
 import android.util.Log;
 
 import com.google.common.collect.Lists;
-import com.pku.ipku.model.type.Fragmentable;
 
 import org.codehaus.jackson.map.DeserializationConfig;
 import org.codehaus.jackson.map.ObjectMapper;
@@ -86,14 +85,6 @@ public class DataHandleUtil {
         Map<String, Object> params = m.convertValue(object, Map.class);
 
         return params;
-    }
-
-    public static List<String> getFragmentablesChineseNameList(List<Fragmentable> fragmentables) {
-        List<String> result = Lists.newArrayList();
-        for (Fragmentable fragmentable : fragmentables) {
-            result.add(fragmentable.getChineseName());
-        }
-        return result;
     }
 
 

@@ -9,7 +9,6 @@ import android.widget.TextView;
 import com.google.common.collect.Lists;
 import com.pku.ipku.R;
 import com.pku.ipku.util.AppContextHolder;
-import com.pku.ipku.util.BitmapManager;
 import com.tonicartos.widget.stickygridheaders.StickyGridHeadersSimpleAdapter;
 
 import java.util.List;

@@ -8,9 +8,12 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.AdapterView;
+import android.widget.GridView;
 
 import com.pku.ipku.R;
+import com.pku.ipku.adapter.navigation.PersonNavigationAdapter;
+import com.pku.ipku.model.person.navigation.RegisterInPersonPage;
 import com.pku.ipku.ui.person.ArrearageStateActivity;
 import com.pku.ipku.ui.person.LibraryActivity;
 import com.pku.ipku.ui.person.PersonInfoActivity;
@@ -18,7 +21,9 @@ import com.pku.ipku.ui.person.ScholarshipActivity;
 import com.pku.ipku.ui.person.ScoreActivity;
 import com.pku.ipku.ui.person.freeClassRoom.FreeClassroomActivity;
 import com.pku.ipku.ui.person.queryClass.QueryClassActivity;
-import com.pku.ipku.util.UIHelper;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -26,6 +31,18 @@ import com.pku.ipku.util.UIHelper;
  * create an instance of this fragment.
  */
 public class PersonFragment extends Fragment {
+
+    private final static List<RegisterInPersonPage> registerInPersonPageList = new ArrayList<RegisterInPersonPage>() {
+        {
+            add(new PersonInfoActivity());
+            add(new ScoreActivity());
+            add(new QueryClassActivity());
+            add(new FreeClassroomActivity());
+            add(new ScholarshipActivity());
+            add(new LibraryActivity());
+            add(new ArrearageStateActivity());
+        }
+    };
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -36,6 +53,8 @@ public class PersonFragment extends Fragment {
     private String mParam2;
 
     private Activity parentActivity;
+
+    private GridView navigationGridView;
 
     public static PersonFragment newInstance() {
         PersonFragment fragment = new PersonFragment();
@@ -57,59 +76,18 @@ public class PersonFragment extends Fragment {
 
     private void initView(View view) {
         parentActivity = getActivity();
-        view.findViewById(R.id.person_info_button).setOnClickListener(new View.OnClickListener() {
+        navigationGridView = (GridView) view.findViewById(R.id.navigation_grid);
+        navigationGridView.setAdapter(new PersonNavigationAdapter(parentActivity, registerInPersonPageList));
+        navigationGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(parentActivity, PersonInfoActivity.class);
-                startActivity(intent);
-            }
-        });
-        view.findViewById(R.id.scholarship_button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(parentActivity, ScholarshipActivity.class);
-                startActivity(intent);
-            }
-        });
-        view.findViewById(R.id.user_grade_button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(parentActivity, ScoreActivity.class);
-                startActivity(intent);
-            }
-        });
-        view.findViewById(R.id.library_button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(parentActivity, LibraryActivity.class);
-                startActivity(intent);
-            }
-        });
-        view.findViewById(R.id.user_class_button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(parentActivity, QueryClassActivity.class);
-                startActivity(intent);
-            }
-        });
-        view.findViewById(R.id.user_classroom_button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(parentActivity, FreeClassroomActivity.class);
-                startActivity(intent);
-            }
-        });
-        view.findViewById(R.id.user_money_button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(parentActivity, ArrearageStateActivity.class);
-                startActivity(intent);
-            }
-        });
-        view.findViewById(R.id.user_class_result_button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                UIHelper.ToastMessage("尽请期待");
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                RegisterInPersonPage registerInPersonPage = (RegisterInPersonPage) view.getTag();
+                if (registerInPersonPage != null) {
+                    Intent intent = new Intent(parentActivity, registerInPersonPage.attachedClassType());
+                    if (intent != null) {
+                        startActivity(intent);
+                    }
+                }
             }
         });
     }

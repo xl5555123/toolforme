@@ -17,13 +17,13 @@ allprojects {
     repositories {
         maven { url "http://jzaccone.github.io/SlidingMenu-aar" }
         maven { url "http://dl.bintray.com/populov/maven" }
-        maven {
-            credentials {
-                username 'deployment'
-                password 'sercxtyf'
-            }
-            url "http://dev.elevenframework.org/nexus/content/groups/public"
-        }
         mavenCentral()
+        //maven {
+          //  credentials {
+            //    username 'deployment'
+              //  password 'sercxtyf'
+            //}
+            //url "http://dev.elevenframework.org/nexus/content/groups/public"
+        //}
     }
 }

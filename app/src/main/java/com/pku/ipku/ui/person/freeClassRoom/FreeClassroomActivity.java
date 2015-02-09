@@ -3,18 +3,20 @@ package com.pku.ipku.ui.person.freeClassRoom;
 
 import android.app.DialogFragment;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
 import com.google.common.collect.Lists;
 import com.pku.ipku.R;
+import com.pku.ipku.model.person.navigation.RegisterInPersonPage;
 import com.pku.ipku.ui.util.BaseActivityIncludingFooterNavigation;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class FreeClassroomActivity extends BaseActivityIncludingFooterNavigation {
+public class FreeClassroomActivity extends BaseActivityIncludingFooterNavigation implements RegisterInPersonPage {
 
     private List<String> buildingNames = new ArrayList<String>() {
         {
@@ -96,4 +98,18 @@ public class FreeClassroomActivity extends BaseActivityIncludingFooterNavigation
         });
     }
 
+    @Override
+    public int getPageDrawableId() {
+        return R.drawable.user_classroom;
+    }
+
+    @Override
+    public String getPageTitle() {
+        return "空闲教室";
+    }
+
+    @Override
+    public Class attachedClassType() {
+        return FreeClassroomActivity.class;
+    }
 }
