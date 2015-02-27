@@ -76,5 +76,7 @@
     <string name="title_activity_home_fragment">HomeFragment</string>
     <string name="title_activity_person_fragment">PersonFragment</string>
     <string name="title_activity_person_info">PersonInfoActivity</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_library_search_result">LibrarySearchResultActivity</string>
 
 </resources>

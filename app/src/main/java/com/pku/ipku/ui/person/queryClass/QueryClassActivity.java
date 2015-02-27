@@ -1,9 +1,7 @@
 package com.pku.ipku.ui.person.queryClass;
 
-import android.app.Activity;
 import android.app.DialogFragment;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.view.View;
@@ -24,7 +22,7 @@ import com.pku.ipku.util.UIHelper;
 import java.util.ArrayList;
 import java.util.List;
 
-public class QueryClassActivity extends BaseActivityIncludingFooterNavigation implements RegisterInPersonPage{
+public class QueryClassActivity extends BaseActivityIncludingFooterNavigation implements RegisterInPersonPage {
 
     private String term;
     private String year;

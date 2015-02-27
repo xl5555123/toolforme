@@ -1,6 +1,5 @@
 package com.pku.ipku.ui.person;
 
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.ListView;
 

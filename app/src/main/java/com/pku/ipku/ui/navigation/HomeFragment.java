@@ -1,9 +1,7 @@
 package com.pku.ipku.ui.navigation;
 
-import android.app.Activity;
-import android.net.Uri;
-import android.os.Bundle;
 import android.app.Fragment;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,6 +26,10 @@ public class HomeFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    public HomeFragment() {
+        // Required empty public constructor
+    }
+
     public static HomeFragment newInstance() {
         HomeFragment fragment = new HomeFragment();
         //Bundle args = new Bundle();
@@ -35,10 +37,6 @@ public class HomeFragment extends Fragment {
         //args.putString(ARG_PARAM2, param2);
         //fragment.setArguments(args);
         return fragment;
-    }
-
-    public HomeFragment() {
-        // Required empty public constructor
     }
 
     @Override

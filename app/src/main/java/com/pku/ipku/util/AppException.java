@@ -53,6 +53,39 @@ public class AppException extends Exception implements UncaughtExceptionHandler 
         }
     }
 
+    public static AppException http(int code) {
+        return new AppException(TYPE_HTTP_CODE, code, null);
+    }
+
+    public static AppException http(Exception e) {
+        return new AppException(TYPE_HTTP_ERROR, 0, e);
+    }
+
+    private static AppException socket(Exception e) {
+        return new AppException(TYPE_SOCKET, 0, e);
+    }
+
+    public static AppException network(Exception e) {
+        if (e instanceof UnknownHostException || e instanceof ConnectException) {
+            return new AppException(TYPE_NETWORK, 0, e);
+        } else if (e instanceof HttpException) {
+            return http(e);
+        } else if (e instanceof SocketException) {
+            return socket(e);
+        }
+        return http(e);
+    }
+
+    /**
+     * 获取APP异常崩溃处理对象
+     *
+     * @param
+     * @return
+     */
+    public static AppException getAppExceptionHandler() {
+        return new AppException();
+    }
+
     /**
      * 保存异常日志
      *
@@ -104,39 +137,6 @@ public class AppException extends Exception implements UncaughtExceptionHandler 
             }
         }
 
-    }
-
-    public static AppException http(int code) {
-        return new AppException(TYPE_HTTP_CODE, code, null);
-    }
-
-    public static AppException http(Exception e) {
-        return new AppException(TYPE_HTTP_ERROR, 0, e);
-    }
-
-    private static AppException socket(Exception e) {
-        return new AppException(TYPE_SOCKET, 0, e);
-    }
-
-    public static AppException network(Exception e) {
-        if (e instanceof UnknownHostException || e instanceof ConnectException) {
-            return new AppException(TYPE_NETWORK, 0, e);
-        } else if (e instanceof HttpException) {
-            return http(e);
-        } else if (e instanceof SocketException) {
-            return socket(e);
-        }
-        return http(e);
-    }
-
-    /**
-     * 获取APP异常崩溃处理对象
-     *
-     * @param
-     * @return
-     */
-    public static AppException getAppExceptionHandler() {
-        return new AppException();
     }
 
     @Override

@@ -16,9 +16,8 @@ import java.util.List;
  */
 public class BuidingAdapter extends BaseAdapter {
 
-    private List<String> buidings;
-
     private final LayoutInflater listContainer;// 视图容器
+    private List<String> buidings;
 
     public BuidingAdapter(List<String> buidings) {
         listContainer = LayoutInflater.from(AppContextHolder.getAppContext());

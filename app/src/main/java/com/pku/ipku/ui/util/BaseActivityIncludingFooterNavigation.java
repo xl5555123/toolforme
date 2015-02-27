@@ -16,7 +16,7 @@ public class BaseActivityIncludingFooterNavigation extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ImageButton back = (ImageButton)findViewById(R.id.back);
+        ImageButton back = (ImageButton) findViewById(R.id.back);
         if (back != null) {
             back.setOnClickListener(new View.OnClickListener() {
                 @Override

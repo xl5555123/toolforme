@@ -1,9 +1,6 @@
 package com.pku.ipku.ui.person;
 
-import android.app.Activity;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,9 +15,10 @@ import com.pku.ipku.ui.util.BaseActivityIncludingFooterNavigation;
 /**
  * Created by XingLiang on 2015/2/5.
  */
-public class PersonInfoActivity extends BaseActivityIncludingFooterNavigation implements RegisterInPersonPage{
+public class PersonInfoActivity extends BaseActivityIncludingFooterNavigation implements RegisterInPersonPage {
 
-    private StuInfoDTO stuInfo ;
+    LoadDataDefaultTask loadDataDefaultTask = new LoadDataDefaultTask(new LoadStuInfoConfigure());
+    private StuInfoDTO stuInfo;
     private ImageView userFace;
     private TextView userName;
     private TextView userSex;
@@ -38,8 +36,6 @@ public class PersonInfoActivity extends BaseActivityIncludingFooterNavigation im
     private TextView userDepartment;
     private TextView userMajor;
     private TextView userResearchArea;
-
-    LoadDataDefaultTask loadDataDefaultTask = new LoadDataDefaultTask(new LoadStuInfoConfigure());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,9 +64,30 @@ public class PersonInfoActivity extends BaseActivityIncludingFooterNavigation im
         return PersonInfoActivity.class;
     }
 
+    public void initView() {
+        this.userFace = (ImageView) findViewById(R.id.user_face);
+        this.userName = (TextView) findViewById(R.id.user_name);
+        this.userSex = (TextView) findViewById(R.id.user_sex);
+        this.userRace = (TextView) findViewById(R.id.user_race);
+        this.userNativePlace = (TextView) findViewById(R.id.user_nativePlace);
+        this.userSupervisor = (TextView) findViewById(R.id.user_supervisor);
+        this.userPoliticalStatus = (TextView) findViewById(R.id.user_politicalStatus);
+        this.userType = (TextView) findViewById(R.id.user_stuType);
+        this.userCredentials = (TextView) findViewById(R.id.user_credentials);
+        this.userCredentialsId = (TextView) findViewById(R.id.user_credentialsId);
+        this.userBirthday = (TextView) findViewById(R.id.user_birthday);
+        this.userEnterSchoolDate = (TextView) findViewById(R.id.user_enterSchoolDate);
+        this.userExamId = (TextView) findViewById(R.id.user_stuExamId);
+        this.userStuId = (TextView) findViewById(R.id.user_stuId);
+        this.userDepartment = (TextView) findViewById(R.id.user_department);
+        this.userMajor = (TextView) findViewById(R.id.user_major);
+        this.userResearchArea = (TextView) findViewById(R.id.user_researchArea);
+
+    }
+
     private class LoadStuInfoConfigure implements LoadDataConfigure {
         @Override
-        public void showData(){
+        public void showData() {
             userFace.setScaleType(ImageView.ScaleType.FIT_XY);
             userName.setText(stuInfo.getName());
             userSex.setText(stuInfo.getSex());
@@ -90,43 +107,23 @@ public class PersonInfoActivity extends BaseActivityIncludingFooterNavigation im
             userMajor.setText(stuInfo.getMajor());
             userResearchArea.setText(stuInfo.getResearchArea());
         }
+
         @Override
-        public boolean getData(boolean cache){
+        public boolean getData(boolean cache) {
             stuInfo = IpkuServiceFactory.getPersonService(cache).getStuInfo();
-            if(stuInfo == null)
+            if (stuInfo == null)
                 return false;
             return true;
         }
 
         @Override
-        public void showWaiting(){
+        public void showWaiting() {
 
         }
 
         @Override
-        public void stopWaiting(){
+        public void stopWaiting() {
 
         }
-    }
-
-    public void initView(){
-        this.userFace = (ImageView)findViewById(R.id.user_face);
-        this.userName = (TextView)findViewById(R.id.user_name);
-        this.userSex = (TextView)findViewById(R.id.user_sex);
-        this.userRace = (TextView)findViewById(R.id.user_race);
-        this.userNativePlace = (TextView)findViewById(R.id.user_nativePlace);
-        this.userSupervisor = (TextView)findViewById(R.id.user_supervisor);
-        this.userPoliticalStatus = (TextView)findViewById(R.id.user_politicalStatus);
-        this.userType = (TextView)findViewById(R.id.user_stuType);
-        this.userCredentials = (TextView)findViewById(R.id.user_credentials);
-        this.userCredentialsId = (TextView)findViewById(R.id.user_credentialsId);
-        this.userBirthday = (TextView)findViewById(R.id.user_birthday);
-        this.userEnterSchoolDate = (TextView)findViewById(R.id.user_enterSchoolDate);
-        this.userExamId = (TextView)findViewById(R.id.user_stuExamId);
-        this.userStuId = (TextView)findViewById(R.id.user_stuId);
-        this.userDepartment = (TextView)findViewById(R.id.user_department);
-        this.userMajor = (TextView)findViewById(R.id.user_major);
-        this.userResearchArea = (TextView)findViewById(R.id.user_researchArea);
-
     }
 }

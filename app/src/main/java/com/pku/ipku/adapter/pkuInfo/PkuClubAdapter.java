@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
 import com.pku.ipku.R;
 import com.pku.ipku.model.pkuInfo.dto.PkuClubDTO;
 
@@ -51,10 +52,10 @@ public class PkuClubAdapter extends BaseAdapter {
         view = listContainer.inflate(R.layout.club_item, null);
 
         TextView subjectView = (TextView) view.findViewById(R.id.club_activity_subject);
-        TextView clubNameView = (TextView)view.findViewById(R.id.club_activity_clubname);
+        TextView clubNameView = (TextView) view.findViewById(R.id.club_activity_clubname);
         TextView locationView = (TextView) view.findViewById(R.id.club_activity_location);
         TextView startTimeView = (TextView) view.findViewById(R.id.club_activity_start_date);
-        TextView createTimeView = (TextView)view.findViewById(R.id.club_activity_create_date);
+        TextView createTimeView = (TextView) view.findViewById(R.id.club_activity_create_date);
 
         subjectView.setText(pkuClubDTO.getSubject());
         clubNameView.setText(pkuClubDTO.getClubName());

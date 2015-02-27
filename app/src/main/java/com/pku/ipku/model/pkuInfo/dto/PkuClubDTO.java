@@ -1,11 +1,13 @@
 package com.pku.ipku.model.pkuInfo.dto;
-;
+
 import java.util.Date;
+
+;
 
 /**
  * Created by Allen on 2015/1/7.
  */
-public class PkuClubDTO{
+public class PkuClubDTO {
 
     private String clubName;
     private String subject;
@@ -14,13 +16,14 @@ public class PkuClubDTO{
     private Date createTime;
     private String attachUrl;
 
-    public PkuClubDTO(){}
-
-    public PkuClubDTO(PkuClubDTO pkuClubDTO){
-        this(pkuClubDTO.getClubName(),pkuClubDTO.getSubject(),pkuClubDTO.getLocation(),pkuClubDTO.getStartTime(),pkuClubDTO.getCreateTime(),pkuClubDTO.getAttachUrl());
+    public PkuClubDTO() {
     }
 
-    public PkuClubDTO(String clubName,String subject,String location,Date startTime,Date createTime,String attachUrl){
+    public PkuClubDTO(PkuClubDTO pkuClubDTO) {
+        this(pkuClubDTO.getClubName(), pkuClubDTO.getSubject(), pkuClubDTO.getLocation(), pkuClubDTO.getStartTime(), pkuClubDTO.getCreateTime(), pkuClubDTO.getAttachUrl());
+    }
+
+    public PkuClubDTO(String clubName, String subject, String location, Date startTime, Date createTime, String attachUrl) {
         this.clubName = clubName;
         this.subject = subject;
         this.location = location;

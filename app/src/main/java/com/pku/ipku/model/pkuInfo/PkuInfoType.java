@@ -1,10 +1,8 @@
 package com.pku.ipku.model.pkuInfo;
 
 import com.pku.ipku.R;
-import com.pku.ipku.model.pkuInfo.dto.PkuPublicInfo;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -42,6 +40,10 @@ public class PkuInfoType {
 
     }
 
+    public PkuInfoType(String type) {
+        this.type = type;
+    }
+
     public boolean isPkuNews() {
         return type.equals(PKU_NEWS);
     }
@@ -56,10 +58,6 @@ public class PkuInfoType {
 
     public boolean isPkuCareer() {
         return type.equals(PKU_CAREER);
-    }
-
-    public PkuInfoType(String type) {
-        this.type = type;
     }
 
     public String getType() {

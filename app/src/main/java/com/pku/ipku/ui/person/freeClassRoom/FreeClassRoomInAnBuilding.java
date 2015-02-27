@@ -2,12 +2,9 @@ package com.pku.ipku.ui.person.freeClassRoom;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.GridView;
 
 import com.pku.ipku.R;
-import com.pku.ipku.adapter.studyGuide.freeClassRoom.BuidingAdapter;
 import com.pku.ipku.adapter.studyGuide.freeClassRoom.FreeClassAdapter;
 import com.pku.ipku.api.factory.IpkuServiceFactory;
 import com.pku.ipku.task.LoadDataConfigure;
@@ -52,7 +49,7 @@ public class FreeClassRoomInAnBuilding extends Activity {
 
             @Override
             public boolean getData(boolean cache) {
-                freeClassrooms =  IpkuServiceFactory.getStudyGuideService(cache).getFreeClassrooms(seletedBuidings, selectedTime);
+                freeClassrooms = IpkuServiceFactory.getStudyGuideService(cache).getFreeClassrooms(seletedBuidings, selectedTime);
                 if (freeClassrooms == null) {
                     return false;
                 }

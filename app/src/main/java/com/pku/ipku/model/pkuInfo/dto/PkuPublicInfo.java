@@ -1,7 +1,5 @@
 package com.pku.ipku.model.pkuInfo.dto;
 
-import java.util.Date;
-
 /**
  * Created by XingLiang on 2015/1/26.
  */

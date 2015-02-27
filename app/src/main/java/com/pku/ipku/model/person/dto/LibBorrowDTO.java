@@ -11,7 +11,7 @@ public class LibBorrowDTO {
     private String borrowDate;
     private String dueDate;
 
-    public LibBorrowDTO(){
+    public LibBorrowDTO() {
 
     }
 

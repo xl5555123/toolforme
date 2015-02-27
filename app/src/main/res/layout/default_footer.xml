@@ -1,27 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal" android:layout_width="match_parent"
-    android:layout_alignParentBottom="true"
-    android:background="#59b89c"
-    android:layout_height="48dp">
+    android:id="@+id/header"
+    android:layout_width="match_parent"
+    android:layout_height="44dp"
+    android:layout_alignParentTop="true"
+    android:background="@color/back_background"
+    android:orientation="horizontal">
 
     <ImageButton
         android:id="@+id/back"
-        android:layout_marginLeft="10dp"
-        android:layout_centerVertical="true"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_alignParentLeft="true"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="#59b89c"
-        android:src="@drawable/back"/>
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/back_selector"
+        android:src="@drawable/back_default" />
 
     <TextView
         android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:layout_gravity="center"
         android:textColor="@color/white"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"/>
+        android:textSize="19sp" />
 
 </RelativeLayout>

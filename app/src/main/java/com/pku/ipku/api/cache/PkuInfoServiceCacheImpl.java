@@ -3,11 +3,9 @@ package com.pku.ipku.api.cache;
 import com.pku.ipku.api.PkuInfoService;
 import com.pku.ipku.api.mock.pkuInfo.MockPkuClubActivityList;
 import com.pku.ipku.api.mock.pkuInfo.MockPkuJob;
-import com.pku.ipku.api.mock.pkuInfo.MockPkuLectureList;
 import com.pku.ipku.model.pkuInfo.PkuInfoType;
 import com.pku.ipku.model.pkuInfo.dto.PkuClubDTO;
 import com.pku.ipku.model.pkuInfo.dto.PkuJobDTO;
-import com.pku.ipku.model.pkuInfo.dto.PkuLectureDTO;
 import com.pku.ipku.model.pkuInfo.dto.PkuPublicInfo;
 
 import org.springframework.web.client.RestClientException;
@@ -54,7 +52,7 @@ public class PkuInfoServiceCacheImpl implements PkuInfoService {
     }
 
     @Override
-    public List<PkuClubDTO> getPkuClubActivities(){
+    public List<PkuClubDTO> getPkuClubActivities() {
         return MockPkuClubActivityList.get();
     }
 

@@ -1,12 +1,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="15dip"
+    android:background="#0b0c0d"
+    android:orientation="horizontal"
+    android:paddingBottom="15dip"
     android:paddingLeft="10dip"
     android:paddingRight="10dip"
-    android:background="#0b0c0d"
-    android:paddingBottom="15dip">
+    android:paddingTop="15dip">
 
     <ImageView
         android:id="@+id/menu_icon"
@@ -18,8 +18,8 @@
         android:id="@+id/menu_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="17sp"
         android:layout_marginLeft="16dip"
         android:text="sad"
-        android:textColor="#FFFFFFFF" />
+        android:textColor="#FFFFFFFF"
+        android:textSize="17sp" />
 </LinearLayout>

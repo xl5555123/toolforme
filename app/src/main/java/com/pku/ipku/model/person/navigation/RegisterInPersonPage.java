@@ -1,7 +1,5 @@
 package com.pku.ipku.model.person.navigation;
 
-import android.graphics.drawable.Drawable;
-
 /**
  * Created by xingliang on 2015/2/9.
  */

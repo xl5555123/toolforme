@@ -10,7 +10,7 @@ import java.util.Map;
  */
 public class MockFreeClassrooms {
 
-    private final static Map<String, List<Integer>> MOCK_FREE_CLASSROOM  = new HashMap<String, List<Integer>>() {
+    private final static Map<String, List<Integer>> MOCK_FREE_CLASSROOM = new HashMap<String, List<Integer>>() {
         {
             put("二教", new ArrayList<Integer>() {
                 {

@@ -17,6 +17,11 @@ import de.greenrobot.dao.identityscope.IdentityScopeType;
 public class DaoMaster extends AbstractDaoMaster {
     public static final int SCHEMA_VERSION = 1000;
 
+    public DaoMaster(SQLiteDatabase db) {
+        super(db, SCHEMA_VERSION);
+        registerDaoClass(CacheDao.class);
+    }
+
     /**
      * Creates underlying database table using DAOs.
      */
@@ -29,6 +34,14 @@ public class DaoMaster extends AbstractDaoMaster {
      */
     public static void dropAllTables(SQLiteDatabase db, boolean ifExists) {
         CacheDao.dropTable(db, ifExists);
+    }
+
+    public DaoSession newSession() {
+        return new DaoSession(db, IdentityScopeType.Session, daoConfigMap);
+    }
+
+    public DaoSession newSession(IdentityScopeType type) {
+        return new DaoSession(db, type, daoConfigMap);
     }
 
     public static abstract class OpenHelper extends SQLiteOpenHelper {
@@ -58,19 +71,6 @@ public class DaoMaster extends AbstractDaoMaster {
             dropAllTables(db, true);
             onCreate(db);
         }
-    }
-
-    public DaoMaster(SQLiteDatabase db) {
-        super(db, SCHEMA_VERSION);
-        registerDaoClass(CacheDao.class);
-    }
-
-    public DaoSession newSession() {
-        return new DaoSession(db, IdentityScopeType.Session, daoConfigMap);
-    }
-
-    public DaoSession newSession(IdentityScopeType type) {
-        return new DaoSession(db, type, daoConfigMap);
     }
 
 }

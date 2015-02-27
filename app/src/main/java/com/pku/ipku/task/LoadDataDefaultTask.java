@@ -17,7 +17,7 @@ public class LoadDataDefaultTask {
         loaded = false;
     }
 
-    public void execute(){
+    public void execute() {
         loadDataConfigure.showWaiting();
         new LoadDataFromCacheTask().execute();
         new LoadDataFromNetTask().execute();
@@ -28,7 +28,7 @@ public class LoadDataDefaultTask {
         protected Boolean doInBackground(Void... params) {
             try {
                 return loadDataConfigure.getData(true);
-            }catch (Exception e){
+            } catch (Exception e) {
                 return false;
             }
         }
@@ -43,7 +43,7 @@ public class LoadDataDefaultTask {
         }
     }
 
-    private class LoadDataFromNetTask extends AsyncTask<Void, Void, Boolean>{
+    private class LoadDataFromNetTask extends AsyncTask<Void, Void, Boolean> {
         @Override
         protected Boolean doInBackground(Void... params) {
             try {
@@ -52,7 +52,7 @@ public class LoadDataDefaultTask {
                 } else {
                     return false;
                 }
-            }catch (Exception e){
+            } catch (Exception e) {
                 return false;
             }
 

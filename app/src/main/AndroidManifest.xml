@@ -99,12 +99,15 @@
             android:windowSoftInputMode="adjustPan|stateHidden" >
         </activity>
         <activity
-            android:name=".ui.person.LibraryActivity"
+            android:name=".ui.person.library.LibraryActivity"
             android:configChanges="keyboardHidden|orientation"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.NoTitleBar"
+            android:theme="@style/Theme.MyActionBarTheme"
             android:windowSoftInputMode="adjustPan|stateHidden" >
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/library_searchable" />
         </activity>
         <activity
             android:name=".ui.person.freeClassRoom.FreeClassroomActivity"
@@ -138,14 +141,23 @@
             android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="adjustPan|stateHidden" >
         </activity>
-
         <activity
             android:name=".ui.util.WebViewActivity"
             android:configChanges="keyboardHidden|orientation"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar"
-            android:windowSoftInputMode="adjustPan|stateHidden" >
+            android:windowSoftInputMode="adjustPan|stateHidden" ></activity>
+        <activity
+            android:name=".ui.person.library.LibrarySearchResultActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyActionBarTheme"
+            android:windowSoftInputMode="adjustPan|stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
         </activity>
     </application>
 

@@ -11,6 +11,15 @@ import java.util.List;
  */
 public class LocationInfo implements Serializable {
     private static final long serialVersionUID = -1010711775392052966L;
+    public static List<LocationInfo> infos = new ArrayList<LocationInfo>();
+
+    static {
+        infos.add(new LocationInfo(39.998922, 116.310728, R.drawable.pku_ximen, "北京大学西门",
+                "距离209米", 1456));
+        infos.add(new LocationInfo(40.001112, 116.316675, R.drawable.pku_weiminghu, "北京大学未名湖",
+                "距离209米", 1456));
+    }
+
     private double latitude;
     private double longitude;
     private int imgId;
@@ -18,19 +27,8 @@ public class LocationInfo implements Serializable {
     private String distance;
     private int zan;
 
-    public static List<LocationInfo> infos = new ArrayList<LocationInfo>();
-
-    static
-    {
-        infos.add(new LocationInfo(39.998922, 116.310728, R.drawable.pku_ximen, "北京大学西门",
-                "距离209米", 1456));
-        infos.add(new LocationInfo(40.001112, 116.316675, R.drawable.pku_weiminghu, "北京大学未名湖",
-                "距离209米", 1456));
-    }
-
     public LocationInfo(double latitude, double longitude, int imgId, String name,
-                String distance, int zan)
-    {
+                        String distance, int zan) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.imgId = imgId;
@@ -39,63 +37,51 @@ public class LocationInfo implements Serializable {
         this.zan = zan;
     }
 
-    public double getLatitude()
-    {
+    public double getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(double latitude)
-    {
+    public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
 
-    public double getLongitude()
-    {
+    public double getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(double longitude)
-    {
+    public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
 
-    public int getImgId()
-    {
+    public int getImgId() {
         return imgId;
     }
 
-    public void setImgId(int imgId)
-    {
+    public void setImgId(int imgId) {
         this.imgId = imgId;
     }
 
-    public String getName()
-    {
+    public String getName() {
         return name;
     }
 
-    public void setName(String name)
-    {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public String getDistance()
-    {
+    public String getDistance() {
         return distance;
     }
 
-    public void setDistance(String distance)
-    {
+    public void setDistance(String distance) {
         this.distance = distance;
     }
 
-    public int getZan()
-    {
+    public int getZan() {
         return zan;
     }
 
-    public void setZan(int zan)
-    {
+    public void setZan(int zan) {
         this.zan = zan;
     }
 }

@@ -2,9 +2,9 @@ package com.pku.ipku.ui.navigation;
 
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +14,6 @@ import android.widget.GridView;
 import com.pku.ipku.R;
 import com.pku.ipku.adapter.navigation.SchoolNavigationAdapter;
 import com.pku.ipku.model.pkuInfo.PkuInfoType;
-import com.pku.ipku.model.pkuInfo.dto.PkuPublicInfo;
 import com.pku.ipku.ui.pkuInfo.PkuPublicInfoActivity;
 
 import java.util.ArrayList;
@@ -40,6 +39,10 @@ public class SchoolFragment extends Fragment {
 
     private GridView icon;
 
+    public SchoolFragment() {
+        // Required empty public constructor
+    }
+
     // TODO: Rename and change types and number of parameters
     public static SchoolFragment newInstance() {
         SchoolFragment fragment = new SchoolFragment();
@@ -50,16 +53,12 @@ public class SchoolFragment extends Fragment {
         return fragment;
     }
 
-    public SchoolFragment() {
-        // Required empty public constructor
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-         //   mParam1 = getArguments().getString(ARG_PARAM1);
-       //     mParam2 = getArguments().getString(ARG_PARAM2);
+            //   mParam1 = getArguments().getString(ARG_PARAM1);
+            //     mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
 

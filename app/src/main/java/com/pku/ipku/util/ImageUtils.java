@@ -34,6 +34,7 @@ public class ImageUtils {
      * 请求相机
      */
     public static final int REQUEST_CODE_GETIMAGE_BYCAMERA = 1;
+    private final static int RETRY_TIME = 3;
 
     /**
      * 写图片文件
@@ -122,12 +123,12 @@ public class ImageUtils {
         int width = bitmap.getWidth();
         float zoomScale;
         /**方式1**/
-//	    if(rWidth/rHeight>width/height){//以高为准 
-//	    	zoomScale=((float) rHeight) / height; 
-//	    }else{ 
-//	    	//if(rWidth/rHeight<width/height)//以宽为准 
-//	    	zoomScale=((float) rWidth) / width; 
-//	    } 
+//	    if(rWidth/rHeight>width/height){//以高为准
+//	    	zoomScale=((float) rHeight) / height;
+//	    }else{
+//	    	//if(rWidth/rHeight<width/height)//以宽为准
+//	    	zoomScale=((float) rWidth) / width;
+//	    }
         /**方式2**/
 //	    if(width*1.5 >= height) {//以宽为准
 //	    	if(width >= rWidth)
@@ -205,8 +206,6 @@ public class ImageUtils {
         }
         return (b[0] == 0x42) && (b[1] == 0x4d);
     }
-
-    private final static int RETRY_TIME = 3;
 
     /**
      * 获取网络图片

@@ -2,8 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical"
-    android:background="#0b0c0d">
+    android:background="#0b0c0d"
+    android:orientation="vertical">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
@@ -14,37 +14,37 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/user_face"
-            android:src="@drawable/xingliang"
             android:layout_width="48dip"
             android:layout_height="48dip"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"
+            android:src="@drawable/xingliang" />
 
         <TextView
             android:id="@+id/user_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dip"
             android:layout_gravity="center_vertical"
-            android:text="Ruici Luo"
-            android:textSize="20sp"
-            android:textColor="@color/white"
+            android:layout_marginLeft="16dip"
             android:layout_weight="0.01"
-            android:textIsSelectable="true" />
+            android:text="Ruici Luo"
+            android:textColor="@color/white"
+            android:textIsSelectable="true"
+            android:textSize="20sp" />
     </LinearLayout>
 
     <FrameLayout
-        android:layout_marginLeft="16dip"
-        android:layout_marginRight="16dip"
         android:layout_width="match_parent"
         android:layout_height="1dip"
+        android:layout_marginLeft="16dip"
+        android:layout_marginRight="16dip"
         android:alpha="50"
         android:background="@color/weak_white"></FrameLayout>
 
     <ListView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@android:id/list"
-        android:layout_gravity="bottom"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_gravity="bottom"
         android:layout_marginLeft="16dip"
         android:layout_marginRight="16dip" />
 

@@ -21,7 +21,7 @@ public class PkuJobAdapter extends BaseAdapter {
     private final LayoutInflater listContainer;// 视图容器
     private Context context;
 
-    public PkuJobAdapter(Context context,List<PkuJobDTO> pkuJobList) {
+    public PkuJobAdapter(Context context, List<PkuJobDTO> pkuJobList) {
         this.pkuJobList = pkuJobList;
         this.context = context;
         this.listContainer = LayoutInflater.from(context);
@@ -46,8 +46,8 @@ public class PkuJobAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         view = listContainer.inflate(R.layout.job_item, null);
         final PkuJobDTO pkuJobDTO = pkuJobList.get(i);
-        TextView subject = (TextView)view.findViewById(R.id.job_subject);
-        subject.setText("["+pkuJobDTO.getType()+"]"+pkuJobDTO.getSubject());
+        TextView subject = (TextView) view.findViewById(R.id.job_subject);
+        subject.setText("[" + pkuJobDTO.getType() + "]" + pkuJobDTO.getSubject());
         view.setTag(pkuJobDTO.getAttachUrl());
         return view;
     }

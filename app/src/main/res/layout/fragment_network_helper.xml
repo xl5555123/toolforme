@@ -1,167 +1,182 @@
 <?xml version="1.0" encoding="utf-8"?>
-	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	    android:orientation="vertical" 
-	    android:layout_width="fill_parent"
-	    android:layout_height="fill_parent"
-	    android:background="@drawable/network_bg" >
-	    <LinearLayout
-	        android:orientation="vertical"
-	        android:layout_width="fill_parent"
-	        android:layout_height="wrap_content">
-	        <LinearLayout
-		        android:orientation="horizontal"
-		        android:layout_width="fill_parent"
-		        android:layout_height="wrap_content"
-		        android:layout_marginTop="85dp">
-		        <TextView 
-	                 android:text="账户名:"
-	                 android:textSize="18sp"
-	                 android:textColor="#965801"
-	                 android:layout_marginLeft="20dp"
-	                 android:gravity="center_horizontal"
-	                 android:layout_width="wrap_content"
-	                 android:layout_height="wrap_content"/>
-		        <EditText 
-		            android:id="@+id/network_uid"
-		            android:gravity="left"
-		            android:textSize="24sp"
-		            android:paddingLeft="10dp"
-		            android:paddingTop="3dp"
-		            android:background="@drawable/network_edit_bg"
-		            android:layout_marginLeft="11dp"
-		            android:layout_marginRight="11dp"
-		            android:layout_width="fill_parent"
-		            android:layout_height="55dp"
-		            />
-		     </LinearLayout>
-		     <LinearLayout
-		        android:orientation="horizontal"
-		        android:layout_width="fill_parent"
-		        android:layout_height="wrap_content">
-		        <TextView 
-	                 android:text="   密码: "
-	                 android:textSize="18sp"
-	                 android:textColor="#965801"
-	                 android:layout_marginLeft="20dp"
-	                 android:gravity="center_horizontal"
-	                 android:layout_width="wrap_content"
-	                 android:layout_height="wrap_content"/>
-		         <EditText 
-		            android:id="@+id/network_pwd"
-		            android:inputType="textPassword"
-		            android:background="@drawable/network_edit_bg"
-		            android:layout_marginTop="5dp"
-		            android:layout_marginLeft="11dp"
-		            android:layout_marginRight="11dp"
-		            android:gravity="left"
-		            android:textSize="24sp"
-		            android:paddingLeft="10dp"
-		            android:paddingTop="3dp"
-		            android:layout_width="fill_parent"
-		            android:layout_height="55dp"/>
-		     </LinearLayout>>
-	         <LinearLayout 
-	             android:orientation="horizontal"
-	             android:layout_width="fill_parent"
-	             android:layout_height="wrap_content"
-	             android:layout_marginLeft="10dp"
-	             android:layout_marginRight="10dp"> 
-		         <LinearLayout
-			     	android:layout_width="fill_parent"  
-			    	android:layout_height="wrap_content"
-			    	android:layout_weight="1"
-			    	android:gravity="center_horizontal">
-		             <ImageView 
-		                 android:id="@+id/network_disconnect"
-		                 android:layout_width="75dp"
-		                 android:layout_height="75dp"
-		                 android:layout_marginTop="8dp"
-                         android:layout_marginLeft="10dp"
-		                 android:background="@drawable/network_disconnect"/>
-		         </LinearLayout>
-		          
-		          <LinearLayout
-			     	android:layout_width="fill_parent"  
-			    	android:layout_height="wrap_content"
-			    	android:layout_weight="1"
-			    	android:gravity="center_horizontal">
-	                <ImageView
-	                  android:id="@+id/network_connect"
-	                  android:layout_width="90dp"
-	                  android:layout_height="90dp"
-	                  android:layout_gravity="center_vertical"
-	                  android:background="@drawable/network_connect" />
-		         </LinearLayout>
-		         <LinearLayout
-			     	android:layout_width="fill_parent"  
-			    	android:layout_height="wrap_content"
-			    	android:layout_weight="1"
-			    	android:gravity="center_horizontal">   
-	                <ImageView 
-	                  android:id="@+id/network_all_disconnect"
-	                  android:layout_width="75dp"
-	                  android:layout_height="75dp"
-	                  android:layout_marginTop="8dp"
-	                  android:layout_marginRight="10dp"
-	                  android:background="@drawable/network_disconnect_all"/>
-	             </LinearLayout>
-	         </LinearLayout>
-	         
-	         <LinearLayout 
-	             android:orientation="horizontal"
-	             android:layout_width="fill_parent"
-	             android:layout_height="wrap_content"
-	             >
-	             <TextView 
-	                 android:text="访问收费地址:"
-	                 android:textSize="18sp"
-	                 android:textColor="#965801"
-	                 android:layout_marginLeft="20dp"
-	                 android:layout_marginTop="10dp"
-	                 android:gravity="center_horizontal"
-	                 android:layout_width="wrap_content"
-	                 android:layout_height="wrap_content"/>
-	             <com.pku.util.SwitchButton
-	                 android:id="@+id/network_free_or_not"
-	                 android:layout_marginTop="3dp"
-	                 android:layout_marginLeft="3dp"
-	                 android:layout_width="wrap_content"
-	                 android:layout_height="wrap_content"
-	                 />
-	         </LinearLayout>
-	         <LinearLayout 
-	             android:orientation="horizontal"
-	             android:layout_width="fill_parent"
-	             android:layout_height="wrap_content"
-	             >
-	             <TextView 
-	                 android:text="保存账户信息:"
-	                 android:textSize="18sp"
-	                 android:textColor="#965801"
-	                 android:layout_marginLeft="20dp"
-	                 android:layout_marginTop="10dp"
-	                 android:gravity="center_horizontal"
-	                 android:layout_width="wrap_content"
-	                 android:layout_height="wrap_content"/>
-	             <com.pku.util.SwitchButton
-	                 android:id="@+id/network_saveuser_or_not"
-	                 android:layout_marginTop="3dp"
-	                 android:layout_marginLeft="3dp"
-	                 android:layout_width="wrap_content"
-	                 android:layout_height="wrap_content"
-	                 />
-	         </LinearLayout>
-	    </LinearLayout>
-	    <TextView 
-	        android:layout_height="match_parent"
-	        android:layout_width="match_parent"
-	        android:id="@+id/network_edittext_result"
-	        android:inputType="textMultiLine"
-	        android:layout_marginLeft="10dp"
-	        android:layout_marginRight="10dp"
-	        android:layout_marginBottom="15dp" 
-	        android:layout_marginTop="5dp"
-	        android:background="@drawable/reply_edit_bg"
-	        android:padding="10dp"
-	        android:scrollbars="vertical"/>
-	</LinearLayout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/network_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="85dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:gravity="center_horizontal"
+                android:text="账户名:"
+                android:textColor="#965801"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/network_uid"
+                android:layout_width="fill_parent"
+                android:layout_height="55dp"
+                android:layout_marginLeft="11dp"
+                android:layout_marginRight="11dp"
+                android:background="@drawable/network_edit_bg"
+                android:gravity="left"
+                android:paddingLeft="10dp"
+                android:paddingTop="3dp"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:gravity="center_horizontal"
+                android:text="   密码: "
+                android:textColor="#965801"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/network_pwd"
+                android:layout_width="fill_parent"
+                android:layout_height="55dp"
+                android:layout_marginLeft="11dp"
+                android:layout_marginRight="11dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/network_edit_bg"
+                android:gravity="left"
+                android:inputType="textPassword"
+                android:paddingLeft="10dp"
+                android:paddingTop="3dp"
+                android:textSize="24sp" />
+        </LinearLayout>
+        >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal">
+
+                <ImageView
+                    android:id="@+id/network_disconnect"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/network_disconnect" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal">
+
+                <ImageView
+                    android:id="@+id/network_connect"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/network_connect" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal">
+
+                <ImageView
+                    android:id="@+id/network_all_disconnect"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/network_disconnect_all" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:text="访问收费地址:"
+                android:textColor="#965801"
+                android:textSize="18sp" />
+
+            <com.pku.util.SwitchButton
+                android:id="@+id/network_free_or_not"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="3dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:text="保存账户信息:"
+                android:textColor="#965801"
+                android:textSize="18sp" />
+
+            <com.pku.util.SwitchButton
+                android:id="@+id/network_saveuser_or_not"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="3dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/network_edittext_result"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/reply_edit_bg"
+        android:inputType="textMultiLine"
+        android:padding="10dp"
+        android:scrollbars="vertical" />
+</LinearLayout>

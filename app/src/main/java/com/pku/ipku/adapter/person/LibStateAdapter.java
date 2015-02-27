@@ -17,7 +17,7 @@ import java.util.List;
  */
 public class LibStateAdapter extends BaseAdapter {
 
-    private List<LibBorrowDTO> bookList;
+    private final List<LibBorrowDTO> bookList;
     private final LayoutInflater listContainer;// 视图容器
     private Context context;
 

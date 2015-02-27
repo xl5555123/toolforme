@@ -1,20 +1,21 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#b9b9b9"
+    android:focusableInTouchMode="true"
     android:paddingBottom="135dp"
-    android:paddingTop="135dp"
     android:paddingLeft="19dp"
     android:paddingRight="19dp"
-    tools:context="com.pku.ipku.ui.navigation.PersonFragment"
-    android:focusableInTouchMode="true">
+    android:paddingTop="135dp"
+    tools:context="com.pku.ipku.ui.navigation.PersonFragment">
 
     <GridView
 
         android:id="@+id/navigation_grid"
-        android:numColumns="3"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:numColumns="3">
 
     </GridView>
 </RelativeLayout>

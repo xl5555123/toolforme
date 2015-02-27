@@ -22,9 +22,11 @@ public interface PkuInfoService {
     public static final String PAGED_CAREER_RECRUITS_URI = "/svcpub/svc/pub/career/recruit/%d";
 
     public List<PkuPublicInfo> getPkuPublicNotice(PkuInfoType pkuInfoType, Integer page) throws RestClientException;
+
     /**
      * 获取学校公告
      * 服务ID RECENT_SCHOOL_NOTICES
+     *
      * @return
      */
     public List<PkuPublicInfo> getPkuNotices() throws RestClientException;
@@ -32,12 +34,14 @@ public interface PkuInfoService {
     /**
      * 获取学校动态
      * 服务ID RECENT_SCHOOL_NEWS
+     *
      * @return
      */
     public List<PkuPublicInfo> getPkuTrends() throws RestClientException;
 
     /**
      * 获取学校新闻
+     *
      * @return
      */
     public List<PkuPublicInfo> getPkuNews() throws RestClientException;
@@ -45,23 +49,27 @@ public interface PkuInfoService {
     /**
      * 获取单位公告
      * 服务ID RECENT_DEPT_NOTICES
+     *
      * @return
      */
     public List<PkuPublicInfo> getPkuApartmentNotice() throws RestClientException;
 
     /**
      * 获取校内讲座信息
+     *
      * @return
      */
     public List<PkuPublicInfo> getPkuLectures() throws RestClientException;
 
     /**
      * 分页获取招聘信息
+     *
      * @param page
      * @return
      */
     public List<PkuPublicInfo> getPkuCareer(int page) throws RestClientException;
 
     public List<PkuClubDTO> getPkuClubActivities();
+
     public List<PkuJobDTO> getPkuJobs();
 }

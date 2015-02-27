@@ -2,27 +2,62 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="#b9b9b9"
     android:orientation="vertical">
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:orientation="vertical">
+    <!--
+        <include layout="@layout/default_footer"
+            android:id="@+id/header"/>
 
-        <ListView xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/lib_book_listview"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:focusable="false"
-            android:focusableInTouchMode="true" />
+        <TextView
+            android:layout_alignParentLeft="true"
+            android:id="@+id/pku_scholar_search"
+            android:text="未名学术搜索"
+            style="@style/library_header" />
+
+        <TextView
+            android:id="@+id/library_index"
+            android:text="馆藏目录"
+            android:layout_toRightOf="@id/pku_scholar_search"
+            style="@style/library_header"/>
 
         <FrameLayout
-            android:layout_width="fill_parent"
-            android:layout_height="1dip"
-            android:background="#C8C7CC">
-        </FrameLayout>
+            android:layout_below="@id/header"
+            android:layout_toRightOf="@id/library_index"
+            android:background="@color/gray"
+            android:layout_width="1dp"
+            android:layout_height="44dp"></FrameLayout>
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/database"
+            android:text="数据库"
+            android:layout_below="@id/header"
+            android:layout_toRightOf="@id/library_index"
+            style="@style/library_header" />
 
-    <include layout="@layout/default_footer" />
+        <FrameLayout
+            android:layout_below="@id/header"
+            android:layout_toRightOf="@id/database"
+            android:background="@color/gray"
+            android:layout_width="11dp"
+            android:layout_height="44dp"></FrameLayout>
 
+        <TextView
+            android:id="@+id/my_lending"
+            android:layout_toRightOf="@id/database"
+            android:text="我的借阅"
+            style="@style/library_header"
+            android:layout_width="match_parent" />
+            -->
+    <FrameLayout
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/green"></FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/search_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/divider" />
 </RelativeLayout>

@@ -28,28 +28,28 @@
     </style>
 
     <style name="ListSubtitleText" parent="SubtitleText"></style>
-<!--
-    <style name="ipku.tab.style" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="vpiTabPageIndicatorStyle">@style/tabPageIndicator</item>
-    </style>
+    <!--
+        <style name="ipku.tab.style" parent="Theme.AppCompat.Light.DarkActionBar">
+            <item name="vpiTabPageIndicatorStyle">@style/tabPageIndicator</item>
+        </style>
 
-    <style name="tabPageIndicator" parent="Widget">
-        <item name="android:gravity">center</item>
-        <item name="android:background">@drawable/vpi__tab_indicator</item>
-        <item name="android:paddingLeft">10dip</item>
-        <item name="android:paddingRight">10dip</item>
-        <item name="android:paddingTop">8dp</item>
-        <item name="android:paddingBottom">8dp</item>
-        <item name="android:textAppearance">@style/MyTextAppearance.TabPageIndicator</item>
-        <item name="android:textSize">14sp</item>
-        <item name="android:maxLines">1</item>
-    </style>
+        <style name="tabPageIndicator" parent="Widget">
+            <item name="android:gravity">center</item>
+            <item name="android:background">@drawable/vpi__tab_indicator</item>
+            <item name="android:paddingLeft">10dip</item>
+            <item name="android:paddingRight">10dip</item>
+            <item name="android:paddingTop">8dp</item>
+            <item name="android:paddingBottom">8dp</item>
+            <item name="android:textAppearance">@style/MyTextAppearance.TabPageIndicator</item>
+            <item name="android:textSize">14sp</item>
+            <item name="android:maxLines">1</item>
+        </style>
 
-    <style name="MyTextAppearance.TabPageIndicator" parent="Widget">
-        <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/black</item>
-    </style>
--->
+        <style name="MyTextAppearance.TabPageIndicator" parent="Widget">
+            <item name="android:textStyle">bold</item>
+            <item name="android:textColor">@color/black</item>
+        </style>
+    -->
     <!-- class_detail_style -->
     <style name="class_detail_blue_title">
         <item name="android:textSize">15sp</item>
@@ -73,6 +73,43 @@
         <item name="android:textColor">@color/gray</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!-- library -->
+    <style name="library_header">
+        <item name="android:textSize">15sp</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:layout_height">44dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingRight">5dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_below">@id/header</item>
+    </style>
+
+    <!-- actionbar -->
+    <style name="Theme.MyActionBarTheme" parent="android:style/Theme.Holo.Light">
+        <!-- 其他部分的颜色变化跟上面类似 -->
+        <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle</item>
+        <!--<item name="android:actionOverflowButtonStyle">@style/MyOverflowButton</item>-->
+    </style>
+
+    <style name="MyActionBarStyle" parent="android:style/Widget.Holo.Light.ActionBar.Solid">
+        <item name="android:background">#504841</item>
+        <item name="android:titleTextStyle">@style/MyActionBarTitleStyle</item>
+        <item name="android:layout_height">44dp</item>
+    </style>
+
+    <style name="MyActionBarTitleStyle" parent="android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textSize">19sp</item>
+    </style>
+    <!-- style for the tabs -->
+    <style name="MyActionBarTabStyle" parent="android:style/Widget.Holo.Light.ActionBar.TabView">
+        <item name="android:background">@drawable/actionbar_tab_drawable</item>
+        <item name="android:layout_height">44dp</item>
     </style>
 
 

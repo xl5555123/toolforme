@@ -1,28 +1,20 @@
 package com.pku.ipku.util;
 
-import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.SpinnerAdapter;
 import android.widget.Toast;
 
 import com.pku.ipku.R;
 
 import java.util.Date;
-import java.util.List;
 
 /**
  * 应用程序UI工具包：封装UI相关的一些操作
@@ -36,9 +28,6 @@ public class UIHelper {
     public final static int LISTVIEW_DATA_LOADING = 0x02;
     public final static int LISTVIEW_DATA_FULL = 0x03;
     public final static int LISTVIEW_DATA_EMPTY = 0x04;
-
-    private static Date lastNetErrorDate;
-
     /**
      * 全局web样式
      */
@@ -46,6 +35,7 @@ public class UIHelper {
             "img.alignleft {float:left;max-width:120px;margin:0 10px 5px 0;border:1px solid #ccc;background:#fff;padding:2px;} " +
             "pre {font-size:9pt;line-height:12pt;font-family:Courier New,Arial;border:1px solid #ddd;border-left:5px solid #6CE26C;background:#f6f6f6;padding:5px;} " +
             "a.tag {font-size:15px;text-decoration:none;background-color:#bbd6f3;border-bottom:2px solid #3E6D8E;border-right:2px solid #7F9FB6;color:#284a7b;margin:2px 2px 2px 0;padding:2px 4px;white-space:nowrap;}</style>";
+    private static Date lastNetErrorDate;
 
     /**
      * 弹出Toast消息
@@ -124,7 +114,6 @@ public class UIHelper {
     }
 
     /**
-     *
      * @param webView
      * @param url
      */

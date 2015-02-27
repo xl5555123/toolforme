@@ -17,21 +17,12 @@ public class CacheDao extends AbstractDao<Cache, String> {
 
     public static final String TABLENAME = "CACHE";
 
-    /**
-     * Properties of entity Cache.<br/>
-     * Can be used for QueryBuilder and for referencing column names.
-     */
-    public static class Properties {
-        public final static Property Key = new Property(0, String.class, "url", true, "URL");
-        public final static Property Data = new Property(1, String.class, "data", false, "DATA");
+    public CacheDao(DaoConfig config) {
+        super(config);
     }
 
     ;
 
-
-    public CacheDao(DaoConfig config) {
-        super(config);
-    }
 
     public CacheDao(DaoConfig config, DaoSession daoSession) {
         super(config, daoSession);
@@ -124,6 +115,15 @@ public class CacheDao extends AbstractDao<Cache, String> {
     @Override
     protected boolean isEntityUpdateable() {
         return true;
+    }
+
+    /**
+     * Properties of entity Cache.<br/>
+     * Can be used for QueryBuilder and for referencing column names.
+     */
+    public static class Properties {
+        public final static Property Key = new Property(0, String.class, "url", true, "URL");
+        public final static Property Data = new Property(1, String.class, "data", false, "DATA");
     }
 
 }

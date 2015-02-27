@@ -2,9 +2,9 @@ package com.pku.ipku.ui.navigation;
 
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,11 +15,11 @@ import com.pku.ipku.R;
 import com.pku.ipku.adapter.navigation.PersonNavigationAdapter;
 import com.pku.ipku.model.person.navigation.RegisterInPersonPage;
 import com.pku.ipku.ui.person.ArrearageStateActivity;
-import com.pku.ipku.ui.person.LibraryActivity;
 import com.pku.ipku.ui.person.PersonInfoActivity;
 import com.pku.ipku.ui.person.ScholarshipActivity;
 import com.pku.ipku.ui.person.ScoreActivity;
 import com.pku.ipku.ui.person.freeClassRoom.FreeClassroomActivity;
+import com.pku.ipku.ui.person.library.LibraryActivity;
 import com.pku.ipku.ui.person.queryClass.QueryClassActivity;
 
 import java.util.ArrayList;
@@ -56,13 +56,13 @@ public class PersonFragment extends Fragment {
 
     private GridView navigationGridView;
 
+    public PersonFragment() {
+        // Required empty public constructor
+    }
+
     public static PersonFragment newInstance() {
         PersonFragment fragment = new PersonFragment();
         return fragment;
-    }
-
-    public PersonFragment() {
-        // Required empty public constructor
     }
 
     @Override

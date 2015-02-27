@@ -3,7 +3,6 @@ package com.pku.ipku.ui.person.freeClassRoom;
 
 import android.app.DialogFragment;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;

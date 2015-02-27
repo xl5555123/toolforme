@@ -10,11 +10,11 @@ public class ScoreDTO {
     private String semester;
     private String courseId;
     private String courseName;
-    private String  credit;
-    private String  score;
+    private String credit;
+    private String score;
     private String courseType;
 
-    public ScoreDTO(String stuId,String department,String schoolYear,String semester, String courseId,String courseName,String credit,String score,String courseType){
+    public ScoreDTO(String stuId, String department, String schoolYear, String semester, String courseId, String courseName, String credit, String score, String courseType) {
         this.stuId = stuId;
         this.department = department;
         this.schoolYear = schoolYear;
@@ -25,7 +25,9 @@ public class ScoreDTO {
         this.score = score;
         this.courseType = courseType;
     }
-    public ScoreDTO(){}
+
+    public ScoreDTO() {
+    }
 
     public String getStuId() {
         return stuId;
@@ -98,9 +100,6 @@ public class ScoreDTO {
     public void setCourseType(String courseType) {
         this.courseType = courseType;
     }
-
-
-
 
 
 }

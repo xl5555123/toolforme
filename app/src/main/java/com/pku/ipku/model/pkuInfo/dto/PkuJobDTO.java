@@ -12,7 +12,7 @@ public class PkuJobDTO {
     private String attachUrl;
     private String type;
 
-    public PkuJobDTO(){
+    public PkuJobDTO() {
 
     }
 

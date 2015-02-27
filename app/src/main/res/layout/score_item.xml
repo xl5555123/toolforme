@@ -1,64 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="30dp"
+        android:orientation="horizontal"
         android:weightSum="1">
 
         <TextView
+            android:id="@+id/stuId"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:text="New Text"
-            android:id="@+id/stuId" />
+            android:text="New Text" />
 
         <TextView
+            android:id="@+id/department"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:text="New Text"
-            android:id="@+id/department" />
+            android:text="New Text" />
 
         <TextView
+            android:id="@+id/schoolYear"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:text="New Text"
-            android:id="@+id/schoolYear" />
+            android:text="New Text" />
 
         <TextView
+            android:id="@+id/semester"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:text="New Text"
-            android:id="@+id/semester" />
+            android:text="New Text" />
 
         <TextView
+            android:id="@+id/courseId"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:text="New Text"
-            android:id="@+id/courseId" />
+            android:text="New Text" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:text="New Text"
             android:id="@+id/courseName"
-            android:layout_weight="0.04" />
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_weight="0.04"
+            android:text="New Text" />
 
         <TextView
+            android:id="@+id/credit"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:text="New Text"
-            android:id="@+id/credit" />
+            android:text="New Text" />
 
         <TextView
+            android:id="@+id/score"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:text="New Text"
-            android:id="@+id/score" />
+            android:text="New Text" />
+
         <TextView
+            android:id="@+id/courseType"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:text="New Text"
-            android:id="@+id/courseType" />
+            android:text="New Text" />
     </LinearLayout>
 </LinearLayout>

@@ -1,11 +1,5 @@
 package com.pku.ipku.model.studyguide;
 
-import android.graphics.Point;
-
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-
 /**
  * Created by XingLiang on 2015/1/7.
  */

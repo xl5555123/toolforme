@@ -3,8 +3,6 @@ package com.pku.ipku.util;
 
 import android.util.Log;
 
-import com.google.common.collect.Lists;
-
 import org.codehaus.jackson.map.DeserializationConfig;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.ObjectWriter;
@@ -15,7 +13,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.List;
 import java.util.Map;
 
 public class DataHandleUtil {

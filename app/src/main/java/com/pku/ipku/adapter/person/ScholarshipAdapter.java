@@ -16,8 +16,8 @@ import java.util.List;
  * Created by Allen on 2015/1/22.
  */
 public class ScholarshipAdapter extends BaseAdapter {
-    private List<ScholarShipDTO> scholarshipDTOs;
     private final LayoutInflater listContainer;// 视图容器
+    private List<ScholarShipDTO> scholarshipDTOs;
     private Context context;
 
     public ScholarshipAdapter(Context context, List<ScholarShipDTO> scholarshipDTOs) {
@@ -52,7 +52,7 @@ public class ScholarshipAdapter extends BaseAdapter {
 
         scholarshipName.setText(scholarShip.getScholarshipName());
         scholarshipTime.setText(scholarShip.getSemester());
-        scholarshipMoney.setText(scholarShip.getMoney()+"");
+        scholarshipMoney.setText(scholarShip.getMoney() + "");
 
         return view;
     }

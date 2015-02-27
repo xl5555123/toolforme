@@ -10,14 +10,12 @@ import java.util.Properties;
 
 public class AppConfig {
 
-    private final static String APP_CONFIG = "config";
-
     public final static String CONF_APP_UNIQUEID = "APP_UNIQUEID";
     public final static String CONF_COOKIE = "cookie";
     public final static String CONF_LOAD_IMAGE = "perf_loadimage";
-
-    private Context mContext;
+    private final static String APP_CONFIG = "config";
     private static AppConfig appConfig;
+    private Context mContext;
 
     public static AppConfig getAppConfig() {
         if (appConfig == null) {

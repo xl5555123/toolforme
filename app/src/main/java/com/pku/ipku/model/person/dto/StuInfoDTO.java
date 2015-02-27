@@ -20,7 +20,30 @@ public class StuInfoDTO {
     private String department;
     private String major;
     private String researchArea;
-    public StuInfoDTO(){}
+
+    public StuInfoDTO() {
+    }
+
+    public StuInfoDTO(String name, String sex, String race, String nativePlace, String supervisor, String politicalStatus, String stuType,
+                      String credentials, String credentialsId, String birthday, String enterSchoolDate, String stuExamId, String stuId,
+                      String department, String major, String researchArea) {
+        this.name = name;
+        this.sex = sex;
+        this.race = race;
+        this.nativePlace = nativePlace;
+        this.supervisor = supervisor;
+        this.politicalStatus = politicalStatus;
+        this.stuType = stuType;
+        this.credentials = credentials;
+        this.credentialsId = credentialsId;
+        this.birthday = birthday;
+        this.enterSchoolDate = enterSchoolDate;
+        this.stuExamId = stuExamId;
+        this.stuId = stuId;
+        this.department = department;
+        this.major = major;
+        this.researchArea = researchArea;
+    }
 
     public String getName() {
         return name;
@@ -149,28 +172,6 @@ public class StuInfoDTO {
     public void setResearchArea(String researchArea) {
         this.researchArea = researchArea;
     }
-
-    public StuInfoDTO(String name, String sex, String race, String nativePlace, String supervisor, String politicalStatus, String stuType,
-                      String credentials, String credentialsId, String birthday, String enterSchoolDate, String stuExamId, String stuId,
-                      String department, String major, String researchArea) {
-        this.name = name;
-        this.sex = sex;
-        this.race = race;
-        this.nativePlace = nativePlace;
-        this.supervisor = supervisor;
-        this.politicalStatus = politicalStatus;
-        this.stuType = stuType;
-        this.credentials = credentials;
-        this.credentialsId = credentialsId;
-        this.birthday = birthday;
-        this.enterSchoolDate = enterSchoolDate;
-        this.stuExamId = stuExamId;
-        this.stuId = stuId;
-        this.department = department;
-        this.major = major;
-        this.researchArea = researchArea;
-    }
-
 
 
 }

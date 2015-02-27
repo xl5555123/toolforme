@@ -1,135 +1,135 @@
-<RelativeLayout
-    android:layout_height="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:layout_height="match_parent">
+
     <include
         android:id="@+id/footer"
-        layout="@layout/default_footer"/>
+        layout="@layout/default_footer" />
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        android:layout_alignParentTop="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@id/footer"
+        android:layout_alignParentTop="true"
         android:background="@color/white"
         android:orientation="vertical"
-        android:layout_above="@id/footer"
         tools:context="com.pku.ipku.ui.person.freeClassRoom.FreeClassroomActivity">
 
 
         <View
-            android:layout_marginTop="100dp"
-            android:background="@color/weak_grey_white"
+            android:layout_width="fill_parent"
             android:layout_height="1dp"
-            android:layout_width="fill_parent"/>
+            android:layout_marginTop="100dp"
+            android:background="@color/weak_grey_white" />
 
         <RelativeLayout
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
             android:id="@+id/buidings"
             android:layout_width="fill_parent"
-            android:layout_height="30dp">
+            android:layout_height="30dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp">
 
             <TextView
-                android:layout_centerVertical="true"
-                android:textSize="20sp"
-                android:layout_marginLeft="10dp"
-                android:textColor="@color/black"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="自习教室"/>
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:text="自习教室"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/buidings_name"
-                android:gravity="right"
-                android:textSize="20sp"
-                android:textColor="@color/gray"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="无"
-                android:maxLength="15"
-                android:ellipsize="end"
-                android:singleLine="true"
                 android:layout_alignBottom="@+id/press_icon1"
-                android:layout_toLeftOf="@+id/press_icon1"
+                android:layout_marginEnd="23dp"
                 android:layout_marginRight="23dp"
-                android:layout_marginEnd="23dp" />
+                android:layout_toLeftOf="@+id/press_icon1"
+                android:ellipsize="end"
+                android:gravity="right"
+                android:maxLength="15"
+                android:singleLine="true"
+                android:text="无"
+                android:textColor="@color/gray"
+                android:textSize="20sp" />
 
             <ImageView
-                android:layout_marginRight="20dp"
                 android:id="@+id/press_icon1"
-                android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"
-                android:src="@drawable/chevron"
                 android:layout_width="20dp"
-                android:layout_height="20dp" />
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/chevron" />
 
         </RelativeLayout>
 
         <View
-            android:background="@color/weak_grey_white"
+            android:layout_width="fill_parent"
             android:layout_height="1dp"
-            android:layout_width="fill_parent"/>
+            android:background="@color/weak_grey_white" />
 
         <RelativeLayout
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
             android:id="@+id/times"
             android:layout_width="fill_parent"
-            android:layout_height="30dp">
+            android:layout_height="30dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp">
 
             <TextView
-                android:layout_centerVertical="true"
-                android:textSize="20sp"
-                android:layout_marginLeft="10dp"
-                android:textColor="@color/black"
+                android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
                 android:text="时间"
-                android:id="@+id/textView" />
+                android:textColor="@color/black"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/times_list"
-                android:gravity="right"
-                android:textSize="20sp"
-                android:textColor="@color/gray"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="无"
-                android:maxLength="15"
-                android:ellipsize="end"
-                android:singleLine="true"
                 android:layout_alignBottom="@+id/press_icon2"
-                android:layout_toLeftOf="@+id/press_icon2"
+                android:layout_marginEnd="23dp"
                 android:layout_marginRight="23dp"
-                android:layout_marginEnd="23dp" />
+                android:layout_toLeftOf="@+id/press_icon2"
+                android:ellipsize="end"
+                android:gravity="right"
+                android:maxLength="15"
+                android:singleLine="true"
+                android:text="无"
+                android:textColor="@color/gray"
+                android:textSize="20sp" />
 
             <ImageView
-                android:layout_marginRight="20dp"
                 android:id="@+id/press_icon2"
-                android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"
-                android:src="@drawable/chevron"
                 android:layout_width="20dp"
-                android:layout_height="20dp" />
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/chevron" />
 
         </RelativeLayout>
 
         <View
-            android:background="@color/weak_grey_white"
+            android:layout_width="fill_parent"
             android:layout_height="1dp"
-            android:layout_width="fill_parent"/>
+            android:background="@color/weak_grey_white" />
 
 
         <Button
             android:id="@+id/search"
-            android:layout_gravity="center"
             android:layout_width="300dp"
             android:layout_height="40dp"
+            android:layout_gravity="center"
             android:layout_marginTop="80dp"
+            android:background="#59b89c"
             android:text="查找"
-            android:textColor="@color/white"
-            android:background="#59b89c"/>
+            android:textColor="@color/white" />
 
     </LinearLayout>
 

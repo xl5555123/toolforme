@@ -11,9 +11,8 @@ import java.util.UUID;
 
 public class AppContext extends Application {
 
-    private final static String CURRENT_USER_KEY = "current-user";
-
     public static final int PAGE_SIZE = 20;// 默认分页大小
+    private final static String CURRENT_USER_KEY = "current-user";
 
     @Override
     public void onCreate() {

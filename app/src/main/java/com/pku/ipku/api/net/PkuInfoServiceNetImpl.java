@@ -2,15 +2,12 @@ package com.pku.ipku.api.net;
 
 import com.google.common.collect.Lists;
 import com.pku.ipku.api.PkuInfoService;
-import com.pku.ipku.api.factory.IpkuServiceFactory;
 import com.pku.ipku.api.mock.pkuInfo.MockPkuClubActivityList;
 import com.pku.ipku.api.mock.pkuInfo.MockPkuJob;
-import com.pku.ipku.api.mock.pkuInfo.MockPkuLectureList;
 import com.pku.ipku.api.util.NetHelper;
 import com.pku.ipku.model.pkuInfo.PkuInfoType;
 import com.pku.ipku.model.pkuInfo.dto.PkuClubDTO;
 import com.pku.ipku.model.pkuInfo.dto.PkuJobDTO;
-import com.pku.ipku.model.pkuInfo.dto.PkuLectureDTO;
 import com.pku.ipku.model.pkuInfo.dto.PkuPublicInfo;
 
 import org.springframework.web.client.RestClientException;
@@ -27,11 +24,9 @@ public class PkuInfoServiceNetImpl implements PkuInfoService {
     public List<PkuPublicInfo> getPkuPublicNotice(PkuInfoType pkuInfoType, Integer page) throws RestClientException {
         if (pkuInfoType.isPkuCareer()) {
             return getPkuCareer(page);
-        }
-        else if (pkuInfoType.isPkuLectures()) {
+        } else if (pkuInfoType.isPkuLectures()) {
             return getPkuLectures();
-        }
-        else if (pkuInfoType.isPkuNews()) {
+        } else if (pkuInfoType.isPkuNews()) {
             List<PkuPublicInfo> pkuTrend = getPkuTrends();
             List<PkuPublicInfo> pkuNews = getPkuNews();
             if (pkuTrend == null) {
@@ -41,8 +36,7 @@ public class PkuInfoServiceNetImpl implements PkuInfoService {
                 pkuTrend.addAll(pkuNews);
             }
             return pkuTrend;
-        }
-        else if (pkuInfoType.isPkuNotices()) {
+        } else if (pkuInfoType.isPkuNotices()) {
             List<PkuPublicInfo> pkuApartmentNotices = getPkuApartmentNotice();
             List<PkuPublicInfo> pkuNotices = getPkuNotices();
             if (pkuApartmentNotices == null) {
@@ -57,7 +51,7 @@ public class PkuInfoServiceNetImpl implements PkuInfoService {
     }
 
     @Override
-    public List<PkuPublicInfo> getPkuNotices() throws RestClientException{
+    public List<PkuPublicInfo> getPkuNotices() throws RestClientException {
         return Lists.newArrayList(NetHelper.getForObject(RECENT_SCHOOL_NEWS_URI, PkuPublicInfo[].class));
     }
 
@@ -87,7 +81,7 @@ public class PkuInfoServiceNetImpl implements PkuInfoService {
         return Lists.newArrayList(NetHelper.getForObject(uri, PkuPublicInfo[].class));
     }
 
-    public List<PkuClubDTO> getPkuClubActivities(){
+    public List<PkuClubDTO> getPkuClubActivities() {
         return MockPkuClubActivityList.get();
     }
 
