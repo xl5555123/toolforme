@@ -13,18 +13,14 @@ public class PkuPublicInfo {
 
     }
 
-    public static PkuPublicInfo mock() {
-        return new PkuPublicInfo("央行宣布对称降息0.25个百分点", "http://finance.sina.com.cn/china/20150228/175421614803.shtml", "2015年02月28日 17:54");
-    }
-
-    public static PkuPublicInfo mock() {
-        return new PkuPublicInfo("央行宣布对称降息0.25个百分点", "http://finance.sina.com.cn/china/20150228/175421614803.shtml", "2015年02月28日 17:54");
-    }
-
     public PkuPublicInfo(String title, String link, String pubDate) {
         this.title = title;
         this.link = link;
         this.pubDate = pubDate;
+    }
+
+    public static PkuPublicInfo mock() {
+        return new PkuPublicInfo("央行宣布对称降息0.25个百分点", "http://finance.sina.com.cn/china/20150228/175421614803.shtml", "2015年02月28日 17:54");
     }
 
     public String getLink() {
