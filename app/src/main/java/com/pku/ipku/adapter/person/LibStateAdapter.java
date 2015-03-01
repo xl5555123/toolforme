@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.pku.ipku.R;
 import com.pku.ipku.model.person.dto.LibBorrowDTO;
 
+import java.text.DateFormat;
 import java.util.List;
 
 /**
@@ -55,8 +56,8 @@ public class LibStateAdapter extends BaseAdapter {
         bookName.setText(book.getBookName());
         authorName.setText(book.getAuthor());
         bookSearchID.setText(book.getBookSearchID());
-        borrowTime.setText(book.getBorrowDate());
-        dueTime.setText(book.getDueDate());
+        borrowTime.setText(DateFormat.getDateInstance().format(book.getBorrowDate()));
+        dueTime.setText(DateFormat.getDateInstance().format(book.getDueDate()));
 
         return view;
     }

@@ -8,7 +8,9 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 
 import com.pku.ipku.R;
+import com.pku.ipku.model.account.User;
 import com.pku.ipku.ui.account.LoginActivity;
+import com.pku.ipku.ui.navigation.MainNavigationActivity;
 import com.pku.ipku.util.AppContextHolder;
 
 /**
@@ -49,7 +51,13 @@ public class AppStart extends Activity {
      * TODO redirect to Login page or Navigation Page ?
      */
     private void redirectTo() {
-        Intent intent = new Intent(this, LoginActivity.class);
+        User currentUser = AppContextHolder.getAppContext().getCurrentUser();
+        Intent intent;
+        if (currentUser == null) {
+            intent = new Intent(this, LoginActivity.class);
+        } else {
+            intent = new Intent(this, MainNavigationActivity.class);
+        }
         startActivity(intent);
         finish();
     }

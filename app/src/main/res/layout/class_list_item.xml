@@ -17,63 +17,40 @@
         android:text="课程名" />
 
     <TextView
-        android:id="@+id/department_header"
-        style="@style/Library.LendList.header"
-        android:layout_below="@id/course_name_header"
-        android:text="学院" />
-
-    <TextView
         android:id="@+id/term_header"
         style="@style/Library.LendList.header"
-        android:layout_below="@id/department_header"
-        android:text="学期" />
+        android:layout_below="@id/course_name_header"
+        android:text="时间" />
 
     <TextView
-        android:id="@+id/type_header"
+        android:id="@+id/department_header"
         style="@style/Library.LendList.header"
         android:layout_below="@id/term_header"
-        android:text="类别" />
-
-    <TextView
-        android:id="@+id/score_header"
-        style="@style/Library.LendList.header"
-        android:layout_below="@id/type_header"
-        android:text="得分" />
+        android:text="学院" />
 
     <TextView
         android:id="@+id/course_id"
         style="@style/Library.LendList.item"
         android:layout_alignParentTop="true"
-        android:text="14213" />
+        android:text="123" />
 
     <TextView
         android:id="@+id/course_name"
         style="@style/Library.LendList.item"
         android:layout_below="@id/course_id"
-        android:text="拉拉" />
-
-    <TextView
-        android:id="@+id/department"
-        style="@style/Library.LendList.item"
-        android:layout_below="@id/course_name"
-        android:text="ff" />
+        android:text="中心馆藏" />
 
     <TextView
         android:id="@+id/term"
         style="@style/Library.LendList.item"
-        android:layout_below="@id/department"
-        android:text="否" />
+        android:layout_below="@id/course_name"
+        android:text="2015-4-10" />
 
     <TextView
-        android:id="@+id/type"
+        android:id="@+id/department"
         style="@style/Library.LendList.item"
         android:layout_below="@id/term"
-        android:text="否" />
-
-    <TextView
-        android:id="@+id/score"
-        style="@style/Library.LendList.item"
-        android:layout_below="@id/type"
         android:layout_marginBottom="10dp"
         android:text="否" />
+
 </RelativeLayout>

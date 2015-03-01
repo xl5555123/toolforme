@@ -1,35 +1,27 @@
 package com.pku.ipku.ui.person.queryClass;
 
-import android.app.DialogFragment;
-import android.content.Intent;
+import android.app.SearchManager;
+import android.content.Context;
 import android.os.Bundle;
-import android.text.Editable;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.TextView;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.widget.SearchView;
 
 import com.pku.ipku.R;
-import com.pku.ipku.api.factory.IpkuServiceFactory;
 import com.pku.ipku.model.person.navigation.RegisterInPersonPage;
 import com.pku.ipku.model.studyguide.Lesson;
-import com.pku.ipku.task.LoadDataConfigure;
-import com.pku.ipku.task.LoadDataDefaultTask;
-import com.pku.ipku.ui.studyGuide.ClassDetail;
 import com.pku.ipku.ui.util.BaseActivityIncludingFooterNavigation;
-import com.pku.ipku.util.DataHandleUtil;
-import com.pku.ipku.util.UIHelper;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class QueryClassActivity extends BaseActivityIncludingFooterNavigation implements RegisterInPersonPage {
 
-    private String term;
-    private String year;
+    private MenuItem searchItem;
+    private SearchView searchView;
 
-    private TextView termTextView;
-    private TextView yearTextView;
-    private EditText lessonName;
+    private QueryClassResultFragment searchResultFragment;
 
     private Lesson lesson;
 
@@ -72,67 +64,9 @@ public class QueryClassActivity extends BaseActivityIncludingFooterNavigation im
     }
 
     private void initView() {
-        lessonName = (EditText) findViewById(R.id.lesson_name);
-        termTextView = (TextView) findViewById(R.id.team);
-        yearTextView = (TextView) findViewById(R.id.year);
-        findViewById(R.id.team_selector).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DialogFragment dialogFragment = new SingleSelectDialogFragment("请选择学期", teamToSelect, termTextView, term);
-                dialogFragment.show(getFragmentManager(), "team");
-            }
-        });
-        findViewById(R.id.year_selector).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DialogFragment dialogFragment = new SingleSelectDialogFragment("请选择学年", yearToSelect, yearTextView, year);
-                dialogFragment.show(getFragmentManager(), "year");
-            }
-        });
-        findViewById(R.id.search).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Editable lesson = lessonName.getText();
-                if (lesson == null || lesson.length() == 0) {
-                    UIHelper.ToastMessage("请输入课程名");
-                    return;
-                }
-                loadLesson();
-
-            }
-        });
+        findViewById(R.id.query_class_frame);
     }
 
-    private void loadLesson() {
-        new LoadDataDefaultTask(new LoadDataConfigure() {
-            @Override
-            public void showData() {
-                String lessonJson = DataHandleUtil.objectToJson(lesson);
-                Intent intent = new Intent(QueryClassActivity.this, ClassDetail.class);
-                intent.putExtra("lesson", lessonJson);
-                startActivity(intent);
-            }
-
-            @Override
-            public boolean getData(boolean cache) {
-                lesson = IpkuServiceFactory.getStudyGuideService(cache).queryLesson(year, term, lessonName.getText().toString());
-                if (lesson != null) {
-                    return true;
-                }
-                return false;
-            }
-
-            @Override
-            public void showWaiting() {
-
-            }
-
-            @Override
-            public void stopWaiting() {
-
-            }
-        }).execute();
-    }
 
     @Override
     public int getPageDrawableId() {
@@ -147,5 +81,35 @@ public class QueryClassActivity extends BaseActivityIncludingFooterNavigation im
     @Override
     public Class attachedClassType() {
         return QueryClassActivity.class;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.library_search, menu);
+        searchItem = menu.findItem(R.id.search);
+        SearchManager searchManager =
+                (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        searchView =
+                (SearchView) searchItem.getActionView();
+        searchView.setSearchableInfo(
+                searchManager.getSearchableInfo(getComponentName()));
+        searchView.setSubmitButtonEnabled(true);
+        searchItem.expandActionView();
+        searchView.setQueryHint("搜索课程");
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                searchResultFragment = QueryClassResultFragment.newInstance(query);
+                getFragmentManager().beginTransaction().replace(R.id.query_class_frame, searchResultFragment).commit();
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
+        return true;
     }
 }

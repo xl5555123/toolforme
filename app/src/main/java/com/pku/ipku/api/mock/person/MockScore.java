@@ -4,6 +4,7 @@ import com.pku.ipku.model.person.dto.ScoreDTO;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by pktxq on 15-1-23.
@@ -23,6 +24,8 @@ public class MockScore {
     };
 
     public static List<ScoreDTO> get() {
-        return scoreDTOList;
+        Random random = new Random();
+        int start = random.nextInt(scoreDTOList.size());
+        return scoreDTOList.subList(start, scoreDTOList.size());
     }
 }

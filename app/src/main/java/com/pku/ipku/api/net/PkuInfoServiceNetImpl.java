@@ -13,6 +13,7 @@ import com.pku.ipku.model.pkuInfo.dto.PkuPublicInfo;
 import org.springframework.web.client.RestClientException;
 
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by XingLiang on 2015/1/6.
@@ -22,6 +23,8 @@ public class PkuInfoServiceNetImpl implements PkuInfoService {
 
     @Override
     public List<PkuPublicInfo> getPkuPublicNotice(PkuInfoType pkuInfoType, Integer page) throws RestClientException {
+        // TODO to be online
+        /*
         if (pkuInfoType.isPkuCareer()) {
             return getPkuCareer(page);
         } else if (pkuInfoType.isPkuLectures()) {
@@ -47,7 +50,13 @@ public class PkuInfoServiceNetImpl implements PkuInfoService {
             }
             return pkuApartmentNotices;
         }
-        return null;
+        */
+        List<PkuPublicInfo> pkuPublicInfos = Lists.newArrayList();
+        Random random = new Random();
+        for (int i = 0; i < random.nextInt() + 2; i++) {
+            pkuPublicInfos.add(PkuPublicInfo.mock());
+        }
+        return pkuPublicInfos;
     }
 
     @Override

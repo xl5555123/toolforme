@@ -1,6 +1,7 @@
 package com.pku.ipku.ui.account;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -8,7 +9,9 @@ import android.widget.TextView;
 
 import com.pku.ipku.R;
 import com.pku.ipku.model.account.User;
-import com.pku.ipku.task.LoadDataDefaultTask;
+import com.pku.ipku.ui.navigation.MainNavigationActivity;
+import com.pku.ipku.util.AppContextHolder;
+import com.pku.ipku.util.UIHelper;
 
 public class LoginActivity extends Activity {
 
@@ -25,10 +28,16 @@ public class LoginActivity extends Activity {
         findViewById(R.id.login_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (usernameTextView.getText() == null || passwordTextView.getText() == null) {
+                String username = usernameTextView.getText().toString();
+                String password = passwordTextView.getText().toString();
+                if (username == null || username.length() == 0 || password == null || password.length() == 0) {
+                    UIHelper.ToastMessage("用户名和密码不能为空");
                     return;
                 }
-                new LoadDataDefaultTask(new LoginTaskConfigure()).execute();
+                User user = new User();
+                user.setPassword(passwordTextView.getText().toString());
+                user.setUsername(usernameTextView.getText().toString());
+                new LoginTask().execute(user);
             }
         });
     }
@@ -46,7 +55,12 @@ public class LoginActivity extends Activity {
 
         @Override
         protected void onPostExecute(User user) {
-            if ()
+            if (user != null) {
+                UIHelper.ToastMessage("登录成功");
+                AppContextHolder.getAppContext().setCurrentUser(user);
+                Intent intent = new Intent(LoginActivity.this, MainNavigationActivity.class);
+                startActivity(intent);
+            }
         }
     }
 }

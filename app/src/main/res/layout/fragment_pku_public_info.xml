@@ -4,15 +4,11 @@
     android:layout_height="match_parent"
     tools:context="com.pku.ipku.ui.pkuInfo.PkuPublicInfoActivity">
 
-    <include
-        android:id="@id/footer"
-        layout="@layout/default_footer" />
 
     <ListView
         android:id="@+id/pku_pub_info_list"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_above="@id/footer"
         android:background="@color/white" />
 
 </RelativeLayout>

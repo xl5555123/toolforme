@@ -1,5 +1,7 @@
 package com.pku.ipku.ui.person;
 
+import android.app.ActionBar;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.widget.ListView;
 
@@ -20,9 +22,9 @@ import java.util.List;
  */
 public class ScoreActivity extends BaseActivityIncludingFooterNavigation implements RegisterInPersonPage {
 
-    private ListView scoreListView;
     private List<ScoreDTO> scoreDTOList;
     private AppContext appContext;
+    private ListView scoreList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +34,28 @@ public class ScoreActivity extends BaseActivityIncludingFooterNavigation impleme
         }
         savedInstanceState.putString("title", getPageTitle());
         super.onCreate(savedInstanceState);
-        scoreListView = (ListView) findViewById(R.id.scoreListView);
+        scoreList = (ListView) findViewById(R.id.score_list);
         appContext = (AppContext) getApplicationContext();
-        new LoadDataDefaultTask(new LoadScoreConfigure()).execute();
+        getActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+        ActionBar.TabListener tabListener = new ActionBar.TabListener() {
+            @Override
+            public void onTabSelected(ActionBar.Tab tab, FragmentTransaction ft) {
+                new LoadDataDefaultTask(new LoadScoreConfigure()).execute();
+            }
+
+            @Override
+            public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction ft) {
+
+            }
+
+            @Override
+            public void onTabReselected(ActionBar.Tab tab, FragmentTransaction ft) {
+
+            }
+        };
+        getActionBar().addTab(getActionBar().newTab().setText("这学期").setTabListener(tabListener));
+        getActionBar().addTab(getActionBar().newTab().setText("上学期").setTabListener(tabListener));
+        getActionBar().addTab(getActionBar().newTab().setText("大上学期").setTabListener(tabListener));
     }
 
     @Override
@@ -56,7 +77,7 @@ public class ScoreActivity extends BaseActivityIncludingFooterNavigation impleme
 
         @Override
         public void showData() {
-            scoreListView.setAdapter(new StuScoreAdapter(appContext, scoreDTOList));
+            scoreList.setAdapter(new StuScoreAdapter(appContext, scoreDTOList));
         }
 
         @Override

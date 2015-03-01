@@ -1,36 +1,37 @@
 package com.pku.ipku.ui.person.library;
 
 import android.app.ActionBar;
-import android.app.Activity;
+import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.app.SearchManager;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.SearchView;
 
 import com.pku.ipku.R;
-import com.pku.ipku.api.factory.IpkuServiceFactory;
 import com.pku.ipku.model.person.dto.LibBorrowDTO;
 import com.pku.ipku.model.person.navigation.RegisterInPersonPage;
-import com.pku.ipku.task.LoadDataConfigure;
 import com.pku.ipku.ui.AppContext;
-import com.pku.ipku.util.UIHelper;
+import com.pku.ipku.ui.util.BaseActivityIncludingFooterNavigation;
 
 import java.util.List;
 
 /**
  * Created by XingLiang on 2015/2/5.
  */
-public class LibraryActivity extends Activity implements RegisterInPersonPage {
+public class LibraryActivity extends BaseActivityIncludingFooterNavigation implements RegisterInPersonPage {
 
     private List<LibBorrowDTO> bookList;
     private ListView bookListView;
     private AppContext appContext;
+    private MenuItem searchItem;
     private SearchView searchView;
     private int searchType;
+    private Fragment searchResultFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +46,7 @@ public class LibraryActivity extends Activity implements RegisterInPersonPage {
 
     private void setUpActionBar() {
         ActionBar actionBar = getActionBar();
+
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeButtonEnabled(true);
         actionBar.setTitle(getPageTitle());
@@ -55,10 +57,18 @@ public class LibraryActivity extends Activity implements RegisterInPersonPage {
                 String title = tab.getText().toString();
                 if (title.equals(LIBRARY_TAB_TITLE.COLLECT_INDEX)) {
                     searchView.setQueryHint("搜索馆藏图书");
+                    searchItem.expandActionView();
+                    getFragmentManager().beginTransaction().remove(searchResultFragment).commit();
                 } else if (title.equals(LIBRARY_TAB_TITLE.SCHOLAR_SEARCH)) {
                     searchView.setQueryHint("未名学术搜索");
+                    searchItem.expandActionView();
+                    getFragmentManager().beginTransaction().remove(searchResultFragment).commit();
                 } else if (title.equals(LIBRARY_TAB_TITLE.MY_LEND)) {
-                    UIHelper.ToastMessage("我的借阅");
+                    searchResultFragment = LendListFragment.newInstance();
+                    getFragmentManager().beginTransaction().replace(R.id.search_content, searchResultFragment).commit();
+                    if (searchItem != null) {
+                        searchItem.collapseActionView();
+                    }
                 }
             }
 
@@ -96,12 +106,27 @@ public class LibraryActivity extends Activity implements RegisterInPersonPage {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.library_search, menu);
+        searchItem = menu.findItem(R.id.search);
         SearchManager searchManager =
                 (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         searchView =
-                (SearchView) menu.findItem(R.id.search).getActionView();
+                (SearchView) searchItem.getActionView();
         searchView.setSearchableInfo(
                 searchManager.getSearchableInfo(getComponentName()));
+        searchView.setSubmitButtonEnabled(true);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                searchResultFragment = LendListFragment.newInstance();
+                getFragmentManager().beginTransaction().replace(R.id.search_content, searchResultFragment).commit();
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
         return true;
     }
 
@@ -109,38 +134,5 @@ public class LibraryActivity extends Activity implements RegisterInPersonPage {
         public final static String COLLECT_INDEX = "馆藏目录";
         public final static String SCHOLAR_SEARCH = "未名学术搜索";
         public final static String MY_LEND = "我的借阅";
-    }
-
-    private final static class LIBRARY_SEARCH_TYPE {
-        public final static int COLLECT_INDEX = 1;
-        public final static int SCHOLAR_SEARCH = 2;
-        public final static int MY_LEND = 3;
-    }
-
-    private class LoadLibStateConfigure implements LoadDataConfigure {
-
-        @Override
-        public void showData() {
-            bookListView.setAdapter(new com.pku.ipku.adapter.person.LibStateAdapter(appContext, bookList));
-        }
-
-        @Override
-        public boolean getData(boolean cache) {
-            bookList = IpkuServiceFactory.getPersonService(cache).getLibBorrowInfo();
-            if (bookList == null) {
-                return false;
-            }
-            return true;
-        }
-
-        @Override
-        public void showWaiting() {
-
-        }
-
-        @Override
-        public void stopWaiting() {
-
-        }
     }
 }
