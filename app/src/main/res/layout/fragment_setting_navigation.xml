@@ -1,0 +1,70 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#b9b9b9"
+    tools:context="com.pku.ipku.ui.navigation.SettingNavigationFragment">
+
+    <RelativeLayout
+        android:id="@+id/account_setting"
+        style="@style/Setting.Layout"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            style="@style/Setting.Title"
+            android:text="帐号管理" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@id/chevron_right"
+            android:src="@drawable/xingliang" />
+
+        <ImageView
+            android:id="@+id/chevron_right"
+            style="@style/Setting.Chevron" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/network_management"
+        style="@style/Setting.Layout"
+        android:layout_below="@id/account_setting"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            style="@style/Setting.Title"
+            android:text="网络管理" />
+
+        <ImageView style="@style/Setting.Chevron" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/notice_management"
+        style="@style/Setting.Layout"
+        android:layout_below="@id/network_management"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            style="@style/Setting.Title"
+            android:text="通知管理" />
+
+        <ImageView style="@style/Setting.Chevron" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/about_ipku"
+        style="@style/Setting.Layout"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="200dp">
+
+        <TextView
+            style="@style/Setting.Title"
+            android:text="关于IPKU" />
+
+        <ImageView style="@style/Setting.Chevron" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -45,6 +45,11 @@ public class MainNavigationActivity extends Activity {
         fragmentTransaction.replace(R.id.content, SchoolFragment.newInstance()).commit();
     }
 
+    private void navigationToSetting() {
+        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.content, SettingNavigationFragment.newInstance()).commit();
+    }
+
     private void initView() {
         homeButton = (ImageButton) findViewById(R.id.home_button);
         studentButton = (ImageButton) findViewById(R.id.student_button);
@@ -76,7 +81,9 @@ public class MainNavigationActivity extends Activity {
         settingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UIHelper.ToastMessage("尽请期待！");
+                initButtonBackground();
+                settingButton.setBackgroundColor(getResources().getColor(R.color.footer_red));
+                navigationToSetting();
             }
         });
         navigateToPerson();

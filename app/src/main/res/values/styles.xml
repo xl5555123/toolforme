@@ -140,4 +140,31 @@
         <item name="android:layout_marginRight">20dp</item>
     </style>
 
+    <!-- setting style -->
+    <style name="Setting">
+
+    </style>
+
+    <style name="Setting.Title">
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="Setting.Chevron">
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:src">@drawable/chevron</item>
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">30dp</item>
+    </style>
+
+    <style name="Setting.Layout">
+        <item name="android:background">@color/white</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">60dp</item>
+    </style>
 </resources>
