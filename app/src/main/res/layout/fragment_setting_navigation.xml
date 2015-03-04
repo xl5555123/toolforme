@@ -16,16 +16,16 @@
             android:text="帐号管理" />
 
         <ImageView
+            android:id="@+id/chevron_right"
+            style="@style/Setting.Chevron" />
+
+        <ImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_centerVertical="true"
             android:layout_marginRight="20dp"
             android:layout_toLeftOf="@id/chevron_right"
             android:src="@drawable/xingliang" />
-
-        <ImageView
-            android:id="@+id/chevron_right"
-            style="@style/Setting.Chevron" />
 
     </RelativeLayout>
 
