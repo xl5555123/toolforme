@@ -55,8 +55,7 @@ public class SettingNavigationFragment extends Fragment {
         accountManagementButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), AccountManagementActivity.class);
-                startActivity(intent);
+                UIHelper.ToastMessage("尽请期待!");
             }
         });
         noticeManagementButton.setOnClickListener(new View.OnClickListener() {

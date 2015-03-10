@@ -2,6 +2,7 @@ package com.pku.ipku.ui.person.queryClass;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -70,12 +71,17 @@ public class QueryClassActivity extends BaseActivityIncludingFooterNavigation im
 
     @Override
     public int getPageDrawableId() {
-        return R.drawable.user_class;
+        return R.drawable.classresult;
     }
 
     @Override
     public String getPageTitle() {
         return "课程查询";
+    }
+
+    @Override
+    public int getPageBackgroundId() {
+        return R.drawable.navigation_border_pink;
     }
 
     @Override

@@ -14,7 +14,7 @@ import android.widget.GridView;
 import com.pku.ipku.R;
 import com.pku.ipku.adapter.navigation.PersonNavigationAdapter;
 import com.pku.ipku.model.person.navigation.RegisterInPersonPage;
-import com.pku.ipku.ui.person.ArrearageStateActivity;
+import com.pku.ipku.ui.person.arrearageState.ArrearageStateActivity;
 import com.pku.ipku.ui.person.PersonInfoActivity;
 import com.pku.ipku.ui.person.ScholarshipActivity;
 import com.pku.ipku.ui.person.ScoreActivity;

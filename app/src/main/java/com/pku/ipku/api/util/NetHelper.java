@@ -58,7 +58,12 @@ public class NetHelper {
         String url = getUrl(uri);
         Log.d("http get", url);
         HttpEntity<T> httpEntity = new HttpEntity<T>(getHeader());
-        T data = restTemplate.exchange(url, HttpMethod.GET, httpEntity, returnType).getBody();
+        T data = null;
+        try {
+            data = restTemplate.exchange(url, HttpMethod.GET, httpEntity, returnType).getBody();
+        } catch (Exception e) {
+
+        }
         return data;
     }
 

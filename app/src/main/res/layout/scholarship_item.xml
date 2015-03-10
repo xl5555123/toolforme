@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="64dip"
-    android:background="#b9b9b9"
+    android:background="@color/default_background"
     android:descendantFocusability="blocksDescendants"
     android:orientation="horizontal"
     android:paddingBottom="8dip"

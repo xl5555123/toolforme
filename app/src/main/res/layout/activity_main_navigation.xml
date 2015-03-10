@@ -4,13 +4,8 @@
     android:layout_height="match_parent"
     tools:context="com.pku.ipku.ui.navigation.MainNavigationActivity">
 
-    <FrameLayout
-        android:id="@+id/content"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"></FrameLayout>
-
     <LinearLayout
+        android:id="@+id/footer"
         android:layout_width="match_parent"
         android:layout_height="44dp"
         android:layout_alignParentBottom="true"
@@ -20,7 +15,8 @@
 
         <ImageButton
             android:id="@+id/home_button"
-            android:layout_width="81dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="match_parent"
             android:background="@drawable/navigation_selector"
             android:focusable="true"
@@ -30,7 +26,8 @@
 
         <ImageButton
             android:id="@+id/student_button"
-            android:layout_width="81dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="match_parent"
             android:background="@drawable/navigation_selector"
             android:paddingLeft="26dp"
@@ -39,7 +36,8 @@
 
         <ImageButton
             android:id="@+id/school_button"
-            android:layout_width="81dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="match_parent"
             android:background="@drawable/navigation_selector"
             android:paddingLeft="26dp"
@@ -48,7 +46,8 @@
 
         <ImageButton
             android:id="@+id/setting_button"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="match_parent"
             android:background="@drawable/navigation_selector"
             android:paddingLeft="26dp"
@@ -56,4 +55,11 @@
             android:src="@drawable/setting" />
 
     </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/footer"
+        android:layout_alignParentTop="true"></FrameLayout>
 </RelativeLayout>

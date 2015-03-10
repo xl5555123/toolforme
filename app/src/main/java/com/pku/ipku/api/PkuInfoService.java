@@ -7,6 +7,8 @@ import com.pku.ipku.model.pkuInfo.dto.PkuPublicInfo;
 
 import org.springframework.web.client.RestClientException;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -20,8 +22,11 @@ public interface PkuInfoService {
     public static final String TOP_NEWS_URI = "/svcpub/svc/pub/news/top8";
     public static final String TOP_LECTURES_URI = "/svcpub/svc/pub/lecture/top10";
     public static final String PAGED_CAREER_RECRUITS_URI = "/svcpub/svc/pub/career/recruit/%d";
+    public static final String LECTURE_URI = "/svcpub/svc/pub/lecture/date/%d/%d/%d";
 
     public List<PkuPublicInfo> getPkuPublicNotice(PkuInfoType pkuInfoType, Integer page) throws RestClientException;
+
+    public List<PkuPublicInfo> getPkuLecture(Calendar calendar) throws RestClientException;
 
     /**
      * 获取学校公告

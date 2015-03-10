@@ -2,20 +2,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#b9b9b9"
+    android:background="#f8fef8"
     android:focusableInTouchMode="true"
-    android:paddingBottom="135dp"
-    android:paddingLeft="19dp"
-    android:paddingRight="19dp"
-    android:paddingTop="135dp"
+    android:paddingBottom="60dp"
+    android:paddingTop="90dp"
     tools:context="com.pku.ipku.ui.navigation.PersonFragment">
 
     <GridView
-
         android:id="@+id/navigation_grid"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:stretchMode="columnWidth"
+        android:columnWidth="100dp"
+        android:horizontalSpacing="10dp"
+        android:verticalSpacing="10dp"
         android:numColumns="3">
-
     </GridView>
+
 </RelativeLayout>

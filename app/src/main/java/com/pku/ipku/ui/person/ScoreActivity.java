@@ -2,6 +2,7 @@ package com.pku.ipku.ui.person;
 
 import android.app.ActionBar;
 import android.app.FragmentTransaction;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.ListView;
 
@@ -60,12 +61,17 @@ public class ScoreActivity extends BaseActivityIncludingFooterNavigation impleme
 
     @Override
     public int getPageDrawableId() {
-        return R.drawable.user_grade;
+        return R.drawable.grade;
     }
 
     @Override
     public String getPageTitle() {
         return "成绩查询";
+    }
+
+    @Override
+    public int getPageBackgroundId() {
+        return R.drawable.navigation_border_green;
     }
 
     @Override

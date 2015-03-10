@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.pku.ipku.R;
 import com.pku.ipku.model.person.navigation.RegisterInPersonPage;
@@ -38,7 +40,7 @@ public class PersonNavigationAdapter extends BaseAdapter {
 
     @Override
     public long getItemId(int i) {
-        return i;
+        return 0;
     }
 
     @Override
@@ -47,8 +49,13 @@ public class PersonNavigationAdapter extends BaseAdapter {
         if (view != null) {
             RegisterInPersonPage registerInPersonPage = registerInPersonPageList.get(i);
             ImageView icon = (ImageView) view.findViewById(R.id.icon);
+            view.findViewById(R.id.background).setBackgroundResource(registerInPersonPage.getPageBackgroundId());
             if (icon != null) {
                 icon.setImageResource(registerInPersonPage.getPageDrawableId());
+            }
+            TextView title = (TextView) view.findViewById(R.id.title);
+            if (title != null) {
+                title.setText(registerInPersonPage.getPageTitle());
             }
             view.setTag(registerInPersonPage);
         }

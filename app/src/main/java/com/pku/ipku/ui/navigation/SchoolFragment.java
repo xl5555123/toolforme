@@ -14,6 +14,7 @@ import android.widget.GridView;
 import com.pku.ipku.R;
 import com.pku.ipku.adapter.navigation.SchoolNavigationAdapter;
 import com.pku.ipku.model.pkuInfo.PkuInfoType;
+import com.pku.ipku.ui.pkuInfo.PkuLectureActivity;
 import com.pku.ipku.ui.pkuInfo.PkuPublicInfoActivity;
 
 import java.util.ArrayList;
@@ -80,9 +81,15 @@ public class SchoolFragment extends Fragment {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 PkuInfoType pkuInfoType = (PkuInfoType) view.getTag();
                 if (pkuInfoType != null) {
-                    Intent intent = new Intent(parentActivity, PkuPublicInfoActivity.class);
-                    intent.putExtra("type", pkuInfoType.getType());
-                    startActivity(intent);
+                    if (pkuInfoType.isPkuLectures()) {
+                        Intent intent = new Intent(parentActivity, PkuLectureActivity.class);
+                        startActivity(intent);
+                    }
+                    else {
+                        Intent intent = new Intent(parentActivity, PkuPublicInfoActivity.class);
+                        intent.putExtra("type", pkuInfoType.getType());
+                        startActivity(intent);
+                    }
                 }
             }
         });

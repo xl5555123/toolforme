@@ -5,6 +5,7 @@ import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.app.SearchManager;
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -89,12 +90,17 @@ public class LibraryActivity extends BaseActivityIncludingFooterNavigation imple
 
     @Override
     public int getPageDrawableId() {
-        return R.drawable.user_library;
+        return R.drawable.libary;
     }
 
     @Override
     public String getPageTitle() {
         return "图书馆";
+    }
+
+    @Override
+    public int getPageBackgroundId() {
+        return R.drawable.navigation_border_red;
     }
 
     @Override

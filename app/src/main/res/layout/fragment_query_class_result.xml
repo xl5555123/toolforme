@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#b9b9b9"
+    android:background="@color/default_background"
     tools:context="com.pku.ipku.ui.person.queryClass.QueryClassResultFragment">
 
     <ListView

@@ -12,6 +12,8 @@ import com.pku.ipku.model.pkuInfo.dto.PkuPublicInfo;
 
 import org.springframework.web.client.RestClientException;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
@@ -23,8 +25,7 @@ public class PkuInfoServiceNetImpl implements PkuInfoService {
 
     @Override
     public List<PkuPublicInfo> getPkuPublicNotice(PkuInfoType pkuInfoType, Integer page) throws RestClientException {
-        // TODO to be online
-        /*
+
         if (pkuInfoType.isPkuCareer()) {
             return getPkuCareer(page);
         } else if (pkuInfoType.isPkuLectures()) {
@@ -50,13 +51,17 @@ public class PkuInfoServiceNetImpl implements PkuInfoService {
             }
             return pkuApartmentNotices;
         }
-        */
-        List<PkuPublicInfo> pkuPublicInfos = Lists.newArrayList();
-        Random random = new Random();
-        for (int i = 0; i < random.nextInt() + 2; i++) {
-            pkuPublicInfos.add(PkuPublicInfo.mock());
+        return null;
+    }
+
+    @Override
+    public List<PkuPublicInfo> getPkuLecture(Calendar calendar) throws RestClientException {
+        String pkuLectureUrl = String.format(LECTURE_URI, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH) + 1, calendar.get(Calendar.DAY_OF_MONTH));
+        PkuPublicInfo[] result = NetHelper.getForObject(pkuLectureUrl, PkuPublicInfo[].class);
+        if (result == null || result.length == 0) {
+            return Lists.newArrayList();
         }
-        return pkuPublicInfos;
+        return Lists.newArrayList(result);
     }
 
     @Override

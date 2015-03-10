@@ -3,6 +3,7 @@ package com.pku.ipku.ui.person.freeClassRoom;
 
 import android.app.DialogFragment;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -99,12 +100,17 @@ public class FreeClassroomActivity extends BaseActivityIncludingFooterNavigation
 
     @Override
     public int getPageDrawableId() {
-        return R.drawable.user_classroom;
+        return R.drawable.freeroom;
     }
 
     @Override
     public String getPageTitle() {
         return "空闲教室";
+    }
+
+    @Override
+    public int getPageBackgroundId() {
+        return R.drawable.navigation_border_blue;
     }
 
     @Override

@@ -244,4 +244,6 @@
     <color name="project_red">#ff897c</color>
     <color name="project_blue">#66c5cf</color>
 
+    <color name="default_background">#f0f0f0</color>
+
 </resources>

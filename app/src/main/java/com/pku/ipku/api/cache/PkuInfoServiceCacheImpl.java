@@ -10,6 +10,7 @@ import com.pku.ipku.model.pkuInfo.dto.PkuPublicInfo;
 
 import org.springframework.web.client.RestClientException;
 
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -18,6 +19,11 @@ import java.util.List;
 public class PkuInfoServiceCacheImpl implements PkuInfoService {
     @Override
     public List<PkuPublicInfo> getPkuPublicNotice(PkuInfoType pkuInfoType, Integer page) throws RestClientException {
+        return null;
+    }
+
+    @Override
+    public List<PkuPublicInfo> getPkuLecture(Calendar calendar) throws RestClientException {
         return null;
     }
 

@@ -1,5 +1,6 @@
 package com.pku.ipku.ui.person;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.ListView;
 
@@ -36,12 +37,17 @@ public class PersonInfoActivity extends BaseActivityIncludingFooterNavigation im
 
     @Override
     public int getPageDrawableId() {
-        return R.drawable.person_info_button;
+        return R.drawable.id;
     }
 
     @Override
     public String getPageTitle() {
         return "个人信息";
+    }
+
+    @Override
+    public int getPageBackgroundId() {
+        return R.drawable.navigation_border_blue;
     }
 
     @Override

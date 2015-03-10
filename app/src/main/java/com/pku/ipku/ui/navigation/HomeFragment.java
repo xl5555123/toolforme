@@ -1,21 +1,19 @@
 package com.pku.ipku.ui.navigation;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.pku.ipku.R;
+import com.pku.ipku.ui.person.arrearageState.ArrearageStateActivity;
+import com.pku.ipku.ui.person.arrearageState.ArrearageStateFragment;
+import com.pku.ipku.ui.person.library.BookOverline;
+import com.pku.ipku.ui.person.library.LibraryActivity;
+import com.pku.ipku.ui.pkuInfo.PkuLectureFragment;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link HomeFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link HomeFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class HomeFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -52,6 +50,28 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        initView(view);
+        return view;
+    }
+
+    private void initView(View view) {
+        getFragmentManager().beginTransaction().replace(R.id.lecture_fragment, PkuLectureFragment.newInstance()).commit();
+        getFragmentManager().beginTransaction().replace(R.id.remain_fragment, ArrearageStateFragment.newInstance()).commit();
+        getFragmentManager().beginTransaction().replace(R.id.library_fragment, BookOverline.newInstance()).commit();
+        view.findViewById(R.id.remain_fragment).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), ArrearageStateActivity.class);
+                startActivity(intent);
+            }
+        });
+        view.findViewById(R.id.library_fragment).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), LibraryActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

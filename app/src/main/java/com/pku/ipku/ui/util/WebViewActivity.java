@@ -22,7 +22,7 @@ public class WebViewActivity extends BaseActivityIncludingFooterNavigation {
         url = getIntent().getStringExtra("url");
         String title = getIntent().getStringExtra("title");
         if (title != null) {
-            savedInstanceState.putString("title", "成绩查询");
+            savedInstanceState.putString("title", title);
         } else {
             savedInstanceState.putString("title", "IPKU");
         }

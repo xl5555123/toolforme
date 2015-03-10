@@ -1,5 +1,6 @@
-package com.pku.ipku.ui.person;
+package com.pku.ipku.ui.person.arrearageState;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -73,12 +74,17 @@ public class ArrearageStateActivity extends BaseActivityIncludingFooterNavigatio
 
     @Override
     public int getPageDrawableId() {
-        return R.drawable.user_money;
+        return R.drawable.money;
     }
 
     @Override
     public String getPageTitle() {
         return "欠费信息";
+    }
+
+    @Override
+    public int getPageBackgroundId() {
+        return R.drawable.navigation_border_purple;
     }
 
     @Override

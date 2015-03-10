@@ -1,5 +1,6 @@
 package com.pku.ipku.ui.person;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.ListView;
 
@@ -39,12 +40,17 @@ public class ScholarshipActivity extends BaseActivityIncludingFooterNavigation i
 
     @Override
     public int getPageDrawableId() {
-        return R.drawable.user_scholar;
+        return R.drawable.sholarship;
     }
 
     @Override
     public String getPageTitle() {
         return "奖学金信息";
+    }
+
+    @Override
+    public int getPageBackgroundId() {
+        return R.drawable.navigation_border_yellow;
     }
 
     @Override

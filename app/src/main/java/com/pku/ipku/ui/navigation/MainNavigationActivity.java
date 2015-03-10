@@ -59,7 +59,9 @@ public class MainNavigationActivity extends Activity {
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UIHelper.ToastMessage("尽请期待");
+                initButtonBackground();
+                homeButton.setBackgroundColor(getResources().getColor(R.color.footer_red));
+                navigateToHome();
             }
         });
         studentButton.setOnClickListener(new View.OnClickListener() {
@@ -86,6 +88,9 @@ public class MainNavigationActivity extends Activity {
                 navigationToSetting();
             }
         });
-        navigateToPerson();
+
+        initButtonBackground();
+        homeButton.setBackgroundColor(getResources().getColor(R.color.footer_red));
+        navigateToHome();
     }
 }
