@@ -14,7 +14,11 @@ import android.widget.GridView;
 import com.pku.ipku.R;
 import com.pku.ipku.adapter.navigation.SchoolNavigationAdapter;
 import com.pku.ipku.model.pkuInfo.PkuInfoType;
+import com.pku.ipku.model.pkuInfo.RegisterInPkuInfoPage;
+import com.pku.ipku.ui.pkuInfo.FindAJobActivity;
 import com.pku.ipku.ui.pkuInfo.PkuLectureActivity;
+import com.pku.ipku.ui.pkuInfo.PkuNewsActivity;
+import com.pku.ipku.ui.pkuInfo.PkuNoticeActivity;
 import com.pku.ipku.ui.pkuInfo.PkuPublicInfoActivity;
 
 import java.util.ArrayList;
@@ -27,12 +31,12 @@ import java.util.List;
  */
 public class SchoolFragment extends Fragment {
 
-    private final static List<PkuInfoType> pkuInfoTypeList = new ArrayList<PkuInfoType>() {
+    private final static List<RegisterInPkuInfoPage> pkuInfoTypeList = new ArrayList<RegisterInPkuInfoPage>() {
         {
-            add(new PkuInfoType(PkuInfoType.PKU_NEWS));
-            add(new PkuInfoType(PkuInfoType.PKU_NOTICES));
-            add(new PkuInfoType(PkuInfoType.PKU_LECTURES));
-            add(new PkuInfoType(PkuInfoType.PKU_CAREER));
+            add(new PkuNewsActivity());
+            add(new PkuLectureActivity());
+            add(new PkuNoticeActivity());
+            add(new FindAJobActivity());
         }
     };
 
@@ -79,15 +83,10 @@ public class SchoolFragment extends Fragment {
         icon.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                PkuInfoType pkuInfoType = (PkuInfoType) view.getTag();
-                if (pkuInfoType != null) {
-                    if (pkuInfoType.isPkuLectures()) {
-                        Intent intent = new Intent(parentActivity, PkuLectureActivity.class);
-                        startActivity(intent);
-                    }
-                    else {
-                        Intent intent = new Intent(parentActivity, PkuPublicInfoActivity.class);
-                        intent.putExtra("type", pkuInfoType.getType());
+                RegisterInPkuInfoPage registerInPkuInfoPage = (RegisterInPkuInfoPage) view.getTag();
+                if (registerInPkuInfoPage != null) {
+                    Intent intent = new Intent(parentActivity, registerInPkuInfoPage.attachedClassType());
+                    if (intent != null) {
                         startActivity(intent);
                     }
                 }

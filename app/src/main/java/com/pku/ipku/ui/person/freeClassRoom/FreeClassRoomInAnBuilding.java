@@ -9,6 +9,7 @@ import com.pku.ipku.adapter.studyGuide.freeClassRoom.FreeClassAdapter;
 import com.pku.ipku.api.factory.IpkuServiceFactory;
 import com.pku.ipku.task.LoadDataConfigure;
 import com.pku.ipku.task.LoadDataDefaultTask;
+import com.pku.ipku.task.Result;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,12 +49,12 @@ public class FreeClassRoomInAnBuilding extends Activity {
             }
 
             @Override
-            public boolean getData(boolean cache) {
+            public Result getData(boolean cache) {
                 freeClassrooms = IpkuServiceFactory.getStudyGuideService(cache).getFreeClassrooms(seletedBuidings, selectedTime);
                 if (freeClassrooms == null) {
-                    return false;
+                    return new Result(Result.NET_ERROR);
                 }
-                return true;
+                return new Result(Result.NO_ERROR);
             }
 
             @Override
@@ -63,6 +64,11 @@ public class FreeClassRoomInAnBuilding extends Activity {
 
             @Override
             public void stopWaiting() {
+
+            }
+
+            @Override
+            public void processError(Result result) {
 
             }
         }).execute();

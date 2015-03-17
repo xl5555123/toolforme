@@ -13,6 +13,7 @@ import com.pku.ipku.model.person.dto.ScoreDTO;
 import com.pku.ipku.model.person.navigation.RegisterInPersonPage;
 import com.pku.ipku.task.LoadDataConfigure;
 import com.pku.ipku.task.LoadDataDefaultTask;
+import com.pku.ipku.task.Result;
 import com.pku.ipku.ui.AppContext;
 import com.pku.ipku.ui.util.BaseActivityIncludingFooterNavigation;
 
@@ -87,12 +88,12 @@ public class ScoreActivity extends BaseActivityIncludingFooterNavigation impleme
         }
 
         @Override
-        public boolean getData(boolean cache) {
+        public Result getData(boolean cache) {
             scoreDTOList = IpkuServiceFactory.getPersonService(cache).getScores();
             if (scoreDTOList == null) {
-                return false;
+                return new Result(Result.NET_ERROR);
             }
-            return true;
+            return new Result(Result.NO_ERROR);
         }
 
         @Override
@@ -102,6 +103,11 @@ public class ScoreActivity extends BaseActivityIncludingFooterNavigation impleme
 
         @Override
         public void stopWaiting() {
+
+        }
+
+        @Override
+        public void processError(Result result) {
 
         }
     }

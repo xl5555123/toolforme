@@ -6,9 +6,11 @@ package com.pku.ipku.task;
 public interface LoadDataConfigure {
     void showData();
 
-    boolean getData(boolean cache);
+    Result getData(boolean cache) throws Exception;
 
     void showWaiting();
 
     void stopWaiting();
+
+    void processError(Result result);
 }

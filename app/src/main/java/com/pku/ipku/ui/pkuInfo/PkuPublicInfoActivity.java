@@ -13,6 +13,7 @@ import com.pku.ipku.model.pkuInfo.PkuInfoType;
 import com.pku.ipku.model.pkuInfo.dto.PkuPublicInfo;
 import com.pku.ipku.task.LoadDataConfigure;
 import com.pku.ipku.task.LoadDataDefaultTask;
+import com.pku.ipku.task.Result;
 import com.pku.ipku.ui.util.BaseActivityIncludingFooterNavigation;
 import com.pku.ipku.ui.util.WebViewActivity;
 import com.pku.ipku.util.AppContextHolder;
@@ -72,12 +73,12 @@ public class PkuPublicInfoActivity extends BaseActivityIncludingFooterNavigation
             }
 
             @Override
-            public boolean getData(boolean cache) {
+            public Result getData(boolean cache) {
                 pkuPublicInfoList = IpkuServiceFactory.getPkuInfoService(cache).getPkuPublicNotice(pkuInfoType, 0);
                 if (pkuPublicInfoList == null) {
-                    return false;
+                    return new Result(Result.NET_ERROR);
                 }
-                return true;
+                return new Result(Result.NO_ERROR);
             }
 
             @Override
@@ -87,6 +88,11 @@ public class PkuPublicInfoActivity extends BaseActivityIncludingFooterNavigation
 
             @Override
             public void stopWaiting() {
+
+            }
+
+            @Override
+            public void processError(Result result) {
 
             }
         }).execute();

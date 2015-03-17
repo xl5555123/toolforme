@@ -11,6 +11,7 @@ import com.pku.ipku.model.person.dto.ScholarShipDTO;
 import com.pku.ipku.model.person.navigation.RegisterInPersonPage;
 import com.pku.ipku.task.LoadDataConfigure;
 import com.pku.ipku.task.LoadDataDefaultTask;
+import com.pku.ipku.task.Result;
 import com.pku.ipku.ui.util.BaseActivityIncludingFooterNavigation;
 import com.pku.ipku.util.AppContextHolder;
 
@@ -66,12 +67,12 @@ public class ScholarshipActivity extends BaseActivityIncludingFooterNavigation i
         }
 
         @Override
-        public boolean getData(boolean cache) {
+        public Result getData(boolean cache) {
             scholarshipList = IpkuServiceFactory.getPersonService(cache).getScholarShips();
             if (scholarshipList == null) {
-                return false;
+                return new Result(Result.NET_ERROR);
             }
-            return true;
+            return new Result(Result.NO_ERROR);
         }
 
         @Override
@@ -81,6 +82,11 @@ public class ScholarshipActivity extends BaseActivityIncludingFooterNavigation i
 
         @Override
         public void stopWaiting() {
+
+        }
+
+        @Override
+        public void processError(Result result) {
 
         }
     }

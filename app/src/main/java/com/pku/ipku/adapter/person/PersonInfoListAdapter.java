@@ -28,21 +28,20 @@ public class PersonInfoListAdapter extends BaseAdapter {
         layoutInflater = LayoutInflater.from(context);
         items = Maps.newHashMap();
         items.put("名字", stuInfoDTO.getName());
+        items.put("名字简写", stuInfoDTO.getNameAbbr());
+        items.put("身份", stuInfoDTO.getUserIdentity());
         items.put("性别", stuInfoDTO.getSex());
-        items.put("民族", stuInfoDTO.getRace());
+        items.put("民族", stuInfoDTO.getEthnic());
         items.put("籍贯", stuInfoDTO.getNativePlace());
-        items.put("政治面貌", stuInfoDTO.getPoliticalStatus());
-        items.put("出生日期", stuInfoDTO.getBirthday());
-        items.put("入学年份", stuInfoDTO.getEnterSchoolDate());
-        items.put("学号", stuInfoDTO.getStuId());
+        items.put("政治面貌", stuInfoDTO.getPolitics());
+        items.put("出生日期", stuInfoDTO.getBirthDate());
+        items.put("入学年份", stuInfoDTO.getEnrollDate());
+        items.put("学号", stuInfoDTO.getStudentId());
         items.put("所在院系", stuInfoDTO.getDepartment());
-        items.put("专业", stuInfoDTO.getMajor());
-        items.put("研究方向", stuInfoDTO.getResearchArea());
-        items.put("导师", stuInfoDTO.getSupervisor());
-        items.put("学生类别", stuInfoDTO.getStuType());
-        items.put("学生考号", stuInfoDTO.getStuExamId());
-        items.put("证件类型", stuInfoDTO.getCredentials());
-        items.put("证件号码", stuInfoDTO.getCredentialsId());
+        items.put("专业", stuInfoDTO.getSpeciality());
+        items.put("研究方向", stuInfoDTO.getDirection());
+        items.put("导师", stuInfoDTO.getTutor());
+        items.put("学生类别", stuInfoDTO.getStudentType());
         headers = new ArrayList<String>(items.keySet());
     }
 

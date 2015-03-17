@@ -1,48 +1,63 @@
 package com.pku.ipku.model.person.dto;
 
 /**
- * Created by pktxq on 15-1-6.
+ * @author XingLiang
  */
 public class StuInfoDTO {
+    private boolean success;
     private String name;
+    private String nameAbbr;
     private String sex;
-    private String race;
-    private String nativePlace;
-    private String supervisor;
-    private String politicalStatus;
-    private String stuType;
-    private String credentials;
-    private String credentialsId;
-    private String birthday;
-    private String enterSchoolDate;
-    private String stuExamId;
-    private String stuId;
+    private String userIdentity;
     private String department;
-    private String major;
-    private String researchArea;
+    private String studentType;
+    private String studentId;
+    private String birthDate;
+    private String ethnic;
+    private String enrollDate;
+    private String nativePlace;
+    private String originPlace;
+    private String direction;
+    private String politics;
+    private String tutor;
+    private String address;
+    private String speciality;
+    private String lastEducation;
+    private String highestDegree;
 
     public StuInfoDTO() {
+
     }
 
-    public StuInfoDTO(String name, String sex, String race, String nativePlace, String supervisor, String politicalStatus, String stuType,
-                      String credentials, String credentialsId, String birthday, String enterSchoolDate, String stuExamId, String stuId,
-                      String department, String major, String researchArea) {
+    public StuInfoDTO(boolean success, String name, String nameAbbr, String sex, String userIdentity, String department, String studentType, String studentId, String birthDate, String ethnic, String enrollDate, String nativePlace, String originPlace, String direction, String politics, String tutor, String address, String speciality, String lastEducation, String highestDegree) {
+        this.success = success;
         this.name = name;
+        this.nameAbbr = nameAbbr;
         this.sex = sex;
-        this.race = race;
-        this.nativePlace = nativePlace;
-        this.supervisor = supervisor;
-        this.politicalStatus = politicalStatus;
-        this.stuType = stuType;
-        this.credentials = credentials;
-        this.credentialsId = credentialsId;
-        this.birthday = birthday;
-        this.enterSchoolDate = enterSchoolDate;
-        this.stuExamId = stuExamId;
-        this.stuId = stuId;
+        this.userIdentity = userIdentity;
         this.department = department;
-        this.major = major;
-        this.researchArea = researchArea;
+        this.studentType = studentType;
+        this.studentId = studentId;
+        this.birthDate = birthDate;
+        this.ethnic = ethnic;
+        this.enrollDate = enrollDate;
+        this.nativePlace = nativePlace;
+        this.originPlace = originPlace;
+        this.direction = direction;
+        this.politics = politics;
+        this.tutor = tutor;
+        this.address = address;
+        this.speciality = speciality;
+        this.lastEducation = lastEducation;
+        this.highestDegree = highestDegree;
+    }
+
+    public boolean isSuccess() {
+        return success;
+    }
+
+    public void setSuccess(boolean success) {
+        this.success = success;
     }
 
     public String getName() {
@@ -53,6 +68,14 @@ public class StuInfoDTO {
         this.name = name;
     }
 
+    public String getNameAbbr() {
+        return nameAbbr;
+    }
+
+    public void setNameAbbr(String nameAbbr) {
+        this.nameAbbr = nameAbbr;
+    }
+
     public String getSex() {
         return sex;
     }
@@ -61,92 +84,12 @@ public class StuInfoDTO {
         this.sex = sex;
     }
 
-    public String getRace() {
-        return race;
+    public String getUserIdentity() {
+        return userIdentity;
     }
 
-    public void setRace(String race) {
-        this.race = race;
-    }
-
-    public String getNativePlace() {
-        return nativePlace;
-    }
-
-    public void setNativePlace(String nativePlace) {
-        this.nativePlace = nativePlace;
-    }
-
-    public String getSupervisor() {
-        return supervisor;
-    }
-
-    public void setSupervisor(String supervisor) {
-        this.supervisor = supervisor;
-    }
-
-    public String getPoliticalStatus() {
-        return politicalStatus;
-    }
-
-    public void setPoliticalStatus(String politicalStatus) {
-        this.politicalStatus = politicalStatus;
-    }
-
-    public String getStuType() {
-        return stuType;
-    }
-
-    public void setStuType(String stuType) {
-        this.stuType = stuType;
-    }
-
-    public String getCredentials() {
-        return credentials;
-    }
-
-    public void setCredentials(String credentials) {
-        this.credentials = credentials;
-    }
-
-    public String getCredentialsId() {
-        return credentialsId;
-    }
-
-    public void setCredentialsId(String credentialsId) {
-        this.credentialsId = credentialsId;
-    }
-
-    public String getBirthday() {
-        return birthday;
-    }
-
-    public void setBirthday(String birthday) {
-        this.birthday = birthday;
-    }
-
-    public String getEnterSchoolDate() {
-        return enterSchoolDate;
-    }
-
-    public void setEnterSchoolDate(String enterSchoolDate) {
-        this.enterSchoolDate = enterSchoolDate;
-    }
-
-    public String getStuExamId() {
-        return stuExamId;
-    }
-
-    public void setStuExamId(String stuExamId) {
-        this.stuExamId = stuExamId;
-    }
-
-    public String getStuId() {
-        return stuId;
-    }
-
-    public void setStuId(String stuId) {
-        this.stuId = stuId;
+    public void setUserIdentity(String userIdentity) {
+        this.userIdentity = userIdentity;
     }
 
     public String getDepartment() {
@@ -157,21 +100,115 @@ public class StuInfoDTO {
         this.department = department;
     }
 
-    public String getMajor() {
-        return major;
+    public String getStudentType() {
+        return studentType;
     }
 
-    public void setMajor(String major) {
-        this.major = major;
+    public void setStudentType(String studentType) {
+        this.studentType = studentType;
     }
 
-    public String getResearchArea() {
-        return researchArea;
+    public String getStudentId() {
+        return studentId;
     }
 
-    public void setResearchArea(String researchArea) {
-        this.researchArea = researchArea;
+    public void setStudentId(String studentId) {
+        this.studentId = studentId;
     }
 
+    public String getBirthDate() {
+        return birthDate;
+    }
 
+    public void setBirthDate(String birthDate) {
+        this.birthDate = birthDate;
+    }
+
+    public String getEthnic() {
+        return ethnic;
+    }
+
+    public void setEthnic(String ethnic) {
+        this.ethnic = ethnic;
+    }
+
+    public String getEnrollDate() {
+        return enrollDate;
+    }
+
+    public void setEnrollDate(String enrollDate) {
+        this.enrollDate = enrollDate;
+    }
+
+    public String getNativePlace() {
+        return nativePlace;
+    }
+
+    public void setNativePlace(String nativePlace) {
+        this.nativePlace = nativePlace;
+    }
+
+    public String getOriginPlace() {
+        return originPlace;
+    }
+
+    public void setOriginPlace(String originPlace) {
+        this.originPlace = originPlace;
+    }
+
+    public String getDirection() {
+        return direction;
+    }
+
+    public void setDirection(String direction) {
+        this.direction = direction;
+    }
+
+    public String getPolitics() {
+        return politics;
+    }
+
+    public void setPolitics(String politics) {
+        this.politics = politics;
+    }
+
+    public String getTutor() {
+        return tutor;
+    }
+
+    public void setTutor(String tutor) {
+        this.tutor = tutor;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getSpeciality() {
+        return speciality;
+    }
+
+    public void setSpeciality(String speciality) {
+        this.speciality = speciality;
+    }
+
+    public String getLastEducation() {
+        return lastEducation;
+    }
+
+    public void setLastEducation(String lastEducation) {
+        this.lastEducation = lastEducation;
+    }
+
+    public String getHighestDegree() {
+        return highestDegree;
+    }
+
+    public void setHighestDegree(String highestDegree) {
+        this.highestDegree = highestDegree;
+    }
 }

@@ -5,8 +5,8 @@ import com.pku.ipku.api.mock.person.MockArrearageState;
 import com.pku.ipku.api.mock.person.MockLibBorrowInfo;
 import com.pku.ipku.api.mock.person.MockScholarShip;
 import com.pku.ipku.api.mock.person.MockScore;
-import com.pku.ipku.api.mock.person.MockStuInfo;
 import com.pku.ipku.api.mock.studyGuide.MockLesson;
+import com.pku.ipku.api.util.NetHelper;
 import com.pku.ipku.model.person.dto.ArrearageStateDTO;
 import com.pku.ipku.model.person.dto.LibBorrowDTO;
 import com.pku.ipku.model.person.dto.ScholarShipDTO;
@@ -26,8 +26,8 @@ public class PersonServiceNetImpl implements PersonService {
     }
 
     @Override
-    public StuInfoDTO getStuInfo() {
-        return MockStuInfo.get();
+    public StuInfoDTO getStuInfo(int userId) throws Exception {
+        return NetHelper.getForObjectWithAuth(PERSON_BASE_INFO_URL, StuInfoDTO.class, userId);
     }
 
     @Override

@@ -14,6 +14,7 @@ import com.pku.ipku.api.factory.IpkuServiceFactory;
 import com.pku.ipku.model.person.dto.LibBorrowDTO;
 import com.pku.ipku.task.LoadDataConfigure;
 import com.pku.ipku.task.LoadDataDefaultTask;
+import com.pku.ipku.task.Result;
 import com.pku.ipku.util.AppContextHolder;
 
 import java.util.List;
@@ -64,12 +65,12 @@ public class LendListFragment extends Fragment {
         }
 
         @Override
-        public boolean getData(boolean cache) {
+        public Result getData(boolean cache) {
             libBorrowDTOs = IpkuServiceFactory.getPersonService(cache).getLibBorrowInfo();
             if (lendListView == null) {
-                return false;
+                return new Result(Result.NET_ERROR);
             }
-            return true;
+            return new Result(Result.NO_ERROR);
         }
 
         @Override
@@ -79,6 +80,11 @@ public class LendListFragment extends Fragment {
 
         @Override
         public void stopWaiting() {
+
+        }
+
+        @Override
+        public void processError(Result result) {
 
         }
     }

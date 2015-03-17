@@ -58,6 +58,16 @@ public class PkuInfoServiceCacheImpl implements PkuInfoService {
     }
 
     @Override
+    public List<PkuPublicInfo> getPkuCareerInterns(int page) throws RestClientException {
+        return null;
+    }
+
+    @Override
+    public List<PkuPublicInfo> getPkuCareerPropa(int page) throws RestClientException {
+        return null;
+    }
+
+    @Override
     public List<PkuClubDTO> getPkuClubActivities() {
         return MockPkuClubActivityList.get();
     }

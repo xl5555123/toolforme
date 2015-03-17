@@ -23,19 +23,19 @@ public class LoadDataDefaultTask {
         new LoadDataFromNetTask().execute();
     }
 
-    private class LoadDataFromCacheTask extends AsyncTask<Void, Void, Boolean> {
+    private class LoadDataFromCacheTask extends AsyncTask<Void, Void, Result> {
         @Override
-        protected Boolean doInBackground(Void... params) {
+        protected Result doInBackground(Void... params) {
             try {
                 return loadDataConfigure.getData(true);
             } catch (Exception e) {
-                return false;
+                return new Result(Result.CACHE_ERROR);
             }
         }
 
         @Override
-        protected void onPostExecute(Boolean result) {
-            if (result && !loaded && loadDataConfigure != null) {
+        protected void onPostExecute(Result result) {
+            if (result.hasNoError() && !loaded && loadDataConfigure != null) {
                 loadDataConfigure.showData();
 
                 loadDataConfigure.stopWaiting();
@@ -43,27 +43,30 @@ public class LoadDataDefaultTask {
         }
     }
 
-    private class LoadDataFromNetTask extends AsyncTask<Void, Void, Boolean> {
+    private class LoadDataFromNetTask extends AsyncTask<Void, Void, Result> {
         @Override
-        protected Boolean doInBackground(Void... params) {
+        protected Result doInBackground(Void... params) {
             try {
                 if (SystemHelper.haveNetwork()) {
                     return loadDataConfigure.getData(false);
                 } else {
-                    return false;
+                    return new Result(Result.NET_ERROR);
                 }
             } catch (Exception e) {
-                return false;
+                return new Result(Result.ACCOUNT_ERROR);
             }
 
         }
 
         @Override
-        protected void onPostExecute(Boolean result) {
-            if (result && loadDataConfigure != null) {
+        protected void onPostExecute(Result result) {
+            if (result.hasNoError() && loadDataConfigure != null) {
                 loaded = true;
                 loadDataConfigure.showData();
                 loadDataConfigure.stopWaiting();
+            }
+            else {
+                loadDataConfigure.processError(result);
             }
         }
     }

@@ -26,30 +26,22 @@ public class PkuInfoServiceNetImpl implements PkuInfoService {
     @Override
     public List<PkuPublicInfo> getPkuPublicNotice(PkuInfoType pkuInfoType, Integer page) throws RestClientException {
 
-        if (pkuInfoType.isPkuCareer()) {
+        if (pkuInfoType.isPAGED_CAREER_RECRUITS()) {
             return getPkuCareer(page);
-        } else if (pkuInfoType.isPkuLectures()) {
+        } else if (pkuInfoType.isTOP_LECTURES()) {
             return getPkuLectures();
-        } else if (pkuInfoType.isPkuNews()) {
-            List<PkuPublicInfo> pkuTrend = getPkuTrends();
-            List<PkuPublicInfo> pkuNews = getPkuNews();
-            if (pkuTrend == null) {
-                pkuTrend = Lists.newArrayList();
-            }
-            if (pkuNews != null) {
-                pkuTrend.addAll(pkuNews);
-            }
-            return pkuTrend;
-        } else if (pkuInfoType.isPkuNotices()) {
-            List<PkuPublicInfo> pkuApartmentNotices = getPkuApartmentNotice();
-            List<PkuPublicInfo> pkuNotices = getPkuNotices();
-            if (pkuApartmentNotices == null) {
-                pkuApartmentNotices = Lists.newArrayList();
-            }
-            if (pkuNotices != null) {
-                pkuApartmentNotices.addAll(pkuNotices);
-            }
-            return pkuApartmentNotices;
+        } else if (pkuInfoType.isPAGED_CAREER_INTERNS()) {
+            return getPkuCareerInterns(page);
+        } else if (pkuInfoType.isPAGED_CAREER_PROPA()) {
+            return getPkuCareerPropa(page);
+        } else if (pkuInfoType.isTOP_NEWS()) {
+            return getPkuNews();
+        } else if (pkuInfoType.isRECENT_DEPT_NOTICES()) {
+            return getPkuApartmentNotice();
+        } else if (pkuInfoType.isRECENT_SCHOOL_NEWS()) {
+            return getPkuNotices();
+        } else if (pkuInfoType.isRECENT_SCHOOL_NOTICES()) {
+            return getPkuTrends();
         }
         return null;
     }
@@ -71,7 +63,7 @@ public class PkuInfoServiceNetImpl implements PkuInfoService {
 
     @Override
     public List<PkuPublicInfo> getPkuTrends() throws RestClientException {
-        return Lists.newArrayList(NetHelper.getForObject(RECENT_SCHOOL_NEWS_URI, PkuPublicInfo[].class));
+        return Lists.newArrayList(NetHelper.getForObject(RECENT_SCHOOL_NOTICES_URI, PkuPublicInfo[].class));
     }
 
     @Override
@@ -92,6 +84,18 @@ public class PkuInfoServiceNetImpl implements PkuInfoService {
     @Override
     public List<PkuPublicInfo> getPkuCareer(int page) throws RestClientException {
         String uri = String.format(PAGED_CAREER_RECRUITS_URI, page);
+        return Lists.newArrayList(NetHelper.getForObject(uri, PkuPublicInfo[].class));
+    }
+
+    @Override
+    public List<PkuPublicInfo> getPkuCareerInterns(int page) throws RestClientException {
+        String uri = String.format(PAGED_CAREER_INTERNS_URI, page);
+        return Lists.newArrayList(NetHelper.getForObject(uri, PkuPublicInfo[].class));
+    }
+
+    @Override
+    public List<PkuPublicInfo> getPkuCareerPropa(int page) throws RestClientException {
+        String uri = String.format(PAGED_CAREER_PROPA_URI, page);
         return Lists.newArrayList(NetHelper.getForObject(uri, PkuPublicInfo[].class));
     }
 

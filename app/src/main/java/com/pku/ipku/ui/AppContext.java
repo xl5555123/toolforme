@@ -15,6 +15,8 @@ public class AppContext extends Application {
 
     public static final int PAGE_SIZE = 20;// 默认分页大小
 
+    public static final String APP_KEY = "?appKey=579d8718c1b911e49c500050568508a5";
+
     private String CURRENT_USER_KEY = "current-user";
     private User currentUser;
 

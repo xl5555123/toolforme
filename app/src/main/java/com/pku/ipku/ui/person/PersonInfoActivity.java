@@ -1,5 +1,7 @@
 package com.pku.ipku.ui.person;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.ListView;
@@ -11,8 +13,10 @@ import com.pku.ipku.model.person.dto.StuInfoDTO;
 import com.pku.ipku.model.person.navigation.RegisterInPersonPage;
 import com.pku.ipku.task.LoadDataConfigure;
 import com.pku.ipku.task.LoadDataDefaultTask;
+import com.pku.ipku.task.Result;
 import com.pku.ipku.ui.util.BaseActivityIncludingFooterNavigation;
 import com.pku.ipku.util.AppContextHolder;
+import com.pku.ipku.util.UIHelper;
 
 /**
  * Created by XingLiang on 2015/2/5.
@@ -57,7 +61,6 @@ public class PersonInfoActivity extends BaseActivityIncludingFooterNavigation im
 
     public void initView() {
         listView = (ListView) findViewById(R.id.person_info_list);
-
     }
 
     private class LoadStuInfoConfigure implements LoadDataConfigure {
@@ -67,11 +70,19 @@ public class PersonInfoActivity extends BaseActivityIncludingFooterNavigation im
         }
 
         @Override
-        public boolean getData(boolean cache) {
-            stuInfo = IpkuServiceFactory.getPersonService(cache).getStuInfo();
-            if (stuInfo == null)
-                return false;
-            return true;
+        public Result getData(boolean cache) throws Exception {
+            try {
+                int studentId = Integer.decode(AppContextHolder.getAppContext().getCurrentUser().getUsername());
+                stuInfo = IpkuServiceFactory.getPersonService(cache).getStuInfo(studentId);
+                if (stuInfo == null)
+                    return new Result(Result.ACCOUNT_ERROR);
+                else {
+                    return new Result(Result.NO_ERROR);
+                }
+            } catch (Exception e) {
+                return new Result(Result.ACCOUNT_ERROR);
+            }
+
         }
 
         @Override
@@ -82,6 +93,13 @@ public class PersonInfoActivity extends BaseActivityIncludingFooterNavigation im
         @Override
         public void stopWaiting() {
 
+        }
+
+        @Override
+        public void processError(Result result) {
+            if (result.isAccountError()) {
+                UIHelper.directToLoginPage(PersonInfoActivity.this);
+            }
         }
     }
 }

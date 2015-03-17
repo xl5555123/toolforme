@@ -1,6 +1,7 @@
 package com.pku.ipku.ui.pkuInfo;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +11,7 @@ import com.google.common.collect.Lists;
 import com.pku.ipku.R;
 import com.pku.ipku.adapter.pkuInfo.PkuPublicAdapter;
 import com.pku.ipku.api.factory.IpkuServiceFactory;
+import com.pku.ipku.model.pkuInfo.RegisterInPkuInfoPage;
 import com.pku.ipku.model.pkuInfo.dto.PkuPublicInfo;
 import com.pku.ipku.task.LoadDataConfigure;
 import com.pku.ipku.task.LoadDataDefaultTask;
@@ -22,7 +24,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-public class PkuLectureActivity extends BaseActivityIncludingFooterNavigation {
+public class PkuLectureActivity extends BaseActivityIncludingFooterNavigation implements RegisterInPkuInfoPage {
 
     private List<PkuPublicInfo> pkuPublicInfoList;
 
@@ -54,9 +56,16 @@ public class PkuLectureActivity extends BaseActivityIncludingFooterNavigation {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String url = (String) view.getTag();
                 if (url != null) {
+                    /*
                     Intent intent = new Intent(PkuLectureActivity.this, WebViewActivity.class);
                     intent.putExtra("url", url);
                     intent.putExtra("title", "讲座信息");
+                    startActivity(intent);
+                    */
+                    Intent intent= new Intent();
+                    intent.setAction("android.intent.action.VIEW");
+                    Uri content_url = Uri.parse(url);
+                    intent.setData(content_url);
                     startActivity(intent);
                 }
             }
@@ -72,6 +81,26 @@ public class PkuLectureActivity extends BaseActivityIncludingFooterNavigation {
                 new GetMoreDataTask().execute();
             }
         });
+    }
+
+    @Override
+    public int getPageDrawableId() {
+        return R.drawable.lecture;
+    }
+
+    @Override
+    public String getPageTitle() {
+        return "讲座信息";
+    }
+
+    @Override
+    public int getPageBackgroundId() {
+        return R.drawable.navigation_border_blue;
+    }
+
+    @Override
+    public Class attachedClassType() {
+        return PkuLectureActivity.class;
     }
 
     private class GetMoreDataTask extends AsyncTask<Void, Void, List<PkuPublicInfo>> {

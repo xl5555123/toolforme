@@ -16,6 +16,7 @@ import com.pku.ipku.api.factory.IpkuServiceFactory;
 import com.pku.ipku.model.studyguide.Lesson;
 import com.pku.ipku.task.LoadDataConfigure;
 import com.pku.ipku.task.LoadDataDefaultTask;
+import com.pku.ipku.task.Result;
 import com.pku.ipku.ui.studyGuide.ClassDetail;
 import com.pku.ipku.util.AppContextHolder;
 import com.pku.ipku.util.DataHandleUtil;
@@ -80,12 +81,12 @@ public class QueryClassResultFragment extends Fragment {
             }
 
             @Override
-            public boolean getData(boolean cache) {
+            public Result getData(boolean cache) {
                 queryResult = IpkuServiceFactory.getPersonService(cache).queryLessons(query);
                 if (queryResult != null) {
-                    return true;
+                    return new Result(Result.NET_ERROR);
                 }
-                return false;
+                return new Result(Result.NO_ERROR);
             }
 
             @Override
@@ -95,6 +96,11 @@ public class QueryClassResultFragment extends Fragment {
 
             @Override
             public void stopWaiting() {
+
+            }
+
+            @Override
+            public void processError(Result result) {
 
             }
         }).execute();

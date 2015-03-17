@@ -2,6 +2,8 @@ package com.pku.ipku.api.util;
 
 import android.util.Log;
 
+import com.pku.ipku.util.DaoHelper;
+
 import org.codehaus.jackson.map.DeserializationConfig;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.http.HttpEntity;
@@ -15,7 +17,12 @@ import org.springframework.http.converter.json.MappingJacksonHttpMessageConverte
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Collections;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by XingLiang on 2015/1/26.
@@ -23,6 +30,10 @@ import java.util.Collections;
 public class NetHelper {
 
     public final static String BASE_URL = "http://162.105.205.170:8080";
+
+    public final static String APP_KEY = "579d8718c1b911e49c500050568508a5";
+
+    public final static String SECRET = "579d87e0c1b911e49c500050568508a5";
 
     public static RestTemplate restTemplate;
 
@@ -46,6 +57,10 @@ public class NetHelper {
         return String.format("%s%s", BASE_URL, uri);
     }
 
+    public static String getAuthUrl(String uri, int userId, int timestamp, String msg) {
+        return String.format("%s%s?user=%d&appKey=%s&timestamp=%d&msg=%s", BASE_URL, uri, userId, APP_KEY, timestamp, msg);
+    }
+
     /**
      * 获取对象
      *
@@ -66,6 +81,61 @@ public class NetHelper {
         }
         return data;
     }
+
+    /**
+     * 获取对象
+     *
+     * @param uri
+     * @param returnType 返回类型
+     * @param <T>        对象类型
+     * @return
+     */
+    public static <T> T getForObjectWithAuth(String uri, Class<T> returnType, int userId) throws Exception {
+        int timestamp = (int) new Date().getTime();
+        String msg = getMd5(concatParameter(userId, timestamp));
+        if (msg == null) {
+            throw new Exception("generate message failed");
+        }
+        String url = getAuthUrl(uri, userId, timestamp, msg);
+        HttpEntity<T> httpEntity = new HttpEntity<T>(getHeader());
+        T data = null;
+        try {
+            data = restTemplate.exchange(url, HttpMethod.GET, httpEntity, returnType).getBody();
+        } catch (Exception e) {
+
+        }
+        if (data != null) {
+            DaoHelper.saveData(uri + userId, data);
+        }
+        return data;
+    }
+
+    public static String getMd5(String toSign) {
+        String result = null;
+        String toSign2 = String.format("%s%s", toSign, SECRET);
+        try {
+            MessageDigest messageDigest = MessageDigest.getInstance("MD5");
+            messageDigest.update(toSign2.getBytes());
+            result = getEncode32(messageDigest);
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    public static String concatParameter(int userId, int timestamp) {
+        return String.format("user=%d&appKey=%s&timestamp=%d", userId, APP_KEY, timestamp);
+    }
+
+    private static String getEncode32(MessageDigest digest) {
+        StringBuilder builder = new StringBuilder();
+        for (byte b : digest.digest()) {
+            builder.append(Integer.toHexString((b >> 4) & 0xf));
+            builder.append(Integer.toHexString(b & 0xf));
+        }
+        return builder.toString().toUpperCase(); // 大写
+    }
+
 
     public static <T> T postForObject(String uri, T object, Class<T> returnType) throws RestClientException {
         String url = getUrl(uri);

@@ -2,6 +2,7 @@ package com.pku.ipku.ui.pkuInfo;
 
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
@@ -18,6 +19,7 @@ import com.pku.ipku.model.pkuInfo.PkuInfoType;
 import com.pku.ipku.model.pkuInfo.dto.PkuPublicInfo;
 import com.pku.ipku.task.LoadDataConfigure;
 import com.pku.ipku.task.LoadDataDefaultTask;
+import com.pku.ipku.task.Result;
 import com.pku.ipku.ui.util.WebViewActivity;
 import com.pku.ipku.util.AppContextHolder;
 
@@ -64,9 +66,16 @@ public class PkuLectureFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String url = (String) view.getTag();
                 if (url != null) {
+                    /*
                     Intent intent = new Intent(getActivity(), WebViewActivity.class);
                     intent.putExtra("url", url);
                     intent.putExtra("title", "公共信息");
+                    startActivity(intent);
+                    */
+                    Intent intent= new Intent();
+                    intent.setAction("android.intent.action.VIEW");
+                    Uri content_url = Uri.parse(url);
+                    intent.setData(content_url);
                     startActivity(intent);
                 }
             }
@@ -81,12 +90,12 @@ public class PkuLectureFragment extends Fragment {
             }
 
             @Override
-            public boolean getData(boolean cache) {
-                pkuPublicInfoList = IpkuServiceFactory.getPkuInfoService(cache).getPkuPublicNotice(new PkuInfoType(PkuInfoType.PKU_LECTURES), 0);
+            public Result getData(boolean cache) {
+                pkuPublicInfoList = IpkuServiceFactory.getPkuInfoService(cache).getPkuPublicNotice(new PkuInfoType(PkuInfoType.TOP_LECTURES), 0);
                 if (pkuPublicInfoList == null) {
-                    return false;
+                    return new Result(Result.NET_ERROR);
                 }
-                return true;
+                return new Result(Result.NO_ERROR);
             }
 
             @Override
@@ -96,6 +105,11 @@ public class PkuLectureFragment extends Fragment {
 
             @Override
             public void stopWaiting() {
+
+            }
+
+            @Override
+            public void processError(Result result) {
 
             }
         }).execute();

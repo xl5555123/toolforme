@@ -10,31 +10,30 @@ import java.util.Map;
  */
 public class PkuInfoType {
 
-    public final static String PKU_NEWS = "pku_news";
-    public final static String PKU_NOTICES = "pku_notices";
-    public final static String PKU_LECTURES = "pku_lectures";
-    public final static String PKU_CAREER = "pku_career";
+    public final static String RECENT_SCHOOL_NOTICES = "RECENT_SCHOOL_NOTICES";
+    public final static String RECENT_SCHOOL_NEWS = "RECENT_SCHOOL_NEWS";
+    public final static String RECENT_DEPT_NOTICES = "RECENT_DEPT_NOTICES";
+    public final static String TOP_NEWS = "TOP_NEWS";
+    public final static String PAGED_CAREER_RECRUITS = "PAGED_CAREER_RECRUITS";
+    public final static String PAGED_CAREER_INTERNS = "PAGED_CAREER_INTERNS";
+    public final static String PAGED_CAREER_PROPA = "PAGED_CAREER_PROPA";
+    public final static String TOP_LECTURES = "TOP_LECTURES";
+
 
     private Map<String, String> titles = new HashMap<String, String>() {
         {
-            put(PKU_NEWS, "学校新闻");
-            put(PKU_NOTICES, "学校通知");
-            put(PKU_LECTURES, "校内讲座");
-            put(PKU_CAREER, "招聘信息");
-        }
-    };
-
-    private Map<String, Integer> icons = new HashMap<String, Integer>() {
-        {
-            put(PKU_NEWS, R.drawable.college_news);
-            put(PKU_NOTICES, R.drawable.college_inform);
-            put(PKU_LECTURES, R.drawable.college_lecture);
-            put(PKU_CAREER, R.drawable.college_job);
+            put(RECENT_SCHOOL_NOTICES, "学校公告");
+            put(RECENT_SCHOOL_NEWS, "学校动态");
+            put(RECENT_DEPT_NOTICES, "单位公告");
+            put(TOP_NEWS, "学校新闻");
+            put(PAGED_CAREER_RECRUITS, "招聘信息");
+            put(PAGED_CAREER_INTERNS, "实习信息");
+            put(TOP_LECTURES, "讲座信息");
+            put(PAGED_CAREER_PROPA, "宣讲会信息");
         }
     };
 
     private String type;
-    private String title;
 
     public PkuInfoType() {
 
@@ -44,22 +43,37 @@ public class PkuInfoType {
         this.type = type;
     }
 
-    public boolean isPkuNews() {
-        return type.equals(PKU_NEWS);
+    public boolean isRECENT_SCHOOL_NOTICES() {
+        return type.equals(RECENT_SCHOOL_NOTICES);
     }
 
-    public boolean isPkuNotices() {
-        return type.equals(PKU_NOTICES);
+    public boolean isRECENT_SCHOOL_NEWS() {
+        return type.equals(RECENT_SCHOOL_NEWS);
     }
 
-    public boolean isPkuLectures() {
-        return type.equals(PKU_LECTURES);
+    public boolean isRECENT_DEPT_NOTICES() {
+        return type.equals(RECENT_DEPT_NOTICES);
     }
 
-    public boolean isPkuCareer() {
-        return type.equals(PKU_CAREER);
+    public boolean isTOP_NEWS() {
+        return type.equals(TOP_NEWS);
     }
 
+    public boolean isPAGED_CAREER_RECRUITS() {
+        return type.equals(PAGED_CAREER_RECRUITS);
+    }
+
+    public boolean isPAGED_CAREER_PROPA() {
+        return type.equals(PAGED_CAREER_PROPA);
+    }
+
+    public boolean isPAGED_CAREER_INTERNS() {
+        return type.equals(PAGED_CAREER_INTERNS);
+    }
+
+    public boolean isTOP_LECTURES() {
+        return type.equals(TOP_LECTURES);
+    }
     public String getType() {
         return type;
     }
@@ -70,14 +84,5 @@ public class PkuInfoType {
 
     public String getTitle() {
         return titles.get(type);
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public Integer getIconId() {
-        return icons.get(type);
-
     }
 }

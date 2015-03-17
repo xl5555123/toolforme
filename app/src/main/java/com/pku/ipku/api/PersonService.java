@@ -15,9 +15,11 @@ import java.util.List;
  */
 public interface PersonService {
 
+    public static final String PERSON_BASE_INFO_URL = "/svcpub/svc/pro/person/baseinfo";
+
     public ArrearageStateDTO getArrearageState();
 
-    public StuInfoDTO getStuInfo();
+    public StuInfoDTO getStuInfo(int userId) throws Exception;
 
     public List<ScoreDTO> getScores();
 

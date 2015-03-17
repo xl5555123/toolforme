@@ -1,11 +1,14 @@
 package com.pku.ipku.util;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.http.SslError;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.SslErrorHandler;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ListAdapter;
@@ -13,6 +16,8 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.pku.ipku.R;
+import com.pku.ipku.ui.account.LoginActivity;
+import com.pku.ipku.ui.util.BaseActivityIncludingFooterNavigation;
 
 import java.util.Date;
 
@@ -124,7 +129,15 @@ public class UIHelper {
         webView.getSettings().setDefaultFontSize(15);
         webView.setInitialScale(100);
         webView.loadUrl(url);
-        webView.setWebViewClient(new WebViewClient());
+        webView.setWebViewClient(new WebViewClient() {
+
+            @Override
+            public void onReceivedSslError(WebView view, SslErrorHandler handler,
+                                           SslError error) {
+                handler.proceed();
+            }
+
+        });
     }
 
     public static void setListViewHeightBasedOnChildren(ListView listView) {
@@ -143,5 +156,11 @@ public class UIHelper {
         params.height = totalHeight
                 + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
         listView.setLayoutParams(params);
+    }
+
+    public static void directToLoginPage(Activity activity) {
+        UIHelper.ToastMessage("登录信息失效请重新登录");
+        Intent intent = new Intent(activity, LoginActivity.class);
+        activity.startActivity(intent);
     }
 }
