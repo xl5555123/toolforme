@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/background"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+    <FrameLayout
+        android:layout_alignParentTop="true"
+        android:id="@+id/top"
+        android:background="@color/gray"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"></FrameLayout>
+
+    <FrameLayout
+        android:layout_alignParentBottom="true"
+        android:id="@+id/bottom"
+        android:background="@color/gray"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"></FrameLayout>
+
+    <FrameLayout
+        android:layout_alignParentLeft="true"
+        android:id="@+id/left"
+        android:background="@color/gray"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"></FrameLayout>
+
+    <FrameLayout
+        android:layout_alignParentRight="true"
+        android:id="@+id/right"
+        android:background="@color/gray"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"></FrameLayout>
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/money" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_below="@id/icon"
+        android:layout_centerHorizontal="true"
+        android:text="欠费信息"
+        android:textSize="20sp"
+        android:textColor="#f8f9f9"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
