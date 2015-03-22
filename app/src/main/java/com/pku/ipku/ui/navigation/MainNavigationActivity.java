@@ -4,17 +4,18 @@ import android.app.Activity;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageButton;
+import android.view.ViewGroup;
 
 import com.pku.ipku.R;
 import com.pku.ipku.ui.person.CurriculumListFragment;
 
+
 public class MainNavigationActivity extends Activity {
 
-    private ImageButton homeButton;
-    private ImageButton studentButton;
-    private ImageButton schoolButton;
-    private ImageButton settingButton;
+    private View homeButton;
+    private View studentButton;
+    private View schoolButton;
+    private View settingButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,11 +24,27 @@ public class MainNavigationActivity extends Activity {
         initView();
     }
 
-    private void initButtonBackground() {
-        homeButton.setBackground(getResources().getDrawable(R.drawable.navigation_selector));
-        studentButton.setBackground(getResources().getDrawable(R.drawable.navigation_selector));
-        schoolButton.setBackground(getResources().getDrawable(R.drawable.navigation_selector));
-        settingButton.setBackground(getResources().getDrawable(R.drawable.navigation_selector));
+    private void initSelectState() {
+        setUnSelected(homeButton);
+        setUnSelected(studentButton);
+        setUnSelected(schoolButton);
+        setUnSelected(settingButton);
+    }
+
+    private void setSelected(View view) {
+        ViewGroup viewGroup = (ViewGroup) view;
+        for (int i = 0; i < viewGroup.getChildCount(); i++) {
+            View thisView = viewGroup.getChildAt(i);
+            thisView.setSelected(true);
+        }
+    }
+
+    private void setUnSelected(View view) {
+        ViewGroup viewGroup = (ViewGroup) view;
+        for (int i = 0; i < viewGroup.getChildCount(); i++) {
+            View thisView = viewGroup.getChildAt(i);
+            thisView.setSelected(false);
+        }
     }
 
     private void navigateToHome() {
@@ -51,46 +68,45 @@ public class MainNavigationActivity extends Activity {
     }
 
     private void initView() {
-        homeButton = (ImageButton) findViewById(R.id.home_button);
-        studentButton = (ImageButton) findViewById(R.id.student_button);
-        studentButton.setBackgroundColor(getResources().getColor(R.color.darkgreen));
-        schoolButton = (ImageButton) findViewById(R.id.school_button);
-        settingButton = (ImageButton) findViewById(R.id.setting_button);
+        homeButton = findViewById(R.id.home_button);
+        studentButton = findViewById(R.id.student_button);
+        schoolButton = findViewById(R.id.school_button);
+        settingButton = findViewById(R.id.setting_button);
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                initButtonBackground();
-                homeButton.setBackgroundColor(getResources().getColor(R.color.footer_red));
+                initSelectState();
+                setSelected(homeButton);
                 navigateToHome();
             }
         });
         studentButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                initButtonBackground();
-                studentButton.setBackgroundColor(getResources().getColor(R.color.footer_red));
+                initSelectState();
+                setSelected(studentButton);
                 navigateToPerson();
             }
         });
         schoolButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                initButtonBackground();
-                schoolButton.setBackgroundColor(getResources().getColor(R.color.footer_red));
+                initSelectState();
+                setSelected(schoolButton);
                 navigateToSchool();
             }
         });
         settingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                initButtonBackground();
-                settingButton.setBackgroundColor(getResources().getColor(R.color.footer_red));
+                initSelectState();
+                setSelected(settingButton);
                 navigationToSetting();
             }
         });
 
-        initButtonBackground();
-        homeButton.setBackgroundColor(getResources().getColor(R.color.footer_red));
+        initSelectState();
+        setSelected(homeButton);
         navigateToHome();
     }
 }

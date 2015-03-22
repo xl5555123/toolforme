@@ -20,6 +20,7 @@
         android:id="@+id/password"
         android:layout_width="250dp"
         android:layout_height="35dp"
+        android:inputType="textPassword"
         android:layout_above="@id/login_button"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="19dp"
