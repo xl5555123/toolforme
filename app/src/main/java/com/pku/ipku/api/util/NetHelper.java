@@ -2,8 +2,6 @@ package com.pku.ipku.api.util;
 
 import android.util.Log;
 
-import com.pku.ipku.util.DaoHelper;
-
 import org.codehaus.jackson.map.DeserializationConfig;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.http.HttpEntity;
@@ -21,8 +19,6 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Collections;
 import java.util.Date;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Created by XingLiang on 2015/1/26.
@@ -98,14 +94,18 @@ public class NetHelper {
         }
         String url = getAuthUrl(uri, userId, timestamp, msg);
         HttpEntity<T> httpEntity = new HttpEntity<T>(getHeader());
+        Log.v("liuyi", "url: " + url);
         T data = null;
         try {
             data = restTemplate.exchange(url, HttpMethod.GET, httpEntity, returnType).getBody();
+            Log.v("liuyi", "load success!");
+            Log.v("liuyi", data.toString());
         } catch (Exception e) {
-
+            Log.v("liuyi", "load failed!");
+            Log.v("liuyi", e.toString());
         }
         if (data != null) {
-            DaoHelper.saveData(uri + userId, data);
+            //DaoHelper.saveData(uri + userId, data);
         }
         return data;
     }

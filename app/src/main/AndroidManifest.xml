@@ -180,6 +180,13 @@
             android:theme="@style/Theme.MyActionBarTheme"
             android:windowSoftInputMode="adjustPan|stateHidden" >
         </activity>
+        <activity
+            android:name=".ui.person.CurriculumActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_curriculum" >
+        </activity>
     </application>
 
 </manifest>

@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import com.pku.ipku.R;
-import com.pku.ipku.util.UIHelper;
+import com.pku.ipku.ui.person.CurriculumListFragment;
 
 public class MainNavigationActivity extends Activity {
 
@@ -32,7 +32,7 @@ public class MainNavigationActivity extends Activity {
 
     private void navigateToHome() {
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.content, HomeFragment.newInstance()).commit();
+        fragmentTransaction.replace(R.id.content, CurriculumListFragment.newInstance()).commit();
     }
 
     private void navigateToPerson() {

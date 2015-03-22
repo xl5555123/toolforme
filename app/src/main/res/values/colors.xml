@@ -246,4 +246,7 @@
 
     <color name="default_background">#f0f0f0</color>
 
+    <color name="tianlan">#1291a9</color>
+    <color name="danlan">#72cfd7</color>
+
 </resources>

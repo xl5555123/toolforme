@@ -13,10 +13,7 @@ import com.pku.ipku.adapter.pkuInfo.PkuPublicAdapter;
 import com.pku.ipku.api.factory.IpkuServiceFactory;
 import com.pku.ipku.model.pkuInfo.RegisterInPkuInfoPage;
 import com.pku.ipku.model.pkuInfo.dto.PkuPublicInfo;
-import com.pku.ipku.task.LoadDataConfigure;
-import com.pku.ipku.task.LoadDataDefaultTask;
 import com.pku.ipku.ui.util.BaseActivityIncludingFooterNavigation;
-import com.pku.ipku.ui.util.WebViewActivity;
 import com.pku.ipku.ui.util.paging.PagingListView;
 import com.pku.ipku.util.AppContextHolder;
 

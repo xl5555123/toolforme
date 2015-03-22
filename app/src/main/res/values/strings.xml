@@ -80,5 +80,6 @@
     <string name="title_activity_library_search_result">LibrarySearchResultActivity</string>
     <string name="title_activity_account_management">AccountManagementActivity</string>
     <string name="title_activity_find_ajob">FindAJobActivity</string>
+    <string name="title_activity_curriculum">CurriculumActivity</string>
 
 </resources>

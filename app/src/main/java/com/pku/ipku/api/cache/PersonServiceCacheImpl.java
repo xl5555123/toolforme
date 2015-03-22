@@ -51,4 +51,5 @@ public class PersonServiceCacheImpl implements PersonService {
     public List<Lesson> queryLessons(String query) {
         return MockLesson.getList();
     }
+
 }

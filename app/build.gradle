@@ -36,7 +36,7 @@ dependencies {
     compile('de.greenrobot:greendao:1.3.0') {
         exclude module: 'support-v4'
     }
-    compile "org.springframework.android:spring-android-rest-template:1.0.1.RELEASE"
+    compile 'org.springframework.android:spring-android-rest-template:1.0.1.RELEASE'
     compile 'org.codehaus.jackson:jackson-mapper-asl:1.9.12'
     compile 'com.google.guava:guava:16.0.1'
     compile 'commons-httpclient:commons-httpclient:3.1'
@@ -44,5 +44,5 @@ dependencies {
     compile 'org.ocpsoft.prettytime:prettytime:2.1.2.Final'
     compile 'com.tonicartos:stickygridheaders:1.0.1'
     compile 'com.google.code.gson:gson:2.3.1'
-
+    compile files('libs/volley.jar')
 }

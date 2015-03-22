@@ -17,6 +17,8 @@ public interface PersonService {
 
     public static final String PERSON_BASE_INFO_URL = "/svcpub/svc/pro/person/baseinfo";
 
+    public static final String PERSON_COURSE_TABLE_URL = "/svcpub/svc/pro/student/coursetable";
+
     public ArrearageStateDTO getArrearageState();
 
     public StuInfoDTO getStuInfo(int userId) throws Exception;
