@@ -63,7 +63,7 @@ public class CurriculumActivity extends FragmentActivity {
         }
         mViewPager.setAdapter(new MyPagerFragmentAdapter(
                 getSupportFragmentManager(), fragmentList, titleList));
-        mViewPager.setCurrentItem(todayInWeek);
+        //mViewPager.setCurrentItem(todayInWeek);
 
     }
 
