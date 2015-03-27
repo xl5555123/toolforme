@@ -21,6 +21,9 @@ import com.pku.ipku.ui.person.ScoreActivity;
 import com.pku.ipku.ui.person.freeClassRoom.FreeClassroomActivity;
 import com.pku.ipku.ui.person.library.LibraryActivity;
 import com.pku.ipku.ui.person.queryClass.QueryClassActivity;
+import com.pku.ipku.ui.pkuInfo.FindAJobActivity;
+import com.pku.ipku.ui.pkuInfo.PkuLectureActivity;
+import com.pku.ipku.ui.pkuInfo.PkuNoticeActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,9 +41,11 @@ public class PersonFragment extends Fragment {
             add(new ScoreActivity());
             add(new QueryClassActivity());
             add(new FreeClassroomActivity());
-            add(new ScholarshipActivity());
             add(new LibraryActivity());
             add(new ArrearageStateActivity());
+            add(new FindAJobActivity());
+            add(new PkuLectureActivity());
+            add(new PkuNoticeActivity());
         }
     };
     // TODO: Rename parameter arguments, choose names that match

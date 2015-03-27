@@ -4,81 +4,91 @@ package com.pku.ipku.model.studyguide;
  * Created by XingLiang on 2015/1/7.
  */
 public class Lesson {
-    private int id;
-    private String name;
-    private String teacherName;
-    private String location;
-    private String information;
-    private String time;
-    private String sector;
+    public Lesson(String courseEngName, String courseId, String courseName, String credits, String setupFor, String totalHrs, String url, String weekHrs) {
+        this.courseEngName = courseEngName;
+        this.courseId = courseId;
+        this.courseName = courseName;
+        this.credits = credits;
+        this.setupFor = setupFor;
+        this.totalHrs = totalHrs;
+        this.url = url;
+        this.weekHrs = weekHrs;
+    }
 
     public Lesson() {
 
     }
 
-    public Lesson(int id, String name, String teacherName, String location, String information, String time, String sector) {
-        this.id = id;
-        this.name = name;
-        this.teacherName = teacherName;
-        this.location = location;
-        this.information = information;
-        this.time = time;
-        this.sector = sector;
+    public String getCourseEngName() {
+        return courseEngName;
     }
 
-    public String getName() {
-        return name;
+    public void setCourseEngName(String courseEngName) {
+        this.courseEngName = courseEngName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getCourseId() {
+        return courseId;
     }
 
-    public String getTeacherName() {
-        return teacherName;
+    public void setCourseId(String courseId) {
+        this.courseId = courseId;
     }
 
-    public void setTeacherName(String teacherName) {
-        this.teacherName = teacherName;
+    public String getCourseName() {
+        return courseName;
     }
 
-    public String getLocation() {
-        return location;
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public String getCredits() {
+        return credits;
     }
 
-    public String getInformation() {
-        return information;
+    public void setCredits(String credits) {
+        this.credits = credits;
     }
 
-    public void setInformation(String information) {
-        this.information = information;
+    public String getSetupFor() {
+        return setupFor;
     }
 
-    public int getId() {
-        return id;
+    public void setSetupFor(String setupFor) {
+        this.setupFor = setupFor;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public String getTotalHrs() {
+        return totalHrs;
     }
 
-    public String getTime() {
-        return time;
+    public void setTotalHrs(String totalHrs) {
+        this.totalHrs = totalHrs;
     }
 
-    public void setTime(String time) {
-        this.time = time;
+    public String getUrl() {
+        return url;
     }
 
-    public String getSector() {
-        return sector;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
-    public void setSector(String sector) {
-        this.sector = sector;
+    public String getWeekHrs() {
+        return weekHrs;
     }
+
+    public void setWeekHrs(String weekHrs) {
+        this.weekHrs = weekHrs;
+    }
+
+    private String courseEngName;
+    private String courseId;
+    private String courseName;
+    private String credits;
+    private String setupFor;
+    private String totalHrs;
+    private String url;
+    private String weekHrs;
 }

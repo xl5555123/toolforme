@@ -14,6 +14,4 @@ public interface StudyGuideService {
     public CurriculumDTO getCurriculum();
 
     public Map<String, List<Integer>> getFreeClassrooms(List<String> seletedBuidings, List<String> selectedTime);
-
-    public Lesson queryLesson(String year, String term, String lessonName);
 }

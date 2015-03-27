@@ -44,15 +44,11 @@ public class QueryClassResultListAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         convertView = layoutInflater.inflate(R.layout.class_list_item, null);
-        TextView courseId = (TextView) convertView.findViewById(R.id.course_id);
+        TextView englishName = (TextView) convertView.findViewById(R.id.enlish_name);
         TextView courseName = (TextView) convertView.findViewById(R.id.course_name);
-        TextView team = (TextView) convertView.findViewById(R.id.term);
-        TextView department = (TextView) convertView.findViewById(R.id.department);
         Lesson lesson = lessonList.get(position);
-        courseId.setText(String.format("%d", lesson.getId()));
-        courseName.setText(lesson.getName());
-        team.setText(lesson.getTime());
-        department.setText(lesson.getSector());
+        courseName.setText(lesson.getCourseName());
+        englishName.setText(lesson.getCourseEngName());
         convertView.setTag(lesson);
         return convertView;
     }

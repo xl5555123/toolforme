@@ -1,7 +1,9 @@
 package com.pku.ipku.ui.navigation;
 
 
+import android.app.AlertDialog;
 import android.app.Fragment;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,6 +12,7 @@ import android.view.ViewGroup;
 
 import com.pku.ipku.R;
 import com.pku.ipku.ui.account.AccountManagementActivity;
+import com.pku.ipku.ui.account.LoginActivity;
 import com.pku.ipku.util.UIHelper;
 
 /**
@@ -21,7 +24,6 @@ public class SettingNavigationFragment extends Fragment {
 
     private View accountManagementButton;
     private View networkNavigationButton;
-    private View noticeManagementButton;
     private View aboutIPKUButton;
 
     public SettingNavigationFragment() {
@@ -49,19 +51,20 @@ public class SettingNavigationFragment extends Fragment {
 
     private void initView(View view) {
         accountManagementButton = view.findViewById(R.id.account_setting);
-        noticeManagementButton = view.findViewById(R.id.notice_management);
         networkNavigationButton = view.findViewById(R.id.network_management);
         aboutIPKUButton = view.findViewById(R.id.about_ipku);
         accountManagementButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UIHelper.ToastMessage("尽请期待!");
-            }
-        });
-        noticeManagementButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                UIHelper.ToastMessage("尽请期待!");
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setItems(R.array.user_face, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent(getActivity(), LoginActivity.class);
+                        startActivity(intent);
+
+                    }
+                }).create().show();
             }
         });
         networkNavigationButton.setOnClickListener(new View.OnClickListener() {

@@ -1,5 +1,6 @@
 package com.pku.ipku.api.net;
 
+import com.google.common.collect.Lists;
 import com.pku.ipku.api.PersonService;
 import com.pku.ipku.api.mock.person.MockArrearageState;
 import com.pku.ipku.api.mock.person.MockLibBorrowInfo;
@@ -45,7 +46,8 @@ public class PersonServiceNetImpl implements PersonService {
 
     @Override
     public List<Lesson> queryLessons(String query) {
-        return MockLesson.getList();
+        String uri = String.format(QUERY_LESSON, query);
+        return Lists.newArrayList(NetHelper.getForObject(uri, Lesson[].class));
     }
 
 }

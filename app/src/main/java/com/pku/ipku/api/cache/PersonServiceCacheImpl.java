@@ -1,5 +1,6 @@
 package com.pku.ipku.api.cache;
 
+import com.google.common.collect.Lists;
 import com.pku.ipku.api.PersonService;
 import com.pku.ipku.api.mock.person.MockArrearageState;
 import com.pku.ipku.api.mock.person.MockLibBorrowInfo;
@@ -49,7 +50,7 @@ public class PersonServiceCacheImpl implements PersonService {
 
     @Override
     public List<Lesson> queryLessons(String query) {
-        return MockLesson.getList();
+        return Lists.newArrayList(DaoHelper.readData(QUERY_LESSON + query, Lesson[].class));
     }
 
 }

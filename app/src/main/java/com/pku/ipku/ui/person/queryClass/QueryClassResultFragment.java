@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
@@ -17,9 +18,8 @@ import com.pku.ipku.model.studyguide.Lesson;
 import com.pku.ipku.task.LoadDataConfigure;
 import com.pku.ipku.task.LoadDataDefaultTask;
 import com.pku.ipku.task.Result;
-import com.pku.ipku.ui.studyGuide.ClassDetail;
+import com.pku.ipku.ui.util.WebViewActivity;
 import com.pku.ipku.util.AppContextHolder;
-import com.pku.ipku.util.DataHandleUtil;
 
 import java.util.List;
 
@@ -57,7 +57,7 @@ public class QueryClassResultFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(final LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_query_class_result, container, false);
@@ -72,8 +72,9 @@ public class QueryClassResultFragment extends Fragment {
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         Lesson lesson = (Lesson) view.getTag();
                         if (lesson != null) {
-                            Intent intent = new Intent(getActivity(), ClassDetail.class);
-                            intent.putExtra("lesson", DataHandleUtil.objectToJson(lesson));
+                            Intent intent = new Intent(getActivity(), WebViewActivity.class);
+                            intent.putExtra("url", lesson.getUrl());
+                            intent.putExtra("title", lesson.getCourseName());
                             startActivity(intent);
                         }
                     }
@@ -83,7 +84,7 @@ public class QueryClassResultFragment extends Fragment {
             @Override
             public Result getData(boolean cache) {
                 queryResult = IpkuServiceFactory.getPersonService(cache).queryLessons(query);
-                if (queryResult != null) {
+                if (queryResult == null) {
                     return new Result(Result.NET_ERROR);
                 }
                 return new Result(Result.NO_ERROR);

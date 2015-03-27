@@ -23,9 +23,4 @@ public class StudyGuideServiceNetImpl implements StudyGuideService {
     public Map<String, List<Integer>> getFreeClassrooms(List<String> seletedBuidings, List<String> selectedTime) {
         return MockFreeClassrooms.get();
     }
-
-    @Override
-    public Lesson queryLesson(String year, String term, String lessonName) {
-        return MockLesson.get();
-    }
 }

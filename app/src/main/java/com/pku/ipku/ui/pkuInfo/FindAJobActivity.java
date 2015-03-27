@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.pku.ipku.R;
+import com.pku.ipku.model.person.navigation.RegisterInPersonPage;
 import com.pku.ipku.model.pkuInfo.PkuInfoType;
 import com.pku.ipku.model.pkuInfo.RegisterInPkuInfoPage;
 import com.pku.ipku.ui.util.BaseActivityIncludingFooterNavigation;
@@ -15,7 +16,7 @@ import com.pku.ipku.ui.util.BaseActivityIncludingFooterNavigation;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FindAJobActivity extends BaseActivityIncludingFooterNavigation implements RegisterInPkuInfoPage {
+public class FindAJobActivity extends BaseActivityIncludingFooterNavigation implements RegisterInPersonPage {
 
     private List<PkuInfoType> pkuInfoTypeList = new ArrayList<PkuInfoType>() {
         {

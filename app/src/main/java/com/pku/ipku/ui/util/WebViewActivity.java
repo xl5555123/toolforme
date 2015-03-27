@@ -50,7 +50,6 @@ public class WebViewActivity extends BaseActivityIncludingFooterNavigation {
             savedInstanceState.putString("title", "IPKU");
         }
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_PROGRESS);
         webView = (WebView) findViewById(R.id.webview);
 
 

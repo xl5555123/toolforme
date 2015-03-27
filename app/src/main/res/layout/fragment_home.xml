@@ -1,7 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/main_background"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/backgroud_main">
+    android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/lecture_this_week_header"

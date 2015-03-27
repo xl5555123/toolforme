@@ -25,10 +25,10 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:focusable="true"
-                android:src="@drawable/navigation_sector_home_icon" />
+                android:src="@drawable/navigation_home_selector" />
 
             <TextView
-                android:textColor="@drawable/navigation_sector_textview"
+                android:textColor="@drawable/navigation_text_selector"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:layout_gravity="center_horizontal"
@@ -51,10 +51,10 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:focusable="true"
-                android:src="@drawable/navigation_sector_person_icon" />
+                android:src="@drawable/navigation_person_icon_selector" />
 
             <TextView
-                android:textColor="@drawable/navigation_sector_textview"
+                android:textColor="@drawable/navigation_text_selector"
                 android:layout_marginTop="5dp"
                 android:layout_gravity="center_horizontal"
                 android:text="个人"
@@ -63,29 +63,6 @@
                 android:layout_height="wrap_content" />
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/school_button"
-            android:orientation="vertical"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:layout_marginTop="10dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:focusable="true"
-                android:src="@drawable/navigation_sector_school_icon" />
-
-            <TextView
-                android:textColor="@drawable/navigation_sector_textview"
-                android:layout_marginTop="5dp"
-                android:layout_gravity="center_horizontal"
-                android:text="学校"
-                android:textSize="12sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/setting_button"
@@ -99,10 +76,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:focusable="true"
-                android:src="@drawable/navigation_sector_setting_icon" />
+                android:src="@drawable/navigation_setting_icon_selector" />
 
             <TextView
-                android:textColor="@drawable/navigation_sector_textview"
+                android:textColor="@drawable/navigation_text_selector"
                 android:layout_marginTop="5dp"
                 android:layout_gravity="center_horizontal"
                 android:text="设置"

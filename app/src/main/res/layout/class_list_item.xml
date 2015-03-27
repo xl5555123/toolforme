@@ -19,13 +19,7 @@
         android:id="@+id/term_header"
         style="@style/Library.LendList.header"
         android:layout_below="@id/course_name_header"
-        android:text="时间" />
-
-    <TextView
-        android:id="@+id/department_header"
-        style="@style/Library.LendList.header"
-        android:layout_below="@id/term_header"
-        android:text="学院" />
+        android:text="英文名" />
 
     <TextView
         android:id="@+id/course_id"
@@ -40,16 +34,10 @@
         android:text="中心馆藏" />
 
     <TextView
-        android:id="@+id/term"
+        android:id="@+id/enlish_name"
+        android:maxLength="20"
         style="@style/Library.LendList.item"
         android:layout_below="@id/course_name"
         android:text="2015-4-10" />
-
-    <TextView
-        android:id="@+id/department"
-        style="@style/Library.LendList.item"
-        android:layout_below="@id/term"
-        android:layout_marginBottom="10dp"
-        android:text="否" />
 
 </RelativeLayout>

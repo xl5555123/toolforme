@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroud_main"
+    android:background="@drawable/main_background"
     tools:context="com.pku.ipku.ui.navigation.SettingNavigationFragment">
 
     <RelativeLayout
@@ -38,19 +38,6 @@
         <TextView
             style="@style/Setting.Title"
             android:text="网络管理" />
-
-        <ImageView style="@style/Setting.Chevron" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/notice_management"
-        style="@style/Setting.Layout"
-        android:layout_below="@id/network_management"
-        android:layout_marginTop="20dp">
-
-        <TextView
-            style="@style/Setting.Title"
-            android:text="通知管理" />
 
         <ImageView style="@style/Setting.Chevron" />
     </RelativeLayout>

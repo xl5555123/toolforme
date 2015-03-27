@@ -11,6 +11,7 @@ import com.google.common.collect.Lists;
 import com.pku.ipku.R;
 import com.pku.ipku.adapter.pkuInfo.PkuPublicAdapter;
 import com.pku.ipku.api.factory.IpkuServiceFactory;
+import com.pku.ipku.model.person.navigation.RegisterInPersonPage;
 import com.pku.ipku.model.pkuInfo.RegisterInPkuInfoPage;
 import com.pku.ipku.model.pkuInfo.dto.PkuPublicInfo;
 import com.pku.ipku.ui.util.BaseActivityIncludingFooterNavigation;
@@ -21,7 +22,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-public class PkuLectureActivity extends BaseActivityIncludingFooterNavigation implements RegisterInPkuInfoPage {
+public class PkuLectureActivity extends BaseActivityIncludingFooterNavigation implements RegisterInPersonPage {
 
     private List<PkuPublicInfo> pkuPublicInfoList;
 
