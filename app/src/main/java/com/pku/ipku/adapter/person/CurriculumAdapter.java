@@ -73,7 +73,7 @@ public class CurriculumAdapter extends BaseAdapter {
         holder.room_name_tv.setText(room_name);
         holder.time_tv.setText(detailTime);
 
-        Log.v("liuyi", course_name + " " + curriculum.getClassCount());
+        Log.v("liuyi", course_name + " " + parity + " " + curriculum.getClassCount());
 
         return convertView;
     }

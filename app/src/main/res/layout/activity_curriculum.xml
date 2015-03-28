@@ -1,22 +1,18 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.pku.ipku.ui.person.CurriculumActivity">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
+    <com.astuetz.PagerSlidingTabStrip
+        android:id="@+id/titles"
+        android:layout_width="match_parent"
+        android:layout_height="48dip" />
     <android.support.v4.view.ViewPager
         android:id="@+id/curriculum_vp"
+        android:layout_below="@id/titles"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:background="#6B92A5" >
-
-        <android.support.v4.view.PagerTabStrip
-            android:id="@+id/curriculum_pts"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top"
-            android:background="@color/tab_text_shadow"
-            android:textColor="#ffffff" />
     </android.support.v4.view.ViewPager>
 
 </RelativeLayout>

@@ -5,10 +5,11 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
+import android.view.Menu;
 import android.view.MenuItem;
 
+import com.astuetz.PagerSlidingTabStrip;
 import com.pku.ipku.R;
 import com.pku.ipku.model.person.dto.CurriculumDTO;
 
@@ -20,6 +21,10 @@ public class CurriculumActivity extends FragmentActivity {
 
     private static int TOTAL_TAP = 7;
     private int todayInWeek;
+    ArrayList<String> titleList;
+    ArrayList<Fragment> fragmentList;
+    int filter = 0;
+    //filter表示单双周，0表示双周，1表示单周
     private String weeks[] = {"周一","周二","周三","周四","周五","周六","周日"};
     public static List<ArrayList<CurriculumDTO>> coursesForWeek = new ArrayList<ArrayList<CurriculumDTO>>();
     @Override
@@ -31,12 +36,8 @@ public class CurriculumActivity extends FragmentActivity {
         savedInstanceState.putString("title", "课程表");
         super.onCreate(savedInstanceState);
         todayInWeek = getIntent().getIntExtra("todayInWeek", 0);
-//        Bundle bundle = getIntent().getBundleExtra("curiculum");
-//        for(int i = 0; i < 7; i++){
-//            ArrayList<CurriculumDTO> tmp = (ArrayList<CurriculumDTO>) bundle.getParcelableArrayList(i+"").get(0);
-//            coursesForWeek.add(tmp);
-//        }
-        coursesForWeek = CurriculumListFragment.coursesForWeek;
+        if(CurriculumListFragment.coursesForWeek!=null)
+            coursesForWeek = CurriculumListFragment.coursesForWeek;
         initView();
     }
     public void initView() {
@@ -45,13 +46,11 @@ public class CurriculumActivity extends FragmentActivity {
         getActionBar().setHomeButtonEnabled(true);
         getActionBar().setDisplayHomeAsUpEnabled(true);
 
-        PagerTabStrip mPagerTabStrip=(PagerTabStrip) findViewById(R.id.curriculum_pts);
-        //设置导航条的颜色
-        mPagerTabStrip.setTabIndicatorColorResource(android.R.color.white);
-        ViewPager mViewPager = (ViewPager) findViewById(R.id.curriculum_vp);
-        ArrayList<Fragment> fragmentList = new ArrayList<Fragment>();//ViewPager中显示的数据
-        ArrayList<String> titleList = new ArrayList<String>();// 标题数据
 
+        PagerSlidingTabStrip tabPageIndicator = (PagerSlidingTabStrip) findViewById(R.id.titles);
+        ViewPager mViewPager = (ViewPager) findViewById(R.id.curriculum_vp);
+        fragmentList = new ArrayList<Fragment>();//ViewPager中显示的数据
+        titleList = new ArrayList<String>();// 标题数据
         //添加数据
         for (int i = 0; i < TOTAL_TAP; i++) {
             CurriculumForWeekFragment mViewPagerFragment = new CurriculumForWeekFragment();
@@ -61,24 +60,27 @@ public class CurriculumActivity extends FragmentActivity {
             titleList.add(weeks[i]);
             fragmentList.add(mViewPagerFragment);
         }
-        mViewPager.setAdapter(new MyPagerFragmentAdapter(
-                getSupportFragmentManager(), fragmentList, titleList));
-        //mViewPager.setCurrentItem(todayInWeek);
+        mViewPager.setAdapter(new MyPagerFragmentAdapter(getSupportFragmentManager()));
+        mViewPager.setCurrentItem(todayInWeek);
+        tabPageIndicator.setViewPager(mViewPager);
+        tabPageIndicator.setShouldExpand(true);
+        tabPageIndicator.setBackgroundResource(R.drawable.timeline_card_background);
+        tabPageIndicator.setTextColorResource(R.drawable.week_curriculum_selector);
+        tabPageIndicator.setIndicatorColorResource(R.drawable.week_curriculum_selector);
+
+
+
+
 
     }
+
 
 
     //适配器
     private class MyPagerFragmentAdapter extends FragmentPagerAdapter {
 
-        private List<Fragment> fragmentList;
-        private List<String> titleList;
-
-        public MyPagerFragmentAdapter(FragmentManager fm,
-                                      List<Fragment> fragmentList, List<String> titleList) {
+        public MyPagerFragmentAdapter(FragmentManager fm) {
             super(fm);
-            this.fragmentList = fragmentList;
-            this.titleList = titleList;
         }
 
         // ViewPage中显示的内容
@@ -109,11 +111,26 @@ public class CurriculumActivity extends FragmentActivity {
 
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_curriculum, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.odd_week:
+                filter = 1;
+                break;
+            case R.id.even_week:
+                filter = 0;
+                break;
             case android.R.id.home:
                 finish();
                 break;
+            default:
+                return super.onOptionsItemSelected(item);
         }
         return true;
     }

@@ -19,8 +19,8 @@ public class CurriculumForWeekFragment extends Fragment {
 
     ListView curriculum_lv;
     ImageView hehe_imv;
+    int weekType = 0;
     int todayInWeek = 0;
-    String weeks[] = {"mon", "tue", "wed", "thu", "fri", "sat", "sun"};
     ArrayList<CurriculumDTO> todayCourses = new ArrayList<CurriculumDTO>();
 
     public CurriculumForWeekFragment() {
@@ -34,6 +34,9 @@ public class CurriculumForWeekFragment extends Fragment {
 
     public void setDayInWeek(int index){
         this.todayInWeek = index;
+    }
+    public void setWeekType(int weekType){
+        this.weekType = weekType;
     }
 
     @Override

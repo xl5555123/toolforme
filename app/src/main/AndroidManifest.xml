@@ -184,6 +184,7 @@
             android:name=".ui.person.CurriculumActivity"
             android:configChanges="keyboardHidden|orientation"
             android:launchMode="singleTask"
+            android:theme="@style/Theme.MyActionBarTheme"
             android:screenOrientation="portrait"
             android:label="@string/title_activity_curriculum" >
         </activity>

@@ -41,13 +41,11 @@ public class CurriculumListFragment extends Fragment {
     ImageView hehe_imv;
     JSONObject courseInfo = new JSONObject();
     JSONArray courses = new JSONArray();
+    public static CurriculumListFragment fragment;
 
     int todayInWeek = 0;
     RequestQueue mQueue;
     String weeks[] = {"mon", "tue", "wed", "thu", "fri", "sat", "sun"};
-
-    List<CurriculumDTO> curriculumList = new ArrayList<CurriculumDTO>();
-    List<CurriculumDTO> todayCourses = new ArrayList<CurriculumDTO>();
     public static List<ArrayList<CurriculumDTO>> coursesForWeek = new ArrayList<ArrayList<CurriculumDTO>>();
     public CurriculumListFragment() {
         // Required empty public constructor
@@ -57,7 +55,8 @@ public class CurriculumListFragment extends Fragment {
     }
 
     public static CurriculumListFragment newInstance() {
-        CurriculumListFragment fragment = new CurriculumListFragment();
+        if(fragment == null)
+            fragment = new CurriculumListFragment();
         return fragment;
     }
     @Override
@@ -85,13 +84,6 @@ public class CurriculumListFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), CurriculumActivity.class);
                 intent.putExtra("todayInWeek", todayInWeek);
-//                Bundle bundle = new Bundle();
-//                for(int i = 0; i < 7; i++) {
-//                    ArrayList list = new ArrayList();
-//                    list.add(coursesForWeek.get(i));
-//                    bundle.putParcelableArrayList(i + "", list);
-//                }
-//                intent.putExtra("curriculum", bundle);
                 startActivity(intent);
             }
         });
@@ -99,7 +91,10 @@ public class CurriculumListFragment extends Fragment {
 
     private void getData() {
         todayInWeek = getTodayInWeek();
-        getDataByVolley();
+        if(coursesForWeek!=null && coursesForWeek.size()!=0)
+            curriculum_lv.setAdapter(new CurriculumAdapter(getActivity(), coursesForWeek.get(todayInWeek)));
+        if(courses==null || courses.length()==0)
+            getDataByVolley();
     }
 
     private int getTodayInWeek()
@@ -108,12 +103,31 @@ public class CurriculumListFragment extends Fragment {
         return (date.get(Calendar.DAY_OF_WEEK) + 5) % 7;
     }
 
+    @Override
+    public void setInitialSavedState(SavedState state) {
+        super.setInitialSavedState(state);
+    }
+
+    @Override
+    public void setRetainInstance(boolean retain) {
+        super.setRetainInstance(retain);
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+    }
+
     private void getDataByVolley()
     {
         int user_id = Integer.decode(AppContextHolder.getAppContext().getCurrentUser().getUsername());
         int timestamp = (int) new Date().getTime();
         String msg = NetHelper.getMd5(NetHelper.concatParameter(user_id, timestamp));
         String url = NetHelper.getAuthUrl(PersonService.PERSON_COURSE_TABLE_URL, user_id, timestamp, msg);
+        coursesForWeek = new ArrayList<ArrayList<CurriculumDTO>>();
+        for(int i = 0; i < 7; i++){
+            coursesForWeek.add(new ArrayList<CurriculumDTO>());
+        }
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(url, null,
                 new Response.Listener<JSONObject>() {
                     @Override
@@ -146,12 +160,6 @@ public class CurriculumListFragment extends Fragment {
                                             courseName = courseNameCopy.substring(0,left);
                                         }
                                         CurriculumDTO tmp_cm = new CurriculumDTO(week, timeNum, courseName, roomName, extra,1);
-//                                        CurriculumDTO last1 = curriculumList.size()>0 ? curriculumList.get(curriculumList.size() - 1) : null;
-//                                        if(last1!=null && tmp_cm.getCourseName().equals(last1.getCourseName()))
-//                                        {
-//                                            curriculumList.get(curriculumList.size() - 1).addClassCount();
-//                                        }else
-//                                            curriculumList.add(tmp_cm);
                                         CurriculumDTO last3 = coursesForWeek.get(j).size()>0 ? coursesForWeek.get(j).get(coursesForWeek.get(j).size() - 1) : null;
                                         if(last3!=null && tmp_cm.getCourseName().equals(last3.getCourseName()))
                                         {
@@ -170,7 +178,8 @@ public class CurriculumListFragment extends Fragment {
                             curriculum_lv.setVisibility(View.GONE);
                             hehe_imv.setVisibility(View.VISIBLE);
                         }else {
-                            curriculum_lv.setAdapter(new CurriculumAdapter(getActivity(), coursesForWeek.get(todayInWeek)));
+                            if(coursesForWeek!=null && coursesForWeek.size()!=0)
+                                curriculum_lv.setAdapter(new CurriculumAdapter(getActivity(), coursesForWeek.get(todayInWeek)));
                             curriculum_lv.setVisibility(View.VISIBLE);
                             hehe_imv.setVisibility(View.GONE);
                         }
