@@ -70,7 +70,7 @@ public class FindAJobActivity extends BaseActivityIncludingFooterNavigation impl
 
     @Override
     public int getPageDrawableId() {
-        return R.drawable.job;
+        return R.drawable.new_recruitment;
     }
 
     @Override

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ListView;
 
 import com.pku.ipku.R;
@@ -27,6 +28,8 @@ public class PersonInfoActivity extends BaseActivityIncludingFooterNavigation im
     private StuInfoDTO stuInfo;
     private ListView listView;
 
+    private View progress;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_person_info);
@@ -41,7 +44,7 @@ public class PersonInfoActivity extends BaseActivityIncludingFooterNavigation im
 
     @Override
     public int getPageDrawableId() {
-        return R.drawable.id;
+        return R.drawable.new_person_information;
     }
 
     @Override
@@ -61,12 +64,19 @@ public class PersonInfoActivity extends BaseActivityIncludingFooterNavigation im
 
     public void initView() {
         listView = (ListView) findViewById(R.id.person_info_list);
+        progress = findViewById(R.id.progress);
+        if (progress != null) {
+            progress.setVisibility(View.VISIBLE);
+        }
     }
 
     private class LoadStuInfoConfigure implements LoadDataConfigure {
         @Override
         public void showData() {
             listView.setAdapter(new PersonInfoListAdapter(AppContextHolder.getAppContext(), stuInfo));
+            if (progress != null) {
+                progress.setVisibility(View.GONE);
+            }
         }
 
         @Override

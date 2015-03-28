@@ -85,6 +85,7 @@
     <string name="title_activity_account_management">AccountManagementActivity</string>
     <string name="title_activity_find_ajob">FindAJobActivity</string>
     <string name="title_activity_curriculum">CurriculumActivity</string>
+    <string name="title_activity_query_result">QueryResultActivity</string>
 
     <string name="odd_week">单周</string>
     <string name="even_week">双周</string>

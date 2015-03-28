@@ -22,11 +22,11 @@ public class FreeClassAdapter extends BaseAdapter implements StickyGridHeadersSi
     private final LayoutInflater mInflater;
     private List<ClassRoom> classRooms;
 
-    public FreeClassAdapter(Map<String, List<Integer>> classroomNumberMap) {
+    public FreeClassAdapter(Map<String, List<String>> classroomNumberMap) {
         mInflater = LayoutInflater.from(AppContextHolder.getAppContext().getApplicationContext());
         this.classRooms = Lists.newArrayList();
         for (String buildingName : classroomNumberMap.keySet()) {
-            for (int classNum : classroomNumberMap.get(buildingName)) {
+            for (String classNum : classroomNumberMap.get(buildingName)) {
                 classRooms.add(new ClassRoom(classNum, buildingName));
             }
         }
@@ -67,16 +67,16 @@ public class FreeClassAdapter extends BaseAdapter implements StickyGridHeadersSi
         view = mInflater.inflate(R.layout.free_class_item, viewGroup, false);
         itemView = (TextView) view.findViewById(R.id.classroom_number);
         final ClassRoom item = getItem(i);
-        itemView.setText(String.format("%d", classRooms.get(i).classroomNumber));
+        itemView.setText(classRooms.get(i).classroomNumber);
 
         return view;
     }
 
     class ClassRoom {
-        final int classroomNumber;
+        final String classroomNumber;
         final String buidingName;
 
-        ClassRoom(int classroomNumber, String buidingName) {
+        ClassRoom(String classroomNumber, String buidingName) {
             this.classroomNumber = classroomNumber;
             this.buidingName = buidingName;
         }

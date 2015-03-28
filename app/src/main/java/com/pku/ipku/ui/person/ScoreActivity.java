@@ -62,7 +62,7 @@ public class ScoreActivity extends BaseActivityIncludingFooterNavigation impleme
 
     @Override
     public int getPageDrawableId() {
-        return R.drawable.grade;
+        return R.drawable.new_grades;
     }
 
     @Override

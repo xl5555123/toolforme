@@ -49,7 +49,6 @@ public class PersonNavigationAdapter extends BaseAdapter {
         if (view != null) {
             RegisterInPersonPage registerInPersonPage = registerInPersonPageList.get(i);
             ImageView icon = (ImageView) view.findViewById(R.id.icon);
-            view.findViewById(R.id.background).setBackgroundResource(registerInPersonPage.getPageBackgroundId());
             if (icon != null) {
                 icon.setImageResource(registerInPersonPage.getPageDrawableId());
             }

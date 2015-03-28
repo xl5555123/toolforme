@@ -90,7 +90,7 @@ public class LibraryActivity extends BaseActivityIncludingFooterNavigation imple
 
     @Override
     public int getPageDrawableId() {
-        return R.drawable.libary;
+        return R.drawable.new_library;
     }
 
     @Override
