@@ -71,7 +71,7 @@ public class QueryClassActivity extends BaseActivityIncludingFooterNavigation im
 
     @Override
     public int getPageDrawableId() {
-        return R.drawable.classresult;
+        return R.drawable.new_classes;
     }
 
     @Override

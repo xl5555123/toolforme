@@ -83,7 +83,7 @@ public class PkuLectureActivity extends BaseActivityIncludingFooterNavigation im
 
     @Override
     public int getPageDrawableId() {
-        return R.drawable.lecture;
+        return R.drawable.new_lecture;
     }
 
     @Override

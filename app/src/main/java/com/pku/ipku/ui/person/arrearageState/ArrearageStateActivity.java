@@ -80,7 +80,7 @@ public class ArrearageStateActivity extends BaseActivityIncludingFooterNavigatio
 
     @Override
     public int getPageDrawableId() {
-        return R.drawable.money;
+        return R.drawable.new_fee;
     }
 
     @Override

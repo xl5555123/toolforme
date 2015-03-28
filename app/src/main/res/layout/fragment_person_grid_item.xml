@@ -1,28 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/background"
-    android:paddingTop="10dp"
-    android:paddingBottom="10dp"
+    android:padding="20dp"
+    android:background="@drawable/grid_item_selector"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     >
-    
-    <TextView
-        android:id="@+id/title"
-        android:text="欠费信息"
-        android:textSize="20sp"
-        android:textColor="@color/white"
-        android:layout_gravity="center_horizontal"
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/icon"
-        android:layout_marginTop="15dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:src="@drawable/money" />
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/new_classes" />
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/title"
+            android:layout_marginTop="9dp"
+            android:text="欠费信息"
+            android:textSize="13sp"
+            android:textColor="#a7acac"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</RelativeLayout>

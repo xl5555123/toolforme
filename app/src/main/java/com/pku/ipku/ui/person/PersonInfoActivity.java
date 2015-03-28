@@ -41,7 +41,7 @@ public class PersonInfoActivity extends BaseActivityIncludingFooterNavigation im
 
     @Override
     public int getPageDrawableId() {
-        return R.drawable.id;
+        return R.drawable.new_person_information;
     }
 
     @Override

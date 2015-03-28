@@ -100,7 +100,7 @@ public class FreeClassroomActivity extends BaseActivityIncludingFooterNavigation
 
     @Override
     public int getPageDrawableId() {
-        return R.drawable.freeroom;
+        return R.drawable.new_classroom;
     }
 
     @Override

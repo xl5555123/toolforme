@@ -4,19 +4,22 @@
     android:layout_height="match_parent"
     android:background="@drawable/main_background"
     android:focusableInTouchMode="true"
-    android:paddingBottom="60dp"
+    android:paddingBottom="30dp"
     android:paddingTop="90dp"
     tools:context="com.pku.ipku.ui.navigation.PersonFragment">
 
     <GridView
         android:id="@+id/navigation_grid"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:stretchMode="columnWidth"
-        android:columnWidth="100dp"
-        android:horizontalSpacing="10dp"
-        android:verticalSpacing="10dp"
-        android:numColumns="3">
+        android:layout_marginBottom="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:horizontalSpacing="1dp"
+        android:background="#e5e5e5"
+        android:listSelector="@android:color/transparent"
+        android:verticalSpacing="1dp"
+        android:numColumns="3"
+        android:stretchMode="columnWidth">
     </GridView>
 
 </RelativeLayout>

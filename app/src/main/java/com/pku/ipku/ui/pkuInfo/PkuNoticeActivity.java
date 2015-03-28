@@ -71,7 +71,7 @@ public class PkuNoticeActivity extends BaseActivityIncludingFooterNavigation imp
 
     @Override
     public int getPageDrawableId() {
-        return R.drawable.inform;
+        return R.drawable.new_notice;
     }
 
     @Override
