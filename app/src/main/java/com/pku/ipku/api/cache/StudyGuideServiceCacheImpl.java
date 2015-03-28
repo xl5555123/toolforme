@@ -21,7 +21,7 @@ public class StudyGuideServiceCacheImpl implements StudyGuideService {
 
 
     @Override
-    public Map<String, List<Integer>> getFreeClassrooms(List<String> seletedBuidings, List<String> selectedTime) {
-        return MockFreeClassrooms.get();
+    public Map<String, List<String>> getFreeClassrooms(List<String> seletedBuidings, List<Integer> selectedTime) {
+        return null;
     }
 }

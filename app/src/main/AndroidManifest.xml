@@ -157,14 +157,6 @@
             android:windowSoftInputMode="adjustPan|stateHidden" >
         </activity>
         <activity
-            android:name=".ui.pkuInfo.PkuNewsActivity"
-            android:configChanges="keyboardHidden|orientation"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.MyActionBarTheme"
-            android:windowSoftInputMode="adjustPan|stateHidden" >
-        </activity>
-        <activity
             android:name=".ui.pkuInfo.PkuNoticeActivity"
             android:configChanges="keyboardHidden|orientation"
             android:launchMode="singleTask"
@@ -185,7 +177,16 @@
             android:configChanges="keyboardHidden|orientation"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
-            android:label="@string/title_activity_curriculum" >
+            android:theme="@style/Theme.MyActionBarTheme"
+            android:windowSoftInputMode="adjustPan|stateHidden">
+        </activity>
+        <activity
+            android:name=".ui.person.queryClass.QueryResultActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyActionBarTheme"
+            android:windowSoftInputMode="adjustPan|stateHidden" >
         </activity>
     </application>
 

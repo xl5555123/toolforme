@@ -11,7 +11,9 @@ import java.util.Map;
  */
 public interface StudyGuideService {
 
+    public final static String GET_FREE_CLASSROOM = "/svcpub/svc/pub/classroom/today?appKey=579d8718c1b911e49c500050568508a5&buildingName=%s";
+
     public CurriculumDTO getCurriculum();
 
-    public Map<String, List<Integer>> getFreeClassrooms(List<String> seletedBuidings, List<String> selectedTime);
+    public Map<String, List<String>> getFreeClassrooms(List<String> seletedBuidings, List<Integer> selectedTime);
 }

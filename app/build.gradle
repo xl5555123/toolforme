@@ -45,4 +45,5 @@ dependencies {
     compile 'com.tonicartos:stickygridheaders:1.0.1'
     compile 'com.google.code.gson:gson:2.3.1'
     compile files('libs/volley.jar')
+    compile 'com.jpardogo.googleprogressbar:library:1.1.0'
 }

@@ -26,15 +26,18 @@ public class SelectDialogFragment extends DialogFragment {
 
     private List<String> result;
 
+    private List<Integer> positionResult;
+
     public SelectDialogFragment() {
         super();
     }
 
-    public SelectDialogFragment(String title, List<String> itemToSelect, TextView textViewToChange, List<String> result) {
+    public SelectDialogFragment(String title, List<String> itemToSelect, TextView textViewToChange, List<String> result, List<Integer> postionResult) {
         this.title = title;
         this.itemToSelect = itemToSelect;
         this.textView = textViewToChange;
         this.result = result;
+        this.positionResult = postionResult;
     }
 
     private String getTextAndSetResult() {
@@ -44,6 +47,7 @@ public class SelectDialogFragment extends DialogFragment {
                 builder.append(itemToSelect.get(i));
                 builder.append(" ");
                 result.add(itemToSelect.get(i));
+                positionResult.add(i + 1);
             }
         }
         return builder.toString();
