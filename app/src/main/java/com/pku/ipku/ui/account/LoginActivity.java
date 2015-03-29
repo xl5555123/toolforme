@@ -90,6 +90,7 @@ public class LoginActivity extends Activity {
                 AppContextHolder.getAppContext().setCurrentUser(user);
                 Intent intent = new Intent(LoginActivity.this, MainNavigationActivity.class);
                 startActivity(intent);
+                finish();
             }
         }
     }

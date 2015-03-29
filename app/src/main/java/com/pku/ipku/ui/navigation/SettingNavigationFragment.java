@@ -13,8 +13,11 @@ import android.view.ViewGroup;
 import com.pku.ipku.R;
 import com.pku.ipku.ui.account.LoginActivity;
 import com.pku.ipku.ui.account.NetworkHelperActivity;
+import com.pku.ipku.ui.person.CurriculumListFragment;
 import com.pku.ipku.util.AppContextHolder;
 import com.pku.ipku.util.UIHelper;
+
+import org.json.JSONArray;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -63,6 +66,8 @@ public class SettingNavigationFragment extends Fragment {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 AppContextHolder.getAppContext().deleteCurrentUser();
+                                //这里不把这个设置成新的JSONArray的话，由于fragment还没有释放，用的还是原来那个，所有会导致没变，其他方法？
+                                CurriculumListFragment.courses = new JSONArray();
                                 Intent intent = new Intent(getActivity(), LoginActivity.class);
                                 if (intent != null) {
                                     startActivity(intent);

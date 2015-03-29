@@ -40,7 +40,7 @@ public class CurriculumListFragment extends Fragment {
     TextView week_curriculum_tv;
     ImageView hehe_imv;
     JSONObject courseInfo = new JSONObject();
-    JSONArray courses = new JSONArray();
+    public static JSONArray courses = new JSONArray();
     public static CurriculumListFragment fragment;
 
     int todayInWeek = 0;
