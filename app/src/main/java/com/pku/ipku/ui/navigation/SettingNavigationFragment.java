@@ -11,8 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.pku.ipku.R;
-import com.pku.ipku.ui.account.AccountManagementActivity;
 import com.pku.ipku.ui.account.LoginActivity;
+import com.pku.ipku.ui.account.NetworkHelperActivity;
+import com.pku.ipku.util.AppContextHolder;
 import com.pku.ipku.util.UIHelper;
 
 /**
@@ -57,13 +58,15 @@ public class SettingNavigationFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                builder.setTitle("退出登录?")
+                builder.setTitle("注销登录?")
                         .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
+                                AppContextHolder.getAppContext().deleteCurrentUser();
                                 Intent intent = new Intent(getActivity(), LoginActivity.class);
                                 if (intent != null) {
                                     startActivity(intent);
+                                    getActivity().finish();
                                 }
                             }
                         })
@@ -78,7 +81,10 @@ public class SettingNavigationFragment extends Fragment {
         networkNavigationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UIHelper.ToastMessage("尽请期待!");
+                Intent intent = new Intent(getActivity(), NetworkHelperActivity.class);
+                if (intent != null) {
+                    startActivity(intent);
+                }
             }
         });
         aboutIPKUButton.setOnClickListener(new View.OnClickListener() {
