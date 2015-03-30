@@ -1,12 +1,12 @@
 package com.pku.ipku.ui.person.library;
 
+
 import android.app.ActionBar;
-import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.app.SearchManager;
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -59,14 +59,14 @@ public class LibraryActivity extends BaseActivityIncludingFooterNavigation imple
                 if (title.equals(LIBRARY_TAB_TITLE.COLLECT_INDEX)) {
                     searchView.setQueryHint("搜索馆藏图书");
                     searchItem.expandActionView();
-                    getFragmentManager().beginTransaction().remove(searchResultFragment).commit();
+                    getSupportFragmentManager().beginTransaction().remove(searchResultFragment).commit();
                 } else if (title.equals(LIBRARY_TAB_TITLE.SCHOLAR_SEARCH)) {
                     searchView.setQueryHint("未名学术搜索");
                     searchItem.expandActionView();
-                    getFragmentManager().beginTransaction().remove(searchResultFragment).commit();
+                    getSupportFragmentManager().beginTransaction().remove(searchResultFragment).commit();
                 } else if (title.equals(LIBRARY_TAB_TITLE.MY_LEND)) {
                     searchResultFragment = LendListFragment.newInstance();
-                    getFragmentManager().beginTransaction().replace(R.id.search_content, searchResultFragment).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.search_content, searchResultFragment).commit();
                     if (searchItem != null) {
                         searchItem.collapseActionView();
                     }
@@ -124,7 +124,7 @@ public class LibraryActivity extends BaseActivityIncludingFooterNavigation imple
             @Override
             public boolean onQueryTextSubmit(String query) {
                 searchResultFragment = LendListFragment.newInstance();
-                getFragmentManager().beginTransaction().replace(R.id.search_content, searchResultFragment).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.search_content, searchResultFragment).commit();
                 return true;
             }
 

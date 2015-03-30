@@ -2,6 +2,7 @@ package com.pku.ipku.ui.person.freeClassRoom;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.GridView;
@@ -19,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class FreeClassRoomInAnBuilding extends Activity {
+public class FreeClassRoomInAnBuilding extends FragmentActivity {
 
     private List<String> seletedBuidings;
     private List<Integer> selectedTime;

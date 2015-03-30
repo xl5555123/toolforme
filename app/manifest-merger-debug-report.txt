@@ -68,6 +68,7 @@ ADDED from AndroidManifest.xml:17:5
 application
 ADDED from AndroidManifest.xml:19:5
 MERGED from de.hdodenhof:circleimageview:1.2.1:9:5
+MERGED from com.jpardogo.googleprogressbar:library:1.1.0:12:5
 	android:label
 		ADDED from AndroidManifest.xml:23:9
 	android:allowBackup
@@ -336,7 +337,7 @@ ADDED from AndroidManifest.xml:151:9
 		ADDED from AndroidManifest.xml:152:13
 	android:launchMode
 		ADDED from AndroidManifest.xml:154:13
-activity#com.pku.ipku.ui.pkuInfo.PkuNewsActivity
+activity#com.pku.ipku.ui.pkuInfo.PkuNoticeActivity
 ADDED from AndroidManifest.xml:159:9
 	android:windowSoftInputMode
 		ADDED from AndroidManifest.xml:165:13
@@ -350,7 +351,7 @@ ADDED from AndroidManifest.xml:159:9
 		ADDED from AndroidManifest.xml:160:13
 	android:launchMode
 		ADDED from AndroidManifest.xml:162:13
-activity#com.pku.ipku.ui.pkuInfo.PkuNoticeActivity
+activity#com.pku.ipku.ui.pkuInfo.FindAJobActivity
 ADDED from AndroidManifest.xml:167:9
 	android:windowSoftInputMode
 		ADDED from AndroidManifest.xml:173:13
@@ -364,7 +365,7 @@ ADDED from AndroidManifest.xml:167:9
 		ADDED from AndroidManifest.xml:168:13
 	android:launchMode
 		ADDED from AndroidManifest.xml:170:13
-activity#com.pku.ipku.ui.pkuInfo.FindAJobActivity
+activity#com.pku.ipku.ui.person.CurriculumActivity
 ADDED from AndroidManifest.xml:175:9
 	android:windowSoftInputMode
 		ADDED from AndroidManifest.xml:181:13
@@ -378,9 +379,24 @@ ADDED from AndroidManifest.xml:175:9
 		ADDED from AndroidManifest.xml:176:13
 	android:launchMode
 		ADDED from AndroidManifest.xml:178:13
+activity#com.pku.ipku.ui.person.queryClass.QueryResultActivity
+ADDED from AndroidManifest.xml:183:9
+	android:windowSoftInputMode
+		ADDED from AndroidManifest.xml:189:13
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:187:13
+	android:configChanges
+		ADDED from AndroidManifest.xml:185:13
+	android:theme
+		ADDED from AndroidManifest.xml:188:13
+	android:name
+		ADDED from AndroidManifest.xml:184:13
+	android:launchMode
+		ADDED from AndroidManifest.xml:186:13
 uses-sdk
 INJECTED from AndroidManifest.xml:0:0 reason: use-sdk injection requested
 MERGED from de.hdodenhof:circleimageview:1.2.1:5:5
+MERGED from com.jpardogo.googleprogressbar:library:1.1.0:8:5
 	android:targetSdkVersion
 		INJECTED from AndroidManifest.xml:0:0
 		INJECTED from AndroidManifest.xml:0:0

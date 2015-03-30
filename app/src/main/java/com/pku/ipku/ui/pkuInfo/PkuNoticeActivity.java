@@ -50,7 +50,7 @@ public class PkuNoticeActivity extends BaseActivityIncludingFooterNavigation imp
             public void onTabSelected(ActionBar.Tab tab, FragmentTransaction ft) {
                 PkuInfoType pkuInfoType = (PkuInfoType) tab.getTag();
                 if (pkuInfoType != null) {
-                    getFragmentManager().beginTransaction().replace(R.id.content, PkuPublicInfoWithoutPagingFragment.newInstance(pkuInfoType)).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.content, PkuPublicInfoWithoutPagingFragment.newInstance(pkuInfoType)).commit();
                 }
             }
 

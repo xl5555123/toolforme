@@ -1,7 +1,6 @@
 package com.pku.ipku.ui.pkuInfo;
 
 import android.app.ActionBar;
-import android.app.Activity;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.Menu;
@@ -49,7 +48,7 @@ public class FindAJobActivity extends BaseActivityIncludingFooterNavigation impl
             public void onTabSelected(ActionBar.Tab tab, FragmentTransaction ft) {
                 PkuInfoType pkuInfoType = (PkuInfoType) tab.getTag();
                 if (pkuInfoType != null) {
-                    getFragmentManager().beginTransaction().replace(R.id.content, PkuPublicInfoWithPagingFragment.newInstance(pkuInfoType)).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.content, PkuPublicInfoWithPagingFragment.newInstance(pkuInfoType)).commit();
                 }
             }
 

@@ -1,26 +1,29 @@
 package com.pku.ipku.ui.navigation;
 
-import android.app.Activity;
-import android.app.FragmentTransaction;
+import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.ViewGroup;
 import com.pku.ipku.R;
 
-import com.pku.ipku.ui.person.CurriculumListFragment;
 
-
-public class MainNavigationActivity extends Activity {
+public class MainNavigationActivity extends FragmentActivity {
 
     private View homeButton;
     private View studentButton;
     private View settingButton;
+
+    private ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_navigation);
         initView();
+        initPager();
     }
 
     private void initSelectState() {
@@ -48,21 +51,46 @@ public class MainNavigationActivity extends Activity {
     }
 
     private void navigateToHome() {
-        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.content, CurriculumListFragment.newInstance()).commit();
+        viewPager.setCurrentItem(0);
     }
 
     private void navigateToPerson() {
-        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.content, PersonFragment.newInstance()).commit();
+        viewPager.setCurrentItem(1);
     }
 
     private void navigationToSetting() {
-        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.content, SettingNavigationFragment.newInstance()).commit();
+        viewPager.setCurrentItem(2);
     }
 
     private void initView() {
+        viewPager = (ViewPager) findViewById(R.id.viewpager);
+        viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                if (position == 0) {
+                    initSelectState();
+                    setSelected(homeButton);
+                }
+                else if (position == 1) {
+                    initSelectState();
+                    setSelected(studentButton);
+                }
+                else {
+                    initSelectState();
+                    setSelected(settingButton);
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
         homeButton = findViewById(R.id.home_button);
         studentButton = findViewById(R.id.student_button);
         settingButton = findViewById(R.id.setting_button);
@@ -94,5 +122,28 @@ public class MainNavigationActivity extends Activity {
         initSelectState();
         setSelected(homeButton);
         navigateToHome();
+    }
+
+    private void initPager() {
+        FragmentPagerAdapter pagerAdapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
+            @Override
+            public Fragment getItem(int position) {
+                if (position == 0) {
+                    return HomeFragment.newInstance();
+                }
+                else if (position == 1) {
+                    return PersonFragment.newInstance();
+                }
+                else {
+                    return SettingNavigationFragment.newInstance();
+                }
+            }
+
+            @Override
+            public int getCount() {
+                return 3;
+            }
+        };
+        viewPager.setAdapter(pagerAdapter);
     }
 }

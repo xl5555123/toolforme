@@ -1,8 +1,8 @@
 package com.pku.ipku.ui.person;
 
+
 import android.app.ActionBar;
 import android.app.FragmentTransaction;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.ListView;
 
