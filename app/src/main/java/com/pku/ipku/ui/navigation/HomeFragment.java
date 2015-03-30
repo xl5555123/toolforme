@@ -1,17 +1,17 @@
 package com.pku.ipku.ui.navigation;
 
 
-import android.support.v4.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.pku.ipku.R;
+import com.pku.ipku.ui.person.CurriculumListFragment;
 import com.pku.ipku.ui.person.arrearageState.ArrearageStateActivity;
 import com.pku.ipku.ui.person.arrearageState.ArrearageStateFragment;
-import com.pku.ipku.ui.person.library.BookOverline;
 import com.pku.ipku.ui.person.library.LibraryActivity;
 import com.pku.ipku.ui.pkuInfo.PkuLectureFragment;
 
@@ -59,7 +59,7 @@ public class HomeFragment extends Fragment {
     private void initView(View view) {
         getFragmentManager().beginTransaction().replace(R.id.lecture_fragment, PkuLectureFragment.newInstance()).commit();
         getFragmentManager().beginTransaction().replace(R.id.remain_fragment, ArrearageStateFragment.newInstance()).commit();
-        getFragmentManager().beginTransaction().replace(R.id.library_fragment, BookOverline.newInstance()).commit();
+        getFragmentManager().beginTransaction().replace(R.id.library_fragment, CurriculumListFragment.newInstance()).commit();
         view.findViewById(R.id.remain_fragment).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -1,16 +1,17 @@
 package com.pku.ipku.ui.person;
 
-import android.support.v4.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
+import android.widget.RelativeLayout;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -19,6 +20,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.pku.ipku.R;
 import com.pku.ipku.adapter.person.CurriculumAdapter;
+import com.pku.ipku.adapter.person.CurriculumAdapterForHome;
 import com.pku.ipku.api.PersonService;
 import com.pku.ipku.api.util.NetHelper;
 import com.pku.ipku.model.person.dto.CurriculumDTO;
@@ -37,12 +39,11 @@ import java.util.Locale;
 public class CurriculumListFragment extends Fragment {
 
     ListView curriculum_lv;
-    TextView week_curriculum_tv;
     ImageView hehe_imv;
     JSONObject courseInfo = new JSONObject();
     public static JSONArray courses = new JSONArray();
     public static CurriculumListFragment fragment;
-
+    RelativeLayout curriculum_container;
     int todayInWeek = 0;
     RequestQueue mQueue;
     String weeks[] = {"mon", "tue", "wed", "thu", "fri", "sat", "sun"};
@@ -77,11 +78,11 @@ public class CurriculumListFragment extends Fragment {
 
     private void initView(View view) {
         curriculum_lv = (ListView) view.findViewById(R.id.curriculum_lv);
-        week_curriculum_tv = (TextView) view.findViewById(R.id.week_curriculum_tv);
         hehe_imv = (ImageView) view.findViewById(R.id.heh_imv);
-        week_curriculum_tv.setOnClickListener(new View.OnClickListener() {
+        curriculum_container = (RelativeLayout) view.findViewById(R.id.curriculum_container);
+        curriculum_lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getActivity(), CurriculumActivity.class);
                 intent.putExtra("todayInWeek", todayInWeek);
                 startActivity(intent);
@@ -179,7 +180,7 @@ public class CurriculumListFragment extends Fragment {
                             hehe_imv.setVisibility(View.VISIBLE);
                         }else {
                             if(coursesForWeek!=null && coursesForWeek.size()!=0)
-                                curriculum_lv.setAdapter(new CurriculumAdapter(getActivity(), coursesForWeek.get(todayInWeek)));
+                                curriculum_lv.setAdapter(new CurriculumAdapterForHome(getActivity(), coursesForWeek.get(todayInWeek)));
                             curriculum_lv.setVisibility(View.VISIBLE);
                             hehe_imv.setVisibility(View.GONE);
                         }

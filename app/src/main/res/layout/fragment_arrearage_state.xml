@@ -1,36 +1,81 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:background="@color/white"
-    android:layout_width="148dp"
-    android:layout_height="182dp">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#f9f9f9"
+            android:layout_alignParentLeft="true"
+            android:text="余额"
+            android:id="@+id/yue"
+            android:textSize="32sp"/>
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#f9f9f9"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/yue"
+            android:text="(元)"
+            android:textSize="10sp"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#53bc94">
+        <TextView
+            style="@style/arrearagementHeader"
+            android:id="@+id/card1"
+            android:textColor="#f9f9f9"
+            android:text="校园卡"/>
+        <TextView
+            android:id="@+id/campus_card_balance"
+            style="@style/arrearagementItem"
+            android:textColor="#f9f9f9"
+            android:layout_below="@id/card1"
+            android:layout_alignParentRight="true"
+            android:text="99.0" />
+    </RelativeLayout>
 
-    <TextView
-        style="@style/arrearagementHeader"
-        android:text="校园卡余额（元）" />
-    <TextView
-        android:id="@+id/campus_card_balance"
-        style="@style/arrearagementItem"
-        android:text="99.0" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="#fff757"
+        android:layout_height="wrap_content">
+        <TextView
+            style="@style/arrearagementHeader"
+            android:textColor="#f9f9f9"
+            android:id="@+id/network"
+            android:text="校园网"
+            />
 
-    <TextView
-        style="@style/arrearagementHeader"
-        android:text="校园网余额（元)"
-        />
+        <TextView
+            android:id="@+id/net_balance"
+            android:text="0.00"
+            android:layout_below="@id/network"
+            android:layout_alignParentRight="true"
+            style="@style/arrearagementItem"
+            android:textColor="#f9f9f9"/>
+    </RelativeLayout>
 
-    <TextView
-        android:id="@+id/net_balance"
-        android:text="0.00"
-        style="@style/arrearagementItem" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f6bad4">
+        <TextView
+            style="@style/arrearagementHeader"
+            android:textColor="#f9f9f9"
+            android:id="@+id/library"
+            android:text="图书馆" />
 
-    <TextView
-        style="@style/arrearagementHeader"
-        android:text="图书馆欠费（元）" />
-
-    <TextView
-        android:id="@+id/library_fee"
-        android:text="0.00"
-        android:textColor="@color/red"
-        style="@style/arrearagementItem"/>
+        <TextView
+            android:id="@+id/library_fee"
+            android:text="0.00"
+            android:layout_below="@id/library"
+            android:layout_alignParentRight="true"
+            style="@style/arrearagementItem"
+            android:textColor="#f9f9f9"/>
+    </RelativeLayout>
 <!--
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"

@@ -1,14 +1,14 @@
 package com.pku.ipku.ui.navigation;
 
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.ViewGroup;
+
 import com.pku.ipku.R;
-import com.pku.ipku.ui.person.CurriculumListFragment;
 
 
 public class MainNavigationActivity extends FragmentActivity {
@@ -130,7 +130,7 @@ public class MainNavigationActivity extends FragmentActivity {
             @Override
             public Fragment getItem(int position) {
                 if (position == 0) {
-                    return CurriculumListFragment.newInstance();
+                    return HomeFragment.newInstance();
                 }
                 else if (position == 1) {
                     return PersonFragment.newInstance();
