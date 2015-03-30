@@ -22,6 +22,7 @@ import com.pku.ipku.task.LoadDataDefaultTask;
 import com.pku.ipku.task.Result;
 import com.pku.ipku.ui.util.WebViewActivity;
 import com.pku.ipku.util.AppContextHolder;
+import com.pku.ipku.util.UIHelper;
 
 import java.util.List;
 
@@ -66,16 +67,7 @@ public class PkuLectureFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String url = (String) view.getTag();
                 if (url != null) {
-                    /*
-                    Intent intent = new Intent(getActivity(), WebViewActivity.class);
-                    intent.putExtra("url", url);
-                    intent.putExtra("title", "公共信息");
-                    startActivity(intent);
-                    */
-                    Intent intent= new Intent();
-                    intent.setAction("android.intent.action.VIEW");
-                    Uri content_url = Uri.parse(url);
-                    intent.setData(content_url);
+                    Intent intent = UIHelper.directToWebView(getActivity(), url);
                     startActivity(intent);
                 }
             }

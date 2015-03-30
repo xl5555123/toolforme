@@ -19,6 +19,7 @@ import com.pku.ipku.model.pkuInfo.dto.PkuPublicInfo;
 import com.pku.ipku.ui.util.WebViewActivity;
 import com.pku.ipku.ui.util.paging.PagingListView;
 import com.pku.ipku.util.AppContextHolder;
+import com.pku.ipku.util.UIHelper;
 
 import java.util.Calendar;
 import java.util.List;
@@ -90,10 +91,7 @@ public class PkuPublicInfoWithoutPagingFragment extends Fragment {
                     intent.putExtra("title", type.getTitle());
                     startActivity(intent);
                     */
-                    Intent intent= new Intent();
-                    intent.setAction("android.intent.action.VIEW");
-                    Uri content_url = Uri.parse(url);
-                    intent.setData(content_url);
+                    Intent intent= UIHelper.directToWebView(getActivity(), url);
                     startActivity(intent);
                 }
             }

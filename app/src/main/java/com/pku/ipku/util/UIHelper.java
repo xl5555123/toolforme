@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.net.http.SslError;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,7 @@ import android.widget.Toast;
 import com.pku.ipku.R;
 import com.pku.ipku.ui.account.LoginActivity;
 import com.pku.ipku.ui.util.BaseActivityIncludingFooterNavigation;
+import com.pku.ipku.ui.util.WebViewActivity;
 
 import java.util.Date;
 
@@ -162,5 +164,21 @@ public class UIHelper {
         UIHelper.ToastMessage("登录信息失效请重新登录");
         Intent intent = new Intent(activity, LoginActivity.class);
         activity.startActivity(intent);
+    }
+
+    public static Intent directToWebView(Activity activity, String url) {
+        if (url.contains("pdf")) {
+            Intent intent= new Intent();
+            intent.setAction("android.intent.action.VIEW");
+            Uri content_url = Uri.parse(url);
+            intent.setData(content_url);
+            return intent;
+        }
+        else {
+            Intent intent = new Intent(activity, WebViewActivity.class);
+            intent.putExtra("url", url);
+            intent.putExtra("title", "公共信息");
+            return intent;
+        }
     }
 }

@@ -17,6 +17,7 @@ import com.pku.ipku.model.pkuInfo.dto.PkuPublicInfo;
 import com.pku.ipku.ui.util.BaseActivityIncludingFooterNavigation;
 import com.pku.ipku.ui.util.paging.PagingListView;
 import com.pku.ipku.util.AppContextHolder;
+import com.pku.ipku.util.UIHelper;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -60,10 +61,7 @@ public class PkuLectureActivity extends BaseActivityIncludingFooterNavigation im
                     intent.putExtra("title", "讲座信息");
                     startActivity(intent);
                     */
-                    Intent intent= new Intent();
-                    intent.setAction("android.intent.action.VIEW");
-                    Uri content_url = Uri.parse(url);
-                    intent.setData(content_url);
+                    Intent intent = UIHelper.directToWebView(PkuLectureActivity.this, url);
                     startActivity(intent);
                 }
             }

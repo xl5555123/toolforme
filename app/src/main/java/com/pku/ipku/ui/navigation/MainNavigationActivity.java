@@ -8,6 +8,7 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.ViewGroup;
 import com.pku.ipku.R;
+import com.pku.ipku.ui.person.CurriculumListFragment;
 
 
 public class MainNavigationActivity extends FragmentActivity {
@@ -129,7 +130,7 @@ public class MainNavigationActivity extends FragmentActivity {
             @Override
             public Fragment getItem(int position) {
                 if (position == 0) {
-                    return HomeFragment.newInstance();
+                    return CurriculumListFragment.newInstance();
                 }
                 else if (position == 1) {
                     return PersonFragment.newInstance();
