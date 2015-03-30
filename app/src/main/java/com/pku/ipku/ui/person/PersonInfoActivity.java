@@ -107,9 +107,6 @@ public class PersonInfoActivity extends BaseActivityIncludingFooterNavigation im
 
         @Override
         public void processError(Result result) {
-            if (result.isAccountError()) {
-                UIHelper.directToLoginPage(PersonInfoActivity.this);
-            }
         }
     }
 }

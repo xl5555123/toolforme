@@ -48,16 +48,9 @@
             style="@style/library_header"
             android:layout_width="match_parent" />
             -->
-    <FrameLayout
-        android:id="@+id/divider"
-        android:layout_width="match_parent"
-        android:layout_height="4dp"
-        android:layout_alignParentTop="true"
-        android:background="@color/green"></FrameLayout>
 
     <FrameLayout
-        android:id="@+id/search_content"
+        android:id="@+id/content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/divider" />
+        android:layout_height="match_parent"/>
 </RelativeLayout>
