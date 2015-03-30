@@ -52,7 +52,7 @@ public class CurriculumDTO implements Parcelable{
         dest.writeInt(classCount);
     }
 
-    public CurriculumDTO(String week, String timeNum, String courseName, String roomName, String Parity, int classCount)
+    public CurriculumDTO(String week, String timeNum, String courseName, String roomName, String parity, int classCount)
     {
         this.week = week;
         this.timeNum = timeNum;

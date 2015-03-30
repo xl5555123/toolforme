@@ -27,6 +27,7 @@
         android:background="@drawable/login_border_no_border"
         android:gravity="center"
         android:hint="密码"
+        android:singleLine="true"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="16sp" />
@@ -40,6 +41,7 @@
         android:layout_marginBottom="7dp"
         android:background="@drawable/login_border_no_color"
         android:gravity="center"
+        android:singleLine="true"
         android:hint="账号"
         android:textColor="@color/white"
         android:textColorHint="@color/white"

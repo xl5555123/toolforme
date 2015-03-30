@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/network_bg"
     android:orientation="vertical">
 
     <LinearLayout
@@ -13,7 +12,7 @@
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="85dp"
+            android:layout_marginTop="15dp"
             android:orientation="horizontal">
 
             <TextView
@@ -135,31 +134,8 @@
                 android:textColor="#965801"
                 android:textSize="18sp" />
 
-            <com.pku.util.SwitchButton
+            <com.pku.ipku.util.SwitchButton
                 android:id="@+id/network_free_or_not"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="3dp"
-                android:layout_marginTop="3dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:gravity="center_horizontal"
-                android:text="保存账户信息:"
-                android:textColor="#965801"
-                android:textSize="18sp" />
-
-            <com.pku.util.SwitchButton
-                android:id="@+id/network_saveuser_or_not"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="3dp"

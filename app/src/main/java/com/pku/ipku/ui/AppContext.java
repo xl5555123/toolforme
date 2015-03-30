@@ -5,7 +5,6 @@ import android.app.Application;
 import com.google.common.base.Strings;
 import com.pku.ipku.model.account.User;
 import com.pku.ipku.util.AppConfig;
-import com.pku.ipku.util.AppException;
 import com.pku.ipku.util.DaoHelper;
 import com.pku.ipku.util.PropertyHelper;
 
@@ -50,6 +49,12 @@ public class AppContext extends Application {
     public void setCurrentUser(User user) {
         currentUser = user;
         DaoHelper.saveData(CURRENT_USER_KEY, user);
+    }
+
+    public void deleteCurrentUser(){
+        currentUser = null;
+        DaoHelper.removeData(CURRENT_USER_KEY);
+
     }
 
 }

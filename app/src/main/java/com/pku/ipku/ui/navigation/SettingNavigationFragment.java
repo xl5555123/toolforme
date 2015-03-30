@@ -11,9 +11,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.pku.ipku.R;
-import com.pku.ipku.ui.account.AccountManagementActivity;
 import com.pku.ipku.ui.account.LoginActivity;
+import com.pku.ipku.ui.account.NetworkHelperActivity;
+import com.pku.ipku.ui.person.CurriculumListFragment;
+import com.pku.ipku.util.AppContextHolder;
 import com.pku.ipku.util.UIHelper;
+
+import org.json.JSONArray;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -57,13 +61,17 @@ public class SettingNavigationFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                builder.setTitle("退出登录?")
+                builder.setTitle("注销登录?")
                         .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
+                                AppContextHolder.getAppContext().deleteCurrentUser();
+                                //这里不把这个设置成新的JSONArray的话，由于fragment还没有释放，用的还是原来那个，所有会导致没变，其他方法？
+                                CurriculumListFragment.courses = new JSONArray();
                                 Intent intent = new Intent(getActivity(), LoginActivity.class);
                                 if (intent != null) {
                                     startActivity(intent);
+                                    getActivity().finish();
                                 }
                             }
                         })
@@ -78,7 +86,10 @@ public class SettingNavigationFragment extends Fragment {
         networkNavigationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UIHelper.ToastMessage("尽请期待!");
+                Intent intent = new Intent(getActivity(), NetworkHelperActivity.class);
+                if (intent != null) {
+                    startActivity(intent);
+                }
             }
         });
         aboutIPKUButton.setOnClickListener(new View.OnClickListener() {
