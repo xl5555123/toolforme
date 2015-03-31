@@ -178,23 +178,47 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyActionBarTheme"
-            android:windowSoftInputMode="adjustPan|stateHidden">
+            android:windowSoftInputMode="adjustPan|stateHidden" >
         </activity>
         <activity
             android:name=".ui.person.queryClass.QueryResultActivity"
             android:configChanges="keyboardHidden|orientation"
             android:launchMode="singleTask"
-            android:theme="@style/Theme.MyActionBarTheme"
             android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyActionBarTheme"
             android:windowSoftInputMode="adjustPan|stateHidden" >
         </activity>
         <activity
             android:name=".ui.account.NetworkHelperActivity"
             android:configChanges="keyboardHidden|orientation"
             android:launchMode="singleTask"
-            android:theme="@style/Theme.MyActionBarTheme"
             android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyActionBarTheme"
             android:windowSoftInputMode="adjustPan|stateHidden" >
+        </activity>
+        <activity
+            android:name=".ui.setting.PhoneActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyActionBarTheme"
+            android:windowSoftInputMode="adjustPan|stateHidden" >
+        </activity>
+        <activity
+            android:name=".ui.setting.PkuMap"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyActionBarTheme"
+            android:windowSoftInputMode="adjustPan|stateHidden" >
+        </activity>
+        <activity
+            android:name=".ui.setting.BeijingRailway"
+            android:label="@string/title_activity_beijing_railway" >
+        </activity>
+        <activity
+            android:name=".ui.setting.AboutSoftware"
+            android:label="@string/title_activity_about_software" >
         </activity>
     </application>
 

@@ -89,5 +89,9 @@
 
     <string name="odd_week">单周</string>
     <string name="even_week">双周</string>
+    <string name="title_activity_phone">PhoneActivity</string>
+    <string name="title_activity_pku_map">PkuMap</string>
+    <string name="title_activity_beijing_railway">BeijingRailway</string>
+    <string name="title_activity_about_software">AboutSoftware</string>
 
 </resources>

@@ -14,6 +14,10 @@ import com.pku.ipku.R;
 import com.pku.ipku.ui.account.LoginActivity;
 import com.pku.ipku.ui.account.NetworkHelperActivity;
 import com.pku.ipku.ui.person.CurriculumListFragment;
+import com.pku.ipku.ui.setting.BeijingRailway;
+import com.pku.ipku.ui.setting.PhoneActivity;
+import com.pku.ipku.ui.setting.PkuMap;
+import com.pku.ipku.ui.util.WebViewActivity;
 import com.pku.ipku.util.AppContextHolder;
 import com.pku.ipku.util.UIHelper;
 
@@ -25,10 +29,6 @@ import org.json.JSONArray;
  * create an instance of this fragment.
  */
 public class SettingNavigationFragment extends Fragment {
-
-    private View accountManagementButton;
-    private View networkNavigationButton;
-    private View aboutIPKUButton;
 
     public SettingNavigationFragment() {
         // Required empty public constructor
@@ -54,10 +54,7 @@ public class SettingNavigationFragment extends Fragment {
     }
 
     private void initView(View view) {
-        accountManagementButton = view.findViewById(R.id.account_setting);
-        networkNavigationButton = view.findViewById(R.id.network_management);
-        aboutIPKUButton = view.findViewById(R.id.about_ipku);
-        accountManagementButton.setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.log_out).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -83,7 +80,7 @@ public class SettingNavigationFragment extends Fragment {
                         }).create().show();
             }
         });
-        networkNavigationButton.setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.network).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), NetworkHelperActivity.class);
@@ -92,10 +89,34 @@ public class SettingNavigationFragment extends Fragment {
                 }
             }
         });
-        aboutIPKUButton.setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.phone_usual).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UIHelper.ToastMessage("尽请期待!");
+                Intent intent = new Intent(getActivity(), PhoneActivity.class);
+                startActivity(intent);
+            }
+        });
+        view.findViewById(R.id.pku_map).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), PkuMap.class);
+                startActivity(intent);
+            }
+        });
+        view.findViewById(R.id.beijing_railway).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), BeijingRailway.class);
+                startActivity(intent);
+            }
+        });
+        view.findViewById(R.id.pku_calendar).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), WebViewActivity.class);
+                intent.putExtra("url", "http://www.pku.edu.cn/about/xl/xl(2014-2015).jsp");
+                intent.putExtra("title", "校历");
+                startActivity(intent);
             }
         });
     }

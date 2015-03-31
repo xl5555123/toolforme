@@ -2,48 +2,236 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/main_background"
+    android:background="#f3f3f3"
     tools:context="com.pku.ipku.ui.navigation.SettingNavigationFragment">
 
+    <TextView
+        android:id="@+id/usual_info"
+        android:textColor="#ababab"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="25dp"
+        android:textSize="15sp"
+        android:text="常用工具"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
     <RelativeLayout
-        android:id="@+id/account_setting"
-        style="@style/Setting.Layout"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="20dp">
-
+        android:id="@+id/network"
+        android:layout_below="@id/usual_info"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
         <TextView
-            style="@style/Setting.Title"
-            android:text="帐号管理" />
-
-        <ImageView
-            android:id="@+id/chevron_right"
-            style="@style/Setting.Chevron" />
-
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="22dp"
+            android:textColor="#303030"
+            android:text="网络管理"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <FrameLayout
+            android:layout_alignParentBottom="true"
+            android:background="#e9e9e9"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"></FrameLayout>
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/network_management"
-        style="@style/Setting.Layout"
-        android:layout_below="@id/account_setting"
-        android:layout_marginTop="20dp">
-
+        android:id="@+id/phone_usual"
+        android:layout_below="@id/network"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
         <TextView
-            style="@style/Setting.Title"
-            android:text="网络管理" />
-
-        <ImageView style="@style/Setting.Chevron" />
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="22dp"
+            android:textColor="#303030"
+            android:text="常用电话"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <FrameLayout
+            android:layout_alignParentBottom="true"
+            android:background="#e9e9e9"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"></FrameLayout>
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/about_ipku"
-        style="@style/Setting.Layout"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="200dp">
-
+        android:id="@+id/pku_map"
+        android:layout_below="@id/phone_usual"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
         <TextView
-            style="@style/Setting.Title"
-            android:text="关于IPKU" />
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="22dp"
+            android:textColor="#303030"
+            android:text="北大地图"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <FrameLayout
+            android:layout_alignParentBottom="true"
+            android:background="#e9e9e9"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"></FrameLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/pku_calendar"
+        android:layout_below="@id/pku_map"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="22dp"
+            android:textColor="#303030"
+            android:text="北京大学校历"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <FrameLayout
+            android:layout_alignParentBottom="true"
+            android:background="#e9e9e9"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"></FrameLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/beijing_railway"
+        android:layout_below="@id/pku_calendar"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="22dp"
+            android:textColor="#303030"
+            android:text="北京地铁线路图"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <FrameLayout
+            android:layout_alignParentBottom="true"
+            android:background="#e9e9e9"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"></FrameLayout>
+    </RelativeLayout>
 
-        <ImageView style="@style/Setting.Chevron" />
+    <TextView
+        android:id="@+id/about"
+        android:layout_below="@id/beijing_railway"
+        android:textColor="#ababab"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="25dp"
+        android:textSize="15sp"
+        android:text="关于"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <RelativeLayout
+        android:id="@+id/suggestion"
+        android:layout_below="@id/about"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="22dp"
+            android:textColor="#303030"
+            android:text="意见反馈"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <FrameLayout
+            android:layout_alignParentBottom="true"
+            android:background="#e9e9e9"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"></FrameLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/about_software"
+        android:layout_below="@id/suggestion"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="22dp"
+            android:textColor="#303030"
+            android:text="关于此软件"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <FrameLayout
+            android:layout_alignParentBottom="true"
+            android:background="#e9e9e9"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"></FrameLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/update"
+        android:layout_below="@id/about_software"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="22dp"
+            android:textColor="#303030"
+            android:text="检查更新"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <FrameLayout
+            android:layout_alignParentBottom="true"
+            android:background="#e9e9e9"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"></FrameLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/log_out"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/update"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="22dp"
+            android:textColor="#303030"
+            android:text="退出"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <FrameLayout
+            android:layout_alignParentBottom="true"
+            android:background="#e9e9e9"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"></FrameLayout>
     </RelativeLayout>
 </RelativeLayout>
