@@ -9,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 
@@ -39,7 +38,8 @@ import java.util.Locale;
 public class CurriculumListFragment extends Fragment {
 
     ListView curriculum_lv;
-    ImageView hehe_imv;
+    RelativeLayout no_class_rl;
+
     JSONObject courseInfo = new JSONObject();
     public static JSONArray courses = new JSONArray();
     public static CurriculumListFragment fragment;
@@ -78,11 +78,19 @@ public class CurriculumListFragment extends Fragment {
 
     private void initView(View view) {
         curriculum_lv = (ListView) view.findViewById(R.id.curriculum_lv);
-        hehe_imv = (ImageView) view.findViewById(R.id.heh_imv);
+        no_class_rl = (RelativeLayout) view.findViewById(R.id.no_class_rl);
         curriculum_container = (RelativeLayout) view.findViewById(R.id.curriculum_container);
         curriculum_lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getActivity(), CurriculumActivity.class);
+                intent.putExtra("todayInWeek", todayInWeek);
+                startActivity(intent);
+            }
+        });
+        no_class_rl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), CurriculumActivity.class);
                 intent.putExtra("todayInWeek", todayInWeek);
                 startActivity(intent);
@@ -177,12 +185,12 @@ public class CurriculumListFragment extends Fragment {
                         //curriculum_lv.setAdapter(new CurriculumAdapter(getActivity(),  todayCourses));
                         if(coursesForWeek.get(todayInWeek).size()==0){
                             curriculum_lv.setVisibility(View.GONE);
-                            hehe_imv.setVisibility(View.VISIBLE);
+                            no_class_rl.setVisibility(View.VISIBLE);
                         }else {
                             if(coursesForWeek!=null && coursesForWeek.size()!=0)
                                 curriculum_lv.setAdapter(new CurriculumAdapterForHome(getActivity(), coursesForWeek.get(todayInWeek)));
                             curriculum_lv.setVisibility(View.VISIBLE);
-                            hehe_imv.setVisibility(View.GONE);
+                            no_class_rl.setVisibility(View.GONE);
                         }
                     }
                 }, new Response.ErrorListener() {

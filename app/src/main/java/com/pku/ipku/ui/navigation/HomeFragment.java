@@ -20,7 +20,7 @@ public class HomeFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
+    private static HomeFragment fragment;
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -30,11 +30,9 @@ public class HomeFragment extends Fragment {
     }
 
     public static HomeFragment newInstance() {
-        HomeFragment fragment = new HomeFragment();
-        //Bundle args = new Bundle();
-        //args.putString(ARG_PARAM1, param1);
-        //args.putString(ARG_PARAM2, param2);
-        //fragment.setArguments(args);
+
+        if(fragment == null)
+            fragment = new  HomeFragment();
         return fragment;
     }
 
