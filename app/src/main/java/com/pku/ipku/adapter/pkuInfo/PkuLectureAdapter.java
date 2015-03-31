@@ -28,8 +28,8 @@ public class PkuLectureAdapter extends BaseAdapter {
     @Override
     public int getCount() {
 
-        //return pkuPublicInfoList.size();
-        return 6;
+        return pkuPublicInfoList.size();
+        //return 6;
     }
 
     @Override

@@ -2,7 +2,7 @@ package com.pku.ipku.ui.pkuInfo;
 
 
 import android.content.Intent;
-import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -13,17 +13,13 @@ import android.widget.ListView;
 
 import com.pku.ipku.R;
 import com.pku.ipku.adapter.pkuInfo.PkuLectureAdapter;
-import com.pku.ipku.adapter.pkuInfo.PkuPublicAdapter;
 import com.pku.ipku.api.factory.IpkuServiceFactory;
-import com.pku.ipku.model.pkuInfo.PkuInfoType;
 import com.pku.ipku.model.pkuInfo.dto.PkuPublicInfo;
-import com.pku.ipku.task.LoadDataConfigure;
-import com.pku.ipku.task.LoadDataDefaultTask;
-import com.pku.ipku.task.Result;
-import com.pku.ipku.ui.util.WebViewActivity;
-import com.pku.ipku.util.AppContextHolder;
 import com.pku.ipku.util.UIHelper;
 
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -34,10 +30,13 @@ import java.util.List;
 public class PkuLectureFragment extends Fragment {
 
     private ListView listView;
-    private List<PkuPublicInfo> pkuPublicInfoList;
+    private List<PkuPublicInfo> pkuPublicInfoList = new ArrayList<PkuPublicInfo>();
+    private Calendar currentDateToLoad;
+    private static PkuLectureFragment fragment;
 
     public static PkuLectureFragment newInstance() {
-        PkuLectureFragment fragment = new PkuLectureFragment();
+        if(fragment == null)
+            fragment = new PkuLectureFragment();
         return fragment;
     }
 
@@ -55,8 +54,11 @@ public class PkuLectureFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_pku_lecture2, container, false);
+        currentDateToLoad = Calendar.getInstance();
+        currentDateToLoad.setTime(new Date());
+        currentDateToLoad.add(Calendar.DATE, 1);
         initView(view);
-        getData();
+        new GetMoreDataTask().execute();
         return view;
     }
 
@@ -74,38 +76,24 @@ public class PkuLectureFragment extends Fragment {
         });
     }
 
-    private void getData() {
-        new LoadDataDefaultTask(new LoadDataConfigure() {
-            @Override
-            public void showData() {
-                listView.setAdapter(new PkuLectureAdapter(getActivity(), pkuPublicInfoList));
+
+    private class GetMoreDataTask extends AsyncTask<Void, Void, List<PkuPublicInfo>> {
+
+        @Override
+        protected List<PkuPublicInfo> doInBackground(Void... params) {
+            currentDateToLoad.add(Calendar.DATE, -1);
+            List<PkuPublicInfo> result = IpkuServiceFactory.getPkuInfoService(false).getPkuLecture(currentDateToLoad);
+            while (result == null || result.size() == 0) {
+                currentDateToLoad.add(Calendar.DATE, -1);
+                result = IpkuServiceFactory.getPkuInfoService(false).getPkuLecture(currentDateToLoad);
             }
-
-            @Override
-            public Result getData(boolean cache) {
-                pkuPublicInfoList = IpkuServiceFactory.getPkuInfoService(cache).getPkuPublicNotice(new PkuInfoType(PkuInfoType.TOP_LECTURES), 0);
-                if (pkuPublicInfoList == null) {
-                    return new Result(Result.NET_ERROR);
-                }
-                return new Result(Result.NO_ERROR);
-            }
-
-            @Override
-            public void showWaiting() {
-
-            }
-
-            @Override
-            public void stopWaiting() {
-
-            }
-
-            @Override
-            public void processError(Result result) {
-
-            }
-        }).execute();
+            return result;
+        }
+        @Override
+        protected void onPostExecute(List<PkuPublicInfo> result) {
+            pkuPublicInfoList.addAll(result);
+            listView.setAdapter(new PkuLectureAdapter(getActivity(), pkuPublicInfoList));
+        }
     }
-
 
 }

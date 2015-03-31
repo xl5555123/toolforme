@@ -4,6 +4,13 @@
     android:layout_height="match_parent"
     android:id="@+id/curriculum_container"
     tools:context="com.pku.ipku.ui.pkuInfo.CurriculumListFragment">
+    <TextView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#f9f9f9"
+        android:layout_alignParentLeft="true"
+        android:text="今日课程"
+        android:id="@+id/today_curr_tv"
+        android:textSize="32sp"/>
     <ListView
         android:id="@+id/curriculum_lv"
         android:layout_width="match_parent"
@@ -11,11 +18,12 @@
         android:dividerHeight="4dp"
         android:visibility="gone"
         android:layout_marginTop="10dp"
+        android:layout_below="@id/today_curr_tv"
         android:layout_height="match_parent"/>
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:layout_below="@id/today_curr_tv"
         android:id="@+id/no_class_rl"
         android:layout_centerInParent="true">
         <TextView android:text="今天没课，感觉自己萌萌哒"
