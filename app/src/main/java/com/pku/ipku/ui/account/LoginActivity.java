@@ -10,12 +10,17 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.pku.ipku.R;
 import com.pku.ipku.model.account.User;
+import com.pku.ipku.model.networkHelper.Ipgw;
 import com.pku.ipku.ui.navigation.MainNavigationActivity;
 import com.pku.ipku.util.AppContextHolder;
+import com.pku.ipku.util.NetWork;
 import com.pku.ipku.util.UIHelper;
+
+import java.util.Properties;
 
 public class LoginActivity extends Activity {
 
@@ -53,6 +58,11 @@ public class LoginActivity extends Activity {
         User user = new User();
         user.setPassword(passwordTextView.getText().toString());
         user.setUsername(usernameTextView.getText().toString());
+        if(!NetWork.isNetworkAvailable(context))
+        {
+            Toast.makeText(this,"请先连上wifi!", Toast.LENGTH_SHORT).show();
+            return;
+        }
         new LoginTask().execute(user);
     }
 
@@ -85,7 +95,16 @@ public class LoginActivity extends Activity {
             if (users.length == 0) {
                 return null;
             }
-            return users[0];
+            Properties result = new Properties();
+            result.setProperty("uid", users[0].getUsername());
+            result.setProperty("password", users[0].getPassword());
+            String content = null;
+            result.setProperty("range","1");
+            Ipgw ipgw = new Ipgw(result);
+            content = ipgw.connect();
+            if(content.indexOf("网络连接成功")>=0)
+                return users[0];
+            return null;
         }
 
         @Override
@@ -96,6 +115,8 @@ public class LoginActivity extends Activity {
                 Intent intent = new Intent(LoginActivity.this, MainNavigationActivity.class);
                 startActivity(intent);
                 finish();
+            }else{
+                UIHelper.ToastMessage("账户密码不匹配，请重新输入后再登录");
             }
         }
     }
