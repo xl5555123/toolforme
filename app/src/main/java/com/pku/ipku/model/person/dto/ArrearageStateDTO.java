@@ -9,7 +9,9 @@ public class ArrearageStateDTO {
     private double netBalance;
 
     public ArrearageStateDTO() {
-
+        setLibraryFee(0);
+        setSchoolCardBalance(0);
+        setNetBalance(0);
     }
 
     public ArrearageStateDTO(double libraryFee, double schoolCardBalance, double netBalance) {

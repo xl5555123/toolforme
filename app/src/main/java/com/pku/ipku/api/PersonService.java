@@ -17,13 +17,17 @@ import java.util.List;
  */
 public interface PersonService {
 
+    public static final String PERSON_NETWORK_FEE = "/svcpub/svc/pro/finance/netbalance";
+
+    public static final String PERSON_CARD_REMAIN = "/svcpub/svc/pro/finance/cardbalance";
+
     public static final String PERSON_BASE_INFO_URL = "/svcpub/svc/pro/person/baseinfo";
 
     public static final String PERSON_COURSE_TABLE_URL = "/svcpub/svc/pro/student/coursetable";
 
     public static final String QUERY_LESSON = "/svcpub/svc/pub/course/list?courseName=%s&appKey=" + NetHelper.APP_KEY;;
 
-    public ArrearageStateDTO getArrearageState();
+    public ArrearageStateDTO getArrearageState(int userId) throws Exception ;
 
     public StuInfoDTO getStuInfo(int userId) throws Exception;
 

@@ -93,5 +93,6 @@
     <string name="title_activity_pku_map">PkuMap</string>
     <string name="title_activity_beijing_railway">BeijingRailway</string>
     <string name="title_activity_about_software">AboutSoftware</string>
+    <string name="title_activity_about">AboutActivity</string>
 
 </resources>
