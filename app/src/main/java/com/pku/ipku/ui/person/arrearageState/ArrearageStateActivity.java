@@ -1,7 +1,10 @@
 package com.pku.ipku.ui.person.arrearageState;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import com.pku.ipku.R;
@@ -12,6 +15,8 @@ import com.pku.ipku.task.LoadDataConfigure;
 import com.pku.ipku.task.LoadDataDefaultTask;
 import com.pku.ipku.task.Result;
 import com.pku.ipku.ui.util.BaseActivityIncludingFooterNavigation;
+import com.pku.ipku.util.AppContextHolder;
+import com.pku.ipku.util.UIHelper;
 
 public class ArrearageStateActivity extends BaseActivityIncludingFooterNavigation implements RegisterInPersonPage {
 
@@ -41,6 +46,17 @@ public class ArrearageStateActivity extends BaseActivityIncludingFooterNavigatio
         libraryFeeTextView = (TextView) findViewById(R.id.library_fee);
         netBalanceTextView = (TextView) findViewById(R.id.net_balance);
         schhoolCardTextView = (TextView) findViewById(R.id.campus_card_balance);
+        findViewById(R.id.alipay).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UIHelper.ToastMessage("使用支付宝来充值吧~");
+                Intent intent = new Intent();
+                intent.setAction("android.intent.action.VIEW");
+                Uri url = Uri.parse("http://m.alipay.com/appIndex.htm");
+                intent.setData(url);
+                startActivity(intent);
+            }
+        });
     }
 
     private void initData() {
@@ -54,7 +70,13 @@ public class ArrearageStateActivity extends BaseActivityIncludingFooterNavigatio
 
             @Override
             public Result getData(boolean cache) {
-                arrearageStateDTO = IpkuServiceFactory.getPersonService(cache).getArrearageState();
+                try {
+                    int studentId = Integer.decode(AppContextHolder.getAppContext().getCurrentUser().getUsername());
+                    arrearageStateDTO = IpkuServiceFactory.getPersonService(cache).getArrearageState(studentId);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    return new Result(Result.NET_ERROR);
+                }
                 if (arrearageStateDTO == null) {
                     return new Result(Result.NET_ERROR);
                 }

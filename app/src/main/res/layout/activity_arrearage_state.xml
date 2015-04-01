@@ -42,6 +42,7 @@
 
 
                 <Button
+                    android:id="@+id/alipay"
                     android:layout_width="108dp"
                     android:layout_height="40dp"
                     android:layout_alignParentRight="true"
@@ -84,18 +85,6 @@
                     android:text="0.00"
                     android:textColor="@color/white"
                     android:textSize="55sp" />
-
-
-                <Button
-                    android:layout_width="108dp"
-                    android:layout_height="40dp"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="20dp"
-                    android:background="@drawable/recharge_border"
-                    android:text="充值"
-                    android:textColor="#528f87"
-                    android:textSize="25sp" />
 
             </RelativeLayout>
         </LinearLayout>

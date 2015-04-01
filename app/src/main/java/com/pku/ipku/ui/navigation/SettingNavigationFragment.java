@@ -11,9 +11,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.pku.ipku.R;
+import com.pku.ipku.api.factory.IpkuServiceFactory;
+import com.pku.ipku.model.person.dto.ArrearageStateDTO;
+import com.pku.ipku.task.LoadDataConfigure;
+import com.pku.ipku.task.LoadDataDefaultTask;
+import com.pku.ipku.task.Result;
 import com.pku.ipku.ui.account.LoginActivity;
 import com.pku.ipku.ui.account.NetworkHelperActivity;
 import com.pku.ipku.ui.person.CurriculumListFragment;
+import com.pku.ipku.ui.setting.AboutActivity;
 import com.pku.ipku.ui.setting.BeijingRailway;
 import com.pku.ipku.ui.setting.PhoneActivity;
 import com.pku.ipku.ui.setting.PkuMap;
@@ -117,6 +123,75 @@ public class SettingNavigationFragment extends Fragment {
                 intent.putExtra("url", "http://www.pku.edu.cn/about/xl/xl(2014-2015).jsp");
                 intent.putExtra("title", "校历");
                 startActivity(intent);
+            }
+        });
+        view.findViewById(R.id.suggestion).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LayoutInflater inflater = getActivity().getLayoutInflater();
+                new AlertDialog.Builder(getActivity())
+                        .setView(inflater.inflate(R.layout.suggestion, null))
+                        .setTitle("提交意见")
+                        .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                UIHelper.ToastMessage("您的意见已提交,我们会尽快处理");
+                            }
+                        }).setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                            }
+                        }).create().show();
+            }
+        });
+        view.findViewById(R.id.about_software).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), AboutActivity.class);
+                startActivity(intent);
+            }
+        });
+        view.findViewById(R.id.update).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new LoadDataDefaultTask(new LoadDataConfigure() {
+                    @Override
+                    public void showData() {
+                        UIHelper.ToastMessage("当前为最新版本");
+                    }
+
+                    @Override
+                    public Result getData(boolean cache) throws Exception {
+                        ArrearageStateDTO arrearageStateDTO;
+                        try {
+                            int studentId = Integer.decode(AppContextHolder.getAppContext().getCurrentUser().getUsername());
+                            arrearageStateDTO = IpkuServiceFactory.getPersonService(cache).getArrearageState(studentId);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                            return new Result(Result.NET_ERROR);
+                        }
+                        if (arrearageStateDTO == null) {
+                            return new Result(Result.NET_ERROR);
+                        }
+                        return new Result(Result.NO_ERROR);
+                    }
+
+                    @Override
+                    public void showWaiting() {
+
+                    }
+
+                    @Override
+                    public void stopWaiting() {
+
+                    }
+
+                    @Override
+                    public void processError(Result result) {
+
+                    }
+                }).execute();
             }
         });
     }

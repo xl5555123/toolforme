@@ -81,11 +81,17 @@ public class PkuLectureFragment extends Fragment {
 
         @Override
         protected List<PkuPublicInfo> doInBackground(Void... params) {
+
             currentDateToLoad.add(Calendar.DATE, -1);
             List<PkuPublicInfo> result = IpkuServiceFactory.getPkuInfoService(false).getPkuLecture(currentDateToLoad);
             while (result == null || result.size() == 0) {
                 currentDateToLoad.add(Calendar.DATE, -1);
-                result = IpkuServiceFactory.getPkuInfoService(false).getPkuLecture(currentDateToLoad);
+                try {
+                    result = IpkuServiceFactory.getPkuInfoService(false).getPkuLecture(currentDateToLoad);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    return result;
+                }
             }
             return result;
         }

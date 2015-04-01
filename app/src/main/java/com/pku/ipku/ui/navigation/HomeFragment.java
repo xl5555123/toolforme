@@ -30,19 +30,12 @@ public class HomeFragment extends Fragment {
     }
 
     public static HomeFragment newInstance() {
-
-        if(fragment == null)
-            fragment = new  HomeFragment();
-        return fragment;
+        return new HomeFragment();
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
@@ -62,13 +55,6 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), ArrearageStateActivity.class);
-                startActivity(intent);
-            }
-        });
-        view.findViewById(R.id.library_fragment).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), LibraryActivity.class);
                 startActivity(intent);
             }
         });

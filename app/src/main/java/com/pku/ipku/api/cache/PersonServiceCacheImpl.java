@@ -15,6 +15,7 @@ import com.pku.ipku.model.person.dto.StuInfoDTO;
 import com.pku.ipku.model.studyguide.Lesson;
 import com.pku.ipku.util.DaoHelper;
 
+import java.net.DatagramPacket;
 import java.util.List;
 
 /**
@@ -23,8 +24,8 @@ import java.util.List;
 public class PersonServiceCacheImpl implements PersonService {
 
     @Override
-    public ArrearageStateDTO getArrearageState() {
-        return MockArrearageState.get();
+    public ArrearageStateDTO getArrearageState(int userId) throws Exception {
+        return DaoHelper.readData("arrearage", ArrearageStateDTO.class);
     }
 
     @Override

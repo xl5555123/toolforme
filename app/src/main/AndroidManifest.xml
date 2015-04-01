@@ -215,11 +215,19 @@
         </activity>
         <activity
             android:name=".ui.setting.BeijingRailway"
-            android:label="@string/title_activity_beijing_railway" >
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyActionBarTheme"
+            android:windowSoftInputMode="adjustPan|stateHidden" >
         </activity>
         <activity
-            android:name=".ui.setting.AboutSoftware"
-            android:label="@string/title_activity_about_software" >
+            android:name=".ui.setting.AboutActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyActionBarTheme"
+            android:windowSoftInputMode="adjustPan|stateHidden">
         </activity>
     </application>
 
