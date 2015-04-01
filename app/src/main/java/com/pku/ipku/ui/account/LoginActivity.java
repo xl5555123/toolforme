@@ -21,6 +21,8 @@ public class LoginActivity extends Activity {
 
     private EditText usernameTextView;
 
+    Context context;
+
     private EditText passwordTextView;
 
     private Button loginButton;
@@ -29,6 +31,7 @@ public class LoginActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        context = this;
         usernameTextView = (EditText) findViewById(R.id.username);
         passwordTextView = (EditText) findViewById(R.id.password);
         loginButton = (Button)findViewById(R.id.login_button);
@@ -71,6 +74,8 @@ public class LoginActivity extends Activity {
         }
         return super.dispatchKeyEvent(event);
     }
+
+
 
     private class LoginTask extends AsyncTask<User, Void, User> {
 
