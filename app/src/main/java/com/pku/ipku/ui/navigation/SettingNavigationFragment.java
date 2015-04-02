@@ -2,6 +2,7 @@ package com.pku.ipku.ui.navigation;
 
 
 import android.app.AlertDialog;
+import android.net.Uri;
 import android.support.v4.app.Fragment;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -42,9 +43,7 @@ public class SettingNavigationFragment extends Fragment {
     }
 
     public static SettingNavigationFragment newInstance() {
-        if(fragment == null)
-            fragment = new SettingNavigationFragment();
-        return fragment;
+        return new SettingNavigationFragment();
     }
 
     @Override
@@ -131,6 +130,7 @@ public class SettingNavigationFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 LayoutInflater inflater = getActivity().getLayoutInflater();
+                /*
                 new AlertDialog.Builder(getActivity())
                         .setView(inflater.inflate(R.layout.suggestion, null))
                         .setTitle("提交意见")
@@ -145,6 +145,12 @@ public class SettingNavigationFragment extends Fragment {
 
                             }
                         }).create().show();
+                        */
+                Intent data=new Intent(Intent.ACTION_SENDTO);
+                data.setData(Uri.parse("mailto:dudong113@163.com"));
+                data.putExtra(Intent.EXTRA_SUBJECT, "掌上信息门户反馈意见");
+                data.putExtra(Intent.EXTRA_TEXT, "掌上信息门户反馈意见：");
+                startActivity(data);
             }
         });
         view.findViewById(R.id.about_software).setOnClickListener(new View.OnClickListener() {

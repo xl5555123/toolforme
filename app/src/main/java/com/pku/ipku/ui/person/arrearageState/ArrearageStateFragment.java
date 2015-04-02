@@ -27,7 +27,6 @@ public class ArrearageStateFragment extends Fragment {
 
     private ArrearageStateDTO arrearageStateDTO;
 
-    // TODO: Rename and change types and number of parameters
     public static ArrearageStateFragment newInstance() {
         ArrearageStateFragment fragment = new ArrearageStateFragment();
 

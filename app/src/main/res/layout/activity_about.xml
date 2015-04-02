@@ -10,7 +10,7 @@
         android:layout_centerHorizontal="true"
         android:textSize="28sp"
         android:textColor="#2e2e2e"
-        android:text="北大手机门户"
+        android:text="掌上信息门户"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

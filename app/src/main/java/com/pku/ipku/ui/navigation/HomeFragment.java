@@ -4,6 +4,7 @@ package com.pku.ipku.ui.navigation;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,9 +49,9 @@ public class HomeFragment extends Fragment {
     }
 
     private void initView(View view) {
-        getFragmentManager().beginTransaction().replace(R.id.lecture_fragment, PkuLectureFragment.newInstance()).commit();
+        getFragmentManager().beginTransaction().replace(R.id.lecture_home_fragment, PkuLectureFragment.newInstance()).commit();
         getFragmentManager().beginTransaction().replace(R.id.remain_fragment, ArrearageStateFragment.newInstance()).commit();
-        getFragmentManager().beginTransaction().replace(R.id.library_fragment, CurriculumListFragment.newInstance()).commit();
+        getFragmentManager().beginTransaction().replace(R.id.class_fragment, CurriculumListFragment.newInstance()).commit();
         view.findViewById(R.id.remain_fragment).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

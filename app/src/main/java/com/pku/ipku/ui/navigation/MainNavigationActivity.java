@@ -3,6 +3,7 @@ package com.pku.ipku.ui.navigation;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
@@ -16,6 +17,8 @@ public class MainNavigationActivity extends FragmentActivity {
     private View homeButton;
     private View studentButton;
     private View settingButton;
+
+    private FragmentManager fragmentManager;
 
     private ViewPager viewPager;
 
@@ -65,6 +68,7 @@ public class MainNavigationActivity extends FragmentActivity {
 
     private void initView() {
         viewPager = (ViewPager) findViewById(R.id.viewpager);
+        fragmentManager = getSupportFragmentManager();
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -119,22 +123,22 @@ public class MainNavigationActivity extends FragmentActivity {
                 navigationToSetting();
             }
         });
-
-
+        setSelected(homeButton);
+        navigateToHome();
     }
 
     private void initPager() {
-        FragmentPagerAdapter pagerAdapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
+        FragmentPagerAdapter pagerAdapter = new FragmentPagerAdapter(fragmentManager) {
             @Override
             public Fragment getItem(int position) {
                 if (position == 0) {
-                    return HomeFragment.newInstance();
+                    return new HomeFragment();
                 }
                 else if (position == 1) {
-                    return PersonFragment.newInstance();
+                    return new PersonFragment();
                 }
                 else {
-                    return SettingNavigationFragment.newInstance();
+                    return new SettingNavigationFragment();
                 }
             }
 
