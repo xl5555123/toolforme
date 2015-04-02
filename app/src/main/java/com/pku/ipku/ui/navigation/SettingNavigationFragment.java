@@ -36,12 +36,14 @@ import org.json.JSONArray;
  */
 public class SettingNavigationFragment extends Fragment {
 
+    public static SettingNavigationFragment fragment;
     public SettingNavigationFragment() {
         // Required empty public constructor
     }
 
     public static SettingNavigationFragment newInstance() {
-        SettingNavigationFragment fragment = new SettingNavigationFragment();
+        if(fragment == null)
+            fragment = new SettingNavigationFragment();
         return fragment;
     }
 

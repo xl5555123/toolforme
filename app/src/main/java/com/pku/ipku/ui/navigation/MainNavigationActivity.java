@@ -120,9 +120,7 @@ public class MainNavigationActivity extends FragmentActivity {
             }
         });
 
-        initSelectState();
-        setSelected(homeButton);
-        navigateToHome();
+
     }
 
     private void initPager() {

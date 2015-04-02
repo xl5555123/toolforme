@@ -46,6 +46,41 @@ public class CurriculumListFragment extends Fragment {
     RelativeLayout curriculum_container;
     int todayInWeek = 0;
     RequestQueue mQueue;
+    public static String courseTable = "<!DOCTYPE html>\n" +
+            "<html lang=\"zh-CN\">\n" +
+            "  <head>\n" +
+            "    <meta charset=\"utf-8\">\n" +
+            "    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n" +
+            "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=0.5\">\n" +
+            "    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->\n" +
+            "    <title>课程表\n</title>" +
+            "<style>" +
+            ".course-header, .course-footer {\n" +
+            "  background-color: #CCDDEE;\n" +
+            "  color: #555588;\n" +
+            "  font-size: 14px;\n" +
+            "  text-align: center;\n" +
+            "  vertical-align: baseline;\n" +
+            "  line-height: 18px;\n" +
+            "  border-color: #999999;\n" +
+            "  border-style: solid;\n" +
+            "  border-width: 1px;\n" +
+            "  padding-left: 10px;}"+
+            "table {\n" +
+            "  display: table;\n" +
+            "  border-collapse: separate;\n" +
+            "  border-spacing: 2px;\n" +
+            "  border-color: gray;\n" +
+            "}"+
+            ".course {\n" +
+            "  border: 1px solid #E2E2E2;\n" +
+            "  border-collapse: collapse;\n" +
+            "  padding-left: 5px;\n" +
+            "}"+
+            "</style>"+
+            "  </head>\n" +
+            "  <body>" ;
+
     String weeks[] = {"mon", "tue", "wed", "thu", "fri", "sat", "sun"};
     public static List<ArrayList<CurriculumDTO>> coursesForWeek = new ArrayList<ArrayList<CurriculumDTO>>();
     public CurriculumListFragment() {
@@ -83,7 +118,7 @@ public class CurriculumListFragment extends Fragment {
         curriculum_lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getActivity(), CurriculumActivity.class);
+                Intent intent = new Intent(getActivity(), CurriculumAsWebActivity.class);
                 intent.putExtra("todayInWeek", todayInWeek);
                 startActivity(intent);
             }
@@ -91,7 +126,7 @@ public class CurriculumListFragment extends Fragment {
         no_class_rl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), CurriculumActivity.class);
+                Intent intent = new Intent(getActivity(), CurriculumAsWebActivity.class);
                 intent.putExtra("todayInWeek", todayInWeek);
                 startActivity(intent);
             }
@@ -141,15 +176,60 @@ public class CurriculumListFragment extends Fragment {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
+
                         try {
                             courses = response.getJSONArray("course");
                         }catch(Exception e){
 
                         }
+                        courseTable = courseTable +
+                                "<table border=\"0\" cellspacing=\"3px\" align=\"center\" width=\"1000\">" +
+                                "<tr class=\"course-header\">\n" +
+                                "\t\t\t\t<th class=\"course\">节数</th>\n" +
+                                "\n" +
+                                "\n" +
+                                "\t\t\t\t<th class=\"course\">星期一</th>\n" +
+                                "\n" +
+                                "\n" +
+                                "\t\t\t\t<th class=\"course\">星期二</th>\n" +
+                                "\n" +
+                                "\n" +
+                                "\t\t\t\t<th class=\"course\">星期三</th>\n" +
+                                "\n" +
+                                "\n" +
+                                "\t\t\t\t<th class=\"course\">星期四</th>\n" +
+                                "\n" +
+                                "\n" +
+                                "\t\t\t\t<th class=\"course\">星期五</th>\n" +
+                                "\n" +
+                                "\n" +
+                                "\t\t\t\t<th class=\"course\">星期六</th>\n" +
+                                "\n" +
+                                "\n" +
+                                "\t\t\t\t<th class=\"course\">星期日</th>\n" +
+                                "\n" +
+                                "\n" +
+                                "\t\t\t\n" +
+                                "</tr>";
                         for(int i = 0; i < courses.length(); i++){
+                            courseTable = courseTable +
+                                    "<tr>"+
+                                    "<td class=\"course\" align=\"center\"><span>";
                             try {
                                 JSONObject course = courses.getJSONObject(i);
                                 String timeNum = course.getString("timeNum");
+                                courseTable = courseTable +
+                                        timeNum+"</span></td>";
+                                for(int m = 0; m < weeks.length; m++){
+                                    String stmp = course.getJSONObject(weeks[m]).getString("courseName");
+                                    String style = course.getJSONObject(weeks[m]).getString("sty");
+                                    courseTable = courseTable +
+                                            "<td class=\"course\" align=\"center\" style=\""+ style +
+
+                                            "\" ><span>"+stmp+"</span></td>";
+                                }
+                                courseTable = courseTable +
+                                        "</tr>";
                                 for(int j = 0; j < 7; j++){
                                     String week = weeks[j];
                                     if(course.has(week)){
@@ -180,8 +260,10 @@ public class CurriculumListFragment extends Fragment {
                             }catch (Exception e){
 
                             }
+
                         }
 
+                        courseTable = courseTable + "</table></body></html>";
                         //curriculum_lv.setAdapter(new CurriculumAdapter(getActivity(),  todayCourses));
                         if(coursesForWeek.get(todayInWeek).size()==0){
                             curriculum_lv.setVisibility(View.GONE);
@@ -204,3 +286,8 @@ public class CurriculumListFragment extends Fragment {
 
 
 }
+
+
+/*
+{"flag":"success","course":[{"fri":{"courseName":"","parity":"","sty":""},"mon":{"courseName":"","parity":"","sty":""},"sat":{"courseName":"","parity":"","sty":""},"sun":{"courseName":"","parity":"","sty":""},"thu":{"courseName":"","parity":"","sty":""},"timeNum":"第一节","tue":{"courseName":"","parity":"","sty":""},"wed":{"courseName":"","parity":"","sty":""}},{"fri":{"courseName":"","parity":"","sty":""},"mon":{"courseName":"","parity":"","sty":""},"sat":{"courseName":"","parity":"","sty":""},"sun":{"courseName":"","parity":"","sty":""},"thu":{"courseName":"","parity":"","sty":""},"timeNum":"第二节","tue":{"courseName":"","parity":"","sty":""},"wed":{"courseName":"","parity":"","sty":""}},{"fri":{"courseName":"","parity":"","sty":""},"mon":{"courseName":"","parity":"","sty":""},"sat":{"courseName":"","parity":"","sty":""},"sun":{"courseName":"","parity":"","sty":""},"thu":{"courseName":"","parity":"","sty":""},"timeNum":"第三节","tue":{"courseName":"","parity":"","sty":""},"wed":{"courseName":"","parity":"","sty":""}},{"fri":{"courseName":"","parity":"","sty":""},"mon":{"courseName":"","parity":"","sty":""},"sat":{"courseName":"","parity":"","sty":""},"sun":{"courseName":"","parity":"","sty":""},"thu":{"courseName":"","parity":"","sty":""},"timeNum":"第四节","tue":{"courseName":"","parity":"","sty":""},"wed":{"courseName":"","parity":"","sty":""}},{"fri":{"courseName":"中国特色社会主义理论与实践研究<br>(理教108)<br>(备注：) 单周","parity":"","sty":"background-color: lightgoldenrodyellow"},"mon":{"courseName":"","parity":"","sty":""},"sat":{"courseName":"","parity":"","sty":""},"sun":{"courseName":"","parity":"","sty":""},"thu":{"courseName":"","parity":"","sty":""},"timeNum":"第五节","tue":{"courseName":"","parity":"","sty":""},"wed":{"courseName":"","parity":"","sty":""}},{"fri":{"courseName":"中国特色社会主义理论与实践研究<br>(理教108)<br>(备注：) 单周","parity":"","sty":"background-color: lightgoldenrodyellow"},"mon":{"courseName":"","parity":"","sty":""},"sat":{"courseName":"","parity":"","sty":""},"sun":{"courseName":"","parity":"","sty":""},"thu":{"courseName":"","parity":"","sty":""},"timeNum":"第六节","tue":{"courseName":"","parity":"","sty":""},"wed":{"courseName":"","parity":"","sty":""}},{"fri":{"courseName":"中国特色社会主义理论与实践研究<br>(理教108)<br>(备注：) 单周","parity":"","sty":"background-color: lightgoldenrodyellow"},"mon":{"courseName":"应用密码学<br>(文史113)<br>(备注：学术型研究生选修，本部上课。) 每周","parity":"","sty":"background-color: lightpink"},"sat":{"courseName":"国学概论<br>(二教412)<br>(备注：工学博士及工学硕士必修！本部上课) 每周","parity":"","sty":"background-color: lightblue"},"sun":{"courseName":"国学概论<br>(二教412)<br>(备注：工学博士及工学硕士必修！本部上课) 每周","parity":"","sty":"background-color: lightblue"},"thu":{"courseName":"软件工程前沿专题<br>(二教106)<br>(备注：工学博士及工学硕士必修！本部上课) 每周","parity":"","sty":"background-color: aquamarine"},"timeNum":"第七节","tue":{"courseName":"云计算技术及应用<br>(文史115)<br>(备注：学术型研究生选修，本部上课。) 每周","parity":"","sty":"background-color: lightgreen"},"wed":{"courseName":"操作系统与虚拟化安全<br>(文史204)<br>(备注：学术型研究生选修，本部上课。) 每周","parity":"","sty":"background-color: lightgrey"}},{"fri":{"courseName":"中国特色社会主义理论与实践研究<br>(理教108)<br>(备注：) 单周","parity":"","sty":"background-color: lightgoldenrodyellow"},"mon":{"courseName":"应用密码学<br>(文史113)<br>(备注：学术型研究生选修，本部上课。) 每周","parity":"","sty":"background-color: lightpink"},"sat":{"courseName":"国学概论<br>(二教412)<br>(备注：工学博士及工学硕士必修！本部上课) 每周","parity":"","sty":"background-color: lightblue"},"sun":{"courseName":"国学概论<br>(二教412)<br>(备注：工学博士及工学硕士必修！本部上课) 每周","parity":"","sty":"background-color: lightblue"},"thu":{"courseName":"软件工程前沿专题<br>(二教106)<br>(备注：工学博士及工学硕士必修！本部上课) 每周","parity":"","sty":"background-color: aquamarine"},"timeNum":"第八节","tue":{"courseName":"云计算技术及应用<br>(文史115)<br>(备注：学术型研究生选修，本部上课。) 每周","parity":"","sty":"background-color: lightgreen"},"wed":{"courseName":"操作系统与虚拟化安全<br>(文史204)<br>(备注：学术型研究生选修，本部上课。) 每周","parity":"","sty":"background-color: lightgrey"}},{"fri":{"courseName":"","parity":"","sty":""},"mon":{"courseName":"应用密码学<br>(文史113)<br>(备注：学术型研究生选修，本部上课。) 每周","parity":"","sty":"background-color: lightpink"},"sat":{"courseName":"国学概论<br>(二教412)<br>(备注：工学博士及工学硕士必修！本部上课) 每周","parity":"","sty":"background-color: lightblue"},"sun":{"courseName":"国学概论<br>(二教412)<br>(备注：工学博士及工学硕士必修！本部上课) 每周","parity":"","sty":"background-color: lightblue"},"thu":{"courseName":"软件工程前沿专题<br>(二教106)<br>(备注：工学博士及工学硕士必修！本部上课) 每周","parity":"","sty":"background-color: aquamarine"},"timeNum":"第九节","tue":{"courseName":"云计算技术及应用<br>(文史115)<br>(备注：学术型研究生选修，本部上课。) 每周","parity":"","sty":"background-color: lightgreen"},"wed":{"courseName":"操作系统与虚拟化安全<br>(文史204)<br>(备注：学术型研究生选修，本部上课。) 每周","parity":"","sty":"background-color: lightgrey"}},{"fri":{"courseName":"国学概论<br>(二教412)<br>(备注：工学博士及工学硕士必修！本部上课) 每周","parity":"","sty":"background-color: lightblue"},"mon":{"courseName":"","parity":"","sty":""},"sat":{"courseName":"","parity":"","sty":""},"sun":{"courseName":"","parity":"","sty":""},"thu":{"courseName":"","parity":"","sty":""},"timeNum":"第十节","tue":{"courseName":"","parity":"","sty":""},"wed":{"courseName":"高级软件工程<br>(二教423)<br>(备注：) 每周","parity":"","sty":"background-color: lightsalmon"}},{"fri":{"courseName":"国学概论<br>(二教412)<br>(备注：工学博士及工学硕士必修！本部上课) 每周","parity":"","sty":"background-color: lightblue"},"mon":{"courseName":"","parity":"","sty":""},"sat":{"courseName":"","parity":"","sty":""},"sun":{"courseName":"","parity":"","sty":""},"thu":{"courseName":"","parity":"","sty":""},"timeNum":"第十一节","tue":{"courseName":"","parity":"","sty":""},"wed":{"courseName":"高级软件工程<br>(二教423)<br>(备注：) 每周","parity":"","sty":"background-color: lightsalmon"}},{"fri":{"courseName":"国学概论<br>(二教412)<br>(备注：工学博士及工学硕士必修！本部上课) 每周","parity":"","sty":"background-color: lightblue"},"mon":{"courseName":"","parity":"","sty":""},"sat":{"courseName":"","parity":"","sty":""},"sun":{"courseName":"","parity":"","sty":""},"thu":{"courseName":"","parity":"","sty":""},"timeNum":"第十二节","tue":{"courseName":"","parity":"","sty":""},"wed":{"courseName":"高级软件工程<br>(二教423)<br>(备注：) 每周","parity":"","sty":"background-color: lightsalmon"}}],"remark":""}
+ */
