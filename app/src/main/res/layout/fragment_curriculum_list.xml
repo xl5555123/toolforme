@@ -10,7 +10,7 @@
         android:layout_alignParentLeft="true"
         android:text="今日课程"
         android:id="@+id/today_curr_tv"
-        android:textSize="32sp"/>
+        android:textSize="27sp"/>
     <ListView
         android:id="@+id/curriculum_lv"
         android:layout_width="match_parent"
