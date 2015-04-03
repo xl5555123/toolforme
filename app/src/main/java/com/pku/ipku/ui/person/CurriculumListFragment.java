@@ -91,9 +91,7 @@ public class CurriculumListFragment extends Fragment {
     }
 
     public static CurriculumListFragment newInstance() {
-        if(fragment == null)
-            fragment = new CurriculumListFragment();
-        return fragment;
+        return new CurriculumListFragment();
     }
     @Override
     public void onCreate(Bundle savedInstanceState) {

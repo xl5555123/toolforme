@@ -33,9 +33,7 @@ public class PkuLectureFragment extends Fragment {
     private ListView listView;
     private List<PkuPublicInfo> pkuPublicInfoList = new ArrayList<PkuPublicInfo>();
     private Calendar currentDateToLoad;
-    private static PkuLectureFragment fragment;
     private Activity activity;
-    private PkuLectureAdapter pkuLectureAdapter;
 
     public static PkuLectureFragment newInstance() {
         return new PkuLectureFragment();
@@ -65,9 +63,7 @@ public class PkuLectureFragment extends Fragment {
 
     private void initView(View view) {
         activity = getActivity();
-        pkuLectureAdapter = new PkuLectureAdapter(activity, pkuPublicInfoList);
         listView = (ListView) view.findViewById(R.id.lecture_list_view);
-        listView.setAdapter(pkuLectureAdapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -102,8 +98,9 @@ public class PkuLectureFragment extends Fragment {
         @Override
         protected void onPostExecute(List<PkuPublicInfo> result) {
             if (result != null) {
-                pkuPublicInfoList.addAll(result);
-                pkuLectureAdapter.notifyDataSetChanged();
+                //noResult.setVisibility(View.GONE);
+                pkuPublicInfoList = result;
+                listView.setAdapter(new PkuLectureAdapter(activity, pkuPublicInfoList));
             }
             else {
                 UIHelper.showNetError();

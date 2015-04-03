@@ -14,7 +14,7 @@
         android:textSize="27sp" />
 
     <FrameLayout
-        android:id="@+id/lecture_home_fragment"
+        android:id="@+id/homelecture"
         android:layout_width="match_parent"
         android:layout_height="225dp"
         android:layout_below="@id/lecture_this_week_header"
@@ -24,7 +24,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="15dp"
-        android:layout_below="@id/lecture_home_fragment">
+        android:layout_below="@id/homelecture">
+        android:layout_below="@id/homelecture">
         <FrameLayout
             android:id="@+id/class_fragment"
             android:layout_width="0dp"
