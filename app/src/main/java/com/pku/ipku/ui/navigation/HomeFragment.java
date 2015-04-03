@@ -1,10 +1,12 @@
 package com.pku.ipku.ui.navigation;
 
 
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,16 +17,11 @@ import com.pku.ipku.ui.person.arrearageState.ArrearageStateActivity;
 import com.pku.ipku.ui.person.arrearageState.ArrearageStateFragment;
 import com.pku.ipku.ui.person.library.LibraryActivity;
 import com.pku.ipku.ui.pkuInfo.PkuLectureFragment;
+import com.pku.ipku.ui.util.LazyFragment;
 
 public class HomeFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-    private static HomeFragment fragment;
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+
+    private FragmentManager fragmentManager;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -49,9 +46,10 @@ public class HomeFragment extends Fragment {
     }
 
     private void initView(View view) {
-        getFragmentManager().beginTransaction().replace(R.id.lecture_home_fragment, PkuLectureFragment.newInstance()).commit();
-        getFragmentManager().beginTransaction().replace(R.id.remain_fragment, ArrearageStateFragment.newInstance()).commit();
-        getFragmentManager().beginTransaction().replace(R.id.class_fragment, CurriculumListFragment.newInstance()).commit();
+        fragmentManager = getChildFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.homelecture, PkuLectureFragment.newInstance()).commit();
+        fragmentManager.beginTransaction().replace(R.id.class_fragment, CurriculumListFragment.newInstance()).commit();
+        fragmentManager.beginTransaction().replace(R.id.remain_fragment, ArrearageStateFragment.newInstance()).commit();
         view.findViewById(R.id.remain_fragment).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

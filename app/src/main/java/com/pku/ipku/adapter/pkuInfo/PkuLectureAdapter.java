@@ -47,10 +47,10 @@ public class PkuLectureAdapter extends BaseAdapter {
         convertView = listContainer.inflate(R.layout.lecture_item, null);
         PkuPublicInfo pkuPublicInfo = getItem(position);
 
-        TextView subject = (TextView) convertView.findViewById(R.id.title);
+        TextView subject = (TextView) convertView.findViewById(R.id.title_of_lecture);
         subject.setText(pkuPublicInfo.getTitle());
 
-        TextView date = (TextView) convertView.findViewById(R.id.date);
+        TextView date = (TextView) convertView.findViewById(R.id.date_of_lecture);
         date.setText(pkuPublicInfo.getPubDate());
 
         convertView.setTag(pkuPublicInfo.getLink());
