@@ -64,8 +64,7 @@ public class LoadDataDefaultTask {
                 loaded = true;
                 loadDataConfigure.showData();
                 loadDataConfigure.stopWaiting();
-            }
-            else {
+            } else {
                 loadDataConfigure.processError(result);
             }
         }

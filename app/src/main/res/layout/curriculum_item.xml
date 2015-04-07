@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/timeline_card_background"
@@ -8,19 +7,25 @@
     android:paddingLeft="5dp"
     android:paddingRight="5dp"
     android:orientation="vertical">
-    <RelativeLayout android:layout_width="match_parent"
+
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="5dp"
         android:gravity="center_vertical"
         android:paddingTop="5dp">
-        <TextView android:layout_width="wrap_content"
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="10-12节"
             android:layout_centerVertical="true"
             android:textColor="#000000"
             android:textSize="12sp"
-            android:id="@+id/time_num_tv"/>
-        <TextView android:layout_width="wrap_content"
+            android:id="@+id/time_num_tv" />
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="国学概论"
             android:layout_centerVertical="true"
@@ -28,23 +33,30 @@
             android:textColor="#000000"
             android:id="@+id/course_name_tv"
             android:layout_toRightOf="@id/time_num_tv"
-            android:textSize="17sp"/>
+            android:textSize="17sp" />
     </RelativeLayout>
-    <TextView android:layout_width="match_parent"
+
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#eeeeee"/>
+        android:background="#eeeeee" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="5dp"
         android:gravity="center_vertical"
         android:paddingTop="5dp">
-        <ImageView android:layout_width="wrap_content"
+
+        <ImageView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/room_imv"
             android:layout_centerVertical="true"
-            android:src="@drawable/ic_treehole_classroom_icon"/>
-        <TextView android:layout_width="wrap_content"
+            android:src="@drawable/ic_treehole_classroom_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="教室"
             android:textSize="12dp"
@@ -52,8 +64,10 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="5dp"
             android:id="@+id/room_tip_tv"
-            android:layout_toRightOf="@id/room_imv"/>
-        <TextView android:layout_width="wrap_content"
+            android:layout_toRightOf="@id/room_imv" />
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="二教412"
             android:textColor="#000000"
@@ -61,20 +75,25 @@
             android:layout_marginLeft="5dp"
             android:textSize="17dp"
             android:layout_toRightOf="@id/room_tip_tv"
-            android:id="@+id/room_name_tv"/>
+            android:id="@+id/room_name_tv" />
     </RelativeLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="5dp"
         android:gravity="center_vertical"
         android:paddingTop="5dp">
-        <ImageView android:layout_width="wrap_content"
+
+        <ImageView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/time_imv"
             android:layout_centerVertical="true"
-            android:src="@drawable/ic_treehole_time_icon"/>
-        <TextView android:layout_width="wrap_content"
+            android:src="@drawable/ic_treehole_time_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="时间"
             android:textColor="#000000"
@@ -82,8 +101,10 @@
             android:id="@+id/time_tip_tv"
             android:textSize="12dp"
             android:layout_marginLeft="5dp"
-            android:layout_toRightOf="@id/time_imv"/>
-        <TextView android:layout_width="wrap_content"
+            android:layout_toRightOf="@id/time_imv" />
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="3:10-6:00"
             android:textColor="#000000"
@@ -91,6 +112,6 @@
             android:textSize="17dp"
             android:layout_marginLeft="5dp"
             android:layout_toRightOf="@id/time_tip_tv"
-            android:id="@+id/time_tv"/>
+            android:id="@+id/time_tv" />
     </RelativeLayout>
 </LinearLayout>

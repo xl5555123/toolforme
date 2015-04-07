@@ -21,6 +21,7 @@ public class CurriculumAdapter extends BaseAdapter {
     private LayoutInflater layoutInflater;
     private Context context;
     List<CurriculumDTO> curriculums;
+
     public CurriculumAdapter(Context context, List<CurriculumDTO> curriculums) {
         this.context = context;
         this.curriculums = curriculums;
@@ -50,18 +51,18 @@ public class CurriculumAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder = null;
-        if(holder == null){
+        if (holder == null) {
             convertView = layoutInflater.inflate(R.layout.curriculum_item, null);
             holder = new ViewHolder();
             holder.course_name_tv = (TextView) convertView.findViewById(R.id.course_name_tv);
             holder.time_num_tv = (TextView) convertView.findViewById(R.id.time_num_tv);
             holder.room_name_tv = (TextView) convertView.findViewById(R.id.room_name_tv);
-            holder.time_tv = (TextView)convertView.findViewById(R.id.time_tv);
+            holder.time_tv = (TextView) convertView.findViewById(R.id.time_tv);
             convertView.setTag(holder);
-        }else{
+        } else {
             holder = (ViewHolder) convertView.getTag();
         }
-        CurriculumDTO  curriculum = curriculums.get(position);
+        CurriculumDTO curriculum = curriculums.get(position);
         curriculum.getTime();
         String detailTime = curriculum.getDetailTime();
         String course_name = curriculum.getCourseName();
@@ -78,7 +79,7 @@ public class CurriculumAdapter extends BaseAdapter {
         return convertView;
     }
 
-    static class ViewHolder{
+    static class ViewHolder {
         TextView time_num_tv;
         TextView course_name_tv;
         TextView room_name_tv;

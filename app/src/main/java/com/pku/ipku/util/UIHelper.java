@@ -168,13 +168,12 @@ public class UIHelper {
 
     public static Intent directToWebView(Activity activity, String url) {
         if (url.contains("pdf")) {
-            Intent intent= new Intent();
+            Intent intent = new Intent();
             intent.setAction("android.intent.action.VIEW");
             Uri content_url = Uri.parse(url);
             intent.setData(content_url);
             return intent;
-        }
-        else {
+        } else {
             Intent intent = new Intent(activity, WebViewActivity.class);
             intent.putExtra("url", url);
             intent.putExtra("title", "公共信息");

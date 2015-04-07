@@ -14,19 +14,19 @@
         android:text="查找"
         android:textColor="@color/white" />
 
-        <EditText
-            android:id="@+id/class_name"
-            android:layout_above="@id/search"
-            android:layout_marginBottom="100dp"
-            android:layout_centerHorizontal="true"
-            android:gravity="center"
-            android:textColor="@color/black"
-            android:textColorHint="@color/gray"
-            android:inputType="text"
-            android:singleLine="true"
-            android:hint="课程名"
-            android:editable="true"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/class_name"
+        android:layout_above="@id/search"
+        android:layout_marginBottom="100dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gray"
+        android:inputType="text"
+        android:singleLine="true"
+        android:hint="课程名"
+        android:editable="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </RelativeLayout>
 

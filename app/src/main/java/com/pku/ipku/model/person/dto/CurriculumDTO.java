@@ -9,7 +9,7 @@ import java.util.Vector;
 /**
  * Created by vector liu on 2015/3/21.
  */
-public class CurriculumDTO implements Parcelable{
+public class CurriculumDTO implements Parcelable {
     String week;
     String timeNum;
     String courseName;
@@ -18,9 +18,10 @@ public class CurriculumDTO implements Parcelable{
     String detailTime;
     int classCount;
 
-    public static String timeNums[] = {"第一节","第二节","第三节","第四节","第五节","第六节","第七节","第八节","第九节","第十节","十一节","第十二节"};
+    public static String timeNums[] = {"第一节", "第二节", "第三节", "第四节", "第五节", "第六节", "第七节", "第八节", "第九节", "第十节", "十一节", "第十二节"};
     public static Vector<Pair<String, String>> classTime = new Vector<Pair<String, String>>();
-    static{
+
+    static {
         classTime.add(new Pair("8:00", "8:50"));
         classTime.add(new Pair("9:00", "9:50"));
         classTime.add(new Pair("10:10", "11:00"));
@@ -52,8 +53,7 @@ public class CurriculumDTO implements Parcelable{
         dest.writeInt(classCount);
     }
 
-    public CurriculumDTO(String week, String timeNum, String courseName, String roomName, String parity, int classCount)
-    {
+    public CurriculumDTO(String week, String timeNum, String courseName, String roomName, String parity, int classCount) {
         this.week = week;
         this.timeNum = timeNum;
         this.courseName = courseName;
@@ -64,14 +64,13 @@ public class CurriculumDTO implements Parcelable{
     }
 
 
-    public String getTime()
-    {
+    public String getTime() {
         String detailTime = "";
-        for(int i = 0; i < 12; i++){
-            if(this.timeNum.indexOf(timeNums[i])>=0) {
+        for (int i = 0; i < 12; i++) {
+            if (this.timeNum.indexOf(timeNums[i]) >= 0) {
                 String begin = classTime.get(i).first;
                 String end = classTime.get(i + classCount - 1).second;
-                this.timeNum = timeNums[i] + " - "+timeNums[i+ classCount - 1];
+                this.timeNum = timeNums[i] + " - " + timeNums[i + classCount - 1];
                 detailTime = begin + " - " + end;
                 break;
             }
@@ -80,7 +79,7 @@ public class CurriculumDTO implements Parcelable{
         return detailTime;
     }
 
-    public CurriculumDTO(Parcel source){
+    public CurriculumDTO(Parcel source) {
         this.week = source.readString();
         this.timeNum = source.readString();
         this.courseName = source.readString();
@@ -159,14 +158,13 @@ public class CurriculumDTO implements Parcelable{
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         String str = "week: " + week + ", timeNum: " + timeNum + ", courseName: " + courseName + ", roomName: " + roomName + ", parity: " + parity;
         return str;
     }
 
 
-    public static final Parcelable.Creator<CurriculumDTO> CREATOR = new Creator<CurriculumDTO>(){
+    public static final Parcelable.Creator<CurriculumDTO> CREATOR = new Creator<CurriculumDTO>() {
 
         @Override
         public CurriculumDTO createFromParcel(Parcel source) {

@@ -4,19 +4,22 @@
     android:layout_height="match_parent"
     android:background="#e1ffff"
     tools:context="com.pku.ipku.ui.pkuInfo.CurriculumForWeekFragment">
+
     <ListView
         android:id="@+id/curriculum_lv111"
         android:layout_width="match_parent"
         android:divider="#00000000"
         android:dividerHeight="15dp"
         android:layout_marginTop="10dp"
-        android:layout_height="match_parent"/>
-    <ImageView android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageView
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/heh_imv"
         android:visibility="gone"
         android:src="@drawable/hehe"
-        android:layout_centerInParent="true"/>
+        android:layout_centerInParent="true" />
 
 
 </RelativeLayout>

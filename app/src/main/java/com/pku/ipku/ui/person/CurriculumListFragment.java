@@ -65,27 +65,28 @@ public class CurriculumListFragment extends Fragment {
             "  border-color: #999999;\n" +
             "  border-style: solid;\n" +
             "  border-width: 1px;\n" +
-            "  padding-left: 10px;}"+
+            "  padding-left: 10px;}" +
             "table {\n" +
             "  display: table;\n" +
             "  border-collapse: separate;\n" +
             "  border-spacing: 2px;\n" +
             "  border-color: gray;\n" +
-            "}"+
+            "}" +
             ".course {\n" +
             "  border: 1px solid #E2E2E2;\n" +
             "  border-collapse: collapse;\n" +
             "  padding-left: 5px;\n" +
-            "}"+
-            "</style>"+
+            "}" +
+            "</style>" +
             "  </head>\n" +
-            "  <body>" ;
+            "  <body>";
 
     String weeks[] = {"mon", "tue", "wed", "thu", "fri", "sat", "sun"};
     public static List<ArrayList<CurriculumDTO>> coursesForWeek = new ArrayList<ArrayList<CurriculumDTO>>();
+
     public CurriculumListFragment() {
         // Required empty public constructor
-        for(int i = 0; i < 7; i++){
+        for (int i = 0; i < 7; i++) {
             coursesForWeek.add(new ArrayList<CurriculumDTO>());
         }
     }
@@ -93,6 +94,7 @@ public class CurriculumListFragment extends Fragment {
     public static CurriculumListFragment newInstance() {
         return new CurriculumListFragment();
     }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -133,14 +135,13 @@ public class CurriculumListFragment extends Fragment {
 
     private void getData() {
         todayInWeek = getTodayInWeek();
-        if(coursesForWeek!=null && coursesForWeek.size()!=0)
+        if (coursesForWeek != null && coursesForWeek.size() != 0)
             curriculum_lv.setAdapter(new CurriculumAdapter(getActivity(), coursesForWeek.get(todayInWeek)));
-        if(courses==null || courses.length()==0)
+        if (courses == null || courses.length() == 0)
             getDataByVolley();
     }
 
-    private int getTodayInWeek()
-    {
+    private int getTodayInWeek() {
         Calendar date = Calendar.getInstance(Locale.CHINA);
         return (date.get(Calendar.DAY_OF_WEEK) + 5) % 7;
     }
@@ -160,14 +161,13 @@ public class CurriculumListFragment extends Fragment {
         super.onSaveInstanceState(outState);
     }
 
-    private void getDataByVolley()
-    {
+    private void getDataByVolley() {
         int user_id = Integer.decode(AppContextHolder.getAppContext().getCurrentUser().getUsername());
         int timestamp = (int) new Date().getTime();
         String msg = NetHelper.getMd5(NetHelper.concatParameter(user_id, timestamp));
         String url = NetHelper.getAuthUrl(PersonService.PERSON_COURSE_TABLE_URL, user_id, timestamp, msg);
         coursesForWeek = new ArrayList<ArrayList<CurriculumDTO>>();
-        for(int i = 0; i < 7; i++){
+        for (int i = 0; i < 7; i++) {
             coursesForWeek.add(new ArrayList<CurriculumDTO>());
         }
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(url, null,
@@ -177,7 +177,7 @@ public class CurriculumListFragment extends Fragment {
 
                         try {
                             courses = response.getJSONArray("course");
-                        }catch(Exception e){
+                        } catch (Exception e) {
 
                         }
                         courseTable = courseTable +
@@ -209,32 +209,32 @@ public class CurriculumListFragment extends Fragment {
                                 "\n" +
                                 "\t\t\t\n" +
                                 "</tr>";
-                        for(int i = 0; i < courses.length(); i++){
+                        for (int i = 0; i < courses.length(); i++) {
                             courseTable = courseTable +
-                                    "<tr>"+
+                                    "<tr>" +
                                     "<td class=\"course\" align=\"center\"><span>";
                             try {
                                 JSONObject course = courses.getJSONObject(i);
                                 String timeNum = course.getString("timeNum");
                                 courseTable = courseTable +
-                                        timeNum+"</span></td>";
-                                for(int m = 0; m < weeks.length; m++){
+                                        timeNum + "</span></td>";
+                                for (int m = 0; m < weeks.length; m++) {
                                     String stmp = course.getJSONObject(weeks[m]).getString("courseName");
                                     String style = course.getJSONObject(weeks[m]).getString("sty");
                                     courseTable = courseTable +
-                                            "<td class=\"course\" align=\"center\" style=\""+ style +
+                                            "<td class=\"course\" align=\"center\" style=\"" + style +
 
-                                            "\" ><span>"+stmp+"</span></td>";
+                                            "\" ><span>" + stmp + "</span></td>";
                                 }
                                 courseTable = courseTable +
                                         "</tr>";
-                                for(int j = 0; j < 7; j++){
+                                for (int j = 0; j < 7; j++) {
                                     String week = weeks[j];
-                                    if(course.has(week)){
+                                    if (course.has(week)) {
                                         JSONObject tmp = course.getJSONObject(week);
                                         String courseName = tmp.getString("courseName");
                                         String courseNameCopy = courseName;
-                                        if(courseName==null || courseName.equals(""))
+                                        if (courseName == null || courseName.equals(""))
                                             continue;
                                         String sty = tmp.getString("sty");
                                         String parity = tmp.getString("parity");
@@ -242,20 +242,19 @@ public class CurriculumListFragment extends Fragment {
                                         int right = courseNameCopy.lastIndexOf("<br>");
                                         String extra = courseNameCopy.substring(courseName.length() - 2);
                                         String roomName = "";
-                                        if(left > 0) {
+                                        if (left > 0) {
                                             roomName = courseNameCopy.substring(left + 5, right - 1);
-                                            courseName = courseNameCopy.substring(0,left);
+                                            courseName = courseNameCopy.substring(0, left);
                                         }
-                                        CurriculumDTO tmp_cm = new CurriculumDTO(week, timeNum, courseName, roomName, extra,1);
-                                        CurriculumDTO last3 = coursesForWeek.get(j).size()>0 ? coursesForWeek.get(j).get(coursesForWeek.get(j).size() - 1) : null;
-                                        if(last3!=null && tmp_cm.getCourseName().equals(last3.getCourseName()))
-                                        {
+                                        CurriculumDTO tmp_cm = new CurriculumDTO(week, timeNum, courseName, roomName, extra, 1);
+                                        CurriculumDTO last3 = coursesForWeek.get(j).size() > 0 ? coursesForWeek.get(j).get(coursesForWeek.get(j).size() - 1) : null;
+                                        if (last3 != null && tmp_cm.getCourseName().equals(last3.getCourseName())) {
                                             coursesForWeek.get(j).get(coursesForWeek.get(j).size() - 1).addClassCount();
-                                        }else
+                                        } else
                                             coursesForWeek.get(j).add(tmp_cm);
                                     }
                                 }
-                            }catch (Exception e){
+                            } catch (Exception e) {
 
                             }
 
@@ -263,11 +262,11 @@ public class CurriculumListFragment extends Fragment {
 
                         courseTable = courseTable + "</table></body></html>";
                         //curriculum_lv.setAdapter(new CurriculumAdapter(getActivity(),  todayCourses));
-                        if(coursesForWeek.get(todayInWeek).size()==0){
+                        if (coursesForWeek.get(todayInWeek).size() == 0) {
                             curriculum_lv.setVisibility(View.GONE);
                             no_class_rl.setVisibility(View.VISIBLE);
-                        }else {
-                            if(coursesForWeek!=null && coursesForWeek.size()!=0)
+                        } else {
+                            if (coursesForWeek != null && coursesForWeek.size() != 0)
                                 curriculum_lv.setAdapter(new CurriculumAdapterForHome(getActivity(), coursesForWeek.get(todayInWeek)));
                             curriculum_lv.setVisibility(View.VISIBLE);
                             no_class_rl.setVisibility(View.GONE);

@@ -51,7 +51,7 @@ public class AppContext extends Application {
         DaoHelper.saveData(CURRENT_USER_KEY, user);
     }
 
-    public void deleteCurrentUser(){
+    public void deleteCurrentUser() {
         currentUser = null;
         DaoHelper.removeData(CURRENT_USER_KEY);
 

@@ -2,33 +2,41 @@
     android:orientation="vertical"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <TextView android:layout_width="wrap_content"
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#f9f9f9"
             android:layout_alignParentLeft="true"
             android:text="余额"
             android:id="@+id/yue"
-            android:textSize="27sp"/>
-        <TextView android:layout_width="wrap_content"
+            android:textSize="27sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#f9f9f9"
             android:layout_alignParentRight="true"
             android:layout_below="@id/yue"
             android:text="(元)"
-            android:textSize="10sp"/>
+            android:textSize="10sp" />
     </RelativeLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#53bc94">
+
         <TextView
             style="@style/arrearagementHeader"
             android:id="@+id/card1"
             android:textColor="#f9f9f9"
-            android:text="校园卡"/>
+            android:text="校园卡" />
+
         <TextView
             android:id="@+id/campus_card_balance"
             style="@style/arrearagementItem"
@@ -42,12 +50,12 @@
         android:layout_width="match_parent"
         android:background="#fff757"
         android:layout_height="wrap_content">
+
         <TextView
             style="@style/arrearagementHeader"
             android:textColor="#f9f9f9"
             android:id="@+id/network"
-            android:text="校园网"
-            />
+            android:text="校园网" />
 
         <TextView
             android:id="@+id/net_balance"
@@ -55,13 +63,14 @@
             android:layout_below="@id/network"
             android:layout_alignParentRight="true"
             style="@style/arrearagementItem"
-            android:textColor="#f9f9f9"/>
+            android:textColor="#f9f9f9" />
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#f6bad4">
+
         <TextView
             style="@style/arrearagementHeader"
             android:textColor="#f9f9f9"
@@ -74,107 +83,107 @@
             android:layout_below="@id/library"
             android:layout_alignParentRight="true"
             style="@style/arrearagementItem"
-            android:textColor="#f9f9f9"/>
+            android:textColor="#f9f9f9" />
     </RelativeLayout>
-<!--
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:background="@color/white"
-        android:orientation="vertical">
-
-        <RelativeLayout
+    <!--
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="fill_parent"
-            android:layout_height="60dp"
-            android:background="#f5af30"
+            android:layout_height="fill_parent"
+            android:background="@color/white"
             android:orientation="vertical">
-
-
 
             <RelativeLayout
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="10dp"
-                android:layout_marginLeft="40dp">
+                android:layout_height="60dp"
+                android:background="#f5af30"
+                android:orientation="vertical">
+
+
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="40dp">
 
 
 
 
 
-                <Button
-                    android:layout_width="108dp"
-                    android:layout_height="40dp"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="20dp"
-                    android:background="@drawable/recharge_border"
-                    android:text="充值"
-                    android:textColor="#f5af30"
-                    android:textSize="25sp" />
+                    <Button
+                        android:layout_width="108dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/recharge_border"
+                        android:text="充值"
+                        android:textColor="#f5af30"
+                        android:textSize="25sp" />
 
+                </RelativeLayout>
             </RelativeLayout>
-        </RelativeLayout>
 
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="133dp"
-            android:background="#528f87"
-            android:orientation="vertical">
-
-
-
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="30dp">
+                android:layout_height="133dp"
+                android:background="#528f87"
+                android:orientation="vertical">
+
+
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="30dp">
 
 
 
 
 
-                <Button
-                    android:layout_width="108dp"
-                    android:layout_height="40dp"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="20dp"
-                    android:background="@drawable/recharge_border"
-                    android:text="充值"
-                    android:textColor="#528f87"
-                    android:textSize="25sp" />
+                    <Button
+                        android:layout_width="108dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/recharge_border"
+                        android:text="充值"
+                        android:textColor="#528f87"
+                        android:textSize="25sp" />
 
-            </RelativeLayout>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:background="#8fcdbf"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="10dp"
+                    android:text="图书馆欠费（元）"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+
+                <TextView
+                    android:id="@+id/library_fee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="30dp"
+                    android:text="0.00"
+                    android:textColor="@color/black"
+                    android:textSize="55sp" />
+            </LinearLayout>
+
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="match_parent"
-            android:background="#8fcdbf"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="10dp"
-                android:text="图书馆欠费（元）"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
-
-
-            <TextView
-                android:id="@+id/library_fee"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:layout_marginTop="30dp"
-                android:text="0.00"
-                android:textColor="@color/black"
-                android:textSize="55sp" />
-        </LinearLayout>
-
-    </LinearLayout>
--->
+    -->
 </LinearLayout>

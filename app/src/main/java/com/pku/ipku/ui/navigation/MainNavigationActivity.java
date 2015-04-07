@@ -80,12 +80,10 @@ public class MainNavigationActivity extends FragmentActivity {
                 if (position == 0) {
                     initSelectState();
                     setSelected(homeButton);
-                }
-                else if (position == 1) {
+                } else if (position == 1) {
                     initSelectState();
                     setSelected(studentButton);
-                }
-                else {
+                } else {
                     initSelectState();
                     setSelected(settingButton);
                 }
@@ -133,11 +131,9 @@ public class MainNavigationActivity extends FragmentActivity {
             public Fragment getItem(int position) {
                 if (position == 0) {
                     return new HomeFragment();
-                }
-                else if (position == 1) {
+                } else if (position == 1) {
                     return new PersonFragment();
-                }
-                else {
+                } else {
                     return new SettingNavigationFragment();
                 }
             }

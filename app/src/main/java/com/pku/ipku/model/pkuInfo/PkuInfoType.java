@@ -74,6 +74,7 @@ public class PkuInfoType {
     public boolean isTOP_LECTURES() {
         return type.equals(TOP_LECTURES);
     }
+
     public String getType() {
         return type;
     }

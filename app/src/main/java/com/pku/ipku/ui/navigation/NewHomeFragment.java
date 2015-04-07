@@ -32,7 +32,6 @@ public class NewHomeFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
 
 
-
     public static NewHomeFragment newInstance() {
         NewHomeFragment fragment = new NewHomeFragment();
         return fragment;
@@ -54,15 +53,15 @@ public class NewHomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate( R.layout.fragment_new_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_new_home, container, false);
         initView(view);
         return view;
     }
 
-    public void initView(View view)
-    {
+    public void initView(View view) {
         getFragmentManager().beginTransaction().replace(R.id.curriculum_list_fragment, CurriculumListFragment.newInstance()).commit();
     }
+
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {

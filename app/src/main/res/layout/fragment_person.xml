@@ -18,15 +18,13 @@
         android:listSelector="@android:color/transparent"
         android:verticalSpacing="1dp"
         android:numColumns="3"
-        android:stretchMode="columnWidth">
-    </GridView>
+        android:stretchMode="columnWidth"></GridView>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/banner_pager"
         android:layout_alignParentTop="true"
         android:layout_width="match_parent"
-        android:layout_height="190dp"/>
-
+        android:layout_height="190dp" />
 
 
 </RelativeLayout>

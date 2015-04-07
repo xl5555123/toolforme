@@ -108,12 +108,10 @@ public class FreeClassroomActivity extends BaseActivityIncludingFooterNavigation
                 if (seletedBuidings == null || seletedBuidings.size() == 0) {
                     UIHelper.ToastMessage("请选择自习教室");
                     return;
-                }
-                else if (selectedTimePositions == null || selectedTimePositions.size() == 0) {
+                } else if (selectedTimePositions == null || selectedTimePositions.size() == 0) {
                     UIHelper.ToastMessage("请选择时间");
                     return;
-                }
-                else {
+                } else {
                     Intent intent = new Intent(FreeClassroomActivity.this, FreeClassRoomInAnBuilding.class);
                     intent.putStringArrayListExtra("buildings", seletedBuidings);
                     intent.putIntegerArrayListExtra("selectedTime", selectedTimePositions);

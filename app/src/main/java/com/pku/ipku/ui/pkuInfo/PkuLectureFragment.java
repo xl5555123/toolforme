@@ -95,14 +95,14 @@ public class PkuLectureFragment extends Fragment {
             }
             return result;
         }
+
         @Override
         protected void onPostExecute(List<PkuPublicInfo> result) {
             if (result != null) {
                 //noResult.setVisibility(View.GONE);
                 pkuPublicInfoList = result;
                 listView.setAdapter(new PkuLectureAdapter(activity, pkuPublicInfoList));
-            }
-            else {
+            } else {
                 UIHelper.showNetError();
             }
         }

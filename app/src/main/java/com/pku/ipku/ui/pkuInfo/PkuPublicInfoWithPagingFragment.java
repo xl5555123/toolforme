@@ -104,6 +104,7 @@ public class PkuPublicInfoWithPagingFragment extends Fragment {
                 return null;
             }
         }
+
         @Override
         protected void onPostExecute(List<PkuPublicInfo> result) {
             if (result != null) {
