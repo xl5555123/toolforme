@@ -74,6 +74,7 @@ ADDED from AndroidManifest.xml:20:5
 MERGED from de.hdodenhof:circleimageview:1.2.1:9:5
 MERGED from com.astuetz:pagerslidingtabstrip:1.0.1:4:5
 MERGED from com.jpardogo.googleprogressbar:library:1.1.0:12:5
+MERGED from it.sephiroth.android.library.imagezoom:imagezoom:2.1.1:11:5
 	android:label
 		ADDED from AndroidManifest.xml:24:9
 	android:allowBackup
@@ -487,6 +488,7 @@ INJECTED from AndroidManifest.xml:0:0 reason: use-sdk injection requested
 MERGED from de.hdodenhof:circleimageview:1.2.1:5:5
 MERGED from com.astuetz:pagerslidingtabstrip:1.0.1:2:5
 MERGED from com.jpardogo.googleprogressbar:library:1.1.0:8:5
+MERGED from it.sephiroth.android.library.imagezoom:imagezoom:2.1.1:7:5
 	android:targetSdkVersion
 		INJECTED from AndroidManifest.xml:0:0
 		INJECTED from AndroidManifest.xml:0:0

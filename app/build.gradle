@@ -5,7 +5,7 @@ android {
     buildToolsVersion "21.1.2"
     defaultConfig {
         applicationId "pku.com.ipku"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 19
         versionCode 2
         versionName "0.2"
@@ -48,4 +48,5 @@ dependencies {
     compile files('libs/volley.jar')
     compile 'com.jpardogo.googleprogressbar:library:1.1.0'
     compile files('libs/ksoap2-android-assembly-3.4.0-jar-with-dependencies.jar')
+    compile 'it.sephiroth.android.library.imagezoom:imagezoom:+'
 }
