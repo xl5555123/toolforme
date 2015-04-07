@@ -39,8 +39,6 @@ public class CurriculumListFragment extends Fragment {
 
     ListView curriculum_lv;
     RelativeLayout no_class_rl;
-
-    JSONObject courseInfo = new JSONObject();
     public static JSONArray courses = new JSONArray();
     public static CurriculumListFragment fragment;
     RelativeLayout curriculum_container;
