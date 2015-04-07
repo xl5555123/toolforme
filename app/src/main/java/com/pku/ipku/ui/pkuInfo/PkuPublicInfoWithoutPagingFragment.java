@@ -91,7 +91,7 @@ public class PkuPublicInfoWithoutPagingFragment extends Fragment {
                     intent.putExtra("title", type.getTitle());
                     startActivity(intent);
                     */
-                    Intent intent= UIHelper.directToWebView(getActivity(), url);
+                    Intent intent = UIHelper.directToWebView(getActivity(), url);
                     startActivity(intent);
                 }
             }
@@ -110,14 +110,14 @@ public class PkuPublicInfoWithoutPagingFragment extends Fragment {
                 return null;
             }
         }
+
         @Override
         protected void onPostExecute(List<PkuPublicInfo> result) {
             listView.onFinishLoading(true, null);
             if (result != null) {
                 pkuPublicInfoList.addAll(result);
                 adapter.notifyDataSetChanged();
-            }
-            else {
+            } else {
                 listView.setHasMoreItems(false);
             }
         }

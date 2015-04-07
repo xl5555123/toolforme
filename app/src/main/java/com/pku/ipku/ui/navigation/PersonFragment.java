@@ -2,28 +2,32 @@ package com.pku.ipku.ui.navigation;
 
 
 import android.app.Activity;
-import android.support.v4.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
+import com.google.common.collect.Lists;
 import com.pku.ipku.R;
 import com.pku.ipku.adapter.navigation.PersonNavigationAdapter;
 import com.pku.ipku.model.person.navigation.RegisterInPersonPage;
-import com.pku.ipku.ui.person.arrearageState.ArrearageStateActivity;
 import com.pku.ipku.ui.person.PersonInfoActivity;
-import com.pku.ipku.ui.person.ScholarshipActivity;
 import com.pku.ipku.ui.person.ScoreActivity;
+import com.pku.ipku.ui.person.arrearageState.ArrearageStateActivity;
 import com.pku.ipku.ui.person.freeClassRoom.FreeClassroomActivity;
 import com.pku.ipku.ui.person.library.LibraryActivity;
 import com.pku.ipku.ui.person.queryClass.QueryClassActivity;
 import com.pku.ipku.ui.pkuInfo.FindAJobActivity;
 import com.pku.ipku.ui.pkuInfo.PkuLectureActivity;
 import com.pku.ipku.ui.pkuInfo.PkuNoticeActivity;
+import com.pku.ipku.ui.util.ImageFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,6 +65,10 @@ public class PersonFragment extends Fragment {
 
     private GridView navigationGridView;
 
+    private ViewPager autoScrollViewPager;
+
+    private int position;
+
     public PersonFragment() {
         // Required empty public constructor
     }
@@ -81,6 +89,7 @@ public class PersonFragment extends Fragment {
 
     private void initView(View view) {
         parentActivity = getActivity();
+        position = 0;
         navigationGridView = (GridView) view.findViewById(R.id.navigation_grid);
         navigationGridView.setAdapter(new PersonNavigationAdapter(parentActivity, registerInPersonPageList));
         navigationGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -95,6 +104,48 @@ public class PersonFragment extends Fragment {
                 }
             }
         });
+        List<Integer> imageIds = Lists.newArrayList();
+        imageIds.add(R.drawable.banner_1);
+        imageIds.add(R.drawable.banner_2);
+        imageIds.add(R.drawable.banner_3);
+        imageIds.add(R.drawable.banner_4);
+        autoScrollViewPager = (ViewPager) view.findViewById(R.id.banner_pager);
+        autoScrollViewPager.setAdapter(new FragmentPagerAdapter(getChildFragmentManager()) {
+            @Override
+            public Fragment getItem(int position) {
+                switch (position) {
+                    case 0:
+                        return ImageFragment.newInstance(R.drawable.banner_1);
+                    case 1:
+                        return ImageFragment.newInstance(R.drawable.banner_2);
+                    case 2:
+                        return ImageFragment.newInstance(R.drawable.banner_3);
+                    default:
+                        return ImageFragment.newInstance(R.drawable.banner_4);
+                }
+            }
+
+            @Override
+            public int getCount() {
+                return 4;
+            }
+        });
+    }
+
+    private void initAutoScroll() {
+        final Handler scrollHandller = new Handler();
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                position++;
+                if (position > 3) {
+                    position = 0;
+                }
+                autoScrollViewPager.setCurrentItem(position);
+                scrollHandller.postDelayed(this, 5000);
+            }
+        };
+        scrollHandller.postDelayed(runnable, 5000);
     }
 
     @Override
@@ -102,6 +153,7 @@ public class PersonFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_person, container, false);
         initView(view);
+        initAutoScroll();
         return view;
     }
 

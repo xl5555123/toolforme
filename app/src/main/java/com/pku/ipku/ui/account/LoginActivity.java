@@ -39,7 +39,7 @@ public class LoginActivity extends Activity {
         context = this;
         usernameTextView = (EditText) findViewById(R.id.username);
         passwordTextView = (EditText) findViewById(R.id.password);
-        loginButton = (Button)findViewById(R.id.login_button);
+        loginButton = (Button) findViewById(R.id.login_button);
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,7 +48,7 @@ public class LoginActivity extends Activity {
         });
     }
 
-    void login(){
+    void login() {
         String username = usernameTextView.getText().toString();
         String password = passwordTextView.getText().toString();
         if (username == null || username.length() == 0 || password == null || password.length() == 0) {
@@ -58,9 +58,8 @@ public class LoginActivity extends Activity {
         User user = new User();
         user.setPassword(passwordTextView.getText().toString());
         user.setUsername(usernameTextView.getText().toString());
-        if(!NetWork.isNetworkAvailable(context))
-        {
-            Toast.makeText(this,"请先连上wifi!", Toast.LENGTH_SHORT).show();
+        if (!NetWork.isNetworkAvailable(context)) {
+            Toast.makeText(this, "请先连上wifi!", Toast.LENGTH_SHORT).show();
             return;
         }
         new LoginTask().execute(user);
@@ -68,12 +67,12 @@ public class LoginActivity extends Activity {
 
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
-        if(event.getKeyCode() == KeyEvent.KEYCODE_ENTER){
-            if(usernameTextView.isFocused()){
+        if (event.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
+            if (usernameTextView.isFocused()) {
                 usernameTextView.clearFocus();
                 passwordTextView.requestFocus();
-            }else if(passwordTextView.isFocused()){
-                if(!passwordTextView.getText().toString().equals("")) {
+            } else if (passwordTextView.isFocused()) {
+                if (!passwordTextView.getText().toString().equals("")) {
                     InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                     if (inputMethodManager.isActive()) {
                         inputMethodManager.hideSoftInputFromWindow(LoginActivity.this.getCurrentFocus().getWindowToken(), 0);
@@ -84,7 +83,6 @@ public class LoginActivity extends Activity {
         }
         return super.dispatchKeyEvent(event);
     }
-
 
 
     private class LoginTask extends AsyncTask<User, Void, User> {
@@ -99,10 +97,10 @@ public class LoginActivity extends Activity {
             result.setProperty("uid", users[0].getUsername());
             result.setProperty("password", users[0].getPassword());
             String content = null;
-            result.setProperty("range","1");
+            result.setProperty("range", "1");
             Ipgw ipgw = new Ipgw(result);
             content = ipgw.connect();
-            if(content.indexOf("网络连接成功")>=0)
+            if (content.indexOf("网络连接成功") >= 0)
                 return users[0];
             return null;
         }
@@ -115,7 +113,7 @@ public class LoginActivity extends Activity {
                 Intent intent = new Intent(LoginActivity.this, MainNavigationActivity.class);
                 startActivity(intent);
                 finish();
-            }else{
+            } else {
                 UIHelper.ToastMessage("账户密码不匹配，请重新输入后再登录");
             }
         }

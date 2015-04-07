@@ -25,8 +25,9 @@ public class CurriculumActivity extends FragmentActivity {
     ArrayList<Fragment> fragmentList;
     int filter = 0;
     //filter表示单双周，0表示双周，1表示单周
-    private String weeks[] = {"周一","周二","周三","周四","周五","周六","周日"};
+    private String weeks[] = {"周一", "周二", "周三", "周四", "周五", "周六", "周日"};
     public static List<ArrayList<CurriculumDTO>> coursesForWeek = new ArrayList<ArrayList<CurriculumDTO>>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_curriculum);
@@ -36,10 +37,11 @@ public class CurriculumActivity extends FragmentActivity {
         savedInstanceState.putString("title", "课程表");
         super.onCreate(savedInstanceState);
         todayInWeek = getIntent().getIntExtra("todayInWeek", 0);
-        if(CurriculumListFragment.coursesForWeek!=null)
+        if (CurriculumListFragment.coursesForWeek != null)
             coursesForWeek = CurriculumListFragment.coursesForWeek;
         initView();
     }
+
     public void initView() {
 
         getActionBar().setTitle("课程表");
@@ -69,11 +71,7 @@ public class CurriculumActivity extends FragmentActivity {
         tabPageIndicator.setIndicatorColorResource(R.drawable.week_curriculum_selector);
 
 
-
-
-
     }
-
 
 
     //适配器
@@ -87,10 +85,10 @@ public class CurriculumActivity extends FragmentActivity {
         @Override
         public Fragment getItem(int arg0) {
             // TODO Auto-generated method stub
-            if(fragmentList == null || fragmentList.size() == 0)
+            if (fragmentList == null || fragmentList.size() == 0)
                 return null;
             Fragment tmp = fragmentList.get(arg0);
-            ((CurriculumForWeekFragment)tmp).setDayInWeek(arg0);
+            ((CurriculumForWeekFragment) tmp).setDayInWeek(arg0);
             return tmp;
         }
 

@@ -4,13 +4,16 @@
     android:layout_height="match_parent"
     android:id="@+id/curriculum_container"
     tools:context="com.pku.ipku.ui.pkuInfo.CurriculumListFragment">
-    <TextView android:layout_width="wrap_content"
+
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#f9f9f9"
         android:layout_alignParentLeft="true"
         android:text="今日课程"
         android:id="@+id/today_curr_tv"
-        android:textSize="27sp"/>
+        android:textSize="27sp" />
+
     <ListView
         android:id="@+id/curriculum_lv"
         android:layout_width="match_parent"
@@ -19,22 +22,27 @@
         android:visibility="gone"
         android:layout_marginTop="10dp"
         android:layout_below="@id/today_curr_tv"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
+
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/today_curr_tv"
         android:id="@+id/no_class_rl"
         android:layout_centerInParent="true">
-        <TextView android:text="今天没课，感觉自己萌萌哒"
+
+        <TextView
+            android:text="今天没课，感觉自己萌萌哒"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/no_class_text_1"
             android:layout_centerHorizontal="true"
             android:gravity="center"
             android:textColor="@color/white"
-            android:textAlignment="center"/>
-        <TextView android:layout_width="wrap_content"
+            android:textAlignment="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
             android:textAlignment="center"
@@ -43,8 +51,7 @@
             android:layout_marginTop="10dp"
             android:textSize="30sp"
             android:layout_below="@id/no_class_text_1"
-            android:text="O(∩_∩)O"
-           />
+            android:text="O(∩_∩)O" />
     </RelativeLayout>
 
 

@@ -5,11 +5,12 @@
     android:gravity="center"
     android:layout_margin="10dp"
     android:orientation="horizontal">
+
     <ProgressBar
         android:id="@+id/video_item_image"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginRight="5dp"
         style="?android:progressBarStyle"
-        android:indeterminate="true"/>
+        android:indeterminate="true" />
 </LinearLayout>

@@ -11,6 +11,6 @@
         android:clipToPadding="false"
         android:numColumns="3" />
 
-    <include layout="@layout/progress"/>
+    <include layout="@layout/progress" />
 
 </RelativeLayout>

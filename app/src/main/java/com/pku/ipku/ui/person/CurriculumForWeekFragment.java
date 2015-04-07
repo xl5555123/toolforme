@@ -26,16 +26,17 @@ public class CurriculumForWeekFragment extends Fragment {
     public CurriculumForWeekFragment() {
         super();
         Bundle bundle = getArguments();
-        if(bundle!=null) {
+        if (bundle != null) {
             todayInWeek = bundle.getInt("day");
             todayCourses = (ArrayList<CurriculumDTO>) bundle.getParcelableArrayList("curriculum").get(0);
         }
     }
 
-    public void setDayInWeek(int index){
+    public void setDayInWeek(int index) {
         this.todayInWeek = index;
     }
-    public void setWeekType(int weekType){
+
+    public void setWeekType(int weekType) {
         this.weekType = weekType;
     }
 
@@ -52,14 +53,15 @@ public class CurriculumForWeekFragment extends Fragment {
         initView(view);
         return view;
     }
+
     private void initView(View view) {
         curriculum_lv = (ListView) view.findViewById(R.id.curriculum_lv);
         hehe_imv = (ImageView) view.findViewById(R.id.heh_imv);
         todayCourses = CurriculumListFragment.coursesForWeek.get(todayInWeek);
-        if(todayCourses.size()==0){
+        if (todayCourses.size() == 0) {
             curriculum_lv.setVisibility(View.GONE);
             hehe_imv.setVisibility(View.VISIBLE);
-        }else {
+        } else {
             curriculum_lv.setAdapter(new CurriculumAdapter(getActivity(), todayCourses));
             curriculum_lv.setVisibility(View.VISIBLE);
             hehe_imv.setVisibility(View.GONE);

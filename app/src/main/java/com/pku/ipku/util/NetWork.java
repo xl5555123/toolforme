@@ -33,6 +33,7 @@ public class NetWork {
         else
             return false;
     }
+
     /**
      * 检查网络是否可用
      *

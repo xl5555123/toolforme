@@ -2,11 +2,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.pku.ipku.ui.pkuInfo.PkuPublicInfoWithoutPagingFragment">
+    tools:context="com.pku.ipku.ui.util.ImageFragment">
 
-    <com.pku.ipku.ui.util.paging.PagingListView
-        android:id="@+id/list"
+    <ImageView
+        android:id="@+id/image_banner"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="190dp" />
 
 </FrameLayout>

@@ -111,6 +111,7 @@ public class PkuLectureActivity extends BaseActivityIncludingFooterNavigation im
             }
             return result;
         }
+
         @Override
         protected void onPostExecute(List<PkuPublicInfo> result) {
             pkuPublicInfoList.addAll(result);

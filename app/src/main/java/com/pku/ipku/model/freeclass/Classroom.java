@@ -29,6 +29,7 @@ public class Classroom extends ClassroomDTO {
 
     /**
      * 返回此classroom是否可以自习
+     *
      * @param times 需要自习的节数
      * @return
      */

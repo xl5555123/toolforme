@@ -38,6 +38,7 @@ import org.json.JSONArray;
 public class SettingNavigationFragment extends Fragment {
 
     public static SettingNavigationFragment fragment;
+
     public SettingNavigationFragment() {
         // Required empty public constructor
     }
@@ -146,7 +147,7 @@ public class SettingNavigationFragment extends Fragment {
                             }
                         }).create().show();
                         */
-                Intent data=new Intent(Intent.ACTION_SENDTO);
+                Intent data = new Intent(Intent.ACTION_SENDTO);
                 data.setData(Uri.parse("mailto:dudong113@163.com"));
                 data.putExtra(Intent.EXTRA_SUBJECT, "掌上信息门户反馈意见");
                 data.putExtra(Intent.EXTRA_TEXT, "掌上信息门户反馈意见：");
