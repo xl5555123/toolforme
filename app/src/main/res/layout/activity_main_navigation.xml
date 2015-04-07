@@ -22,8 +22,8 @@
             <ImageView
                 android:layout_marginTop="5dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:focusable="true"
                 android:src="@drawable/navigation_home_selector" />
 
@@ -35,7 +35,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="首页"
-                android:textSize="12sp" />
+                android:textSize="10sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -48,8 +48,8 @@
             <ImageView
                 android:layout_marginTop="5dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:focusable="true"
                 android:src="@drawable/navigation_person_icon_selector" />
 
@@ -58,7 +58,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_gravity="center_horizontal"
                 android:text="个人"
-                android:textSize="12sp"
+                android:textSize="10sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
@@ -73,8 +73,8 @@
             <ImageView
                 android:layout_marginTop="10dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:focusable="true"
                 android:src="@drawable/navigation_setting_icon_selector" />
 
@@ -83,7 +83,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_gravity="center_horizontal"
                 android:text="设置"
-                android:textSize="12sp"
+                android:textSize="10sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>

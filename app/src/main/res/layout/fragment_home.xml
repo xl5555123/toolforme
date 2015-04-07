@@ -1,8 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@drawable/main_background"
+    android:background="@drawable/home"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-
     <TextView
         android:id="@+id/lecture_this_week_header"
         android:layout_width="wrap_content"
@@ -10,27 +9,35 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="10dp"
-        android:text="本周讲座"
-        android:textColor="@color/white"
-        android:textSize="32sp" />
+        android:text="当日讲座"
+        android:textColor="#f9f9f9"
+        android:textSize="27sp" />
 
     <FrameLayout
         android:id="@+id/homelecture"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="225dp"
         android:layout_below="@id/lecture_this_week_header"
         android:layout_marginTop="15dp"></FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/homelecture">
         android:layout_below="@id/homelecture">
         <FrameLayout
             android:id="@+id/class_fragment"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
-            android:layout_weight="1"></FrameLayout>
+            android:layout_weight="1.5"></FrameLayout>
+        <ImageView
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"/>
         <FrameLayout
             android:id="@+id/remain_fragment"
             android:layout_width="0dp"
