@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="64dip"
+    android:layout_height="72dp"
     android:descendantFocusability="blocksDescendants"
     android:background="@color/default_background"
     android:orientation="horizontal"
@@ -27,7 +27,7 @@
             android:maxLines="2"
             android:text="在项目完成了"
             android:textColor="#333"
-            android:textSize="14sp" />
+            android:textSize="17sp" />
 
         <TextView
             android:id="@+id/date"
@@ -36,7 +36,7 @@
             android:layout_marginTop="8dip"
             android:text="27分钟前"
             android:textColor="#999"
-            android:textSize="12sp" />
+            android:textSize="14sp" />
 
     </LinearLayout>
 
