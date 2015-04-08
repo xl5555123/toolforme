@@ -99,13 +99,13 @@
     </style>
 
     <style name="MyActionBarStyle" parent="android:style/Widget.Holo.Light.ActionBar.Solid">
-        <item name="android:background">@color/back_background</item>
+        <item name="android:background">@color/navigation_bar_back_color</item>
         <item name="android:titleTextStyle">@style/MyActionBarTitleStyle</item>
         <item name="android:layout_height">44dp</item>
     </style>
 
     <style name="MyActionBarTitleStyle" parent="android:style/TextAppearance.Holo.Widget.ActionBar.Title">
-        <item name="android:textSize">19sp</item>
+        <item name="android:textSize">22sp</item>
         <item name="android:textColor">@color/white</item>
     </style>
     <!-- style for the tabs -->
