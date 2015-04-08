@@ -9,11 +9,12 @@ import android.os.Looper;
 import android.os.Message;
 import android.text.Selection;
 import android.text.Spannable;
+import android.text.method.ScrollingMovementMethod;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,9 +35,9 @@ public class NetworkHelperActivity extends Activity {
     private EditText uid = null;
     private EditText pwd = null;
     private SwitchButton free = null;
-    private ImageView connect = null;
-    private ImageView disconnect = null;
-    private ImageView all_disconnect = null;
+    private Button connect = null;
+    private Button disconnect = null;
+    private Button all_disconnect = null;
     private TextView edittext_result = null;
     private Ipgw ipgw = null;
 
@@ -75,10 +76,11 @@ public class NetworkHelperActivity extends Activity {
         uid = (EditText) findViewById(R.id.network_uid);
         pwd = (EditText) findViewById(R.id.network_pwd);
         free = (SwitchButton) findViewById(R.id.network_free_or_not);
-        connect = (ImageView) findViewById(R.id.network_connect);
-        disconnect = (ImageView) findViewById(R.id.network_disconnect);
-        all_disconnect = (ImageView) findViewById(R.id.network_all_disconnect);
+        connect = (Button) findViewById(R.id.network_connect);
+        disconnect = (Button) findViewById(R.id.network_disconnect);
+        all_disconnect = (Button) findViewById(R.id.network_all_disconnect);
         edittext_result = (TextView) findViewById(R.id.network_edittext_result);
+        edittext_result.setMovementMethod(ScrollingMovementMethod.getInstance());
         connect.setOnClickListener(new ConnectListener());
         disconnect.setOnClickListener(new ConnectListener());
         all_disconnect.setOnClickListener(new ConnectListener());

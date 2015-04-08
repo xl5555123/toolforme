@@ -160,8 +160,8 @@ public class CurriculumListFragment extends Fragment {
     }
 
     private void getDataByVolley() {
-        int user_id = Integer.decode(AppContextHolder.getAppContext().getCurrentUser().getUsername());
-        int timestamp = (int) new Date().getTime();
+        long user_id = Integer.decode(AppContextHolder.getAppContext().getCurrentUser().getUsername());
+        long timestamp = new Date().getTime();
         String msg = NetHelper.getMd5(NetHelper.concatParameter(user_id, timestamp));
         String url = NetHelper.getAuthUrl(PersonService.PERSON_COURSE_TABLE_URL, user_id, timestamp, msg);
         coursesForWeek = new ArrayList<ArrayList<CurriculumDTO>>();

@@ -53,7 +53,7 @@ public class NetHelper {
         return String.format("%s%s", BASE_URL, uri);
     }
 
-    public static String getAuthUrl(String uri, int userId, int timestamp, String msg) {
+    public static String getAuthUrl(String uri, long userId, long timestamp, String msg) {
         return String.format("%s%s?user=%d&appKey=%s&timestamp=%d&msg=%s", BASE_URL, uri, userId, APP_KEY, timestamp, msg);
     }
 
@@ -123,7 +123,7 @@ public class NetHelper {
         return result;
     }
 
-    public static String concatParameter(int userId, int timestamp) {
+    public static String concatParameter(long userId, long timestamp) {
         return String.format("user=%d&appKey=%s&timestamp=%d", userId, APP_KEY, timestamp);
     }
 
