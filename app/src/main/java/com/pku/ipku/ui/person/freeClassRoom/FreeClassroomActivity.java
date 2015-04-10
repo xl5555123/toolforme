@@ -1,16 +1,18 @@
 package com.pku.ipku.ui.person.freeClassRoom;
 
-
-import android.app.DialogFragment;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.view.MenuItem;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.google.common.collect.Lists;
 import com.pku.ipku.R;
+import com.pku.ipku.adapter.pkuInfo.SelectAdapter;
 import com.pku.ipku.model.person.navigation.RegisterInPersonPage;
 import com.pku.ipku.ui.util.BaseActivityIncludingFooterNavigation;
 import com.pku.ipku.util.UIHelper;
@@ -91,15 +93,17 @@ public class FreeClassroomActivity extends BaseActivityIncludingFooterNavigation
         findViewById(R.id.buidings).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DialogFragment dialogFragment = new SelectDialogFragment("选择想要去的教学楼", buildingNames, buildingsName, seletedBuidings, seletedBuidingPositions);
-                dialogFragment.show(getFragmentManager(), "buidings");
+                //DialogFragment dialogFragment = new SelectDialogFragment("选择想要去的教学楼", buildingNames, buildingsName, seletedBuidings, seletedBuidingPositions);
+                //dialogFragment.show(getFragmentManager(), "buidings");
+                createPopWindow(buildingNames, buildingsName, seletedBuidings, seletedBuidingPositions);
             }
         });
         findViewById(R.id.times).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DialogFragment dialogFragment = new SelectDialogFragment("选择想要自习的时间", timeSelector, timeList, selectedTime, selectedTimePositions);
-                dialogFragment.show(getFragmentManager(), "buidings");
+                //DialogFragment dialogFragment = new SelectDialogFragment("选择想要自习的时间", timeSelector, timeList, selectedTime, selectedTimePositions);
+                //dialogFragment.show(getFragmentManager(), "buidings");
+                createPopWindow(timeSelector, timeList, selectedTime, selectedTimePositions);
             }
         });
         findViewById(R.id.search).setOnClickListener(new View.OnClickListener() {
@@ -139,5 +143,43 @@ public class FreeClassroomActivity extends BaseActivityIncludingFooterNavigation
     @Override
     public Class attachedClassType() {
         return FreeClassroomActivity.class;
+    }
+
+
+    private void  createPopWindow(final List<String> itemToSelect, final TextView textViewToChange, final List<String> result, final List<Integer> postionResult){
+        View view = LayoutInflater.from(this).inflate(R.layout.popup_window, null);
+        final PopupWindow pop = new PopupWindow(view, LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT,false);
+        //设置点击窗口外边窗口消失
+        pop.setOutsideTouchable(true);
+        // 设置此参数获得焦点，否则无法点击
+        pop.setFocusable(true);
+        final ListView content_lv = (ListView) view.findViewById(R.id.content_lv);
+        final SelectAdapter selectAdapter = new SelectAdapter(this, itemToSelect);
+        content_lv.setAdapter(selectAdapter);
+        Button cancel_bt = (Button) view.findViewById(R.id.cancel_bt);
+        Button ok_bt = (Button) view.findViewById(R.id.ok_bt);
+        cancel_bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pop.dismiss();
+            }
+        });
+        ok_bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < itemToSelect.size(); i++) {
+                    if (selectAdapter.mChecked.get(i)) {
+                        builder.append(itemToSelect.get(i));
+                        builder.append(" ");
+                        result.add(itemToSelect.get(i));
+                        postionResult.add(i + 1);
+                    }
+                }
+                textViewToChange.setText(builder.toString());
+                pop.dismiss();
+            }
+        });
+        pop.showAsDropDown(textViewToChange);
     }
 }
