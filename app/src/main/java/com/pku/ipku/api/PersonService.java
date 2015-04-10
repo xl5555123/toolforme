@@ -8,7 +8,6 @@ import com.pku.ipku.model.person.dto.ScholarShipDTO;
 import com.pku.ipku.model.person.dto.ScoreDTO;
 import com.pku.ipku.model.person.dto.StuInfoDTO;
 import com.pku.ipku.model.studyguide.Lesson;
-import com.pku.ipku.ui.AppContext;
 
 import java.util.List;
 
@@ -26,7 +25,7 @@ public interface PersonService {
     public static final String PERSON_COURSE_TABLE_URL = "/svcpub/svc/pro/student/coursetable";
 
     public static final String QUERY_LESSON = "/svcpub/svc/pub/course/list?courseName=%s&appKey=" + NetHelper.APP_KEY;
-    ;
+
 
     public ArrearageStateDTO getArrearageState(int userId) throws Exception;
 
