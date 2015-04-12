@@ -1,7 +1,6 @@
 package com.pku.ipku.ui.person.arrearageState;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -36,7 +35,7 @@ public class ArrearageStateActivity extends BaseActivityIncludingFooterNavigatio
         if (savedInstanceState == null) {
             savedInstanceState = new Bundle();
         }
-        savedInstanceState.putString("title", "欠费信息");
+        savedInstanceState.putString("title", "我的钱包");
         super.onCreate(savedInstanceState);
         initView();
         initData();

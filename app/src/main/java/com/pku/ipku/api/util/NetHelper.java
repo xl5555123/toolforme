@@ -87,7 +87,7 @@ public class NetHelper {
      * @return
      */
     public static <T> T getForObjectWithAuth(String uri, Class<T> returnType, int userId) throws Exception {
-        int timestamp = (int) new Date().getTime();
+        long timestamp = Integer.valueOf(String.format("%d", new Date().getTime()).substring(4));
         String msg = getMd5(concatParameter(userId, timestamp));
         if (msg == null) {
             throw new Exception("generate message failed");
@@ -96,6 +96,7 @@ public class NetHelper {
         HttpEntity<T> httpEntity = new HttpEntity<T>(getHeader());
         Log.v("liuyi", "url: " + url);
         T data = null;
+        /*
         try {
             data = restTemplate.exchange(url, HttpMethod.GET, httpEntity, returnType).getBody();
             Log.v("liuyi", "load success!");
@@ -107,6 +108,7 @@ public class NetHelper {
         if (data != null) {
             //DaoHelper.saveData(uri + userId, data);
         }
+        */
         return data;
     }
 
