@@ -12,7 +12,7 @@
             android:layout_height="wrap_content"
             android:textColor="#f9f9f9"
             android:layout_alignParentLeft="true"
-            android:text="余额"
+            android:text="钱包"
             android:id="@+id/yue"
             android:textSize="27sp" />
 

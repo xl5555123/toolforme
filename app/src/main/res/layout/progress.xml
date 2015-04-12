@@ -7,14 +7,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:gpb="http://schemas.android.com/apk/res-auto">
 
-    <FrameLayout
-        android:background="#c0000000"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"></FrameLayout>
-
-    <com.jpardogo.android.googleprogressbar.library.GoogleProgressBar
+    <ProgressBar
         android:layout_centerInParent="true"
-        gpb:type="folding_circles"
         android:layout_width="50dp"
         android:layout_height="50dp" />
 </RelativeLayout>

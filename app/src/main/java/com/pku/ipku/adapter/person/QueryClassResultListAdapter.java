@@ -49,6 +49,8 @@ public class QueryClassResultListAdapter extends BaseAdapter {
         Lesson lesson = lessonList.get(position);
         courseName.setText(lesson.getCourseName());
         englishName.setText(lesson.getCourseEngName());
+        TextView courseId = (TextView) convertView.findViewById(R.id.course_id);
+        courseId.setText(lesson.getCourseId());
         convertView.setTag(lesson);
         return convertView;
     }

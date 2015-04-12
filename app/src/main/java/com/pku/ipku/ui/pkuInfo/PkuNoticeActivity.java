@@ -1,16 +1,12 @@
 package com.pku.ipku.ui.pkuInfo;
 
 import android.app.ActionBar;
-import android.app.Activity;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 
 import com.pku.ipku.R;
 import com.pku.ipku.model.person.navigation.RegisterInPersonPage;
 import com.pku.ipku.model.pkuInfo.PkuInfoType;
-import com.pku.ipku.model.pkuInfo.RegisterInPkuInfoPage;
 import com.pku.ipku.ui.util.BaseActivityIncludingFooterNavigation;
 
 import java.util.ArrayList;
@@ -76,7 +72,7 @@ public class PkuNoticeActivity extends BaseActivityIncludingFooterNavigation imp
 
     @Override
     public String getPageTitle() {
-        return "通知";
+        return "校内公告";
     }
 
     @Override
