@@ -3,13 +3,10 @@ package com.pku.ipku.ui.pkuInfo;
 import android.app.ActionBar;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 
 import com.pku.ipku.R;
 import com.pku.ipku.model.person.navigation.RegisterInPersonPage;
 import com.pku.ipku.model.pkuInfo.PkuInfoType;
-import com.pku.ipku.model.pkuInfo.RegisterInPkuInfoPage;
 import com.pku.ipku.ui.util.BaseActivityIncludingFooterNavigation;
 
 import java.util.ArrayList;
@@ -31,7 +28,7 @@ public class FindAJobActivity extends BaseActivityIncludingFooterNavigation impl
         if (savedInstanceState == null) {
             savedInstanceState = new Bundle();
         }
-        savedInstanceState.putString("title", "找工作");
+        savedInstanceState.putString("title", "就业信息");
         super.onCreate(savedInstanceState);
         initView();
     }
@@ -74,7 +71,7 @@ public class FindAJobActivity extends BaseActivityIncludingFooterNavigation impl
 
     @Override
     public String getPageTitle() {
-        return "找工作";
+        return "就业信息";
     }
 
     @Override

@@ -22,7 +22,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginLeft="17dp"
         android:layout_marginRight="17dp"
-        android:background="@color/white"
+        android:background="@drawable/back_selector"
         android:layout_width="match_parent"
         android:layout_height="40dp">
 
@@ -61,7 +61,7 @@
         android:layout_marginLeft="17dp"
         android:layout_marginRight="17dp"
         android:layout_marginTop="5dp"
-        android:background="@color/white"
+        android:background="@drawable/back_selector"
         android:layout_width="match_parent"
         android:layout_height="40dp">
 
@@ -86,7 +86,7 @@
         android:layout_below="@id/phone_usual"
         android:layout_marginLeft="17dp"
         android:layout_marginRight="17dp"
-        android:background="@color/white"
+        android:background="@drawable/back_selector"
         android:layout_width="match_parent"
         android:layout_height="40dp">
 
@@ -111,7 +111,7 @@
         android:layout_below="@id/pku_map"
         android:layout_marginLeft="17dp"
         android:layout_marginRight="17dp"
-        android:background="@color/white"
+        android:background="@drawable/back_selector"
         android:layout_width="match_parent"
         android:layout_height="40dp">
 
@@ -136,7 +136,7 @@
         android:layout_below="@id/pku_calendar"
         android:layout_marginLeft="17dp"
         android:layout_marginRight="17dp"
-        android:background="@color/white"
+        android:background="@drawable/back_selector"
         android:layout_width="match_parent"
         android:layout_height="40dp">
 
@@ -174,7 +174,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginLeft="17dp"
         android:layout_marginRight="17dp"
-        android:background="@color/white"
+        android:background="@drawable/back_selector"
         android:layout_width="match_parent"
         android:layout_height="40dp">
 
@@ -199,7 +199,7 @@
         android:layout_below="@id/suggestion"
         android:layout_marginLeft="17dp"
         android:layout_marginRight="17dp"
-        android:background="@color/white"
+        android:background="@drawable/back_selector"
         android:layout_width="match_parent"
         android:layout_height="40dp">
 
@@ -224,7 +224,7 @@
         android:layout_below="@id/about_software"
         android:layout_marginLeft="17dp"
         android:layout_marginRight="17dp"
-        android:background="@color/white"
+        android:background="@drawable/back_selector"
         android:layout_width="match_parent"
         android:layout_height="40dp">
 
@@ -250,7 +250,7 @@
         android:layout_below="@id/update"
         android:layout_marginLeft="17dp"
         android:layout_marginRight="17dp"
-        android:background="@color/white"
+        android:background="@drawable/back_selector"
         android:layout_width="match_parent"
         android:layout_height="40dp">
 

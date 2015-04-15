@@ -1,8 +1,6 @@
 package com.pku.ipku.ui.person;
 
 
-import android.app.ActionBar;
-import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.widget.ListView;
 
@@ -16,6 +14,7 @@ import com.pku.ipku.task.LoadDataDefaultTask;
 import com.pku.ipku.task.Result;
 import com.pku.ipku.ui.AppContext;
 import com.pku.ipku.ui.util.BaseActivityIncludingFooterNavigation;
+import com.pku.ipku.util.AppContextHolder;
 
 import java.util.List;
 
@@ -38,26 +37,7 @@ public class ScoreActivity extends BaseActivityIncludingFooterNavigation impleme
         super.onCreate(savedInstanceState);
         scoreList = (ListView) findViewById(R.id.score_list);
         appContext = (AppContext) getApplicationContext();
-        getActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-        ActionBar.TabListener tabListener = new ActionBar.TabListener() {
-            @Override
-            public void onTabSelected(ActionBar.Tab tab, FragmentTransaction ft) {
-                new LoadDataDefaultTask(new LoadScoreConfigure()).execute();
-            }
-
-            @Override
-            public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction ft) {
-
-            }
-
-            @Override
-            public void onTabReselected(ActionBar.Tab tab, FragmentTransaction ft) {
-
-            }
-        };
-        getActionBar().addTab(getActionBar().newTab().setText("这学期").setTabListener(tabListener));
-        getActionBar().addTab(getActionBar().newTab().setText("上学期").setTabListener(tabListener));
-        getActionBar().addTab(getActionBar().newTab().setText("大上学期").setTabListener(tabListener));
+        new LoadDataDefaultTask(new LoadScoreConfigure()).execute();
     }
 
     @Override
@@ -89,7 +69,8 @@ public class ScoreActivity extends BaseActivityIncludingFooterNavigation impleme
 
         @Override
         public Result getData(boolean cache) {
-            scoreDTOList = IpkuServiceFactory.getPersonService(cache).getScores();
+            int studentId = Integer.decode(AppContextHolder.getAppContext().getCurrentUser().getUsername());
+            scoreDTOList = IpkuServiceFactory.getPersonService(cache).getScores(studentId);
             if (scoreDTOList == null) {
                 return new Result(Result.NET_ERROR);
             }

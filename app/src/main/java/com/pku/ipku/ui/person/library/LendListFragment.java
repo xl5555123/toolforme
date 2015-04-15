@@ -67,7 +67,7 @@ public class LendListFragment extends Fragment {
         @Override
         public Result getData(boolean cache) {
             libBorrowDTOs = IpkuServiceFactory.getPersonService(cache).getLibBorrowInfo();
-            if (lendListView == null) {
+            if (libBorrowDTOs == null) {
                 return new Result(Result.NET_ERROR);
             }
             return new Result(Result.NO_ERROR);

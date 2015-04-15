@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
     <!-- 填充的颜色 -->
@@ -15,3 +16,8 @@
         android:bottom="6dp"
         />
 </shape>
+=======
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+</selector>
+>>>>>>> 5621a1aad0d2b65669d3e528665e549485603bdf

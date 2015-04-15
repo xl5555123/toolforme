@@ -1,7 +1,6 @@
 package com.pku.ipku.ui.person.arrearageState;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -20,7 +19,6 @@ import com.pku.ipku.util.UIHelper;
 
 public class ArrearageStateActivity extends BaseActivityIncludingFooterNavigation implements RegisterInPersonPage {
 
-    private TextView libraryFeeTextView;
     private TextView netBalanceTextView;
     private TextView schhoolCardTextView;
 
@@ -36,14 +34,13 @@ public class ArrearageStateActivity extends BaseActivityIncludingFooterNavigatio
         if (savedInstanceState == null) {
             savedInstanceState = new Bundle();
         }
-        savedInstanceState.putString("title", "欠费信息");
+        savedInstanceState.putString("title", "我的钱包");
         super.onCreate(savedInstanceState);
         initView();
         initData();
     }
 
     private void initView() {
-        libraryFeeTextView = (TextView) findViewById(R.id.library_fee);
         netBalanceTextView = (TextView) findViewById(R.id.net_balance);
         schhoolCardTextView = (TextView) findViewById(R.id.campus_card_balance);
         findViewById(R.id.alipay).setOnClickListener(new View.OnClickListener() {
@@ -63,7 +60,6 @@ public class ArrearageStateActivity extends BaseActivityIncludingFooterNavigatio
         new LoadDataDefaultTask(new LoadDataConfigure() {
             @Override
             public void showData() {
-                libraryFeeTextView.setText(Double.toString(arrearageStateDTO.getLibraryFee()));
                 schhoolCardTextView.setText(Double.toString(arrearageStateDTO.getSchoolCardBalance()));
                 netBalanceTextView.setText(Double.toString(arrearageStateDTO.getNetBalance()));
             }
@@ -107,7 +103,7 @@ public class ArrearageStateActivity extends BaseActivityIncludingFooterNavigatio
 
     @Override
     public String getPageTitle() {
-        return "欠费信息";
+        return "我的钱包";
     }
 
     @Override

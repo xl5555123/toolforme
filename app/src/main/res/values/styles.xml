@@ -92,25 +92,32 @@
 
     <!-- actionbar -->
     <style name="Theme.MyActionBarTheme" parent="android:style/Theme.Holo.Light">
-        <!-- 其他部分的颜色变化跟上面类似 -->
+        <!-- actionbar 样式 -->
         <item name="android:actionBarStyle">@style/MyActionBarStyle</item>
+        <!-- actionbar tab部分样式 -->
         <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle</item>
-        <!--<item name="android:actionOverflowButtonStyle">@style/MyOverflowButton</item>-->
     </style>
 
     <style name="MyActionBarStyle" parent="android:style/Widget.Holo.Light.ActionBar.Solid">
+        <!-- actionbar 背景颜色 -->
         <item name="android:background">@color/navigation_bar_back_color</item>
+        <!-- actionbar 标题文字样式 -->
         <item name="android:titleTextStyle">@style/MyActionBarTitleStyle</item>
+        <!-- actionbar 高度 -->
         <item name="android:layout_height">44dp</item>
     </style>
 
     <style name="MyActionBarTitleStyle" parent="android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+        <!-- actionbar 标题文字大小 -->
         <item name="android:textSize">22sp</item>
+        <!-- actionbar 文字颜色 -->
         <item name="android:textColor">@color/white</item>
     </style>
     <!-- style for the tabs -->
     <style name="MyActionBarTabStyle" parent="android:style/Widget.Holo.Light.ActionBar.TabView">
+        <!-- actionbar tab背景 -->
         <item name="android:background">@drawable/actionbar_tab_drawable</item>
+        <!-- actionbar 颜色 -->
         <item name="android:layout_height">44dp</item>
     </style>
 
