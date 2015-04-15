@@ -127,6 +127,19 @@ public class NetHelper {
         return result;
     }
 
+    public static String getMd5WithKey(String toSign) {
+        String result = null;
+        String toSign2 = String.format("%s%s", toSign, APP_KEY);
+        try {
+            MessageDigest messageDigest = MessageDigest.getInstance("MD5");
+            messageDigest.update(toSign2.getBytes());
+            result = getEncode32(messageDigest);
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
     public static String concatParameter(long userId, long timestamp) {
         return String.format("user=%d&appKey=%s&timestamp=%d", userId, APP_KEY, timestamp);
     }

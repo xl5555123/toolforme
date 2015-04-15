@@ -1,8 +1,10 @@
 package com.pku.ipku.ui.person.freeClassRoom;
 
 import android.content.Intent;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -22,6 +24,7 @@ import java.util.List;
 
 public class FreeClassroomActivity extends BaseActivityIncludingFooterNavigation implements RegisterInPersonPage {
 
+    PopupWindow pop;
     private List<String> buildingNames = new ArrayList<String>() {
         {
             add("一教");
@@ -146,9 +149,27 @@ public class FreeClassroomActivity extends BaseActivityIncludingFooterNavigation
     }
 
 
+    @Override
+
+    public boolean onTouchEvent(MotionEvent event) {
+
+        // TODO Auto-generated method stub
+        switch(event.getAction()) {
+            case MotionEvent.ACTION_UP:
+                if (pop != null && pop.isShowing()) {
+                    pop.dismiss();
+                }
+            default:
+                break;
+        }
+        return super.onTouchEvent(event);
+
+    }
+
     private void  createPopWindow(final List<String> itemToSelect, final TextView textViewToChange, final List<String> result, final List<Integer> postionResult){
         View view = LayoutInflater.from(this).inflate(R.layout.popup_window, null);
-        final PopupWindow pop = new PopupWindow(view, LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT,false);
+        pop  = new PopupWindow(view, LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT,false);
+        pop.setBackgroundDrawable(new BitmapDrawable());
         //设置点击窗口外边窗口消失
         pop.setOutsideTouchable(true);
         // 设置此参数获得焦点，否则无法点击
