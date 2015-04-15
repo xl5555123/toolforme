@@ -18,7 +18,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.pku.ipku.R;
-import com.pku.ipku.adapter.person.CurriculumAdapter;
 import com.pku.ipku.adapter.person.CurriculumAdapterForHome;
 import com.pku.ipku.api.PersonService;
 import com.pku.ipku.api.util.NetHelper;
@@ -80,7 +79,7 @@ public class CurriculumListFragment extends Fragment {
             "  <body>";
 
     String weeks[] = {"mon", "tue", "wed", "thu", "fri", "sat", "sun"};
-    public static List<ArrayList<CurriculumDTO>> coursesForWeek = new ArrayList<ArrayList<CurriculumDTO>>();
+    public List<ArrayList<CurriculumDTO>> coursesForWeek = new ArrayList<ArrayList<CurriculumDTO>>();
 
     public CurriculumListFragment() {
         // Required empty public constructor
@@ -90,7 +89,9 @@ public class CurriculumListFragment extends Fragment {
     }
 
     public static CurriculumListFragment newInstance() {
-        return new CurriculumListFragment();
+        if(fragment==null)
+            fragment = new CurriculumListFragment();
+        return fragment;
     }
 
     @Override
@@ -133,10 +134,10 @@ public class CurriculumListFragment extends Fragment {
 
     private void getData() {
         todayInWeek = getTodayInWeek();
-        if (coursesForWeek != null && coursesForWeek.size() != 0)
-            curriculum_lv.setAdapter(new CurriculumAdapter(getActivity(), coursesForWeek.get(todayInWeek)));
-        if (courses == null || courses.length() == 0)
-            getDataByVolley();
+//        if (coursesForWeek != null && coursesForWeek.size() != 0)
+//            curriculum_lv.setAdapter(new CurriculumAdapter(getActivity(), coursesForWeek.get(todayInWeek)));
+//        if (courses == null || courses.length() == 0)
+         getDataByVolley();
     }
 
     private int getTodayInWeek() {
@@ -144,20 +145,7 @@ public class CurriculumListFragment extends Fragment {
         return (date.get(Calendar.DAY_OF_WEEK) + 5) % 7;
     }
 
-    @Override
-    public void setInitialSavedState(SavedState state) {
-        super.setInitialSavedState(state);
-    }
 
-    @Override
-    public void setRetainInstance(boolean retain) {
-        super.setRetainInstance(retain);
-    }
-
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-    }
 
     private void getDataByVolley() {
         long user_id = Integer.decode(AppContextHolder.getAppContext().getCurrentUser().getUsername());
@@ -278,7 +266,6 @@ public class CurriculumListFragment extends Fragment {
         });
         mQueue.add(jsonObjectRequest);
     }
-
 
 }
 
