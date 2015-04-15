@@ -2,11 +2,8 @@ package com.pku.ipku.api.net;
 
 import com.google.common.collect.Lists;
 import com.pku.ipku.api.PersonService;
-import com.pku.ipku.api.mock.person.MockArrearageState;
 import com.pku.ipku.api.mock.person.MockLibBorrowInfo;
 import com.pku.ipku.api.mock.person.MockScholarShip;
-import com.pku.ipku.api.mock.person.MockScore;
-import com.pku.ipku.api.mock.studyGuide.MockLesson;
 import com.pku.ipku.api.util.NetHelper;
 import com.pku.ipku.model.person.dto.ArrearageStateDTO;
 import com.pku.ipku.model.person.dto.BalanceDTO;
@@ -44,8 +41,14 @@ public class PersonServiceNetImpl implements PersonService {
     }
 
     @Override
-    public List<ScoreDTO> getScores() {
-        return MockScore.get();
+    public List<ScoreDTO> getScores(int userId) {
+        String uri = String.format(GET_SCORE);
+        try {
+            return Lists.newArrayList(NetHelper.getForObjectWithAuth(uri, ScoreDTO[].class, userId));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     public List<LibBorrowDTO> getLibBorrowInfo() {

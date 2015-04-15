@@ -2,6 +2,8 @@ package com.pku.ipku.api.util;
 
 import android.util.Log;
 
+import com.pku.ipku.util.DaoHelper;
+
 import org.codehaus.jackson.map.DeserializationConfig;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.http.HttpEntity;
@@ -25,7 +27,7 @@ import java.util.Date;
  */
 public class NetHelper {
 
-    public final static String BASE_URL = "http://162.105.205.170:8080";
+    public final static String BASE_URL = "http://162.105.205.169:8080";
 
     public final static String APP_KEY = "579d8718c1b911e49c500050568508a5";
 
@@ -87,7 +89,7 @@ public class NetHelper {
      * @return
      */
     public static <T> T getForObjectWithAuth(String uri, Class<T> returnType, int userId) throws Exception {
-        long timestamp = Integer.valueOf(String.format("%d", new Date().getTime()).substring(4));
+        long timestamp = new Date().getTime();
         String msg = getMd5(concatParameter(userId, timestamp));
         if (msg == null) {
             throw new Exception("generate message failed");
@@ -96,7 +98,7 @@ public class NetHelper {
         HttpEntity<T> httpEntity = new HttpEntity<T>(getHeader());
         Log.v("liuyi", "url: " + url);
         T data = null;
-        /*
+
         try {
             data = restTemplate.exchange(url, HttpMethod.GET, httpEntity, returnType).getBody();
             Log.v("liuyi", "load success!");
@@ -106,9 +108,9 @@ public class NetHelper {
             Log.v("liuyi", e.toString());
         }
         if (data != null) {
-            //DaoHelper.saveData(uri + userId, data);
+            DaoHelper.saveData(uri + userId, data);
         }
-        */
+
         return data;
     }
 

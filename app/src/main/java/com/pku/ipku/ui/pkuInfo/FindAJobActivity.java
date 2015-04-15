@@ -71,7 +71,7 @@ public class FindAJobActivity extends BaseActivityIncludingFooterNavigation impl
 
     @Override
     public String getPageTitle() {
-        return "找工作";
+        return "就业信息";
     }
 
     @Override

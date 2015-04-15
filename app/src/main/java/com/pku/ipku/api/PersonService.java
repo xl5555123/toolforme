@@ -26,12 +26,14 @@ public interface PersonService {
 
     public static final String QUERY_LESSON = "/svcpub/svc/pub/course/list?courseName=%s&appKey=" + NetHelper.APP_KEY;
 
+    public static final String GET_SCORE = "/svcpub/svc/pro/student/scores";
+
 
     public ArrearageStateDTO getArrearageState(int userId) throws Exception;
 
     public StuInfoDTO getStuInfo(int userId) throws Exception;
 
-    public List<ScoreDTO> getScores();
+    public List<ScoreDTO> getScores(int userId);
 
     public List<LibBorrowDTO> getLibBorrowInfo();
 

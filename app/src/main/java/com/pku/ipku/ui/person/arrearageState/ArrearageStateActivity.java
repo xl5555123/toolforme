@@ -19,7 +19,6 @@ import com.pku.ipku.util.UIHelper;
 
 public class ArrearageStateActivity extends BaseActivityIncludingFooterNavigation implements RegisterInPersonPage {
 
-    private TextView libraryFeeTextView;
     private TextView netBalanceTextView;
     private TextView schhoolCardTextView;
 
@@ -42,7 +41,6 @@ public class ArrearageStateActivity extends BaseActivityIncludingFooterNavigatio
     }
 
     private void initView() {
-        libraryFeeTextView = (TextView) findViewById(R.id.library_fee);
         netBalanceTextView = (TextView) findViewById(R.id.net_balance);
         schhoolCardTextView = (TextView) findViewById(R.id.campus_card_balance);
         findViewById(R.id.alipay).setOnClickListener(new View.OnClickListener() {
@@ -62,7 +60,6 @@ public class ArrearageStateActivity extends BaseActivityIncludingFooterNavigatio
         new LoadDataDefaultTask(new LoadDataConfigure() {
             @Override
             public void showData() {
-                libraryFeeTextView.setText(Double.toString(arrearageStateDTO.getLibraryFee()));
                 schhoolCardTextView.setText(Double.toString(arrearageStateDTO.getSchoolCardBalance()));
                 netBalanceTextView.setText(Double.toString(arrearageStateDTO.getNetBalance()));
             }
@@ -106,7 +103,7 @@ public class ArrearageStateActivity extends BaseActivityIncludingFooterNavigatio
 
     @Override
     public String getPageTitle() {
-        return "欠费信息";
+        return "我的钱包";
     }
 
     @Override

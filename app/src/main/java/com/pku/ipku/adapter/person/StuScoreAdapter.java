@@ -48,17 +48,15 @@ public class StuScoreAdapter extends BaseAdapter {
 
         TextView courseIdTextView = (TextView) view.findViewById(R.id.course_id);
         TextView courseNameTextView = (TextView) view.findViewById(R.id.course_name);
-        TextView departmentTextView = (TextView) view.findViewById(R.id.department);
         TextView termTextView = (TextView) view.findViewById(R.id.term);
         TextView typeTextView = (TextView) view.findViewById(R.id.type);
         TextView scoreTextView = (TextView) view.findViewById(R.id.score);
 
-        courseIdTextView.setText(scoreDTO.getCourseId());
-        courseNameTextView.setText(scoreDTO.getCourseName());
-        departmentTextView.setText(scoreDTO.getDepartment());
-        termTextView.setText(scoreDTO.getSchoolYear());
-        typeTextView.setText(scoreDTO.getCourseType());
-        scoreTextView.setText(scoreDTO.getScore());
+        courseIdTextView.setText(scoreDTO.getKch());
+        courseNameTextView.setText(scoreDTO.getKcmc());
+        termTextView.setText(scoreDTO.getXf());
+        typeTextView.setText(scoreDTO.getKclb());
+        scoreTextView.setText(scoreDTO.getCj());
 
         return view;
     }
