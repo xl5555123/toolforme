@@ -97,7 +97,6 @@ public class LoginActivity extends Activity {
     }
 
 
-
     private class LoginTask extends AsyncTask<User, Void, User> {
 
 
@@ -113,7 +112,7 @@ public class LoginActivity extends Activity {
             result.setProperty("range", "0");
             Ipgw ipgw = new Ipgw(result);
             content = ipgw.connect();
-            if (content.contains("网络连接成功") ||content.contains("免登录帐号的地址")||content.contains("免费包月时长已经用完")||content.contains("当前连接数超过预定值"))
+            if (content.contains("网络连接成功") || content.contains("免登录帐号的地址") || content.contains("免费包月时长已经用完") || content.contains("当前连接数超过预定值"))
                 return users[0];
             return null;
         }
@@ -144,7 +143,7 @@ public class LoginActivity extends Activity {
             User user_test = users[0];
             boolean access = true;
 
-            String url = "https://iaaa.pku.edu.cn/iaaaWS/EuserLogon";
+            String url = "https://iaaa.pku.edu.cn/iaaaWS/EuserLogon?WSDL";
             String namespace = "http://pku/iaaa/webservice";
             String methodName = "userLogonCs"; // 函数名
             String soupaction = namespace + "/" + methodName;
@@ -153,9 +152,11 @@ public class LoginActivity extends Activity {
             // 设置调用方法参数的值,经测试，此处还变量名好像没关系，貌似和顺序是相关的
             soapObject.addProperty("userID", user_test.getUsername());
             soapObject.addProperty("password", user_test.getPassword());
-            soapObject.addProperty("appID",NetHelper.APP_KEY);
-            soapObject.addProperty("messageAbstract", NetHelper.getMd5(user_test.getUsername()));
-            soapObject.addProperty("clientIP",getLocalHostIp());
+            soapObject.addProperty("appID", "portalApp");
+            String md5d = NetHelper.getMd5WithKey(user_test.getUsername(), "118607A0BC765262E0530100007F3E41");
+            Log.v("liuyi", user_test.getUsername() +" " + user_test.getPassword() + " " + md5d);
+            soapObject.addProperty("messageAbstract", md5d);
+            soapObject.addProperty("clientIP", getLocalHostIp());
             HttpTransportSE transport = new HttpTransportSE(url);
             // 版本号向下兼容，SOAP协议版本号，与你要调用的webService中版本号一致
             SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
@@ -178,7 +179,7 @@ public class LoginActivity extends Activity {
             SoapObject sb = (SoapObject) envelope.bodyIn;
             String xmlMessage = sb.getProperty(0).toString(); // 获取从服务器端返回的XML字符串
             Log.v("liuyi", "前方高能！");
-            Log.v("liuyi",xmlMessage);
+            Log.v("liuyi", xmlMessage);
 
             if (!access)
                 return users[0];
@@ -200,38 +201,31 @@ public class LoginActivity extends Activity {
 
 
         // 得到本机ip地址
-        public String getLocalHostIp()
-        {
+        public String getLocalHostIp() {
             String ipaddress = "";
-            try
-            {
+            try {
                 Enumeration<NetworkInterface> en = NetworkInterface
                         .getNetworkInterfaces();
                 // 遍历所用的网络接口
-                while (en.hasMoreElements())
-                {
+                while (en.hasMoreElements()) {
                     NetworkInterface nif = en.nextElement();// 得到每一个网络接口绑定的所有ip
                     Enumeration<InetAddress> inet = nif.getInetAddresses();
                     // 遍历每一个接口绑定的所有ip
-                    while (inet.hasMoreElements())
-                    {
+                    while (inet.hasMoreElements()) {
                         InetAddress ip = inet.nextElement();
                         if (!ip.isLoopbackAddress()
                                 && InetAddressUtils.isIPv4Address(ip
-                                .getHostAddress()))
-                        {
+                                .getHostAddress())) {
                             ipaddress = ip.getHostAddress();
                         }
                     }
 
                 }
-            }
-            catch (SocketException e)
-            {
+            } catch (SocketException e) {
                 Log.e("feige", "获取本地ip地址失败");
                 e.printStackTrace();
-            }finally{
-                Log.v("liuyi","the ip is: " + ipaddress);
+            } finally {
+                Log.v("liuyi", "the ip is: " + ipaddress);
                 return ipaddress;
             }
 

@@ -1,18 +1,23 @@
 package com.pku.ipku.ui.person.freeClassRoom;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.pku.ipku.R;
+import com.pku.ipku.adapter.pkuInfo.FreeClassHistoryAdapter;
 import com.pku.ipku.adapter.pkuInfo.SelectAdapter;
 import com.pku.ipku.model.person.navigation.RegisterInPersonPage;
 import com.pku.ipku.ui.util.BaseActivityIncludingFooterNavigation;
@@ -24,6 +29,13 @@ import java.util.List;
 public class FreeClassroomActivity extends BaseActivityIncludingFooterNavigation implements RegisterInPersonPage {
 
     PopupWindow pop;
+    GridView history_gv;
+    String history;
+    Context context;
+    static final String SEARCH_HISTORY = "SEARCH_HISTORY";
+    SharedPreferences mySharedPreferences;
+    SharedPreferences.Editor editor;
+    FreeClassHistoryAdapter myAdapter;
     private List<String> buildingNames = new ArrayList<String>() {
         {
             add("一教");
@@ -44,6 +56,9 @@ public class FreeClassroomActivity extends BaseActivityIncludingFooterNavigation
             add("电教听力");
             add("国关");
             add("政管");
+            add("理科3#楼");
+            add("理科2#楼");
+
         }
     };
 
@@ -76,11 +91,28 @@ public class FreeClassroomActivity extends BaseActivityIncludingFooterNavigation
         }
         savedInstanceState.putString("title", "空闲教室");
         super.onCreate(savedInstanceState);
+        mySharedPreferences= getSharedPreferences(SEARCH_HISTORY,Activity.MODE_PRIVATE);
+        editor = mySharedPreferences.edit();
+        history = mySharedPreferences.getString(SEARCH_HISTORY, "");
+        context = this;
         initView();
     }
 
     private void initView() {
         buildingsName = (TextView) findViewById(R.id.buidings_name);
+        history_gv = (GridView) findViewById(R.id.history_gv);
+
+        myAdapter = new FreeClassHistoryAdapter(context,history);
+        history_gv.setAdapter(myAdapter);
+
+        history_gv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(FreeClassroomActivity.this, FreeClassRoomInAnBuilding.class);
+                intent.putExtra("buildings", myAdapter.getItem(position).toString());
+                startActivity(intent);
+            }
+        });
 
         findViewById(R.id.buidings).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,6 +131,15 @@ public class FreeClassroomActivity extends BaseActivityIncludingFooterNavigation
                 } else {
                     Intent intent = new Intent(FreeClassroomActivity.this, FreeClassRoomInAnBuilding.class);
                     intent.putExtra("buildings", seletedBuiding);
+                    if(!history.contains(seletedBuiding))
+                    {
+                        if(history.equals(""))
+                            history = history + seletedBuiding;
+                        else
+                            history = history + ","+seletedBuiding;
+                        editor.putString(SEARCH_HISTORY,history);
+                        editor.commit();
+                    }
                     startActivity(intent);
                 }
             }
@@ -145,7 +186,7 @@ public class FreeClassroomActivity extends BaseActivityIncludingFooterNavigation
 
     private void  createPopWindow(final List<String> itemToSelect, final TextView textViewToChange){
         View view = LayoutInflater.from(this).inflate(R.layout.popup_window, null);
-        pop  = new PopupWindow(view, LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT,false);
+        pop  = new PopupWindow(view, 250,LinearLayout.LayoutParams.WRAP_CONTENT,false);
         pop.setBackgroundDrawable(new BitmapDrawable());
         //设置点击窗口外边窗口消失
         pop.setOutsideTouchable(true);
@@ -162,6 +203,6 @@ public class FreeClassroomActivity extends BaseActivityIncludingFooterNavigation
                 pop.dismiss();
             }
         });
-        pop.showAsDropDown(textViewToChange);
+        pop.showAsDropDown(textViewToChange,0,20);
     }
 }

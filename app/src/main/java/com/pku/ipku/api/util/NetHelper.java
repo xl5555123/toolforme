@@ -127,9 +127,9 @@ public class NetHelper {
         return result;
     }
 
-    public static String getMd5WithKey(String toSign) {
+    public static String getMd5WithKey(String toSign, String key) {
         String result = null;
-        String toSign2 = String.format("%s%s", toSign, APP_KEY);
+        String toSign2 = String.format("%s%s", toSign, key);
         try {
             MessageDigest messageDigest = MessageDigest.getInstance("MD5");
             messageDigest.update(toSign2.getBytes());
