@@ -110,10 +110,10 @@ public class LoginActivity extends Activity {
             result.setProperty("uid", users[0].getUsername());
             result.setProperty("password", users[0].getPassword());
             String content = null;
-            result.setProperty("range", "1");
+            result.setProperty("range", "0");
             Ipgw ipgw = new Ipgw(result);
             content = ipgw.connect();
-            if (content.contains("网络连接成功") ||content.contains("免登录帐号的地址"))
+            if (content.contains("网络连接成功") ||content.contains("免登录帐号的地址")||content.contains("免费包月时长已经用完")||content.contains("当前连接数超过预定值"))
                 return users[0];
             return null;
         }

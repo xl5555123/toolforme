@@ -113,13 +113,15 @@ public class Ipgw {
             String str = html.toString();
             Log.v("liuyi", str);
             if (str.contains("超过预定值"))
-                return "当前连接超过预定值";
+                return "当前连接数超过预定值";
             else if (str.contains("口令错误"))
                 return "密码错误";
             else if (str.contains("账户名错"))
                 return "账户名错";
             else if(str.contains("免登录帐号的地址"))
                 return "免登录帐号的地址";
+            else if(str.contains("免费包月时长已经用完"))
+                return "免费包月时长已经用完";
             else
                 return removeAllHtmlTags(parseHtml(html.toString()));
         } catch (HttpException e) {
