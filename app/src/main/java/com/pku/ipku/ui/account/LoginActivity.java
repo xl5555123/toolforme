@@ -113,7 +113,7 @@ public class LoginActivity extends Activity {
             result.setProperty("range", "1");
             Ipgw ipgw = new Ipgw(result);
             content = ipgw.connect();
-            if (content.indexOf("网络连接成功") >= 0)
+            if (content.contains("网络连接成功") ||content.contains("免登录帐号的地址"))
                 return users[0];
             return null;
         }

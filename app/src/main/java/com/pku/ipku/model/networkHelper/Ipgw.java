@@ -1,5 +1,7 @@
 package com.pku.ipku.model.networkHelper;
 
+import android.util.Log;
+
 import com.pku.ipku.util.MyProtocolSocketFactory;
 
 import org.apache.commons.httpclient.HttpClient;
@@ -109,12 +111,15 @@ public class Ipgw {
 
             //	return html.toString();
             String str = html.toString();
+            Log.v("liuyi", str);
             if (str.contains("超过预定值"))
                 return "当前连接超过预定值";
             else if (str.contains("口令错误"))
                 return "密码错误";
             else if (str.contains("账户名错"))
                 return "账户名错";
+            else if(str.contains("免登录帐号的地址"))
+                return "免登录帐号的地址";
             else
                 return removeAllHtmlTags(parseHtml(html.toString()));
         } catch (HttpException e) {

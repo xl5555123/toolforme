@@ -6,13 +6,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
+import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
-import com.google.common.collect.Lists;
 import com.pku.ipku.R;
 import com.pku.ipku.adapter.pkuInfo.SelectAdapter;
 import com.pku.ipku.model.person.navigation.RegisterInPersonPage;
@@ -66,13 +65,8 @@ public class FreeClassroomActivity extends BaseActivityIncludingFooterNavigation
     };
 
     private TextView buildingsName;
-    private TextView timeList;
 
-    private ArrayList<String> seletedBuidings;
-    private List<String> selectedTime;
-
-    private List<Integer> seletedBuidingPositions;
-    private ArrayList<Integer> selectedTimePositions;
+    private String seletedBuiding;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -87,41 +81,24 @@ public class FreeClassroomActivity extends BaseActivityIncludingFooterNavigation
 
     private void initView() {
         buildingsName = (TextView) findViewById(R.id.buidings_name);
-        timeList = (TextView) findViewById(R.id.times_list);
-        seletedBuidings = Lists.newArrayList();
-        selectedTime = Lists.newArrayList();
-        seletedBuidingPositions = Lists.newArrayList();
-        selectedTimePositions = Lists.newArrayList();
 
         findViewById(R.id.buidings).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //DialogFragment dialogFragment = new SelectDialogFragment("选择想要去的教学楼", buildingNames, buildingsName, seletedBuidings, seletedBuidingPositions);
                 //dialogFragment.show(getFragmentManager(), "buidings");
-                createPopWindow(buildingNames, buildingsName, seletedBuidings, seletedBuidingPositions);
-            }
-        });
-        findViewById(R.id.times).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //DialogFragment dialogFragment = new SelectDialogFragment("选择想要自习的时间", timeSelector, timeList, selectedTime, selectedTimePositions);
-                //dialogFragment.show(getFragmentManager(), "buidings");
-                createPopWindow(timeSelector, timeList, selectedTime, selectedTimePositions);
+                createPopWindow(buildingNames, buildingsName);
             }
         });
         findViewById(R.id.search).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (seletedBuidings == null || seletedBuidings.size() == 0) {
+                if (seletedBuiding == null || seletedBuiding.equals("")) {
                     UIHelper.ToastMessage("请选择自习教室");
-                    return;
-                } else if (selectedTimePositions == null || selectedTimePositions.size() == 0) {
-                    UIHelper.ToastMessage("请选择时间");
                     return;
                 } else {
                     Intent intent = new Intent(FreeClassroomActivity.this, FreeClassRoomInAnBuilding.class);
-                    intent.putStringArrayListExtra("buildings", seletedBuidings);
-                    intent.putIntegerArrayListExtra("selectedTime", selectedTimePositions);
+                    intent.putExtra("buildings", seletedBuiding);
                     startActivity(intent);
                 }
             }
@@ -166,7 +143,7 @@ public class FreeClassroomActivity extends BaseActivityIncludingFooterNavigation
 
     }
 
-    private void  createPopWindow(final List<String> itemToSelect, final TextView textViewToChange, final List<String> result, final List<Integer> postionResult){
+    private void  createPopWindow(final List<String> itemToSelect, final TextView textViewToChange){
         View view = LayoutInflater.from(this).inflate(R.layout.popup_window, null);
         pop  = new PopupWindow(view, LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT,false);
         pop.setBackgroundDrawable(new BitmapDrawable());
@@ -177,27 +154,11 @@ public class FreeClassroomActivity extends BaseActivityIncludingFooterNavigation
         final ListView content_lv = (ListView) view.findViewById(R.id.content_lv);
         final SelectAdapter selectAdapter = new SelectAdapter(this, itemToSelect);
         content_lv.setAdapter(selectAdapter);
-        Button cancel_bt = (Button) view.findViewById(R.id.cancel_bt);
-        Button ok_bt = (Button) view.findViewById(R.id.ok_bt);
-        cancel_bt.setOnClickListener(new View.OnClickListener() {
+        content_lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View v) {
-                pop.dismiss();
-            }
-        });
-        ok_bt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                StringBuilder builder = new StringBuilder();
-                for (int i = 0; i < itemToSelect.size(); i++) {
-                    if (selectAdapter.mChecked.get(i)) {
-                        builder.append(itemToSelect.get(i));
-                        builder.append(" ");
-                        result.add(itemToSelect.get(i));
-                        postionResult.add(i + 1);
-                    }
-                }
-                textViewToChange.setText(builder.toString());
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                seletedBuiding = itemToSelect.get(position);
+                textViewToChange.setText(seletedBuiding);
                 pop.dismiss();
             }
         });

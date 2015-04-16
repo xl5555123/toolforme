@@ -3,30 +3,8 @@
     android:layout_width="wrap_content"
     android:background="@drawable/arc_bg"
     android:layout_height="wrap_content">
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/op"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="10dp">
-        <Button android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="取消"
-            android:background="@drawable/arc_button_small"
-            android:id="@+id/cancel_bt"
-            android:textColor="@color/white"
-            android:layout_alignParentLeft="true"/>
-        <Button android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="确定"
-            android:textColor="@color/white"
-            android:background="@drawable/arc_button_small"
-            android:id="@+id/ok_bt"
-            android:layout_alignParentRight="true"/>
-    </RelativeLayout>
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/op"
         android:id="@+id/content_lv"></ListView>
 </RelativeLayout>
