@@ -5,12 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.pku.ipku.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -18,15 +16,10 @@ import java.util.List;
  */
 public class SelectAdapter extends BaseAdapter {
     List<String> itemToSelect;
-    public List<Boolean> mChecked;
     Context context;
     public SelectAdapter(Context context, List<String> itemToSelect){
         this.context = context;
         this.itemToSelect = itemToSelect;
-        mChecked = new ArrayList<Boolean>();
-        for(int i=0;i<itemToSelect.size();i++){
-            mChecked.add(false);
-        }
     }
     @Override
     public int getCount() {
@@ -47,16 +40,6 @@ public class SelectAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         convertView = LayoutInflater.from(context).inflate(R.layout.select_item,null);
         TextView content = (TextView)convertView.findViewById(R.id.select_content_tv);
-        CheckBox cb = (CheckBox) convertView.findViewById(R.id.check_cb);
-        final int p = position;
-        cb.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                CheckBox cb = (CheckBox)v;
-                mChecked.set(p, cb.isChecked());
-            }
-        });
         content.setText(itemToSelect.get(position));
         return convertView;
     }

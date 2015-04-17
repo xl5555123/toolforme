@@ -21,19 +21,18 @@
                 android:layout_marginLeft="20dp"
                 android:gravity="center_horizontal"
                 android:text="账户名:"
-                android:textColor="#965801"
+                android:textColor="@color/black"
                 android:textSize="18sp" />
 
             <EditText
                 android:id="@+id/network_uid"
                 android:layout_width="fill_parent"
-                android:layout_height="55dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="11dp"
                 android:layout_marginRight="11dp"
-                android:background="@drawable/network_edit_bg"
+                android:background="@drawable/arc_bg_small"
                 android:gravity="left"
                 android:paddingLeft="10dp"
-                android:paddingTop="3dp"
                 android:textSize="24sp" />
         </LinearLayout>
 
@@ -48,21 +47,20 @@
                 android:layout_marginLeft="20dp"
                 android:gravity="center_horizontal"
                 android:text="   密码: "
-                android:textColor="#965801"
+                android:textColor="@color/black"
                 android:textSize="18sp" />
 
             <EditText
                 android:id="@+id/network_pwd"
                 android:layout_width="fill_parent"
-                android:layout_height="55dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="11dp"
                 android:layout_marginRight="11dp"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/network_edit_bg"
+                android:background="@drawable/arc_bg_small"
                 android:gravity="left"
                 android:inputType="textPassword"
                 android:paddingLeft="10dp"
-                android:paddingTop="3dp"
                 android:textSize="24sp" />
         </LinearLayout>
         >
@@ -81,7 +79,7 @@
                 android:gravity="center_horizontal"
                 android:layout_centerVertical="true"
                 android:text="访问收费地址:"
-                android:textColor="#965801"
+                android:textColor="@color/black"
                 android:id="@+id/visit_tv"
                 android:textSize="18sp" />
 
@@ -162,7 +160,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="5dp"
-        android:background="@drawable/reply_edit_bg"
+        android:background="@drawable/arc_bg"
         android:inputType="textMultiLine"
         android:ellipsize="marquee"
         android:marqueeRepeatLimit="marquee_forever"

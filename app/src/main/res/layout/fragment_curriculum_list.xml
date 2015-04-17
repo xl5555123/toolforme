@@ -3,6 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/curriculum_container"
+    android:gravity="center"
+    android:paddingTop="50dp"
+    android:paddingBottom="20dp"
     tools:context="com.pku.ipku.ui.pkuInfo.CurriculumListFragment">
 
     <TextView

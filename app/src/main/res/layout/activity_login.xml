@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/login"
     android:gravity="center_vertical"
-    android:paddingTop="150dp"
+    android:paddingTop="70dp"
     tools:context="com.pku.ipku.ui.account.LoginActivity">
 
     <Button

@@ -1,8 +1,5 @@
 package com.pku.ipku.ui.person.arrearageState;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -17,11 +14,9 @@ import com.pku.ipku.task.LoadDataConfigure;
 import com.pku.ipku.task.LoadDataDefaultTask;
 import com.pku.ipku.task.Result;
 import com.pku.ipku.util.AppContextHolder;
-import com.pku.ipku.util.UIHelper;
 
 public class ArrearageStateFragment extends Fragment {
 
-    private TextView libraryFeeTextView;
     private TextView netBalanceTextView;
     private TextView schhoolCardTextView;
 
@@ -54,7 +49,6 @@ public class ArrearageStateFragment extends Fragment {
     }
 
     private void initView(View view) {
-        libraryFeeTextView = (TextView) view.findViewById(R.id.library_fee);
         netBalanceTextView = (TextView) view.findViewById(R.id.net_balance);
         schhoolCardTextView = (TextView) view.findViewById(R.id.campus_card_balance);
     }
@@ -63,7 +57,6 @@ public class ArrearageStateFragment extends Fragment {
         new LoadDataDefaultTask(new LoadDataConfigure() {
             @Override
             public void showData() {
-                libraryFeeTextView.setText(Double.toString(arrearageStateDTO.getLibraryFee()));
                 schhoolCardTextView.setText(Double.toString(arrearageStateDTO.getSchoolCardBalance()));
                 netBalanceTextView.setText(Double.toString(arrearageStateDTO.getNetBalance()));
             }

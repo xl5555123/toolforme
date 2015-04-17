@@ -51,7 +51,7 @@ public class PkuLectureAdapter extends BaseAdapter {
         subject.setText(pkuPublicInfo.getTitle());
 
         TextView date = (TextView) convertView.findViewById(R.id.date_of_lecture);
-        date.setText(pkuPublicInfo.getPubDate());
+        date.setText(pkuPublicInfo.getPubDate().substring(11));
 
         convertView.setTag(pkuPublicInfo.getLink());
         return convertView;
