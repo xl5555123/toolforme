@@ -43,6 +43,7 @@ public class LoginActivity extends Activity {
     private EditText passwordTextView;
 
     private Button loginButton;
+    String res="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +75,7 @@ public class LoginActivity extends Activity {
             Toast.makeText(this, "请先连上wifi!", Toast.LENGTH_SHORT).show();
             return;
         }
-        new LoginTask().execute(user);
+        new LoginTaskByIAAA().execute(user);
     }
 
     @Override
@@ -96,6 +97,18 @@ public class LoginActivity extends Activity {
         return super.dispatchKeyEvent(event);
     }
 
+    public String bytes2HexString(byte[] b)    //byte转换为十六进制
+    {
+        String ret = "";
+        for (int i = 0; i < b.length; i++) {
+            String hex = Integer.toHexString(b[i]& 0xFF);
+            if (hex.length() == 1) {
+                hex = '0' + hex;
+            }
+            ret += hex.toUpperCase();
+        }
+        return ret;
+    }
 
     private class LoginTask extends AsyncTask<User, Void, User> {
 
@@ -116,6 +129,9 @@ public class LoginActivity extends Activity {
                 return users[0];
             return null;
         }
+
+
+
 
         @Override
         protected void onPostExecute(User user) {
@@ -153,7 +169,8 @@ public class LoginActivity extends Activity {
             soapObject.addProperty("userID", user_test.getUsername());
             soapObject.addProperty("password", user_test.getPassword());
             soapObject.addProperty("appID", "portalApp");
-            String md5d = NetHelper.getMd5WithKey(user_test.getUsername(), "118607A0BC765262E0530100007F3E41");
+            String tmp = user_test.getUsername() + "7696baa1fa4ed9679441764a271e556e";
+            String md5d = NetHelper.getMd5WithKey(user_test.getUsername(), "7696baa1fa4ed9679441764a271e556e").toLowerCase();
             Log.v("liuyi", user_test.getUsername() +" " + user_test.getPassword() + " " + md5d);
             soapObject.addProperty("messageAbstract", md5d);
             soapObject.addProperty("clientIP", getLocalHostIp());
@@ -178,11 +195,11 @@ public class LoginActivity extends Activity {
 
             SoapObject sb = (SoapObject) envelope.bodyIn;
             String xmlMessage = sb.getProperty(0).toString(); // 获取从服务器端返回的XML字符串
-            Log.v("liuyi", "前方高能！");
-            Log.v("liuyi", xmlMessage);
-
-            if (!access)
+//            Log.v("liuyi", "前方高能！");
+//            Log.v("liuyi", xmlMessage);
+            if (xmlMessage.contains("Status=0"))
                 return users[0];
+            res = xmlMessage;
             return null;
         }
 
@@ -195,7 +212,8 @@ public class LoginActivity extends Activity {
                 startActivity(intent);
                 finish();
             } else {
-                UIHelper.ToastMessage("账户密码不匹配，请重新输入后再登录");
+                //UIHelper.ToastMessage("账户密码不匹配，请重新输入后再登录");
+                UIHelper.ToastMessage(res.substring(res.indexOf("{")+1,res.indexOf("}")));
             }
         }
 
@@ -232,4 +250,6 @@ public class LoginActivity extends Activity {
         }
 
     }
+
+
 }
