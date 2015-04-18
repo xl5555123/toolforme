@@ -85,7 +85,8 @@ public class PkuPublicInfoWithoutPagingFragment extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String url = (String) view.getTag();
+                PubInfo pubInfo = (PubInfo) view.getTag();
+                String url = pubInfo.getLink();
                 if (url != null) {
                     /*
                     Intent intent = new Intent(getActivity(), WebViewActivity.class);

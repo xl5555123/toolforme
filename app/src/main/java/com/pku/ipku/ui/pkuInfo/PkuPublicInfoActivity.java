@@ -15,7 +15,6 @@ import com.pku.ipku.adapter.pkuInfo.PkuPublicAdapter;
 import com.pku.ipku.api.factory.IpkuServiceFactory;
 import com.pku.ipku.model.PubInfo;
 import com.pku.ipku.model.pkuInfo.PkuInfoType;
-import com.pku.ipku.model.pkuInfo.dto.PkuPublicInfo;
 import com.pku.ipku.task.LoadDataConfigure;
 import com.pku.ipku.task.LoadDataDefaultTask;
 import com.pku.ipku.task.Result;
@@ -62,8 +61,8 @@ public class PkuPublicInfoActivity extends BaseActivityIncludingFooterNavigation
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                PkuPublicInfo pkuPublicInfo = (PkuPublicInfo) view.getTag();
-                String url = (String) pkuPublicInfo.getLink();
+                PubInfo pubInfo = (PubInfo) view.getTag();
+                String url = pubInfo.getLink();
                 if (url != null) {
                     Intent intent = new Intent(PkuPublicInfoActivity.this, WebViewActivity.class);
                     intent.putExtra("url", url);
