@@ -15,7 +15,7 @@ import android.widget.ListView;
 import com.pku.ipku.R;
 import com.pku.ipku.adapter.pkuInfo.PkuLectureAdapter;
 import com.pku.ipku.api.factory.IpkuServiceFactory;
-import com.pku.ipku.model.pkuInfo.dto.PkuPublicInfo;
+import com.pku.ipku.model.PubInfo;
 import com.pku.ipku.util.UIHelper;
 
 import java.util.ArrayList;
@@ -31,7 +31,7 @@ import java.util.List;
 public class PkuLectureFragment extends Fragment {
 
     private ListView listView;
-    private List<PkuPublicInfo> pkuPublicInfoList = new ArrayList<PkuPublicInfo>();
+    private List<PubInfo> pkuPublicInfoList = new ArrayList<PubInfo>();
     private Calendar currentDateToLoad;
     private Activity activity;
 
@@ -55,7 +55,6 @@ public class PkuLectureFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_pku_lecture2, container, false);
         currentDateToLoad = Calendar.getInstance();
         currentDateToLoad.setTime(new Date());
-        currentDateToLoad.add(Calendar.DATE, 1);
         initView(view);
         new GetMoreDataTask().execute();
         return view;
@@ -77,27 +76,16 @@ public class PkuLectureFragment extends Fragment {
     }
 
 
-    private class GetMoreDataTask extends AsyncTask<Void, Void, List<PkuPublicInfo>> {
+    private class GetMoreDataTask extends AsyncTask<Void, Void, List<PubInfo>> {
 
         @Override
-        protected List<PkuPublicInfo> doInBackground(Void... params) {
-
-            currentDateToLoad.add(Calendar.DATE, -1);
-            List<PkuPublicInfo> result = IpkuServiceFactory.getPkuInfoService(false).getPkuLecture(currentDateToLoad);
-            while (result == null || result.size() == 0) {
-                currentDateToLoad.add(Calendar.DATE, -1);
-                try {
-                    result = IpkuServiceFactory.getPkuInfoService(false).getPkuLecture(currentDateToLoad);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    return result;
-                }
-            }
+        protected List<PubInfo> doInBackground(Void... params) {
+            List<PubInfo> result = IpkuServiceFactory.getPkuInfoService(false).getPkuLecture(currentDateToLoad);
             return result;
         }
 
         @Override
-        protected void onPostExecute(List<PkuPublicInfo> result) {
+        protected void onPostExecute(List<PubInfo> result) {
             if (result != null) {
                 //noResult.setVisibility(View.GONE);
                 pkuPublicInfoList = result;

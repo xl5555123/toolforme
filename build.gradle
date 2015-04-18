@@ -3,6 +3,7 @@
 buildscript {
     repositories {
         mavenLocal()
+        jcenter()
         maven { url "http://dl.bintray.com/populov/maven" }
         mavenCentral()
     }
@@ -17,6 +18,7 @@ buildscript {
 allprojects {
     repositories {
         mavenLocal()
+        jcenter()
         maven { url "http://jzaccone.github.io/SlidingMenu-aar" }
         maven { url "http://dl.bintray.com/populov/maven" }
         mavenCentral()

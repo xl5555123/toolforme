@@ -5,17 +5,18 @@ import com.pku.ipku.api.PkuInfoService;
 import com.pku.ipku.api.mock.pkuInfo.MockPkuClubActivityList;
 import com.pku.ipku.api.mock.pkuInfo.MockPkuJob;
 import com.pku.ipku.api.util.NetHelper;
+import com.pku.ipku.model.PubInfo;
 import com.pku.ipku.model.pkuInfo.PkuInfoType;
 import com.pku.ipku.model.pkuInfo.dto.PkuClubDTO;
 import com.pku.ipku.model.pkuInfo.dto.PkuJobDTO;
 import com.pku.ipku.model.pkuInfo.dto.PkuPublicInfo;
+import com.pku.ipku.util.DaoHelper;
+import com.pku.ipku.util.DataHandleUtil;
 
 import org.springframework.web.client.RestClientException;
 
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
-import java.util.Random;
 
 /**
  * Created by XingLiang on 2015/1/6.
@@ -24,7 +25,7 @@ public class PkuInfoServiceNetImpl implements PkuInfoService {
 
 
     @Override
-    public List<PkuPublicInfo> getPkuPublicNotice(PkuInfoType pkuInfoType, Integer page) throws RestClientException {
+    public List<PubInfo> getPkuPublicNotice(PkuInfoType pkuInfoType, Integer page) throws RestClientException {
 
         if (pkuInfoType.isPAGED_CAREER_RECRUITS()) {
             return getPkuCareer(page);
@@ -47,56 +48,78 @@ public class PkuInfoServiceNetImpl implements PkuInfoService {
     }
 
     @Override
-    public List<PkuPublicInfo> getPkuLecture(Calendar calendar) throws RestClientException {
+    public List<PubInfo> getPkuLecture(Calendar calendar) throws RestClientException {
         String pkuLectureUrl = String.format(LECTURE_URI, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH) + 1, calendar.get(Calendar.DAY_OF_MONTH));
         PkuPublicInfo[] result = NetHelper.getForObject(pkuLectureUrl, PkuPublicInfo[].class);
+        List<PubInfo> resultList = null;
         if (result == null || result.length == 0) {
-            return Lists.newArrayList();
+            resultList = Lists.newArrayList();
         }
-        return Lists.newArrayList(result);
+        else {
+            resultList = DataHandleUtil.PubArrayToList(result);
+        }
+        String key = String.format("lecture%s", pkuLectureUrl);
+        DaoHelper.saveData(key, result);
+
+        return resultList;
     }
 
     @Override
-    public List<PkuPublicInfo> getPkuNotices() throws RestClientException {
-        return Lists.newArrayList(NetHelper.getForObject(RECENT_SCHOOL_NEWS_URI, PkuPublicInfo[].class));
+    public void collect(PubInfo pkuPublicInfo, PkuInfoType pkuInfoType) {
+
     }
 
     @Override
-    public List<PkuPublicInfo> getPkuTrends() throws RestClientException {
-        return Lists.newArrayList(NetHelper.getForObject(RECENT_SCHOOL_NOTICES_URI, PkuPublicInfo[].class));
+    public void unCollect(PubInfo pkuPublicInfo, PkuInfoType pkuInfoType) {
+
     }
 
     @Override
-    public List<PkuPublicInfo> getPkuNews() throws RestClientException {
-        return Lists.newArrayList(NetHelper.getForObject(TOP_NEWS_URI, PkuPublicInfo[].class));
+    public List<PubInfo> getCollected(PkuInfoType pkuInfoType) {
+        return null;
     }
 
     @Override
-    public List<PkuPublicInfo> getPkuApartmentNotice() throws RestClientException {
-        return Lists.newArrayList(NetHelper.getForObject(RECENT_DEPT_NOTICES_URI, PkuPublicInfo[].class));
+    public List<PubInfo> getPkuNotices() throws RestClientException {
+        return DataHandleUtil.PubArrayToList(NetHelper.getForObject(RECENT_SCHOOL_NEWS_URI, PkuPublicInfo[].class));
     }
 
     @Override
-    public List<PkuPublicInfo> getPkuLectures() throws RestClientException {
-        return Lists.newArrayList(NetHelper.getForObject(TOP_LECTURES_URI, PkuPublicInfo[].class));
+    public List<PubInfo> getPkuTrends() throws RestClientException {
+        return DataHandleUtil.PubArrayToList(NetHelper.getForObject(RECENT_SCHOOL_NOTICES_URI, PkuPublicInfo[].class));
     }
 
     @Override
-    public List<PkuPublicInfo> getPkuCareer(int page) throws RestClientException {
+    public List<PubInfo> getPkuNews() throws RestClientException {
+        return DataHandleUtil.PubArrayToList(NetHelper.getForObject(TOP_NEWS_URI, PkuPublicInfo[].class));
+    }
+
+    @Override
+    public List<PubInfo> getPkuApartmentNotice() throws RestClientException {
+        return DataHandleUtil.PubArrayToList(NetHelper.getForObject(RECENT_DEPT_NOTICES_URI, PkuPublicInfo[].class));
+    }
+
+    @Override
+    public List<PubInfo> getPkuLectures() throws RestClientException {
+        return DataHandleUtil.PubArrayToList(NetHelper.getForObject(TOP_LECTURES_URI, PkuPublicInfo[].class));
+    }
+
+    @Override
+    public List<PubInfo> getPkuCareer(int page) throws RestClientException {
         String uri = String.format(PAGED_CAREER_RECRUITS_URI, page);
-        return Lists.newArrayList(NetHelper.getForObject(uri, PkuPublicInfo[].class));
+        return DataHandleUtil.PubArrayToList(NetHelper.getForObject(uri, PkuPublicInfo[].class));
     }
 
     @Override
-    public List<PkuPublicInfo> getPkuCareerInterns(int page) throws RestClientException {
+    public List<PubInfo> getPkuCareerInterns(int page) throws RestClientException {
         String uri = String.format(PAGED_CAREER_INTERNS_URI, page);
-        return Lists.newArrayList(NetHelper.getForObject(uri, PkuPublicInfo[].class));
+        return DataHandleUtil.PubArrayToList(NetHelper.getForObject(uri, PkuPublicInfo[].class));
     }
 
     @Override
-    public List<PkuPublicInfo> getPkuCareerPropa(int page) throws RestClientException {
+    public List<PubInfo> getPkuCareerPropa(int page) throws RestClientException {
         String uri = String.format(PAGED_CAREER_PROPA_URI, page);
-        return Lists.newArrayList(NetHelper.getForObject(uri, PkuPublicInfo[].class));
+        return DataHandleUtil.PubArrayToList(NetHelper.getForObject(uri, PkuPublicInfo[].class));
     }
 
     public List<PkuClubDTO> getPkuClubActivities() {
