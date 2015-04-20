@@ -5,7 +5,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AbsListView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.TextView;
@@ -47,15 +46,15 @@ public class FreeClassAdapter extends BaseAdapter{
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        Log.v("liuyi",position+"");
+        //Log.v("liuyi",position+"");
         ViewHolder holder;
         if (convertView==null) {
             holder=new ViewHolder();
             convertView= LayoutInflater.from(context).inflate(R.layout.free_classroom_item, null);
-            AbsListView.LayoutParams param = new AbsListView.LayoutParams(
-                    android.view.ViewGroup.LayoutParams.FILL_PARENT,
-                    gv.getHeight()/(len+1));
-            convertView.setLayoutParams(param);
+//            AbsListView.LayoutParams param = new AbsListView.LayoutParams(
+//                    android.view.ViewGroup.LayoutParams.FILL_PARENT,
+//                    gv.getHeight()/(len+1));
+//            convertView.setLayoutParams(param);
             holder.tv=(TextView) convertView.findViewById(R.id.block);
             convertView.setTag(holder);
         }
@@ -88,17 +87,11 @@ public class FreeClassAdapter extends BaseAdapter{
                 holder.tv.setText(classRoomName);
                 holder.tv.setBackgroundResource(R.drawable.border);
             }else{
-                if(info.equals("")){
-
-                }else{
-
-                }
-
-                if(off%2==0){
-                    holder.tv.setBackgroundResource(R.drawable.border);
-                    holder.tv.setText("");
-                }else {
+                if(info!=null&&info.equals("占用")){
                     holder.tv.setBackgroundResource(R.drawable.border_filled);
+                    holder.tv.setText("");
+                }else{
+                    holder.tv.setBackgroundResource(R.drawable.border);
                     holder.tv.setText("");
                 }
             }

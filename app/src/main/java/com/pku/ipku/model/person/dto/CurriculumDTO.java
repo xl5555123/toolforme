@@ -17,6 +17,10 @@ public class CurriculumDTO implements Parcelable {
     String parity;
     String detailTime;
     int classCount;
+    public int start_hour = 0;
+    public int start_min = 0;
+    public int end_hour = 0;
+    public int end_min = 0;
 
     public static String timeNums[] = {"第一节", "第二节", "第三节", "第四节", "第五节", "第六节", "第七节", "第八节", "第九节", "第十节", "十一节", "第十二节"};
     public static Vector<Pair<String, String>> classTime = new Vector<Pair<String, String>>();
@@ -70,8 +74,12 @@ public class CurriculumDTO implements Parcelable {
             if (this.timeNum.indexOf(timeNums[i]) >= 0) {
                 String begin = classTime.get(i).first;
                 String end = classTime.get(i + classCount - 1).second;
+                start_hour = Integer.parseInt(begin.substring(0,begin.indexOf(":")));
+                start_min = Integer.parseInt(begin.substring(begin.indexOf(":")+1));
+                end_hour = Integer.parseInt(end.substring(0,end.indexOf(":")));
+                end_min = Integer.parseInt(end.substring(end.indexOf(":")+1));
                 this.timeNum = timeNums[i] + " - " + timeNums[i + classCount - 1];
-                detailTime = begin + " - " + end;
+                detailTime = begin + "-" + end;
                 break;
             }
         }

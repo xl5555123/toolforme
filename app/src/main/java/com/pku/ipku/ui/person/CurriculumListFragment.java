@@ -79,7 +79,7 @@ public class CurriculumListFragment extends Fragment {
             "  <body>";
 
     String weeks[] = {"mon", "tue", "wed", "thu", "fri", "sat", "sun"};
-    public List<ArrayList<CurriculumDTO>> coursesForWeek = new ArrayList<ArrayList<CurriculumDTO>>();
+    public static List<ArrayList<CurriculumDTO>> coursesForWeek = new ArrayList<ArrayList<CurriculumDTO>>();
 
     public CurriculumListFragment() {
         // Required empty public constructor
@@ -117,7 +117,7 @@ public class CurriculumListFragment extends Fragment {
         curriculum_lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getActivity(), CurriculumAsWebActivity.class);
+                Intent intent = new Intent(getActivity(), CurriculumWeekActivity.class);
                 intent.putExtra("todayInWeek", todayInWeek);
                 startActivity(intent);
             }
@@ -125,7 +125,8 @@ public class CurriculumListFragment extends Fragment {
         no_class_rl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), CurriculumAsWebActivity.class);
+                //Intent intent = new Intent(getActivity(), CurriculumAsWebActivity.class);
+                Intent intent = new Intent(getActivity(), CurriculumWeekActivity.class);
                 intent.putExtra("todayInWeek", todayInWeek);
                 startActivity(intent);
             }
@@ -156,6 +157,7 @@ public class CurriculumListFragment extends Fragment {
         for (int i = 0; i < 7; i++) {
             coursesForWeek.add(new ArrayList<CurriculumDTO>());
         }
+        Log.v("liuyi",url);
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(url, null,
                 new Response.Listener<JSONObject>() {
                     @Override
@@ -257,6 +259,7 @@ public class CurriculumListFragment extends Fragment {
                             curriculum_lv.setVisibility(View.VISIBLE);
                             no_class_rl.setVisibility(View.GONE);
                         }
+                        Log.v("liuyi", coursesForWeek.toString());
                     }
                 }, new Response.ErrorListener() {
             @Override
