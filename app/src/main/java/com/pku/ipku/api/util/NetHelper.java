@@ -2,6 +2,7 @@ package com.pku.ipku.api.util;
 
 import android.util.Log;
 
+import com.pku.ipku.model.networkHelper.Version;
 import com.pku.ipku.util.DaoHelper;
 
 import org.codehaus.jackson.map.DeserializationConfig;
@@ -111,6 +112,18 @@ public class NetHelper {
             DaoHelper.saveData(uri + userId, data);
         }
 
+        return data;
+    }
+
+    public static Version getVersion() {
+        String url = "http://fir.im/api/v2/app/version/54a216d223a60da3260071ca?token=0e473730754c11e486625ce46eebe0684d318702";
+        Log.d("http get", url);
+        Version data = null;
+        try {
+            data = restTemplate.getForObject(url, Version.class);
+        } catch (Exception e) {
+
+        }
         return data;
     }
 

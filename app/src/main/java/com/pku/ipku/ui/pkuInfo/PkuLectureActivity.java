@@ -1,9 +1,11 @@
 package com.pku.ipku.ui.pkuInfo;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 
@@ -11,9 +13,9 @@ import com.google.common.collect.Lists;
 import com.pku.ipku.R;
 import com.pku.ipku.adapter.pkuInfo.PkuPublicAdapter;
 import com.pku.ipku.api.factory.IpkuServiceFactory;
+import com.pku.ipku.model.PubInfo;
 import com.pku.ipku.model.person.navigation.RegisterInPersonPage;
-import com.pku.ipku.model.pkuInfo.RegisterInPkuInfoPage;
-import com.pku.ipku.model.pkuInfo.dto.PkuPublicInfo;
+import com.pku.ipku.model.pkuInfo.PkuInfoType;
 import com.pku.ipku.ui.util.BaseActivityIncludingFooterNavigation;
 import com.pku.ipku.ui.util.paging.PagingListView;
 import com.pku.ipku.util.AppContextHolder;
@@ -25,7 +27,7 @@ import java.util.List;
 
 public class PkuLectureActivity extends BaseActivityIncludingFooterNavigation implements RegisterInPersonPage {
 
-    private List<PkuPublicInfo> pkuPublicInfoList;
+    private List<PubInfo> datas;
 
     private Calendar currentDateToLoad;
 
@@ -47,13 +49,55 @@ public class PkuLectureActivity extends BaseActivityIncludingFooterNavigation im
         initView();
     }
 
+    //创建ContextMenu
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v,
+                                    ContextMenu.ContextMenuInfo menuInfo) {
+        if (v.getId() == R.id.list) {
+            MenuInflater inflater = getMenuInflater();
+            inflater.inflate(R.menu.pku_pub_context_menu, menu);
+        }
+        super.onCreateContextMenu(menu, v, menuInfo);
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        // 得到当前被选中的item信息
+        AdapterView.AdapterContextMenuInfo menuInfo = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+        View view = menuInfo.targetView;
+
+        PubInfo pkuPublicInfo = (PubInfo) view.getTag();
+        switch(item.getItemId()) {
+            case R.id.collect:
+                if (!pkuPublicInfo.isCollected()) {
+                    IpkuServiceFactory.getPkuInfoService(true).collect(pkuPublicInfo, new PkuInfoType("lecture"));
+                    PubInfo pubInfo = new PubInfo(pkuPublicInfo, true);
+                    adapter.addCollectData(pubInfo);
+                }
+                break;
+            case R.id.uncollect:
+                if (pkuPublicInfo.isCollected()) {
+                    IpkuServiceFactory.getPkuInfoService(true).unCollect(pkuPublicInfo, new PkuInfoType("lecture"));
+                    PubInfo pubInfo = new PubInfo(pkuPublicInfo, false);
+                    adapter.removeCollectData(pubInfo);
+                }
+            default:
+                return super.onContextItemSelected(item);
+        }
+        return super.onContextItemSelected(item);
+    }
+
 
     private void initView() {
+        datas = Lists.newLinkedList();
+        List<PubInfo> collectResult = IpkuServiceFactory.getPkuInfoService(true).getCollected(new PkuInfoType("lecture"));
+        datas.addAll(collectResult);
         listView = (PagingListView) findViewById(R.id.list);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String url = (String) view.getTag();
+                PubInfo pubInfo = (PubInfo) view.getTag();
+                String url = pubInfo.getLink();
                 if (url != null) {
                     /*
                     Intent intent = new Intent(PkuLectureActivity.this, WebViewActivity.class);
@@ -67,8 +111,7 @@ public class PkuLectureActivity extends BaseActivityIncludingFooterNavigation im
             }
         });
         currentDateToLoad.add(Calendar.DATE, 1);
-        pkuPublicInfoList = Lists.newArrayList();
-        adapter = new PkuPublicAdapter(AppContextHolder.getAppContext(), pkuPublicInfoList);
+        adapter = new PkuPublicAdapter(AppContextHolder.getAppContext(), datas);
         listView.setAdapter(adapter);
         listView.setHasMoreItems(true);
         listView.setPagingableListener(new PagingListView.Pagingable() {
@@ -77,6 +120,7 @@ public class PkuLectureActivity extends BaseActivityIncludingFooterNavigation im
                 new GetMoreDataTask().execute();
             }
         });
+        registerForContextMenu(listView);
     }
 
     @Override
@@ -99,12 +143,12 @@ public class PkuLectureActivity extends BaseActivityIncludingFooterNavigation im
         return PkuLectureActivity.class;
     }
 
-    private class GetMoreDataTask extends AsyncTask<Void, Void, List<PkuPublicInfo>> {
+    private class GetMoreDataTask extends AsyncTask<Void, Void, List<PubInfo>> {
 
         @Override
-        protected List<PkuPublicInfo> doInBackground(Void... params) {
+        protected List<PubInfo> doInBackground(Void... params) {
             currentDateToLoad.add(Calendar.DATE, -1);
-            List<PkuPublicInfo> result = IpkuServiceFactory.getPkuInfoService(false).getPkuLecture(currentDateToLoad);
+            List<PubInfo> result = IpkuServiceFactory.getPkuInfoService(false).getPkuLecture(currentDateToLoad);
             while (result == null || result.size() == 0) {
                 currentDateToLoad.add(Calendar.DATE, -1);
                 result = IpkuServiceFactory.getPkuInfoService(false).getPkuLecture(currentDateToLoad);
@@ -113,8 +157,8 @@ public class PkuLectureActivity extends BaseActivityIncludingFooterNavigation im
         }
 
         @Override
-        protected void onPostExecute(List<PkuPublicInfo> result) {
-            pkuPublicInfoList.addAll(result);
+        protected void onPostExecute(List<PubInfo> result) {
+            adapter.addData(result);
             adapter.notifyDataSetChanged();
             listView.onFinishLoading(true, null);
         }

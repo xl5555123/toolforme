@@ -68,6 +68,7 @@ public class MainNavigationActivity extends FragmentActivity {
 
     private void initView() {
         viewPager = (ViewPager) findViewById(R.id.viewpager);
+        viewPager.setOffscreenPageLimit(3);
         fragmentManager = getSupportFragmentManager();
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override

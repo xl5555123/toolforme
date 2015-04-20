@@ -49,7 +49,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="46dp"
-                    android:background="@drawable/recharge_border"
+                    android:background="@color/back_background"
                     android:text="充值"
                     android:textColor="#020000"
                     android:textSize="17sp" />
@@ -98,6 +98,19 @@
                     android:textSize="55sp" />
 
             </RelativeLayout>
+
+            <Button
+                android:id="@+id/compute_alipay"
+                android:layout_width="67dp"
+                android:layout_height="26dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="46dp"
+                android:background="@color/back_background"
+                android:text="充值"
+                android:textColor="#020000"
+                android:textSize="17sp" />
+
         </RelativeLayout>
 
         <FrameLayout

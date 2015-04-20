@@ -1,12 +1,13 @@
 package com.pku.ipku.ui.pkuInfo;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -15,8 +16,8 @@ import com.google.common.collect.Lists;
 import com.pku.ipku.R;
 import com.pku.ipku.adapter.pkuInfo.PkuPublicAdapter;
 import com.pku.ipku.api.factory.IpkuServiceFactory;
+import com.pku.ipku.model.PubInfo;
 import com.pku.ipku.model.pkuInfo.PkuInfoType;
-import com.pku.ipku.model.pkuInfo.dto.PkuPublicInfo;
 import com.pku.ipku.ui.util.paging.PagingListView;
 import com.pku.ipku.util.AppContextHolder;
 import com.pku.ipku.util.UIHelper;
@@ -30,7 +31,7 @@ public class PkuPublicInfoWithPagingFragment extends Fragment {
 
     private PagingListView listView;
 
-    private List<PkuPublicInfo> pkuPublicInfoList;
+    private List<PubInfo> datas;
 
     private PkuPublicAdapter adapter;
 
@@ -64,8 +65,10 @@ public class PkuPublicInfoWithPagingFragment extends Fragment {
     }
 
     private void initView(View view) {
-        pkuPublicInfoList = Lists.newArrayList();
-        adapter = new PkuPublicAdapter(AppContextHolder.getAppContext(), pkuPublicInfoList);
+        datas = Lists.newLinkedList();
+        List<PubInfo> collectResult = IpkuServiceFactory.getPkuInfoService(true).getCollected(type);
+        datas.addAll(collectResult);
+        adapter = new PkuPublicAdapter(AppContextHolder.getAppContext(), datas);
         listView = (PagingListView) view.findViewById(R.id.list);
         listView.setAdapter(adapter);
         listView.setHasMoreItems(true);
@@ -78,7 +81,8 @@ public class PkuPublicInfoWithPagingFragment extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String url = (String) view.getTag();
+                PubInfo pubInfo = (PubInfo) view.getTag();
+                String url = pubInfo.getLink();
                 if (url != null) {
                     /*
                     Intent intent = new Intent(getActivity(), WebViewActivity.class);
@@ -91,14 +95,53 @@ public class PkuPublicInfoWithPagingFragment extends Fragment {
                 }
             }
         });
+        registerForContextMenu(listView);
     }
 
-    private class GetMoreDataTask extends AsyncTask<Void, Void, List<PkuPublicInfo>> {
+    //创建ContextMenu
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v,
+                                    ContextMenu.ContextMenuInfo menuInfo) {
+        if (v.getId() == R.id.list) {
+            MenuInflater inflater = getActivity().getMenuInflater();
+            inflater.inflate(R.menu.pku_pub_context_menu, menu);
+        }
+        super.onCreateContextMenu(menu, v, menuInfo);
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        // 得到当前被选中的item信息
+        AdapterView.AdapterContextMenuInfo menuInfo = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+        View view = menuInfo.targetView;
+
+        PubInfo pkuPublicInfo = (PubInfo) view.getTag();
+        switch(item.getItemId()) {
+            case R.id.collect:
+                if (!pkuPublicInfo.isCollected()) {
+                    IpkuServiceFactory.getPkuInfoService(true).collect(pkuPublicInfo, new PkuInfoType("lecture"));
+                    PubInfo pubInfo = new PubInfo(pkuPublicInfo, true);
+                    adapter.addCollectData(pubInfo);
+                }
+                break;
+            case R.id.uncollect:
+                if (pkuPublicInfo.isCollected()) {
+                    IpkuServiceFactory.getPkuInfoService(true).unCollect(pkuPublicInfo, new PkuInfoType("lecture"));
+                    PubInfo pubInfo = new PubInfo(pkuPublicInfo, false);
+                    adapter.removeCollectData(pubInfo);
+                }
+            default:
+                return super.onContextItemSelected(item);
+        }
+        return super.onContextItemSelected(item);
+    }
+
+    private class GetMoreDataTask extends AsyncTask<Void, Void, List<PubInfo>> {
 
         @Override
-        protected List<PkuPublicInfo> doInBackground(Void... params) {
+        protected List<PubInfo> doInBackground(Void... params) {
             try {
-                List<PkuPublicInfo> result = IpkuServiceFactory.getPkuInfoService(false).getPkuPublicNotice(type, 0);
+                List<PubInfo> result = IpkuServiceFactory.getPkuInfoService(false).getPkuPublicNotice(type, 0);
                 return result;
             } catch (Exception e) {
                 return null;
@@ -106,9 +149,9 @@ public class PkuPublicInfoWithPagingFragment extends Fragment {
         }
 
         @Override
-        protected void onPostExecute(List<PkuPublicInfo> result) {
+        protected void onPostExecute(List<PubInfo> result) {
             if (result != null) {
-                pkuPublicInfoList.addAll(result);
+                adapter.addData(result);
                 adapter.notifyDataSetChanged();
             }
             listView.onFinishLoading(true, null);

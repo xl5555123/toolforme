@@ -54,6 +54,17 @@ public class ArrearageStateActivity extends BaseActivityIncludingFooterNavigatio
                 startActivity(intent);
             }
         });
+        findViewById(R.id.compute_alipay).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UIHelper.ToastMessage("网关充值");
+                Intent intent = new Intent();
+                intent.setAction("android.intent.action.VIEW");
+                Uri url = Uri.parse("http://its.pku.edu.cn/payBank.html");
+                intent.setData(url);
+                startActivity(intent);
+            }
+        });
     }
 
     private void initData() {

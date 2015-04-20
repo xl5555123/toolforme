@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="72dp"
     android:descendantFocusability="blocksDescendants"
@@ -10,7 +10,7 @@
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="fill_parent"
         android:layout_gravity="center_vertical"
         android:layout_marginLeft="8dip"
         android:layout_marginRight="8dip"
@@ -37,7 +37,16 @@
             android:text="27分钟前"
             android:textColor="#999"
             android:textSize="14sp" />
-
     </LinearLayout>
 
-</LinearLayout> 
+    <ImageView
+        android:id="@+id/collected"
+        android:visibility="gone"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_centerVertical="true"
+        android:src="@drawable/pin"
+        android:layout_width="20dp"
+        android:layout_height="20dp" />
+
+</RelativeLayout>

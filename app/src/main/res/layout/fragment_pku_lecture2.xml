@@ -10,4 +10,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"></ListView>
 
+    <ProgressBar
+        android:id="@+id/progress"
+        style="?android:attr/progressBarStyleSmall"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
 </LinearLayout>

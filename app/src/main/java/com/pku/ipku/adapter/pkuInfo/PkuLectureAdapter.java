@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.pku.ipku.R;
+import com.pku.ipku.model.PubInfo;
 import com.pku.ipku.model.pkuInfo.dto.PkuPublicInfo;
 
 import java.util.List;
@@ -17,10 +18,10 @@ import java.util.List;
  */
 public class PkuLectureAdapter extends BaseAdapter {
 
-    private final List<PkuPublicInfo> pkuPublicInfoList;
+    private final List<PubInfo> pkuPublicInfoList;
     private final LayoutInflater listContainer;
 
-    public PkuLectureAdapter(Context context, List<PkuPublicInfo> pkuPublicInfoList) {
+    public PkuLectureAdapter(Context context, List<PubInfo> pkuPublicInfoList) {
         this.pkuPublicInfoList = pkuPublicInfoList;
         this.listContainer = LayoutInflater.from(context);
     }
