@@ -122,14 +122,14 @@ public class PkuPublicInfoWithoutPagingFragment extends Fragment {
         switch(item.getItemId()) {
             case R.id.collect:
                 if (!pkuPublicInfo.isCollected()) {
-                    IpkuServiceFactory.getPkuInfoService(true).collect(pkuPublicInfo, new PkuInfoType("lecture"));
+                    IpkuServiceFactory.getPkuInfoService(true).collect(pkuPublicInfo, type);
                     PubInfo pubInfo = new PubInfo(pkuPublicInfo, true);
                     adapter.addCollectData(pubInfo);
                 }
                 break;
             case R.id.uncollect:
                 if (pkuPublicInfo.isCollected()) {
-                    IpkuServiceFactory.getPkuInfoService(true).unCollect(pkuPublicInfo, new PkuInfoType("lecture"));
+                    IpkuServiceFactory.getPkuInfoService(true).unCollect(pkuPublicInfo, type);
                     PubInfo pubInfo = new PubInfo(pkuPublicInfo, false);
                     adapter.removeCollectData(pubInfo);
                 }

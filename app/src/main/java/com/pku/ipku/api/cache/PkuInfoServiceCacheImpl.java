@@ -71,6 +71,7 @@ public class PkuInfoServiceCacheImpl implements PkuInfoService {
                     iterator.remove();
                 }
             }
+            DaoHelper.saveData(key, result);
         }
     }
 

@@ -97,14 +97,14 @@ public class PkuPublicInfoActivity extends BaseActivityIncludingFooterNavigation
         switch(item.getItemId()) {
             case R.id.collect:
                 if (!pkuPublicInfo.isCollected()) {
-                    IpkuServiceFactory.getPkuInfoService(true).collect(pkuPublicInfo, new PkuInfoType("lecture"));
+                    IpkuServiceFactory.getPkuInfoService(true).collect(pkuPublicInfo, pkuInfoType);
                     PubInfo pubInfo = new PubInfo(pkuPublicInfo, true);
                     pkuPublicAdapter.addCollectData(pubInfo);
                 }
                 break;
             case R.id.uncollect:
                 if (pkuPublicInfo.isCollected()) {
-                    IpkuServiceFactory.getPkuInfoService(true).unCollect(pkuPublicInfo, new PkuInfoType("lecture"));
+                    IpkuServiceFactory.getPkuInfoService(true).unCollect(pkuPublicInfo, pkuInfoType);
                     PubInfo pubInfo = new PubInfo(pkuPublicInfo, false);
                     pkuPublicAdapter.removeCollectData(pubInfo);
                 }

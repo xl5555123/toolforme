@@ -131,7 +131,7 @@ public class SettingNavigationFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 LayoutInflater inflater = getActivity().getLayoutInflater();
-                /*
+
                 new AlertDialog.Builder(getActivity())
                         .setView(inflater.inflate(R.layout.suggestion, null))
                         .setTitle("提交意见")
@@ -146,7 +146,7 @@ public class SettingNavigationFragment extends Fragment {
 
                             }
                         }).create().show();
-                        */
+
                 Intent data = new Intent(Intent.ACTION_SENDTO);
                 data.setData(Uri.parse("mailto:dudong113@163.com"));
                 data.putExtra(Intent.EXTRA_SUBJECT, "掌上信息门户反馈意见");

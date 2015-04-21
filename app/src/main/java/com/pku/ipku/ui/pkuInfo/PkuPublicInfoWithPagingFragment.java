@@ -55,6 +55,8 @@ public class PkuPublicInfoWithPagingFragment extends Fragment {
         }
     }
 
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -102,10 +104,9 @@ public class PkuPublicInfoWithPagingFragment extends Fragment {
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v,
                                     ContextMenu.ContextMenuInfo menuInfo) {
-        if (v.getId() == R.id.list) {
-            MenuInflater inflater = getActivity().getMenuInflater();
-            inflater.inflate(R.menu.pku_pub_context_menu, menu);
-        }
+        MenuInflater inflater = getActivity().getMenuInflater();
+        inflater.inflate(R.menu.pku_pub_context_menu, menu);
+
         super.onCreateContextMenu(menu, v, menuInfo);
     }
 
@@ -119,14 +120,14 @@ public class PkuPublicInfoWithPagingFragment extends Fragment {
         switch(item.getItemId()) {
             case R.id.collect:
                 if (!pkuPublicInfo.isCollected()) {
-                    IpkuServiceFactory.getPkuInfoService(true).collect(pkuPublicInfo, new PkuInfoType("lecture"));
+                    IpkuServiceFactory.getPkuInfoService(true).collect(pkuPublicInfo, type);
                     PubInfo pubInfo = new PubInfo(pkuPublicInfo, true);
                     adapter.addCollectData(pubInfo);
                 }
                 break;
             case R.id.uncollect:
                 if (pkuPublicInfo.isCollected()) {
-                    IpkuServiceFactory.getPkuInfoService(true).unCollect(pkuPublicInfo, new PkuInfoType("lecture"));
+                    IpkuServiceFactory.getPkuInfoService(true).unCollect(pkuPublicInfo, type);
                     PubInfo pubInfo = new PubInfo(pkuPublicInfo, false);
                     adapter.removeCollectData(pubInfo);
                 }
