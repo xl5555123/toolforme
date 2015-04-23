@@ -30,6 +30,7 @@ public class FreeClassRoomInAnBuilding extends FragmentActivity {
     private GridView freeClassTable;
     Context context;
     JSONArray classrooms;
+    public static int GRID_ITEM = 30;
     FreeClassAdapter myAdapter;
 
     @Override
@@ -74,7 +75,7 @@ public class FreeClassRoomInAnBuilding extends FragmentActivity {
 //                    }catch(Exception e){
 //
 //                    }
-                    myAdapter = new FreeClassAdapter(context, classrooms,freeClassTable);
+                    myAdapter = new FreeClassAdapter(context, classrooms,freeClassTable, seletedBuiding);
                     freeClassTable.setAdapter(myAdapter);
 
                 }
@@ -86,13 +87,16 @@ public class FreeClassRoomInAnBuilding extends FragmentActivity {
                     progress.setVisibility(View.GONE);
                 }
                 classrooms = new JSONArray();
-                myAdapter = new FreeClassAdapter(context, classrooms,freeClassTable);
+                myAdapter = new FreeClassAdapter(context, classrooms,freeClassTable,seletedBuiding);
                 freeClassTable.setAdapter(myAdapter);
                 Log.i("liuyi", error.getMessage());
             }
         });
         mQueue.add(jsonArrayRequest);
     }
+
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

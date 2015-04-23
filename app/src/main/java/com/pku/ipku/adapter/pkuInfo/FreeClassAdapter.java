@@ -2,11 +2,14 @@ package com.pku.ipku.adapter.pkuInfo;
 
 import android.content.Context;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.pku.ipku.R;
@@ -22,11 +25,13 @@ public class FreeClassAdapter extends BaseAdapter{
     JSONArray classrooms;
     GridView gv;
     int len;
-    public FreeClassAdapter(Context context, JSONArray classrooms, GridView gv) {
+    String seletedBuiding;
+    public FreeClassAdapter(Context context, JSONArray classrooms, GridView gv, String seletedBuiding) {
         this.context = context;
         this.classrooms = classrooms;
         this.gv = gv;
         len = classrooms.length();
+        this.seletedBuiding = seletedBuiding;
     }
 
     @Override
@@ -56,11 +61,13 @@ public class FreeClassAdapter extends BaseAdapter{
 //                    gv.getHeight()/(len+1));
 //            convertView.setLayoutParams(param);
             holder.tv=(TextView) convertView.findViewById(R.id.block);
+            holder.wrap_ll = (LinearLayout) convertView.findViewById(R.id.wrap_ll);
             convertView.setTag(holder);
         }
         else {
             holder=(ViewHolder) convertView.getTag();
         }
+
         if(position==0) {
             holder.tv.setText("#");
             holder.tv.setBackgroundResource(R.drawable.border);
@@ -84,7 +91,7 @@ public class FreeClassAdapter extends BaseAdapter{
             }
             if(off==0){
                 Log.v("liuyi",classRoomName);
-                holder.tv.setText(classRoomName);
+                holder.tv.setText(classRoomName.replace(seletedBuiding, ""));
                 holder.tv.setBackgroundResource(R.drawable.border);
             }else{
                 if(info!=null&&info.equals("占用")){
@@ -99,6 +106,15 @@ public class FreeClassAdapter extends BaseAdapter{
         return convertView;
     }
     private class ViewHolder{
+        LinearLayout wrap_ll;
         TextView tv;
+    }
+
+
+
+    public void setHeight(View ll, int height) {
+        ll.setLayoutParams(new AbsListView.LayoutParams(AbsListView.LayoutParams.MATCH_PARENT, height,
+                Gravity.CENTER));
+
     }
 }
