@@ -2,21 +2,26 @@ package com.pku.ipku.ui.navigation;
 
 
 import android.app.AlertDialog;
-import android.net.Uri;
-import android.support.v4.app.Fragment;
+import android.app.DownloadManager;
+import android.app.ProgressDialog;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.database.Cursor;
+import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.pku.ipku.R;
-import com.pku.ipku.api.factory.IpkuServiceFactory;
-import com.pku.ipku.model.person.dto.ArrearageStateDTO;
-import com.pku.ipku.task.LoadDataConfigure;
-import com.pku.ipku.task.LoadDataDefaultTask;
-import com.pku.ipku.task.Result;
+import com.pku.ipku.api.util.NetHelper;
+import com.pku.ipku.model.networkHelper.Version;
 import com.pku.ipku.ui.account.LoginActivity;
 import com.pku.ipku.ui.account.NetworkHelperActivity;
 import com.pku.ipku.ui.person.CurriculumListFragment;
@@ -26,9 +31,13 @@ import com.pku.ipku.ui.setting.PhoneActivity;
 import com.pku.ipku.ui.setting.PkuMap;
 import com.pku.ipku.ui.util.WebViewActivity;
 import com.pku.ipku.util.AppContextHolder;
+import com.pku.ipku.util.SystemHelper;
 import com.pku.ipku.util.UIHelper;
 
 import org.json.JSONArray;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -38,6 +47,14 @@ import org.json.JSONArray;
 public class SettingNavigationFragment extends Fragment {
 
     public static SettingNavigationFragment fragment;
+
+    private AlertDialog updateNotificationDialog;
+
+    private ProgressDialog downloadProgressDialog;
+
+    private long apkDownloadReference;
+
+    private DownloadManager downloadManager;
 
     public SettingNavigationFragment() {
         // Required empty public constructor
@@ -164,46 +181,109 @@ public class SettingNavigationFragment extends Fragment {
         view.findViewById(R.id.update).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new LoadDataDefaultTask(new LoadDataConfigure() {
-                    @Override
-                    public void showData() {
-                        UIHelper.ToastMessage("当前为最新版本");
-                    }
-
-                    @Override
-                    public Result getData(boolean cache) throws Exception {
-                        ArrearageStateDTO arrearageStateDTO;
-                        try {
-                            int studentId = Integer.decode(AppContextHolder.getAppContext().getCurrentUser().getUsername());
-                            arrearageStateDTO = IpkuServiceFactory.getPersonService(cache).getArrearageState(studentId);
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                            return new Result(Result.NET_ERROR);
-                        }
-                        if (arrearageStateDTO == null) {
-                            return new Result(Result.NET_ERROR);
-                        }
-                        return new Result(Result.NO_ERROR);
-                    }
-
-                    @Override
-                    public void showWaiting() {
-
-                    }
-
-                    @Override
-                    public void stopWaiting() {
-
-                    }
-
-                    @Override
-                    public void processError(Result result) {
-
-                    }
-                }).execute();
+                new GetVersionTask().execute();
             }
         });
     }
+
+    private class GetVersionTask extends AsyncTask<Void, Void, Version> {
+
+        @Override
+        protected Version doInBackground(Void... params) {
+            return NetHelper.getVersion();
+        }
+
+        @Override
+        protected void onPostExecute(Version version) {
+            if (version != null && version.getVersion() > SystemHelper.getPackageInfo().versionCode) {
+                Log.d("newest version", String.format("%d", version.getVersion()));
+                updateNotificationDialog.setMessage("更新日志:\n" + version.getChangelog());
+                updateNotificationDialog.show();
+            }
+
+            else {
+                UIHelper.ToastMessage("当前为最新版本");
+            }
+        }
+    }
+
+    private void downloadNewVersion() {
+        String newUrl = "http://fir.im/api/v2/app/install/54a216d223a60da3260071ca?token=0e473730754c11e486625ce46eebe0684d318702";
+
+        Uri uri = Uri.parse(newUrl);
+        DownloadManager.Request request = new DownloadManager.Request(uri);
+        request.setTitle("信息门户更新");
+        request.setDestinationInExternalFilesDir(getActivity(), null, "ipku.apk");
+        request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+        apkDownloadReference = downloadManager.enqueue(request);
+
+        checkIfdownloaded();
+        downloadProgressDialog.show();
+        TimerTask task = new TimerTask() {
+
+            @Override
+            public void run() {
+                checkDownloadProgress();
+            }
+        };
+        Timer timer = new Timer();
+        timer.schedule(task, 0, 50);
+    }
+
+
+    private void checkDownloadProgress() {
+        DownloadManager.Query query = new DownloadManager.Query();
+        query.setFilterById(apkDownloadReference);
+        Cursor cursor = downloadManager.query(query);
+        if (cursor != null && cursor.moveToFirst()) {
+            int current_byte = cursor.getInt(cursor.getColumnIndexOrThrow(DownloadManager.COLUMN_BYTES_DOWNLOADED_SO_FAR));
+            int size = cursor.getInt(cursor.getColumnIndexOrThrow(DownloadManager.COLUMN_TOTAL_SIZE_BYTES));
+            downloadProgressDialog.setProgress(100 * current_byte / size);
+            cursor.close();
+        }
+
+    }
+
+    private void checkIfdownloaded() {
+        IntentFilter filter = new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE);
+        BroadcastReceiver receiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                long reference = intent.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID, -1);
+
+                if (reference == apkDownloadReference) {
+                    downloadProgressDialog.hide();
+                    installNewVersion(downloadManager);
+
+                }
+            }
+        };
+        getActivity().registerReceiver(receiver, filter);
+    }
+
+    private void installNewVersion(DownloadManager downloadManager) {
+        DownloadManager.Query updateDownloadQuery = new DownloadManager.Query();
+        updateDownloadQuery.setFilterById(apkDownloadReference);
+        Cursor thisDownload = downloadManager.query(updateDownloadQuery);
+        String fileName = "ipku.apk";
+        if (thisDownload.moveToFirst()) {
+            int fileUriIndex = thisDownload.getColumnIndex(DownloadManager.COLUMN_LOCAL_URI);
+            fileName = thisDownload.getString(fileUriIndex);
+        }
+        Intent install = new Intent();
+        install.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        install.setAction(Intent.ACTION_VIEW);
+        install.setDataAndType(Uri.parse(fileName),
+                "application/vnd.android.package-archive");
+        startActivity(install);
+    }
+
+    DialogInterface.OnClickListener toUpdateListener = new DialogInterface.OnClickListener() {
+        @Override
+        public void onClick(DialogInterface dialog, int which) {
+            downloadNewVersion();
+        }
+    };
 
 
 }

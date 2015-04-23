@@ -7,11 +7,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.google.common.collect.Lists;
 import com.pku.ipku.R;
 import com.pku.ipku.model.setting.Telephone;
-import com.pku.ipku.model.setting.TelephoneStatic;
-import com.pku.ipku.util.DataHandleUtil;
 
 import java.util.List;
 
@@ -22,10 +19,11 @@ public class PhoneAdapter extends BaseAdapter {
 
     private LayoutInflater layoutInflater;
 
-    private List<Telephone> phoneList = Lists.newArrayList(DataHandleUtil.stringToObject(Telephone[].class, TelephoneStatic.TELEPHONE_JSON));
+    private List<Telephone> phoneList;
 
-    public PhoneAdapter(Context context) {
+    public PhoneAdapter(Context context, List<Telephone> telephones) {
         layoutInflater = LayoutInflater.from(context);
+        this.phoneList = telephones;
     }
 
     @Override
