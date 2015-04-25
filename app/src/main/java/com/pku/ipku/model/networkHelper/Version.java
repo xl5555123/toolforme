@@ -5,10 +5,15 @@ package com.pku.ipku.model.networkHelper;
  */
 public class Version {
     private String name;
-    private int version;
-    private String changelog;
+    private String version;
     private String versionShort;
+    private String changelog;
     private String update_url;
+    private String installUrl;
+
+    public Version() {
+
+    }
 
     public String getName() {
         return name;
@@ -16,14 +21,6 @@ public class Version {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public int getVersion() {
-        return version;
-    }
-
-    public void setVersion(int version) {
-        this.version = version;
     }
 
     public String getChangelog() {
@@ -48,5 +45,21 @@ public class Version {
 
     public void setUpdate_url(String update_url) {
         this.update_url = update_url;
+    }
+
+    public String getInstallUrl() {
+        return installUrl;
+    }
+
+    public void setInstallUrl(String installUrl) {
+        this.installUrl = installUrl;
+    }
+
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
     }
 }

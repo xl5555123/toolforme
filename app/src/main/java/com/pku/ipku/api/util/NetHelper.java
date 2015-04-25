@@ -2,6 +2,7 @@ package com.pku.ipku.api.util;
 
 import android.util.Log;
 
+import com.google.common.collect.Lists;
 import com.pku.ipku.model.networkHelper.Version;
 import com.pku.ipku.util.DaoHelper;
 
@@ -20,8 +21,8 @@ import org.springframework.web.client.RestTemplate;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.Collections;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by XingLiang on 2015/1/26.
@@ -43,7 +44,10 @@ public class NetHelper {
         objectMapper.configure(DeserializationConfig.Feature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         objectMapper.configure(DeserializationConfig.Feature.ACCEPT_SINGLE_VALUE_AS_ARRAY, true);
         converter.setObjectMapper(objectMapper);
-        converter.setSupportedMediaTypes(Collections.singletonList(new MediaType("text", "javascript")));
+        List<MediaType> mediaTypeList = Lists.newArrayList();
+        mediaTypeList.add(new MediaType("text", "javascript"));
+        mediaTypeList.add(new MediaType("application", "json"));
+        converter.setSupportedMediaTypes(mediaTypeList);
 
         restTemplate.getMessageConverters().add(converter);
         restTemplate.getMessageConverters().add(new StringHttpMessageConverter());
@@ -122,7 +126,7 @@ public class NetHelper {
         try {
             data = restTemplate.getForObject(url, Version.class);
         } catch (Exception e) {
-
+            e.printStackTrace();
         }
         return data;
     }

@@ -195,8 +195,8 @@ public class SettingNavigationFragment extends Fragment {
 
         @Override
         protected void onPostExecute(Version version) {
-            if (version != null && version.getVersion() > SystemHelper.getPackageInfo().versionCode) {
-                Log.d("newest version", String.format("%d", version.getVersion()));
+            if (version != null && version.getVersion().charAt(0) - '0' > SystemHelper.getPackageInfo().versionCode) {
+                Log.d("newest version", String.format("%s", version.getVersion()));
                 updateNotificationDialog.setMessage("更新日志:\n" + version.getChangelog());
                 updateNotificationDialog.show();
             }
