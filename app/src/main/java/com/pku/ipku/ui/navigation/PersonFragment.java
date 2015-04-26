@@ -42,11 +42,11 @@ public class PersonFragment extends Fragment {
     private final static List<RegisterInPersonPage> registerInPersonPageList = new ArrayList<RegisterInPersonPage>() {
         {
             add(new PersonInfoActivity());
-            add(new ScoreActivity());
-            add(new QueryClassActivity());
-            add(new FreeClassroomActivity());
             add(new LibraryActivity());
             add(new ArrearageStateActivity());
+            add(new FreeClassroomActivity());
+            add(new QueryClassActivity());
+            add(new ScoreActivity());
             add(new FindAJobActivity());
             add(new PkuLectureActivity());
             add(new PkuNoticeActivity());

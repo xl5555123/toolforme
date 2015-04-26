@@ -147,23 +147,6 @@ public class SettingNavigationFragment extends Fragment {
         view.findViewById(R.id.suggestion).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                LayoutInflater inflater = getActivity().getLayoutInflater();
-
-                new AlertDialog.Builder(getActivity())
-                        .setView(inflater.inflate(R.layout.suggestion, null))
-                        .setTitle("提交意见")
-                        .setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                UIHelper.ToastMessage("您的意见已提交,我们会尽快处理");
-                            }
-                        }).setNegativeButton("取消", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-
-                            }
-                        }).create().show();
-
                 Intent data = new Intent(Intent.ACTION_SENDTO);
                 data.setData(Uri.parse("mailto:dudong113@163.com"));
                 data.putExtra(Intent.EXTRA_SUBJECT, "掌上信息门户反馈意见");

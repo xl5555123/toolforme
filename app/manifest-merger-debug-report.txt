@@ -75,17 +75,16 @@ ADDED from AndroidManifest.xml:19:5
 		ADDED from AndroidManifest.xml:19:22
 application
 ADDED from AndroidManifest.xml:21:5
-MERGED from com.android.support:support-v4:21.0.3:16:5
+MERGED from com.android.support:support-v4:22.1.1:22:5
+MERGED from com.android.support:appcompat-v7:22.0.0:22:5
+MERGED from com.android.support:support-v4:22.1.1:22:5
 MERGED from de.hdodenhof:circleimageview:1.2.1:9:5
 MERGED from com.astuetz:pagerslidingtabstrip:1.0.1:4:5
-MERGED from com.android.support:support-v4:21.0.3:16:5
+MERGED from com.android.support:support-v4:22.1.1:22:5
 MERGED from com.jpardogo.googleprogressbar:library:1.1.0:12:5
 MERGED from it.sephiroth.android.library.imagezoom:imagezoom:2.1.1:11:5
-MERGED from com.github.alamkanak:android-week-view:1.2.1:9:5
-MERGED from com.android.support:appcompat-v7:20.0.0:17:5
-MERGED from com.android.support:support-v4:21.0.3:16:5
 MERGED from me.imid.swipebacklayout.lib:library:1.0.0:11:5
-MERGED from com.android.support:support-v4:21.0.3:16:5
+MERGED from com.android.support:support-v4:22.1.1:22:5
 	android:label
 		ADDED from AndroidManifest.xml:25:9
 	android:allowBackup
@@ -510,17 +509,16 @@ ADDED from AndroidManifest.xml:230:9
 		ADDED from AndroidManifest.xml:233:13
 uses-sdk
 INJECTED from AndroidManifest.xml:0:0 reason: use-sdk injection requested
-MERGED from com.android.support:support-v4:21.0.3:15:5
+MERGED from com.android.support:support-v4:22.1.1:20:5
+MERGED from com.android.support:appcompat-v7:22.0.0:20:5
+MERGED from com.android.support:support-v4:22.1.1:20:5
 MERGED from de.hdodenhof:circleimageview:1.2.1:5:5
 MERGED from com.astuetz:pagerslidingtabstrip:1.0.1:2:5
-MERGED from com.android.support:support-v4:21.0.3:15:5
+MERGED from com.android.support:support-v4:22.1.1:20:5
 MERGED from com.jpardogo.googleprogressbar:library:1.1.0:8:5
 MERGED from it.sephiroth.android.library.imagezoom:imagezoom:2.1.1:7:5
-MERGED from com.github.alamkanak:android-week-view:1.2.1:5:5
-MERGED from com.android.support:appcompat-v7:20.0.0:16:5
-MERGED from com.android.support:support-v4:21.0.3:15:5
 MERGED from me.imid.swipebacklayout.lib:library:1.0.0:7:5
-MERGED from com.android.support:support-v4:21.0.3:15:5
+MERGED from com.android.support:support-v4:22.1.1:20:5
 	android:targetSdkVersion
 		INJECTED from AndroidManifest.xml:0:0
 		INJECTED from AndroidManifest.xml:0:0
