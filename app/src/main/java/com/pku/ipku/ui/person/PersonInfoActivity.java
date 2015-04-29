@@ -1,8 +1,5 @@
 package com.pku.ipku.ui.person;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
@@ -17,7 +14,9 @@ import com.pku.ipku.task.LoadDataDefaultTask;
 import com.pku.ipku.task.Result;
 import com.pku.ipku.ui.util.BaseActivityIncludingFooterNavigation;
 import com.pku.ipku.util.AppContextHolder;
-import com.pku.ipku.util.UIHelper;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by XingLiang on 2015/2/5.
@@ -27,6 +26,26 @@ public class PersonInfoActivity extends BaseActivityIncludingFooterNavigation im
     LoadDataDefaultTask loadDataDefaultTask = new LoadDataDefaultTask(new LoadStuInfoConfigure());
     private StuInfoDTO stuInfo;
     private ListView listView;
+
+    private List<String> headerList = new ArrayList<String>() {
+        {
+            add("姓名");
+            add("性别");
+            add("学号");
+            add("所在院系");
+            add("身份");
+            add("专业");
+            add("研究方向");
+            add("导师");
+            add("学生类别");
+            add("出生日期");
+            add("民族");
+            add("入学年份");
+            add("籍贯");
+            add("政治面貌");
+            add("名字简写");
+        }
+    };
 
     private View progress;
 
@@ -73,7 +92,7 @@ public class PersonInfoActivity extends BaseActivityIncludingFooterNavigation im
     private class LoadStuInfoConfigure implements LoadDataConfigure {
         @Override
         public void showData() {
-            listView.setAdapter(new PersonInfoListAdapter(AppContextHolder.getAppContext(), stuInfo));
+            listView.setAdapter(new PersonInfoListAdapter(AppContextHolder.getAppContext(), stuInfo, headerList));
             if (progress != null) {
                 progress.setVisibility(View.GONE);
             }

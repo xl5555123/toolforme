@@ -11,7 +11,6 @@ import com.google.common.collect.Maps;
 import com.pku.ipku.R;
 import com.pku.ipku.model.person.dto.StuInfoDTO;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -24,10 +23,10 @@ public class PersonInfoListAdapter extends BaseAdapter {
     private List<String> headers;
     private LayoutInflater layoutInflater;
 
-    public PersonInfoListAdapter(Context context, StuInfoDTO stuInfoDTO) {
+    public PersonInfoListAdapter(Context context, StuInfoDTO stuInfoDTO, List<String> keyOrder) {
         layoutInflater = LayoutInflater.from(context);
         items = Maps.newHashMap();
-        items.put("名字", stuInfoDTO.getName());
+        items.put("姓名", stuInfoDTO.getName());
         items.put("名字简写", stuInfoDTO.getNameAbbr());
         items.put("身份", stuInfoDTO.getUserIdentity());
         items.put("性别", stuInfoDTO.getSex());
@@ -42,12 +41,12 @@ public class PersonInfoListAdapter extends BaseAdapter {
         items.put("研究方向", stuInfoDTO.getDirection());
         items.put("导师", stuInfoDTO.getTutor());
         items.put("学生类别", stuInfoDTO.getStudentType());
-        headers = new ArrayList<String>(items.keySet());
+        headers = keyOrder;
     }
 
     @Override
     public int getCount() {
-        return items.keySet().size();
+        return headers.size();
     }
 
     @Override
