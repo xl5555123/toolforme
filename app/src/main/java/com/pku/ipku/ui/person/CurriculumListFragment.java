@@ -149,7 +149,11 @@ public class CurriculumListFragment extends Fragment {
 
 
     private void getDataByVolley() {
-        long user_id = Integer.decode(AppContextHolder.getAppContext().getCurrentUser().getUsername());
+        String user_name = AppContextHolder.getAppContext().getCurrentUser().getUsername();
+        if(!user_name.matches("\\d+")){
+            return;
+        }
+        long user_id = Long.parseLong(user_name);
         long timestamp = new Date().getTime();
         String msg = NetHelper.getMd5(NetHelper.concatParameter(user_id, timestamp));
         String url = NetHelper.getAuthUrl(PersonService.PERSON_COURSE_TABLE_URL, user_id, timestamp, msg);
