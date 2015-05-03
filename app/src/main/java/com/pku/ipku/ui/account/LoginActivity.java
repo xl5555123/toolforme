@@ -16,7 +16,6 @@ import android.widget.Toast;
 import com.pku.ipku.R;
 import com.pku.ipku.api.util.NetHelper;
 import com.pku.ipku.model.account.User;
-import com.pku.ipku.model.networkHelper.Ipgw;
 import com.pku.ipku.ui.navigation.MainNavigationActivity;
 import com.pku.ipku.util.AppContextHolder;
 import com.pku.ipku.util.NetWork;
@@ -32,7 +31,6 @@ import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.util.Enumeration;
-import java.util.Properties;
 
 public class LoginActivity extends Activity {
 
@@ -110,42 +108,42 @@ public class LoginActivity extends Activity {
         return ret;
     }
 
-    private class LoginTask extends AsyncTask<User, Void, User> {
-
-
-        @Override
-        protected User doInBackground(User... users) {
-            if (users.length == 0) {
-                return null;
-            }
-            Properties result = new Properties();
-            result.setProperty("uid", users[0].getUsername());
-            result.setProperty("password", users[0].getPassword());
-            String content = null;
-            result.setProperty("range", "0");
-            Ipgw ipgw = new Ipgw(result);
-            content = ipgw.connect();
-            if (content.contains("网络连接成功") || content.contains("免登录帐号的地址") || content.contains("免费包月时长已经用完") || content.contains("当前连接数超过预定值"))
-                return users[0];
-            return null;
-        }
-
-
-
-
-        @Override
-        protected void onPostExecute(User user) {
-            if (user != null) {
-                UIHelper.ToastMessage("登录成功");
-                AppContextHolder.getAppContext().setCurrentUser(user);
-                Intent intent = new Intent(LoginActivity.this, MainNavigationActivity.class);
-                startActivity(intent);
-                finish();
-            } else {
-                UIHelper.ToastMessage("账户密码不匹配，请重新输入后再登录");
-            }
-        }
-    }
+//    private class LoginTask extends AsyncTask<User, Void, User> {
+//
+//
+//        @Override
+//        protected User doInBackground(User... users) {
+//            if (users.length == 0) {
+//                return null;
+//            }
+//            Properties result = new Properties();
+//            result.setProperty("uid", users[0].getUsername());
+//            result.setProperty("password", users[0].getPassword());
+//            String content = null;
+//            result.setProperty("range", "0");
+//            Ipgw ipgw = new Ipgw(result);
+//            content = ipgw.connect();
+//            if (content.contains("网络连接成功") || content.contains("免登录帐号的地址") || content.contains("免费包月时长已经用完") || content.contains("当前连接数超过预定值"))
+//                return users[0];
+//            return null;
+//        }
+//
+//
+//
+//
+//        @Override
+//        protected void onPostExecute(User user) {
+//            if (user != null) {
+//                UIHelper.ToastMessage("登录成功");
+//                AppContextHolder.getAppContext().setCurrentUser(user);
+//                Intent intent = new Intent(LoginActivity.this, MainNavigationActivity.class);
+//                startActivity(intent);
+//                finish();
+//            } else {
+//                UIHelper.ToastMessage("账户密码不匹配，请重新输入后再登录");
+//            }
+//        }
+//    }
 
 
     private class LoginTaskByIAAA extends AsyncTask<User, Void, User> {
@@ -213,7 +211,7 @@ public class LoginActivity extends Activity {
                 finish();
             } else {
                 //UIHelper.ToastMessage("账户密码不匹配，请重新输入后再登录");
-                UIHelper.ToastMessage(res.substring(res.indexOf("{")+1,res.indexOf("}")));
+                UIHelper.ToastMessage(res.substring(res.indexOf("nfo=")+4,res.indexOf("}") - 2));
             }
         }
 
