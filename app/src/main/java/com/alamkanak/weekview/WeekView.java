@@ -104,7 +104,7 @@ public class WeekView extends View {
     private Calendar mFirstVisibleDay;
     private Calendar mLastVisibleDay;
     private Calendar mScrollToDay = null;
-    private double mScrollToHour = -1;
+    private double mScrollToHour = 8;
 
     // Listeners.
     private EventClickListener mEventClickListener;
