@@ -7,6 +7,7 @@ import android.widget.ListView;
 import com.pku.ipku.R;
 import com.pku.ipku.adapter.person.PersonInfoListAdapter;
 import com.pku.ipku.api.factory.IpkuServiceFactory;
+import com.pku.ipku.model.account.User;
 import com.pku.ipku.model.person.dto.StuInfoDTO;
 import com.pku.ipku.model.person.navigation.RegisterInPersonPage;
 import com.pku.ipku.task.LoadDataConfigure;
@@ -101,8 +102,8 @@ public class PersonInfoActivity extends BaseActivityIncludingFooterNavigation im
         @Override
         public Result getData(boolean cache) throws Exception {
             try {
-                int studentId = Integer.decode(AppContextHolder.getAppContext().getCurrentUser().getUsername());
-                stuInfo = IpkuServiceFactory.getPersonService(cache).getStuInfo(studentId);
+                User user = AppContextHolder.getAppContext().getCurrentUser();
+                stuInfo = IpkuServiceFactory.getPersonService(cache).getStuInfo(user.getUsername());
                 if (stuInfo == null)
                     return new Result(Result.ACCOUNT_ERROR);
                 else {

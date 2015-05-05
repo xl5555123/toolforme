@@ -7,6 +7,7 @@ import android.widget.ListView;
 import com.pku.ipku.R;
 import com.pku.ipku.adapter.person.StuScoreAdapter;
 import com.pku.ipku.api.factory.IpkuServiceFactory;
+import com.pku.ipku.model.account.User;
 import com.pku.ipku.model.person.dto.ScoreDTO;
 import com.pku.ipku.model.person.navigation.RegisterInPersonPage;
 import com.pku.ipku.task.LoadDataConfigure;
@@ -69,8 +70,10 @@ public class ScoreActivity extends BaseActivityIncludingFooterNavigation impleme
 
         @Override
         public Result getData(boolean cache) {
-            int studentId = Integer.decode(AppContextHolder.getAppContext().getCurrentUser().getUsername());
-            scoreDTOList = IpkuServiceFactory.getPersonService(cache).getScores(studentId);
+            User currentUser = AppContextHolder.getAppContext().getCurrentUser();
+            if (currentUser != null) {
+                scoreDTOList = IpkuServiceFactory.getPersonService(cache).getScores(currentUser.getUsername());
+            }
             if (scoreDTOList == null) {
                 return new Result(Result.NET_ERROR);
             }

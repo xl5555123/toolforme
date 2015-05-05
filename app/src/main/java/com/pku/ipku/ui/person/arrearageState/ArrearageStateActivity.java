@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.pku.ipku.R;
 import com.pku.ipku.api.factory.IpkuServiceFactory;
+import com.pku.ipku.model.account.User;
 import com.pku.ipku.model.person.dto.ArrearageStateDTO;
 import com.pku.ipku.model.person.navigation.RegisterInPersonPage;
 import com.pku.ipku.task.LoadDataConfigure;
@@ -78,8 +79,8 @@ public class ArrearageStateActivity extends BaseActivityIncludingFooterNavigatio
             @Override
             public Result getData(boolean cache) {
                 try {
-                    int studentId = Integer.decode(AppContextHolder.getAppContext().getCurrentUser().getUsername());
-                    arrearageStateDTO = IpkuServiceFactory.getPersonService(cache).getArrearageState(studentId);
+                    User currentUser = AppContextHolder.getAppContext().getCurrentUser();
+                    arrearageStateDTO = IpkuServiceFactory.getPersonService(cache).getArrearageState(currentUser.getUsername());
                 } catch (Exception e) {
                     e.printStackTrace();
                     return new Result(Result.NET_ERROR);

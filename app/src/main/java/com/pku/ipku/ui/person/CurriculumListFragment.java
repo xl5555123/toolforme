@@ -153,10 +153,9 @@ public class CurriculumListFragment extends Fragment {
         if(!user_name.matches("\\d+")){
             return;
         }
-        long user_id = Long.parseLong(user_name);
         long timestamp = new Date().getTime();
-        String msg = NetHelper.getMd5(NetHelper.concatParameter(user_id, timestamp));
-        String url = NetHelper.getAuthUrl(PersonService.PERSON_COURSE_TABLE_URL, user_id, timestamp, msg);
+        String msg = NetHelper.getMd5(NetHelper.concatParameter(user_name, timestamp));
+        String url = NetHelper.getAuthUrl(PersonService.PERSON_COURSE_TABLE_URL, user_name, timestamp, msg);
         coursesForWeek = new ArrayList<ArrayList<CurriculumDTO>>();
         for (int i = 0; i < 7; i++) {
             coursesForWeek.add(new ArrayList<CurriculumDTO>());

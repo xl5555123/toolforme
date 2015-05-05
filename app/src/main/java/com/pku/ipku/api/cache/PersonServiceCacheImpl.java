@@ -20,17 +20,17 @@ import java.util.List;
 public class PersonServiceCacheImpl implements PersonService {
 
     @Override
-    public ArrearageStateDTO getArrearageState(int userId) throws Exception {
+    public ArrearageStateDTO getArrearageState(String userId) throws Exception {
         return DaoHelper.readData("arrearage", ArrearageStateDTO.class);
     }
 
     @Override
-    public StuInfoDTO getStuInfo(int userId) throws Exception {
+    public StuInfoDTO getStuInfo(String userId) throws Exception {
         return DaoHelper.readData(PERSON_BASE_INFO_URL + userId, StuInfoDTO.class);
     }
 
     @Override
-    public List<ScoreDTO> getScores(int userId) {
+    public List<ScoreDTO> getScores(String userId) {
         return null;
     }
 

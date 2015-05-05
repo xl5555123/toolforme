@@ -21,7 +21,7 @@ import java.util.List;
  */
 public class PersonServiceNetImpl implements PersonService {
     @Override
-    public ArrearageStateDTO getArrearageState(int userId) throws Exception {
+    public ArrearageStateDTO getArrearageState(String userId) throws Exception {
         ArrearageStateDTO arrearageStateDTO = new ArrearageStateDTO();
         BalanceDTO card = NetHelper.getForObjectWithAuth(PERSON_CARD_REMAIN, BalanceDTO.class, userId);
         BalanceDTO network = NetHelper.getForObjectWithAuth(PERSON_NETWORK_FEE, BalanceDTO.class, userId);
@@ -36,12 +36,12 @@ public class PersonServiceNetImpl implements PersonService {
     }
 
     @Override
-    public StuInfoDTO getStuInfo(int userId) throws Exception {
+    public StuInfoDTO getStuInfo(String userId) throws Exception {
         return NetHelper.getForObjectWithAuth(PERSON_BASE_INFO_URL, StuInfoDTO.class, userId);
     }
 
     @Override
-    public List<ScoreDTO> getScores(int userId) {
+    public List<ScoreDTO> getScores(String userId) {
         String uri = String.format(GET_SCORE);
         try {
             return Lists.newArrayList(NetHelper.getForObjectWithAuth(uri, ScoreDTO[].class, userId));

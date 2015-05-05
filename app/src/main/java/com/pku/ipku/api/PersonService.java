@@ -29,11 +29,11 @@ public interface PersonService {
     public static final String GET_SCORE = "/svcpub/svc/pro/student/scores";
 
 
-    public ArrearageStateDTO getArrearageState(int userId) throws Exception;
+    public ArrearageStateDTO getArrearageState(String userId) throws Exception;
 
-    public StuInfoDTO getStuInfo(int userId) throws Exception;
+    public StuInfoDTO getStuInfo(String userId) throws Exception;
 
-    public List<ScoreDTO> getScores(int userId);
+    public List<ScoreDTO> getScores(String userId);
 
     public List<LibBorrowDTO> getLibBorrowInfo();
 

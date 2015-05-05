@@ -60,8 +60,8 @@ public class NetHelper {
         return String.format("%s%s", BASE_URL, uri);
     }
 
-    public static String getAuthUrl(String uri, long userId, long timestamp, String msg) {
-        return String.format("%s%s?user=%d&appKey=%s&timestamp=%d&msg=%s", BASE_URL, uri, userId, APP_KEY, timestamp, msg);
+    public static String getAuthUrl(String uri, String userId, long timestamp, String msg) {
+        return String.format("%s%s?user=%s&appKey=%s&timestamp=%d&msg=%s", BASE_URL, uri, userId, APP_KEY, timestamp, msg);
     }
 
     /**
@@ -93,7 +93,7 @@ public class NetHelper {
      * @param <T>        对象类型
      * @return
      */
-    public static <T> T getForObjectWithAuth(String uri, Class<T> returnType, int userId) throws Exception {
+    public static <T> T getForObjectWithAuth(String uri, Class<T> returnType, String userId) throws Exception {
         long timestamp = new Date().getTime();
         String msg = getMd5(concatParameter(userId, timestamp));
         if (msg == null) {
@@ -157,8 +157,8 @@ public class NetHelper {
         return result;
     }
 
-    public static String concatParameter(long userId, long timestamp) {
-        return String.format("user=%d&appKey=%s&timestamp=%d", userId, APP_KEY, timestamp);
+    public static String concatParameter(String userId, long timestamp) {
+        return String.format("user=%s&appKey=%s&timestamp=%d", userId, APP_KEY, timestamp);
     }
 
     private static String getEncode32(MessageDigest digest) {
