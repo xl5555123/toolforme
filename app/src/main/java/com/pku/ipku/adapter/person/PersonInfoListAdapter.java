@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.pku.ipku.R;
 import com.pku.ipku.model.person.dto.StuInfoDTO;
@@ -36,12 +37,24 @@ public class PersonInfoListAdapter extends BaseAdapter {
         items.put("出生日期", stuInfoDTO.getBirthDate());
         items.put("入学年份", stuInfoDTO.getEnrollDate());
         items.put("学号", stuInfoDTO.getStudentId());
+        items.put("职工号", stuInfoDTO.getStudentId());
         items.put("所在院系", stuInfoDTO.getDepartment());
+        items.put("所在单位", stuInfoDTO.getDepartment());
         items.put("专业", stuInfoDTO.getSpeciality());
         items.put("研究方向", stuInfoDTO.getDirection());
         items.put("导师", stuInfoDTO.getTutor());
         items.put("学生类别", stuInfoDTO.getStudentType());
-        headers = keyOrder;
+        headers = Lists.newArrayList(keyOrder);
+        if (stuInfoDTO.getUserIdentity() != null && !stuInfoDTO.getUserIdentity().equals("学生")) {
+            headers.remove("导师");
+            headers.remove("研究方向");
+            headers.remove("学生类别");
+            headers.remove("入学年份");
+            headers.remove("所在院系");
+            headers.remove("学号");
+            headers.add(2, "职工号");
+            headers.add(3, "所在单位");
+        }
     }
 
     @Override
