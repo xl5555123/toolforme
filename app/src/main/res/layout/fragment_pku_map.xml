@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.pku.ipku.ui.pkuMap.PkuMapFragment">
+    tools:context="com.pku.portal.ui.pkuMap.PkuMapFragment">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/route_plan_ll"

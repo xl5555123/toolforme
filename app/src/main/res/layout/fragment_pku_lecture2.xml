@@ -1,21 +1,58 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
+    android:background="#ffffff"
     android:layout_height="match_parent"
-    tools:context="com.pku.ipku.ui.pkuInfo.PkuLectureFragment">
+    tools:context="com.pku.portal.ui.pkuInfo.PkuLectureFragment">
+    
+    <LinearLayout
+        android:id="@+id/lecture_header"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+        
+        <ImageView
+            android:layout_marginLeft="15dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/lecture_home"
+            android:layout_width="25dp"
+            android:layout_height="25dp" />
+
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_gravity="center_vertical"
+            android:textColor="#333333"
+            android:text="今日讲座"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/lecture_header_divider"
+        android:layout_below="@+id/lecture_header"
+        android:background="#eaeaea"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"></FrameLayout>
 
     <ListView
         android:id="@+id/lecture_list_view"
+        android:layout_below="@+id/lecture_header_divider"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:divider="#00000000"
-        android:dividerHeight="10dp"></ListView>
+        android:listSelector="@drawable/back_selector"
+        android:divider="#eaeaea"
+        android:dividerHeight="1dp"></ListView>
 
-    <ProgressBar
-        android:id="@+id/progress"
-        style="?android:attr/progressBarStyleSmall"
+
+    <FrameLayout
+        android:id="@+id/lecture_footer"
+        android:layout_alignParentBottom="true"
+        android:background="#D1d1d1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="2dp"></FrameLayout>
 
-</LinearLayout>
+
+</RelativeLayout>

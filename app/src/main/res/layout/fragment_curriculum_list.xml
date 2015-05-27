@@ -2,29 +2,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ffffff"
     android:id="@+id/curriculum_container"
-    android:gravity="center"
-    android:paddingTop="50dp"
-    android:paddingBottom="20dp"
-    tools:context="com.pku.ipku.ui.pkuInfo.CurriculumListFragment">
+    tools:context="com.pku.portal.ui.pkuInfo.CurriculumListFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#f9f9f9"
-        android:layout_alignParentLeft="true"
-        android:text="今日课程"
+    <LinearLayout
         android:id="@+id/today_curr_tv"
-        android:textSize="27sp" />
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="47dp">
+        
+        <ImageView
+            android:layout_marginLeft="15dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/class_home"
+            android:layout_width="34dp"
+            android:layout_height="34dp" />
+
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#333333"
+            android:layout_marginLeft="6dp"
+            android:text="今日课程"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+
+    <FrameLayout
+        android:id="@+id/divider"
+        android:layout_below="@+id/lecture_header"
+        android:background="#eaeaea"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"></FrameLayout>
 
     <ListView
         android:id="@+id/curriculum_lv"
         android:layout_width="match_parent"
-        android:divider="#00000000"
-        android:dividerHeight="4dp"
+        android:divider="#eaeaea"
+        android:dividerHeight="1dp"
         android:visibility="gone"
         android:layout_marginTop="10dp"
-        android:layout_below="@id/today_curr_tv"
+        android:layout_below="@id/divider"
         android:layout_height="match_parent" />
 
     <RelativeLayout
@@ -41,13 +62,13 @@
             android:id="@+id/no_class_text_1"
             android:layout_centerHorizontal="true"
             android:gravity="center"
-            android:textColor="@color/white"
+            android:textColor="#9e9e9e"
             android:textAlignment="center" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
+            android:textColor="#9e9e9e"
             android:textAlignment="center"
             android:gravity="center"
             android:layout_centerHorizontal="true"

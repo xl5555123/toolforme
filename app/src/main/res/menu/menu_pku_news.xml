@@ -1,6 +1,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.pku.ipku.ui.pkuInfo.PkuNewsActivity">
+    tools:context="com.pku.portal.ui.pkuInfo.PkuNewsActivity">
     <item
         android:id="@+id/action_settings"
         android:title="@string/action_settings"

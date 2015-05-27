@@ -83,7 +83,7 @@
                 android:id="@+id/visit_tv"
                 android:textSize="18sp" />
 
-            <com.pku.ipku.util.SwitchButton
+            <com.pku.portal.util.SwitchButton
                 android:id="@+id/network_free_or_not"
                 android:layout_width="wrap_content"
                 android:layout_toRightOf="@id/visit_tv"

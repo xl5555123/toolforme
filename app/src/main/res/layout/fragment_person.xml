@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/setting_background"
     android:focusableInTouchMode="true"
-    tools:context="com.pku.ipku.ui.navigation.PersonFragment">
+    tools:context="com.pku.portal.ui.navigation.PersonFragment">
 
     <GridView
         android:id="@+id/navigation_grid"

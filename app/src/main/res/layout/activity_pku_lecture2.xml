@@ -3,9 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/default_background"
-    tools:context="com.pku.ipku.ui.pkuInfo.PkuLectureActivity">
+    tools:context="com.pku.portal.ui.pkuInfo.PkuLectureActivity">
 
-    <com.pku.ipku.ui.util.paging.PagingListView
+    <com.pku.portal.ui.util.paging.PagingListView
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

@@ -246,7 +246,7 @@
     <color name="project_red">#ff897c</color>
     <color name="project_blue">#66c5cf</color>
 
-    <color name="default_background">#f0f0f0</color>
+    <color name="default_background">#ffffff</color>
 
     <color name="tianlan">#1291a9</color>
     <color name="danlan">#72cfd7</color>
@@ -256,5 +256,8 @@
     <color name="event_color_02">#f57f68</color>
     <color name="event_color_03">#87d288</color>
     <color name="event_color_04">#f8b552</color>
+
+    <color name="setting_header">#333333</color>
+    <color name="setting_item">#747474</color>
 
 </resources>

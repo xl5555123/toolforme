@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.pku.ipku.ui.person.library.LibrarySearchListFragment">
+    tools:context="com.pku.portal.ui.person.library.LibrarySearchListFragment">
 
     <ListView
         android:id="@+id/library_search_listview"

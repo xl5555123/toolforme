@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#f3f3f3"
-    tools:context="com.pku.ipku.ui.setting.AboutActivity">
+    tools:context="com.pku.portal.ui.setting.AboutActivity">
 
     <TextView
         android:id="@+id/title"

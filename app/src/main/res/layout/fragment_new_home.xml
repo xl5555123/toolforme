@@ -3,13 +3,12 @@
     android:layout_width="match_parent"
     android:padding="5dp"
     android:layout_height="match_parent"
-    tools:context="com.pku.ipku.ui.navigation.NewHomeFragment">
+    tools:context="com.pku.portal.ui.navigation.NewHomeFragment">
 
     <FrameLayout
         android:id="@+id/curriculum_list_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/lecture_this_week_header"
         android:layout_marginTop="15dp"></FrameLayout>
 
 </RelativeLayout>

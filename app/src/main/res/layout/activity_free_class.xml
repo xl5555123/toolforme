@@ -6,7 +6,7 @@
     android:layout_alignParentTop="true"
     android:background="@color/white"
     android:orientation="vertical"
-    tools:context="com.pku.ipku.ui.person.freeClassRoom.FreeClassroomActivity">
+    tools:context="com.pku.portal.ui.person.freeClassRoom.FreeClassroomActivity">
 
 
     <View

@@ -5,7 +5,7 @@
     android:background="@drawable/login"
     android:gravity="center_vertical"
     android:paddingTop="70dp"
-    tools:context="com.pku.ipku.ui.account.LoginActivity">
+    tools:context="com.pku.portal.ui.account.LoginActivity">
 
     <Button
         android:id="@+id/login_button"

@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@color/orange" android:state_focused="true"></item>
-    <item android:drawable="@color/orange" android:state_selected="true" />
-    <item android:drawable="@color/orange" android:state_pressed="true" />
+    <item android:state_focused="true">
+        <color android:color="#D9d9d9"></color>
+    </item>
+    <item android:state_selected="true" >
+        <color android:color="#D9d9d9"></color>
+    </item>
+    <item android:state_pressed="true" >
+
+        <color android:color="#D9d9d9"></color>
+    </item>
     <item android:drawable="@color/default_background" />
 </selector>

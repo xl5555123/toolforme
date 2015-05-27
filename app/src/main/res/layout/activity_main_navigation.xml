@@ -2,14 +2,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.pku.ipku.ui.navigation.MainNavigationActivity">
+    tools:context="com.pku.portal.ui.navigation.MainNavigationActivity">
 
     <LinearLayout
         android:id="@+id/footer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
-        android:background="@color/white"
+        android:background="#98000c"
         android:focusable="false"
         android:orientation="horizontal">
 
@@ -21,17 +21,16 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="8dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
                 android:focusable="true"
                 android:src="@drawable/navigation_home_selector" />
 
             <TextView
                 android:textColor="@drawable/navigation_text_selector"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
+                android:layout_marginTop="4dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -41,23 +40,22 @@
 
         <LinearLayout
             android:id="@+id/student_button"
-            android:background="@color/white"
             android:orientation="vertical"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content">
 
             <ImageView
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="8dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
                 android:focusable="true"
                 android:src="@drawable/navigation_person_icon_selector" />
 
             <TextView
                 android:textColor="@drawable/navigation_text_selector"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="4dp"
                 android:layout_gravity="center_horizontal"
                 android:text="个人"
                 android:textSize="10sp"
@@ -74,16 +72,16 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="8dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
                 android:focusable="true"
                 android:src="@drawable/navigation_setting_icon_selector" />
 
             <TextView
                 android:textColor="@drawable/navigation_text_selector"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="4dp"
                 android:layout_gravity="center_horizontal"
                 android:text="设置"
                 android:textSize="10sp"
