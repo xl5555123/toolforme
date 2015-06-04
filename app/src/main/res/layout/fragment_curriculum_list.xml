@@ -33,7 +33,7 @@
 
     <FrameLayout
         android:id="@+id/divider"
-        android:layout_below="@+id/lecture_header"
+        android:layout_below="@+id/today_curr_tv"
         android:background="#eaeaea"
         android:layout_width="match_parent"
         android:layout_height="1dp"></FrameLayout>
@@ -43,7 +43,7 @@
         android:layout_width="match_parent"
         android:divider="#eaeaea"
         android:dividerHeight="1dp"
-        android:visibility="gone"
+        android:visibility="visible"
         android:layout_marginTop="10dp"
         android:layout_below="@id/divider"
         android:layout_height="match_parent" />
@@ -51,7 +51,7 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/today_curr_tv"
+        android:layout_below="@id/divider"
         android:id="@+id/no_class_rl"
         android:layout_centerInParent="true">
 

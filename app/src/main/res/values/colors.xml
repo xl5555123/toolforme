@@ -170,7 +170,7 @@
     <drawable name="ab_bg_black">#aa000000</drawable>
     <color name="year_select_color_green">#7cc6b3</color>
     <color name="default_gray">#b9b9b9</color>
-    <color name="navigation_bar_back_color">#5bc7ee</color>
+    <color name="navigation_bar_back_color">#98000c</color>
     <color name="navigation_bar_tab_selected">#b5b5b5</color>
     <color name="navigation_bar_tab_un_selected">#e5e5e5</color>
 

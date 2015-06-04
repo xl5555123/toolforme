@@ -10,6 +10,8 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -18,6 +20,7 @@ import com.pku.portal.api.util.NetHelper;
 import com.pku.portal.model.account.User;
 import com.pku.portal.ui.navigation.MainNavigationActivity;
 import com.pku.portal.util.AppContextHolder;
+import com.pku.portal.util.DaoHelper;
 import com.pku.portal.util.NetWork;
 import com.pku.portal.util.UIHelper;
 
@@ -41,6 +44,11 @@ public class LoginActivity extends Activity {
     private EditText passwordTextView;
 
     private Button loginButton;
+
+    private CheckBox checkBox;
+
+    private boolean rememberPassword;
+
     String res="";
 
     @Override
@@ -51,6 +59,14 @@ public class LoginActivity extends Activity {
         usernameTextView = (EditText) findViewById(R.id.username);
         passwordTextView = (EditText) findViewById(R.id.password);
         loginButton = (Button) findViewById(R.id.login_button);
+        checkBox = (CheckBox) findViewById(R.id.remember_password);
+        rememberPassword = true;
+        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                rememberPassword = isChecked;
+            }
+        });
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -205,6 +221,7 @@ public class LoginActivity extends Activity {
         protected void onPostExecute(User user) {
             if (user != null) {
                 UIHelper.ToastMessage("登录成功");
+                DaoHelper.saveData(DaoHelper.REMBER_PASSWORD_KEY, rememberPassword);
                 AppContextHolder.getAppContext().setCurrentUser(user);
                 Intent intent = new Intent(LoginActivity.this, MainNavigationActivity.class);
                 startActivity(intent);

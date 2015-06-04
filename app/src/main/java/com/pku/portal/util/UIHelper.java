@@ -175,7 +175,7 @@ public class UIHelper {
         } else {
             Intent intent = new Intent(activity, WebViewActivity.class);
             intent.putExtra("url", url);
-            intent.putExtra("title", "公共信息");
+            intent.putExtra("title", "今日讲座");
             return intent;
         }
     }

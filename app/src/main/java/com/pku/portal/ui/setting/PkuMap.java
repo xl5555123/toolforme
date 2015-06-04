@@ -2,6 +2,7 @@ package com.pku.portal.ui.setting;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.ImageView;
 
 import com.pku.portal.R;
@@ -22,5 +23,20 @@ public class PkuMap extends Activity {
     private void initView() {
         ImageView imageView = (ImageView) findViewById(R.id.image);
         imageView.setImageDrawable(getResources().getDrawable(R.drawable.pkumap));
+
+        getActionBar().setDisplayHomeAsUpEnabled(true);
+        getActionBar().setHomeButtonEnabled(true);
+        getActionBar().setTitle("北大地图");
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                break;
+        }
+        return true;
     }
 }

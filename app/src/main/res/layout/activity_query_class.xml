@@ -3,22 +3,10 @@
     android:layout_height="match_parent"
     android:background="@color/default_background">
 
-    <Button
-        android:id="@+id/search"
-        android:layout_marginBottom="270dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:background="@color/navigation_bar_back_color"
-        android:text="查找"
-        android:textColor="@color/white" />
-
     <EditText
         android:id="@+id/class_name"
-        android:text="计算机"
-        android:layout_above="@id/search"
-        android:layout_marginBottom="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="80dp"
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:textColor="@color/black"
@@ -29,5 +17,38 @@
         android:editable="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/search"
+        android:layout_below="@id/class_name"
+        android:layout_centerHorizontal="true"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="80dp"
+        android:background="@color/navigation_bar_back_color"
+        android:text="查找"
+        android:textColor="@color/white" />
+
+
+
+    <RelativeLayout
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="12dp"
+        android:layout_below="@id/search"
+        android:background="#e6e6e6"
+        android:layout_marginRight="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/query_class_tip"
+            android:textColor="#a7a7a7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
 </RelativeLayout>
 

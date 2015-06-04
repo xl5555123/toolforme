@@ -22,7 +22,7 @@
         android:name="com.pku.portal.ui.AppContext"
         android:allowBackup="true"
         android:icon="@drawable/logo"
-        android:label="掌上信息门户">
+        android:label="掌上燕园">
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="r8Qt5owRUFKg55ELMeF2OsnN" />

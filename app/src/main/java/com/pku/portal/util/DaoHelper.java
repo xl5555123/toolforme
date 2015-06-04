@@ -16,6 +16,8 @@ public class DaoHelper {
     private static DaoMaster daoMaster;
     private static DaoSession daoSession;
 
+    public final static String REMBER_PASSWORD_KEY = "remember-me";
+
     /**
      * 取得DaoMaster
      *

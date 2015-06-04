@@ -34,6 +34,7 @@ public class CurriculumWeekActivity extends Activity implements WeekView.MonthCh
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_curriculum_week);
+        getActionBar().setTitle("课程表");
 
         // Get a reference for the week view in the layout.
         mWeekView = (WeekView) findViewById(R.id.weekView);

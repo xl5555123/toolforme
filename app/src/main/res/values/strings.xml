@@ -95,4 +95,12 @@
     <string name="title_activity_about_software">AboutSoftware</string>
     <string name="title_activity_about">AboutActivity</string>
 
+    <string name="library_tip">
+        亲爱的同学，目前只是测试阶段，在正式版本中会接入图书馆的数据，为您展现图书借阅状态，同时您可以通过此页面来对图书进行查阅、续借和预约等操作。如果您有更好的想法和建议，请进入设置页面里进行意见反馈。
+    </string>
+
+    <string name="query_class_tip">
+        亲爱的同学，目前只是测试阶段，请输入您要查询的课程
+    </string>
+
 </resources>

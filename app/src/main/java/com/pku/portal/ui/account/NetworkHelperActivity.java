@@ -20,10 +20,11 @@ import android.widget.Toast;
 
 import com.pku.portal.R;
 import com.pku.portal.model.account.User;
-import com.pku.portal.util.networkHelper.Ipgw;
 import com.pku.portal.util.AppContextHolder;
+import com.pku.portal.util.DaoHelper;
 import com.pku.portal.util.NetWork;
 import com.pku.portal.util.SwitchButton;
+import com.pku.portal.util.networkHelper.Ipgw;
 
 import java.util.Properties;
 
@@ -42,6 +43,8 @@ public class NetworkHelperActivity extends Activity {
     private Ipgw ipgw = null;
 
     private User user;
+
+    private Boolean rememberPassword;
 
     @SuppressLint("HandlerLeak")
     private Handler handler = new Handler() {
@@ -68,7 +71,10 @@ public class NetworkHelperActivity extends Activity {
     }
 
     private void initView() {
-
+        rememberPassword = DaoHelper.readData(DaoHelper.REMBER_PASSWORD_KEY, Boolean.class);
+        if (rememberPassword == null) {
+            rememberPassword = true;
+        }
         getActionBar().setTitle("网关登录");
         getActionBar().setHomeButtonEnabled(true);
         getActionBar().setDisplayHomeAsUpEnabled(true);
@@ -86,7 +92,9 @@ public class NetworkHelperActivity extends Activity {
         all_disconnect.setOnClickListener(new ConnectListener());
 
         uid.setText(user.getUsername());
-        pwd.setText(user.getPassword());
+        if (rememberPassword) {
+            pwd.setText(user.getPassword());
+        }
 
         //设置光标位置
         CharSequence text = uid.getText();

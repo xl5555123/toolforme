@@ -14,14 +14,12 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.pku.portal.R;
 import com.pku.portal.api.util.NetHelper;
-import com.pku.portal.util.networkHelper.Version;
 import com.pku.portal.ui.account.LoginActivity;
 import com.pku.portal.ui.account.NetworkHelperActivity;
 import com.pku.portal.ui.person.CurriculumListFragment;
@@ -31,8 +29,8 @@ import com.pku.portal.ui.setting.PhoneActivity;
 import com.pku.portal.ui.setting.PkuMap;
 import com.pku.portal.ui.util.WebViewActivity;
 import com.pku.portal.util.AppContextHolder;
-import com.pku.portal.util.SystemHelper;
 import com.pku.portal.util.UIHelper;
+import com.pku.portal.util.networkHelper.Version;
 
 import org.json.JSONArray;
 
@@ -139,7 +137,7 @@ public class SettingNavigationFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), WebViewActivity.class);
-                intent.putExtra("url", "http://www.pku.edu.cn/about/xl/xl(2014-2015).jsp");
+                intent.putExtra("url", "http://www.pku.edu.cn/campuslife/xl/index.htm");
                 intent.putExtra("title", "校历");
                 startActivity(intent);
             }
@@ -178,15 +176,8 @@ public class SettingNavigationFragment extends Fragment {
 
         @Override
         protected void onPostExecute(Version version) {
-            if (version != null && version.getVersion().charAt(0) - '0' > SystemHelper.getPackageInfo().versionCode) {
-                Log.d("newest version", String.format("%s", version.getVersion()));
-                updateNotificationDialog.setMessage("更新日志:\n" + version.getChangelog());
-                updateNotificationDialog.show();
-            }
 
-            else {
-                UIHelper.ToastMessage("当前为最新版本");
-            }
+            UIHelper.ToastMessage("当前为最新版本");
         }
     }
 

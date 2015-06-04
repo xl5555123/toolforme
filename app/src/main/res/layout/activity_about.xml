@@ -11,7 +11,7 @@
         android:layout_centerHorizontal="true"
         android:textSize="28sp"
         android:textColor="#2e2e2e"
-        android:text="掌上信息门户"
+        android:text="掌上燕园"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
@@ -21,8 +21,9 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@id/title"
         android:textSize="15sp"
+        android:gravity="center"
         android:textColor="#2e2e2e"
-        android:text="应用开发部"
+        android:text="北京大学计算中心\n北京大学研究生会应用开发部"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
@@ -86,7 +87,7 @@
             android:layout_marginRight="30dp"
             android:layout_alignParentRight="true"
             android:textColor="#303030"
-            android:text="闫丽,邓晔也"
+            android:text="孙艺桐,闫丽,邓晔也"
             android:textSize="16sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -99,7 +100,43 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/product"
         android:layout_below="@id/meigong"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="22dp"
+            android:textColor="#303030"
+            android:text="产品"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dp"
+            android:layout_alignParentRight="true"
+            android:textColor="#303030"
+            android:text="杜栋栋,王晓健,李林晓"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <FrameLayout
+            android:layout_alignParentBottom="true"
+            android:background="#e9e9e9"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"></FrameLayout>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_below="@id/product"
         android:layout_marginLeft="17dp"
         android:layout_marginRight="17dp"
         android:background="@color/white"
@@ -120,7 +157,7 @@
             android:layout_marginRight="30dp"
             android:layout_alignParentRight="true"
             android:textColor="#303030"
-            android:text="dudong113@163.com"
+            android:text="sermis@pku.edu.cn"
             android:textSize="16sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />

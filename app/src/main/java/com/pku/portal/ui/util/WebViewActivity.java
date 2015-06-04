@@ -48,6 +48,8 @@ public class WebViewActivity extends BaseActivityIncludingFooterNavigation {
         }
         super.onCreate(savedInstanceState);
         webView = (WebView) findViewById(R.id.webview);
+        getActionBar().setDisplayHomeAsUpEnabled(true);
+        getActionBar().setHomeButtonEnabled(true);
 
 
         UIHelper.setWebViewContent(webView, url);

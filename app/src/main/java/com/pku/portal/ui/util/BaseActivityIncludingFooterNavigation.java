@@ -22,6 +22,7 @@ public class BaseActivityIncludingFooterNavigation extends SwipeBackActivity {
         }
         getActionBar().setHomeButtonEnabled(true);
         getActionBar().setDisplayHomeAsUpEnabled(true);
+        getActionBar().setDisplayUseLogoEnabled(false);
         swipeBackLayout = getSwipeBackLayout();
         final int edgeFlag = SwipeBackLayout.FOCUS_LEFT;
         swipeBackLayout.setEdgeTrackingEnabled(edgeFlag);

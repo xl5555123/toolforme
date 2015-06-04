@@ -11,7 +11,7 @@
         android:maxLength="5"
         android:layout_marginTop="10dp"
         android:textSize="12sp"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
@@ -24,7 +24,7 @@
         android:text="请查看附件里最新的美工设计图，请大家帮忙慢慢开始改啊。咱们APP主席团29号想在研会常代会上让每位常代表都下载安装下~~ 所以咱们最好是下周三基本上能弄好哈~~"
         android:maxLines="2"
         android:ellipsize="end"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 </LinearLayout>

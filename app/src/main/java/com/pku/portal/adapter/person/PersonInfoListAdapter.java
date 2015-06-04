@@ -52,8 +52,8 @@ public class PersonInfoListAdapter extends BaseAdapter {
             headers.remove("入学年份");
             headers.remove("所在院系");
             headers.remove("学号");
-            headers.add(2, "职工号");
-            headers.add(3, "所在单位");
+            //headers.add(2, "职工号");
+            //headers.add(3, "所在单位");
         }
     }
 
