@@ -7,7 +7,7 @@ android {
         applicationId "pku.com.ipku"
         minSdkVersion 16
         targetSdkVersion 22
-        versionCode 7
+        versionCode 8
         versionName "1.0"
     }
 

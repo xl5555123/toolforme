@@ -27,7 +27,7 @@ public class CurriculumAsWebActivity extends FragmentActivity {
 
     public void initView() {
 
-        getActionBar().setTitle("课程表");
+        getActionBar().setTitle("今日课程");
         getActionBar().setHomeButtonEnabled(true);
         getActionBar().setDisplayHomeAsUpEnabled(true);
         my_wv = (WebView) findViewById(R.id.my_wv);

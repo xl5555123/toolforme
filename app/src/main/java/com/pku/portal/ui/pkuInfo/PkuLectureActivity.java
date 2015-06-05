@@ -105,7 +105,7 @@ public class PkuLectureActivity extends BaseActivityIncludingFooterNavigation im
                     intent.putExtra("title", "讲座信息");
                     startActivity(intent);
                     */
-                    Intent intent = UIHelper.directToWebView(PkuLectureActivity.this, url);
+                    Intent intent = UIHelper.directToWebView(PkuLectureActivity.this, url, "讲座信息");
                     startActivity(intent);
                 }
             }

@@ -68,7 +68,7 @@ public class PkuLectureFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String url = (String) view.getTag();
                 if (url != null) {
-                    Intent intent = UIHelper.directToWebView(getActivity(), url);
+                    Intent intent = UIHelper.directToWebView(getActivity(), url, "讲座信息");
                     startActivity(intent);
                 }
             }

@@ -1,3 +1,4 @@
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -19,392 +20,407 @@
             android:layout_height="wrap_content" />
     </RelativeLayout>
 
-    <RelativeLayout
-        android:id="@+id/network_manage"
+    <ScrollView
+        android:id="@+id/scroll_content"
         android:layout_below="@id/header"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:background="@color/white"
         android:layout_width="match_parent"
-        android:layout_height="35dp">
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:textColor="#333333"
-            android:textSize="14sp"
-            android:layout_marginLeft="23dp"
-            android:layout_centerVertical="true"
-            android:text="网络管理"
-            android:background="@color/white"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <FrameLayout
-            android:layout_alignParentBottom="true"
-            android:background="#e9e9e9"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="1dp"></FrameLayout>
-    </RelativeLayout>
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/network_manage"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="35dp">
+
+                <TextView
+                    android:textColor="#333333"
+                    android:textSize="14sp"
+                    android:layout_marginLeft="23dp"
+                    android:layout_centerVertical="true"
+                    android:text="网络管理"
+                    android:background="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <FrameLayout
+                    android:layout_alignParentBottom="true"
+                    android:background="#e9e9e9"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"></FrameLayout>
+            </RelativeLayout>
 
 
-    <RelativeLayout
-        android:id="@+id/network"
-        android:layout_below="@id/network_manage"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:background="@drawable/back_selector"
-        android:layout_width="match_parent"
-        android:layout_height="35dp">
-        
-        <ImageView
-            android:layout_centerVertical="true"
-            android:layout_marginRight="27dp"
-            android:layout_alignParentRight="true"
-            android:src="@drawable/right"
-            android:layout_width="12dp"
-            android:layout_height="12dp" />
+            <RelativeLayout
+                android:id="@+id/network"
+                android:layout_below="@id/network_manage"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/back_selector"
+                android:layout_width="match_parent"
+                android:layout_height="35dp">
 
-        <TextView
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="22dp"
-            android:textColor="#747474"
-            android:text="连接网关"
-            android:textSize="14sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="27dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/right"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp" />
 
-        <FrameLayout
-            android:layout_alignParentBottom="true"
-            android:background="#e9e9e9"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"></FrameLayout>
-    </RelativeLayout>
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="22dp"
+                    android:textColor="#747474"
+                    android:text="连接网关"
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
 
-    <RelativeLayout
-        android:id="@+id/usual_info"
-        android:layout_below="@id/network"
-        android:layout_marginTop="13dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:background="@color/white"
-        android:layout_width="match_parent"
-        android:layout_height="35dp">
+                <FrameLayout
+                    android:layout_alignParentBottom="true"
+                    android:background="#e9e9e9"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"></FrameLayout>
+            </RelativeLayout>
 
-        <TextView
-            android:textColor="@color/setting_header"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="25dp"
-            android:textSize="14sp"
-            android:text="常用工具"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            <RelativeLayout
+                android:id="@+id/usual_info"
+                android:layout_below="@id/network"
+                android:layout_marginTop="13dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="35dp">
 
-        <FrameLayout
-            android:layout_alignParentBottom="true"
-            android:background="#e9e9e9"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"></FrameLayout>
-    </RelativeLayout>
+                <TextView
+                    android:textColor="@color/setting_header"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="25dp"
+                    android:textSize="14sp"
+                    android:text="常用工具"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
 
-
-    <RelativeLayout
-        android:id="@+id/phone_usual"
-        android:layout_below="@id/usual_info"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:background="@drawable/back_selector"
-        android:layout_width="match_parent"
-        android:layout_height="35dp">
+                <FrameLayout
+                    android:layout_alignParentBottom="true"
+                    android:background="#e9e9e9"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"></FrameLayout>
+            </RelativeLayout>
 
 
-        <ImageView
-            android:layout_centerVertical="true"
-            android:layout_marginRight="27dp"
-            android:layout_alignParentRight="true"
-            android:src="@drawable/right"
-            android:layout_width="12dp"
-            android:layout_height="12dp" />
-
-        <TextView
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="22dp"
-            android:textColor="@color/setting_item"
-            android:text="常用电话"
-            android:textSize="14sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <FrameLayout
-            android:layout_alignParentBottom="true"
-            android:background="#e9e9e9"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"></FrameLayout>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/pku_map"
-        android:layout_below="@id/phone_usual"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:background="@drawable/back_selector"
-        android:layout_width="match_parent"
-        android:layout_height="35dp">
+            <RelativeLayout
+                android:id="@+id/phone_usual"
+                android:layout_below="@id/usual_info"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/back_selector"
+                android:layout_width="match_parent"
+                android:layout_height="35dp">
 
 
-        <ImageView
-            android:layout_centerVertical="true"
-            android:layout_marginRight="27dp"
-            android:layout_alignParentRight="true"
-            android:src="@drawable/right"
-            android:layout_width="12dp"
-            android:layout_height="12dp" />
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="27dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/right"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp" />
 
-        <TextView
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="22dp"
-            android:textColor="@color/setting_item"
-            android:text="北大地图"
-            android:textSize="14sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="22dp"
+                    android:textColor="@color/setting_item"
+                    android:text="常用电话"
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
 
-        <FrameLayout
-            android:layout_alignParentBottom="true"
-            android:background="#e9e9e9"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"></FrameLayout>
-    </RelativeLayout>
+                <FrameLayout
+                    android:layout_alignParentBottom="true"
+                    android:background="#e9e9e9"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"></FrameLayout>
+            </RelativeLayout>
 
-    <RelativeLayout
-        android:id="@+id/pku_calendar"
-        android:layout_below="@id/pku_map"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:background="@drawable/back_selector"
-        android:layout_width="match_parent"
-        android:layout_height="35dp">
-
-
-        <ImageView
-            android:layout_centerVertical="true"
-            android:layout_marginRight="27dp"
-            android:layout_alignParentRight="true"
-            android:src="@drawable/right"
-            android:layout_width="12dp"
-            android:layout_height="12dp" />
-
-        <TextView
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="22dp"
-            android:textColor="@color/setting_item"
-            android:text="北京大学校历"
-            android:textSize="14sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <FrameLayout
-            android:layout_alignParentBottom="true"
-            android:background="#e9e9e9"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"></FrameLayout>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/beijing_railway"
-        android:layout_below="@id/pku_calendar"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:background="@drawable/back_selector"
-        android:layout_width="match_parent"
-        android:layout_height="35dp">
+            <RelativeLayout
+                android:id="@+id/pku_map"
+                android:layout_below="@id/phone_usual"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/back_selector"
+                android:layout_width="match_parent"
+                android:layout_height="35dp">
 
 
-        <ImageView
-            android:layout_centerVertical="true"
-            android:layout_marginRight="27dp"
-            android:layout_alignParentRight="true"
-            android:src="@drawable/right"
-            android:layout_width="12dp"
-            android:layout_height="12dp" />
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="27dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/right"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp" />
 
-        <TextView
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="22dp"
-            android:textColor="@color/setting_item"
-            android:text="北京地铁线路图"
-            android:textSize="14sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="22dp"
+                    android:textColor="@color/setting_item"
+                    android:text="北大地图"
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
 
-        <FrameLayout
-            android:layout_alignParentBottom="true"
-            android:background="#e9e9e9"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"></FrameLayout>
-    </RelativeLayout>
+                <FrameLayout
+                    android:layout_alignParentBottom="true"
+                    android:background="#e9e9e9"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"></FrameLayout>
+            </RelativeLayout>
 
-    <RelativeLayout
-        android:id="@+id/about"
-        android:layout_below="@id/beijing_railway"
-        android:layout_marginTop="13dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:background="@color/white"
-        android:layout_width="match_parent"
-        android:layout_height="35dp">
-
-        <TextView
-            android:textColor="#040102"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="25dp"
-            android:textSize="14sp"
-            android:text="关于"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <FrameLayout
-            android:layout_alignParentBottom="true"
-            android:background="#e9e9e9"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"></FrameLayout>
-
-    </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/pku_calendar"
+                android:layout_below="@id/pku_map"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/back_selector"
+                android:layout_width="match_parent"
+                android:layout_height="35dp">
 
 
-    <RelativeLayout
-        android:id="@+id/suggestion"
-        android:layout_below="@id/about"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:background="@drawable/back_selector"
-        android:layout_width="match_parent"
-        android:layout_height="35dp">
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="27dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/right"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp" />
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="22dp"
+                    android:textColor="@color/setting_item"
+                    android:text="北京大学校历"
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <FrameLayout
+                    android:layout_alignParentBottom="true"
+                    android:background="#e9e9e9"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"></FrameLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/beijing_railway"
+                android:layout_below="@id/pku_calendar"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/back_selector"
+                android:layout_width="match_parent"
+                android:layout_height="35dp">
 
 
-        <ImageView
-            android:layout_centerVertical="true"
-            android:layout_marginRight="27dp"
-            android:layout_alignParentRight="true"
-            android:src="@drawable/right"
-            android:layout_width="12dp"
-            android:layout_height="12dp" />
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="27dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/right"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp" />
 
-        <TextView
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="22dp"
-            android:textColor="@color/setting_item"
-            android:text="意见反馈"
-            android:textSize="14sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="22dp"
+                    android:textColor="@color/setting_item"
+                    android:text="北京地铁线路图"
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
 
-        <FrameLayout
-            android:layout_alignParentBottom="true"
-            android:background="#e9e9e9"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"></FrameLayout>
-    </RelativeLayout>
+                <FrameLayout
+                    android:layout_alignParentBottom="true"
+                    android:background="#e9e9e9"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"></FrameLayout>
+            </RelativeLayout>
 
-    <RelativeLayout
-        android:id="@+id/about_software"
-        android:layout_below="@id/suggestion"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:background="@drawable/back_selector"
-        android:layout_width="match_parent"
-        android:layout_height="35dp">
+            <RelativeLayout
+                android:id="@+id/about"
+                android:layout_below="@id/beijing_railway"
+                android:layout_marginTop="13dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="35dp">
 
+                <TextView
+                    android:textColor="#040102"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="25dp"
+                    android:textSize="14sp"
+                    android:text="关于"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
 
-        <ImageView
-            android:layout_centerVertical="true"
-            android:layout_marginRight="27dp"
-            android:layout_alignParentRight="true"
-            android:src="@drawable/right"
-            android:layout_width="12dp"
-            android:layout_height="12dp" />
+                <FrameLayout
+                    android:layout_alignParentBottom="true"
+                    android:background="#e9e9e9"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"></FrameLayout>
 
-        <TextView
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="22dp"
-            android:textColor="@color/setting_item"
-            android:text="关于此软件"
-            android:textSize="14sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <FrameLayout
-            android:layout_alignParentBottom="true"
-            android:background="#e9e9e9"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"></FrameLayout>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/update"
-        android:layout_below="@id/about_software"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:background="@drawable/back_selector"
-        android:layout_width="match_parent"
-        android:layout_height="35dp">
+            </RelativeLayout>
 
 
-        <ImageView
-            android:layout_centerVertical="true"
-            android:layout_marginRight="27dp"
-            android:layout_alignParentRight="true"
-            android:src="@drawable/right"
-            android:layout_width="12dp"
-            android:layout_height="12dp" />
-
-        <TextView
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="22dp"
-            android:textColor="@color/setting_item"
-            android:text="检查更新"
-            android:textSize="14sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <FrameLayout
-            android:layout_alignParentBottom="true"
-            android:background="#e9e9e9"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"></FrameLayout>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/log_out"
-        android:layout_marginTop="20dp"
-        android:layout_below="@id/update"
-        android:layout_marginLeft="17dp"
-        android:layout_marginRight="17dp"
-        android:background="@drawable/back_selector"
-        android:layout_width="match_parent"
-        android:layout_height="35dp">
+            <RelativeLayout
+                android:id="@+id/suggestion"
+                android:layout_below="@id/about"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/back_selector"
+                android:layout_width="match_parent"
+                android:layout_height="35dp">
 
 
-        <ImageView
-            android:layout_centerVertical="true"
-            android:layout_marginRight="27dp"
-            android:layout_alignParentRight="true"
-            android:src="@drawable/right"
-            android:layout_width="12dp"
-            android:layout_height="12dp" />
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="27dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/right"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp" />
 
-        <TextView
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="22dp"
-            android:textColor="@color/setting_item"
-            android:text="退出"
-            android:textSize="14sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="22dp"
+                    android:textColor="@color/setting_item"
+                    android:text="意见反馈"
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
 
-        <FrameLayout
-            android:layout_alignParentBottom="true"
-            android:background="#e9e9e9"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"></FrameLayout>
-    </RelativeLayout>
+                <FrameLayout
+                    android:layout_alignParentBottom="true"
+                    android:background="#e9e9e9"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"></FrameLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/about_software"
+                android:layout_below="@id/suggestion"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/back_selector"
+                android:layout_width="match_parent"
+                android:layout_height="35dp">
+
+
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="27dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/right"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp" />
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="22dp"
+                    android:textColor="@color/setting_item"
+                    android:text="关于此软件"
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <FrameLayout
+                    android:layout_alignParentBottom="true"
+                    android:background="#e9e9e9"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"></FrameLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/update"
+                android:layout_below="@id/about_software"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/back_selector"
+                android:layout_width="match_parent"
+                android:layout_height="35dp">
+
+
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="27dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/right"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp" />
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="22dp"
+                    android:textColor="@color/setting_item"
+                    android:text="检查更新"
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <FrameLayout
+                    android:layout_alignParentBottom="true"
+                    android:background="#e9e9e9"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"></FrameLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/log_out"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/update"
+                android:layout_marginLeft="17dp"
+                android:layout_marginRight="17dp"
+                android:background="@drawable/back_selector"
+                android:layout_width="match_parent"
+                android:layout_height="35dp">
+
+
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="27dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/right"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp" />
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="22dp"
+                    android:textColor="@color/setting_item"
+                    android:text="退出"
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <FrameLayout
+                    android:layout_alignParentBottom="true"
+                    android:background="#e9e9e9"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"></FrameLayout>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
 </RelativeLayout>

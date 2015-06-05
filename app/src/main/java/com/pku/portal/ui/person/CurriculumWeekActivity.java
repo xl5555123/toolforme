@@ -34,7 +34,9 @@ public class CurriculumWeekActivity extends Activity implements WeekView.MonthCh
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_curriculum_week);
-        getActionBar().setTitle("课程表");
+        getActionBar().setTitle("今日课程");
+        getActionBar().setDisplayHomeAsUpEnabled(true);
+        getActionBar().setHomeButtonEnabled(true);
 
         // Get a reference for the week view in the layout.
         mWeekView = (WeekView) findViewById(R.id.weekView);
@@ -75,6 +77,9 @@ public class CurriculumWeekActivity extends Activity implements WeekView.MonthCh
             case R.id.action_today:
                 mWeekView.goToToday();
                 return true;
+            case android.R.id.home:
+                finish();
+                break;
             case R.id.action_day_view:
                 if (mWeekViewType != TYPE_DAY_VIEW) {
                     item.setChecked(!item.isChecked());

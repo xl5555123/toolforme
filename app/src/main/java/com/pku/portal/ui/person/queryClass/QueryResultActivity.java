@@ -3,6 +3,7 @@ package com.pku.portal.ui.person.queryClass;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -42,6 +43,9 @@ public class QueryResultActivity extends Activity {
     private void initView() {
         listView = (ListView) findViewById(R.id.listview);
         progress = findViewById(R.id.progress);
+        getActionBar().setTitle("课程查询");
+        getActionBar().setDisplayHomeAsUpEnabled(true);
+        getActionBar().setHomeButtonEnabled(true);
 
         new LoadDataDefaultTask(new LoadDataConfigure() {
             @Override
@@ -89,5 +93,17 @@ public class QueryResultActivity extends Activity {
 
             }
         }).execute();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                break;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+        return true;
     }
 }

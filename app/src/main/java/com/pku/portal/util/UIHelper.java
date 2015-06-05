@@ -165,7 +165,7 @@ public class UIHelper {
         activity.startActivity(intent);
     }
 
-    public static Intent directToWebView(Activity activity, String url) {
+    public static Intent directToWebView(Activity activity, String url, String title) {
         if (url.contains("pdf")) {
             Intent intent = new Intent();
             intent.setAction("android.intent.action.VIEW");
@@ -175,7 +175,7 @@ public class UIHelper {
         } else {
             Intent intent = new Intent(activity, WebViewActivity.class);
             intent.putExtra("url", url);
-            intent.putExtra("title", "今日讲座");
+            intent.putExtra("title", title);
             return intent;
         }
     }

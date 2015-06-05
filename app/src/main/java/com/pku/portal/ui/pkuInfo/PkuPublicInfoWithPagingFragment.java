@@ -92,7 +92,7 @@ public class PkuPublicInfoWithPagingFragment extends Fragment {
                     intent.putExtra("title", type.getTitle());
                     startActivity(intent);
                     */
-                    Intent intent = UIHelper.directToWebView(getActivity(), url);
+                    Intent intent = UIHelper.directToWebView(getActivity(), url, type.getTitle());
                     startActivity(intent);
                 }
             }
