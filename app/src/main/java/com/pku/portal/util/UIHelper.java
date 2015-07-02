@@ -5,8 +5,11 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.net.http.SslError;
+import android.os.Handler;
+import android.os.Message;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.SslErrorHandler;
@@ -123,14 +126,49 @@ public class UIHelper {
      * @param webView
      * @param url
      */
-    public static void setWebViewContent(WebView webView, String url) {
+    public static void setWebViewContent(final WebView webView, String url) {
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setSupportZoom(true);
         webView.getSettings().setBuiltInZoomControls(true);
         webView.getSettings().setDefaultFontSize(15);
         webView.setInitialScale(100);
         webView.loadUrl(url);
+        final Handler handler = new Handler() {
+            @Override
+            public void handleMessage(Message message) {
+                if (message.what == 1) {
+                    UIHelper.ToastMessage("请确保网络正常或已连接网关！");
+                }
+            }
+        };
         webView.setWebViewClient(new WebViewClient() {
+
+            boolean timeout = true;
+            @Override
+            public void onPageStarted(WebView view, String url, Bitmap favicon) {
+                super.onPageStarted(view, url, favicon);
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            Thread.sleep(5000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        if(timeout) {
+                            Message message = new Message();
+                            message.what = 1;
+                            handler.sendMessage(message);
+                        }
+                    }
+                }).start();
+            }
+
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                super.onPageFinished(view, url);
+                timeout = false;
+            }
 
             @Override
             public void onReceivedSslError(WebView view, SslErrorHandler handler,

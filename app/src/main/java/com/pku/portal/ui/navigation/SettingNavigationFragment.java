@@ -146,7 +146,7 @@ public class SettingNavigationFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent data = new Intent(Intent.ACTION_SENDTO);
-                data.setData(Uri.parse("mailto:dudong113@163.com"));
+                data.setData(Uri.parse("mailto:sermis@pku.edu.cn"));
                 data.putExtra(Intent.EXTRA_SUBJECT, "掌上信息门户反馈意见");
                 data.putExtra(Intent.EXTRA_TEXT, "掌上信息门户反馈意见：");
                 startActivity(data);
