@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:background="#ffffff"
     android:layout_height="match_parent"
-    tools:context="com.pku.portal.ui.pkuInfo.PkuLectureFragment">
+    tools:context="com.xingliang.toolforme.ui.pkuInfo.PkuLectureFragment">
     
     <LinearLayout
         android:id="@+id/lecture_header"

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.pku.portal">
+    package="com.xingliang.toolforme">
 
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission  android:name="android.permission.CALL_PHONE" />
@@ -19,16 +19,24 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
-        android:name="com.pku.portal.ui.AppContext"
+        android:name="com.xingliang.toolforme.ui.AppContext"
         android:allowBackup="true"
         android:icon="@drawable/logo"
         android:label="掌上燕园">
+
+        <receiver android:name="com.xingliang.toolforme.widget.NetworkWidgetProvider" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider"
+                android:resource="@xml/network_widget_provider" />
+        </receiver>
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="r8Qt5owRUFKg55ELMeF2OsnN" />
 
         <activity
-            android:name="com.pku.portal.ui.AppStart"
+            android:name="com.xingliang.toolforme.ui.AppStart"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
             <intent-filter>
@@ -38,49 +46,49 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.pku.portal.ui.person.freeClassRoom.FreeClassRoomInAnBuilding"
+            android:name="com.xingliang.toolforme.ui.person.freeClassRoom.FreeClassRoomInAnBuilding"
             android:configChanges="keyboardHidden|orientation"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyActionBarTheme"
             android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity
-            android:name="com.pku.portal.ui.account.LoginActivity"
+            android:name="com.xingliang.toolforme.ui.account.LoginActivity"
             android:configChanges="keyboardHidden|orientation"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity
-            android:name="com.pku.portal.ui.navigation.MainNavigationActivity"
+            android:name="com.xingliang.toolforme.ui.navigation.MainNavigationActivity"
             android:configChanges="keyboardHidden|orientation"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity
-            android:name="com.pku.portal.ui.person.PersonInfoActivity"
+            android:name="com.xingliang.toolforme.ui.person.PersonInfoActivity"
             android:configChanges="keyboardHidden|orientation"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyActionBarTheme"
             android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity
-            android:name="com.pku.portal.ui.person.ScholarshipActivity"
+            android:name="com.xingliang.toolforme.ui.person.ScholarshipActivity"
             android:configChanges="keyboardHidden|orientation"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyActionBarTheme"
             android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity
-            android:name="com.pku.portal.ui.person.ScoreActivity"
+            android:name="com.xingliang.toolforme.ui.person.ScoreActivity"
             android:configChanges="keyboardHidden|orientation"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyActionBarTheme"
             android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity
-            android:name="com.pku.portal.ui.person.library.LibraryActivity"
+            android:name="com.xingliang.toolforme.ui.person.library.LibraryActivity"
             android:configChanges="keyboardHidden|orientation"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
@@ -91,42 +99,42 @@
                 android:resource="@xml/library_searchable" />
         </activity>
         <activity
-            android:name="com.pku.portal.ui.person.freeClassRoom.FreeClassroomActivity"
+            android:name="com.xingliang.toolforme.ui.person.freeClassRoom.FreeClassroomActivity"
             android:configChanges="keyboardHidden|orientation"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyActionBarTheme"
             android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity
-            android:name="com.pku.portal.ui.person.queryClass.QueryClassActivity"
+            android:name="com.xingliang.toolforme.ui.person.queryClass.QueryClassActivity"
             android:configChanges="keyboardHidden|orientation"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyActionBarTheme"
             android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity
-            android:name="com.pku.portal.ui.person.arrearageState.ArrearageStateActivity"
+            android:name="com.xingliang.toolforme.ui.person.arrearageState.ArrearageStateActivity"
             android:configChanges="keyboardHidden|orientation"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyActionBarTheme"
             android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity
-            android:name="com.pku.portal.ui.pkuInfo.PkuPublicInfoActivity"
+            android:name="com.xingliang.toolforme.ui.pkuInfo.PkuPublicInfoActivity"
             android:configChanges="keyboardHidden|orientation"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyActionBarTheme"
             android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity
-            android:name="com.pku.portal.ui.util.WebViewActivity"
+            android:name="com.xingliang.toolforme.ui.util.WebViewActivity"
             android:configChanges="keyboardHidden|orientation"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyActionBarTheme"
             android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity
-            android:name="com.pku.portal.ui.person.library.LibrarySearchResultActivity"
+            android:name="com.xingliang.toolforme.ui.person.library.LibrarySearchResultActivity"
             android:configChanges="keyboardHidden|orientation"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
@@ -137,84 +145,84 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.pku.portal.ui.account.AccountManagementActivity"
+            android:name="com.xingliang.toolforme.ui.account.AccountManagementActivity"
             android:configChanges="keyboardHidden|orientation"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyActionBarTheme"
             android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity
-            android:name="com.pku.portal.ui.pkuInfo.PkuLectureActivity"
+            android:name="com.xingliang.toolforme.ui.pkuInfo.PkuLectureActivity"
             android:configChanges="keyboardHidden|orientation"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyActionBarTheme"
             android:windowSoftInputMode="adjustPan|stateHidden"></activity>
         <activity
-            android:name="com.pku.portal.ui.pkuInfo.PkuNoticeActivity"
+            android:name="com.xingliang.toolforme.ui.pkuInfo.PkuNoticeActivity"
             android:configChanges="keyboardHidden|orientation"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyActionBarTheme"
             android:windowSoftInputMode="adjustPan|stateHidden"></activity>
         <activity
-            android:name="com.pku.portal.ui.pkuInfo.FindAJobActivity"
+            android:name="com.xingliang.toolforme.ui.pkuInfo.FindAJobActivity"
             android:configChanges="keyboardHidden|orientation"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyActionBarTheme"
             android:windowSoftInputMode="adjustPan|stateHidden"></activity>
         <activity
-            android:name="com.pku.portal.ui.person.queryClass.QueryResultActivity"
+            android:name="com.xingliang.toolforme.ui.person.queryClass.QueryResultActivity"
             android:configChanges="keyboardHidden|orientation"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyActionBarTheme"
             android:windowSoftInputMode="adjustPan|stateHidden"></activity>
         <activity
-            android:name="com.pku.portal.ui.account.NetworkHelperActivity"
+            android:name="com.xingliang.toolforme.ui.account.NetworkHelperActivity"
             android:configChanges="keyboardHidden|orientation"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyActionBarTheme"
             android:windowSoftInputMode="adjustPan|stateHidden"></activity>
         <activity
-            android:name="com.pku.portal.ui.setting.PhoneActivity"
+            android:name="com.xingliang.toolforme.ui.setting.PhoneActivity"
             android:configChanges="keyboardHidden|orientation"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyActionBarTheme"
             android:windowSoftInputMode="adjustPan|stateHidden"></activity>
         <activity
-            android:name="com.pku.portal.ui.setting.PkuMap"
+            android:name="com.xingliang.toolforme.ui.setting.PkuMap"
             android:configChanges="keyboardHidden|orientation"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyActionBarTheme"
             android:windowSoftInputMode="adjustPan|stateHidden"></activity>
         <activity
-            android:name="com.pku.portal.ui.setting.BeijingRailway"
+            android:name="com.xingliang.toolforme.ui.setting.BeijingRailway"
             android:configChanges="keyboardHidden|orientation"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyActionBarTheme"
             android:windowSoftInputMode="adjustPan|stateHidden"></activity>
         <activity
-            android:name="com.pku.portal.ui.setting.AboutActivity"
+            android:name="com.xingliang.toolforme.ui.setting.AboutActivity"
             android:configChanges="keyboardHidden|orientation"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MyActionBarTheme"
             android:windowSoftInputMode="adjustPan|stateHidden"></activity>
         <activity
-            android:name="com.pku.portal.ui.person.CurriculumAsWebActivity"
+            android:name="com.xingliang.toolforme.ui.person.CurriculumAsWebActivity"
             android:configChanges="keyboardHidden|orientation"
             android:launchMode="singleTask"
             android:screenOrientation="landscape"
             android:theme="@style/Theme.MyActionBarTheme"
             android:windowSoftInputMode="adjustPan|stateHidden"></activity>
         <activity
-            android:name="com.pku.portal.ui.person.CurriculumWeekActivity"
+            android:name="com.xingliang.toolforme.ui.person.CurriculumWeekActivity"
             android:configChanges="keyboardHidden|orientation"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"

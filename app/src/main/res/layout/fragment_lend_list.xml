@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#efeff4"
-    tools:context="com.pku.portal.ui.person.library.LendListFragment">
+    tools:context="com.xingliang.toolforme.ui.person.library.LendListFragment">
 
     <TextView
         android:id="@+id/header"

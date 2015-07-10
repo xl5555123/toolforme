@@ -2,9 +2,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.pku.portal.ui.pkuInfo.PkuPublicInfoWithoutPagingFragment">
+    tools:context="com.xingliang.toolforme.ui.pkuInfo.PkuPublicInfoWithoutPagingFragment">
 
-    <com.pku.portal.ui.util.paging.PagingListView
+    <com.xingliang.toolforme.ui.util.paging.PagingListView
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

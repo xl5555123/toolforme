@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fefefe"
-    tools:context="com.pku.portal.ui.pkuInfo.PkuPublicInfoActivity">
+    tools:context="com.xingliang.toolforme.ui.pkuInfo.PkuPublicInfoActivity">
 
 
     <ListView

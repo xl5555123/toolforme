@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:padding="5dp"
     android:layout_height="match_parent"
-    tools:context="com.pku.portal.ui.navigation.NewHomeFragment">
+    tools:context="com.xingliang.toolforme.ui.navigation.NewHomeFragment">
 
     <FrameLayout
         android:id="@+id/curriculum_list_fragment"

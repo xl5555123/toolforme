@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#b9b9b9"
-    tools:context="com.pku.portal.ui.person.queryClass.SelectYearFragment">
+    tools:context="com.xingliang.toolforme.ui.person.queryClass.SelectYearFragment">
 
     <FrameLayout
         android:layout_width="match_parent"

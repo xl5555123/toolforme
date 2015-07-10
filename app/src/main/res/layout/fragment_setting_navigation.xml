@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#eaeaea"
-    tools:context="com.pku.portal.ui.navigation.SettingNavigationFragment">
+    tools:context="com.xingliang.toolforme.ui.navigation.SettingNavigationFragment">
 
     <RelativeLayout
         android:id="@+id/header"

@@ -3,5 +3,5 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.pku.portal.ui.account.Main2Activity"
+    tools:context="com.xingliang.toolforme.ui.account.Main2Activity"
     tools:ignore="MergeRootFrame" />

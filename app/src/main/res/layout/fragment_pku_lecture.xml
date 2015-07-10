@@ -3,7 +3,7 @@
     android:id="@+id/lecture_fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.pku.portal.ui.pkuInfo.PkuLectureFragment">
+    tools:context="com.xingliang.toolforme.ui.pkuInfo.PkuLectureFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <ListView

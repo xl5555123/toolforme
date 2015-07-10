@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.pku.portal.ui.pkuInfo.PkuInfoNavigationFragment">
+    tools:context="com.xingliang.toolforme.ui.pkuInfo.PkuInfoNavigationFragment">
 
     <com.viewpagerindicator.TabPageIndicator
         android:id="@+id/titles"

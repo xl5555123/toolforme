@@ -5,7 +5,7 @@
     android:background="@drawable/main_background"
     android:paddingBottom="60dp"
     android:paddingTop="90dp"
-    tools:context="com.pku.portal.ui.navigation.PersonFragment">
+    tools:context="com.xingliang.toolforme.ui.navigation.PersonFragment">
 
     <GridView
         android:id="@+id/icon"

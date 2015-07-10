@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:padding="@dimen/widget_margin"
+    android:layout_height="match_parent">
+    
+    <LinearLayout
+        android:layout_centerInParent="true"
+        android:background="#252525"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp">
+        <TextView
+            android:id="@+id/student_id"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:text=""
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <FrameLayout
+            android:background="@color/gray"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"></FrameLayout>
+        
+        <ImageButton
+            android:id="@+id/connect_free"
+            android:background="@drawable/connect_free"
+            android:layout_width="50dp"
+            android:layout_height="match_parent" />
+
+        <FrameLayout
+            android:background="@color/gray"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"></FrameLayout>
+
+        <ImageButton
+            android:id="@+id/connect_all"
+            android:background="@drawable/connect_abroad"
+            android:layout_width="50dp"
+            android:layout_height="match_parent" />
+
+        <FrameLayout
+            android:background="@color/gray"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"></FrameLayout>
+
+        <ImageButton
+            android:id="@+id/break_current"
+            android:background="@drawable/break_current"
+            android:layout_width="50dp"
+            android:layout_height="match_parent" />
+
+        <FrameLayout
+            android:background="@color/gray"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"></FrameLayout>
+
+        <ImageButton
+            android:id="@+id/break_all"
+            android:background="@drawable/break_all"
+            android:layout_width="50dp"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+
+</RelativeLayout>

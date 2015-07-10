@@ -25,7 +25,7 @@ import android.view.View;
 import android.widget.OverScroller;
 import android.widget.Scroller;
 
-import com.pku.portal.R;
+import com.xingliang.toolforme.R;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

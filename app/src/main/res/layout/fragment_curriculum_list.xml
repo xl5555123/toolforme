@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:background="#ffffff"
     android:id="@+id/curriculum_container"
-    tools:context="com.pku.portal.ui.pkuInfo.CurriculumListFragment">
+    tools:context="com.xingliang.toolforme.ui.pkuInfo.CurriculumListFragment">
 
     <LinearLayout
         android:id="@+id/today_curr_tv"

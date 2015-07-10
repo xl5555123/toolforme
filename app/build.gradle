@@ -4,7 +4,7 @@ android {
     compileSdkVersion 22
     buildToolsVersion "22.0.0"
     defaultConfig {
-        applicationId "pku.com.ipku"
+        applicationId "com.xingliang.toolforme"
         minSdkVersion 16
         targetSdkVersion 22
         versionCode 10

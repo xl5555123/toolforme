@@ -1,6 +1,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.pku.portal.ui.person.library.LibrarySearchResultActivity">
+    tools:context="com.xingliang.toolforme.ui.person.library.LibrarySearchResultActivity">
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"

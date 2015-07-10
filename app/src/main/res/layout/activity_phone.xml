@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.pku.portal.ui.setting.PhoneActivity">
+    tools:context="com.xingliang.toolforme.ui.setting.PhoneActivity">
 
     <ListView
         android:id="@+id/phone_list"

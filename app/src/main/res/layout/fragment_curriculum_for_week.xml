@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#e1ffff"
-    tools:context="com.pku.portal.ui.pkuInfo.CurriculumForWeekFragment">
+    tools:context="com.xingliang.toolforme.ui.pkuInfo.CurriculumForWeekFragment">
 
     <ListView
         android:id="@+id/curriculum_lv111"

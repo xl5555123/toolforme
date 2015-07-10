@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.pku.portal.ui.navigation.MainNavigationActivity">
+    tools:context="com.xingliang.toolforme.ui.navigation.MainNavigationActivity">
 
     <LinearLayout
         android:id="@+id/footer"
